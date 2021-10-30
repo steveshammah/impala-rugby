@@ -22,11 +22,21 @@
     background-color: $blueDark;
     color: $light;
     border-radius: 100px;
+    margin-right: 20px;
 
     span {
       flex: 1;
       display: flex;
       align-items: center;
+      transition: ease-in 0.5s;
+
+      .icon {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      &:hover {
+        color: white;
+      }
     }
   }
 
@@ -36,13 +46,24 @@
     flex: 2;
     width: 60%;
     height: 100%;
-    padding: 10px;
+    // padding: 30px;
 
     .list-nav {
       width: 95%;
       display: flex;
       justify-content: space-between;
       padding: 10px 20px;
+
+      span {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+
+        .icon {
+          font-size: 2rem;
+        }
+      }
     }
   }
 
@@ -52,16 +73,18 @@
     flex-wrap: wrap;
     color: $blueDark;
     overflow-y: scroll;
+    padding: 50px;
 
     .group {
       height: 200px;
-      width: 200px;
+      width: 170px;
       border-radius: 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
       background-color: $mainColor;
       margin-bottom: 20px;
+      margin-left: 10px;
       position: relative;
       cursor: pointer;
 
@@ -83,8 +106,8 @@
       }
       .active {
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: 10px;
+        right: 10px;
         height: 10px;
         width: 10px;
         border-radius: 50%;
@@ -103,5 +126,4 @@
       }
     }
   }
-
 }

@@ -13,21 +13,16 @@ $light: #495057;
 $online: #ff0000;
 $mainFont: "Poppins", sans-serif;
 
-body {
-  background-color: $blueDark;
-  color: $mainColor;
-  font-family: $mainFont;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.status {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: $light;
-
-  > & .user-active {
-    background-color: $online;
-  }
+body {
+  background-color: $mainColor;
+  color: $blueDark;
+  font-family: $mainFont;
 }
 
 // media queries

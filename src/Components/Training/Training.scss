@@ -1,0 +1,70 @@
+@import "../../Global.scss";
+
+.training-container {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: 40px;
+    left: -200px;
+  }
+  table {
+    margin-top: 50px;
+    thead {
+      td {
+        color: $mainColor;
+        background-color: $defaultRed;
+      }
+    }
+    tr {
+      color: black;
+
+      &:nth-child(even) {
+        // background-color: $blueDark;
+        color: black;
+      }
+      td {
+        // color: black;
+        min-width: 100px;
+        text-align: center;
+        position: relative;
+
+        span {
+          background-color: white;
+          height: 100%;
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          &.exceptional {
+            background-color: rgba(0, 128, 0, 1);
+            width: 100%;
+          }
+
+          &.good {
+            background-color: rgba(0, 128, 0, 0.7);
+            width: 80%;
+          }
+          &.average {
+            background-color: rgba(0, 128, 0, 0.5);
+            width: 50%;
+          }
+          &.poor {
+            background-color: rgba(250, 4, 4, 0.5);
+            width: 25%;
+          }
+        }
+
+        small {
+          z-index: 2;
+        }
+      }
+    }
+  }
+}

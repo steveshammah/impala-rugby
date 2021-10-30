@@ -6,7 +6,7 @@
   display: flex;
   background-color: $defaultRed;
 
-  border-radius: 10px;
+  border-radius: 6px;
   margin: auto;
   > div {
     flex: 1;
@@ -21,14 +21,15 @@
       height: 95%;
       background-color: $defaultRed;
       object-fit: contain;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
     }
   }
 
   .form-container {
     box-shadow: 10px 10px 10px #333;
     padding-bottom: 30px;
+    border-radius: 6px;
 
     .head-container {
       justify-content: center;

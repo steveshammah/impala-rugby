@@ -1,0 +1,103 @@
+@import "../../Global.scss";
+
+.profile-card {
+  height: 400px;
+  width: 350px;
+  background-color: $blueDark;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  border-radius: 6px;
+
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    position: relative;
+    border-radius: 6px;
+
+    span {
+      flex: 1;
+      width: 95%;
+
+      &:first-child {
+        background-color: $defaultRed;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+      }
+      &:nth-child(3) {
+        background-color: white;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      object-fit: contain;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .profile-meta {
+    height: 30%;
+    width: 95%;
+    background-color: $blueDark;
+    padding: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.profile-links {
+  min-height: 150px;
+  padding: 10px;
+  margin: auto;
+  width: 60%;
+  margin-top: 50px;
+  background-color: $black;
+  border-radius: 6px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+
+    a {
+      text-decoration: none;
+      color: $defaultRed;
+      background-color: $mainColor;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 10px 10px 20px 10px;
+      min-width: 200px;
+      text-align: center;
+    }
+  }
+}

@@ -1,12 +1,13 @@
 import "./Global.scss";
 import { Login } from "./Components/Login/Login";
 import { GroupContainer } from "./Components/Groups/GroupContainer";
+import { Profile } from "./Components/Profile/Profile";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { useState } from "react";
 import { LoginContext } from "./Contexts/LoginContext";
 
 function App() {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   const [username, setUsername] = useState("");
 
   const logOut = () => {
@@ -20,7 +21,9 @@ function App() {
         <ul>
           <Link to='/'>Home</Link>
           {login ? (
-            <Link onClick={() => logOut}>Logout</Link>
+            <a href='/' onClick={() => logOut}>
+              Logout
+            </a>
           ) : (
             <Link to='/'>Login</Link>
           )}
@@ -28,15 +31,16 @@ function App() {
           <Link to='/about'>About</Link>
         </ul>
 
-        <h2>Impala Time</h2>
-        {login && <h2>{username}</h2>}
-        <span className={`status  ${login && "user-active"}`}></span>
+        <h1>Impala Time</h1>
 
         <LoginContext.Provider
           value={{ login, setLogin, username, setUsername }}>
           <Switch>
             <Route path='/' exact>
-              {login ? <GroupContainer /> : <Login />}
+              {login ? <Profile /> : <Login />}
+            </Route>
+            <Route path='/groups'>
+              <GroupContainer />
             </Route>
             <Route path='/about'>
               <h1>About Page</h1>
