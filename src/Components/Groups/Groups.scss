@@ -1,0 +1,107 @@
+@import "../../Global.scss";
+
+.groups-section {
+  height: 70vh;
+  width: 80%;
+  border: 1px solid $mainColor;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  background-color: $light;
+
+  .nav-panel {
+    height: 80%;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $blueDark;
+    color: $light;
+    border-radius: 100px;
+
+    span {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .group-list {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    width: 60%;
+    height: 100%;
+    padding: 10px;
+
+    .list-nav {
+      width: 95%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+  }
+
+  .groups-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: $blueDark;
+    overflow-y: scroll;
+
+    .group {
+      height: 200px;
+      width: 200px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $mainColor;
+      margin-bottom: 20px;
+      position: relative;
+      cursor: pointer;
+
+      .image {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+
+        .group-logo {
+          object-fit: contain;
+          height: 55%;
+          width: 55%;
+          border-radius: 50%;
+        }
+      }
+      .active {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: $online;
+      }
+
+      .group-text {
+        text-align: center;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        font-weight: 500;
+      }
+    }
+  }
+
+}
