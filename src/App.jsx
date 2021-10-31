@@ -7,7 +7,7 @@ import { useState } from "react";
 import { LoginContext } from "./Contexts/LoginContext";
 
 function App() {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
   const [username, setUsername] = useState("");
 
   const logOut = () => {

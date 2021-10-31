@@ -88,16 +88,66 @@
     align-items: center;
     list-style: none;
     flex-wrap: wrap;
-
     a {
       text-decoration: none;
-      color: $defaultRed;
-      background-color: $mainColor;
-      padding: 10px;
-      border-radius: 6px;
-      margin: 10px 10px 20px 10px;
-      min-width: 200px;
-      text-align: center;
+
+      li {
+        text-decoration: none;
+        color: $defaultRed;
+        background-color: $mainColor;
+        padding: 10px;
+        border-radius: 6px;
+        margin: 10px 10px 20px 10px;
+        min-width: 200px;
+        text-align: center;
+        cursor: pointer;
+
+        &.active {
+          background-color: $defaultRed;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.list-container {
+  padding-top: 50px;
+  width: 60%;
+  margin: auto;
+  position: relative;
+  display: none;
+
+  &.active-link {
+    display: flex;
+    flex-direction: column;
+  }
+  h2 {
+    position: absolute;
+    top: 40px;
+    left: -200px;
+  }
+
+  table {
+    margin-top: 50px;
+    thead {
+      td {
+        color: $mainColor;
+        background-color: $defaultRed;
+      }
+    }
+    tr {
+      color: black;
+
+      &:nth-child(even) {
+        // background-color: $blueDark;
+        color: black;
+      }
+      td {
+        // color: black;
+        min-width: 100px;
+        text-align: center;
+      }
     }
   }
 }
