@@ -1,22 +1,7 @@
-import "./Profile.scss";
-import { ProfileLinks } from "./ProfileLinks";
-import { Management } from "../Management/Management";
-import { Training } from "../Training/Training";
-import { Allowance } from "../Allowance/Allowance";
-import { Gazelles } from "../Gazelles/Gazelles";
-import { Boks } from "../Boks/Boks";
-import { Ladies } from "../Ladies/Ladies";
-import { Swaras } from "../Swaras/Swaras";
-import { Fixtures } from "../Fixtures/Fixtures";
-import { LoginContext } from "../../Contexts/LoginContext";
-import { TeamContext } from "../../Contexts/TeamContext";
-import { useContext, useState } from "react";
-import impala from "../../Resources/impala-logo.png";
+import { useState, createContext } from "react";
 
-export const Profile = () => {
-  const { username } = useContext(LoginContext);
-  const [activeLink, setActiveLink] = useState("");
-
+export const TeamContext = () => {
+  const [team, setTeam] = useState({});
   const players = [
     {
       id: 0,
@@ -174,59 +159,48 @@ export const Profile = () => {
       phone: "795058630",
       email: "shammahranks@gmail.com",
     },
-    // {
-    //   id: 12,
-    //   name: "Quinto Oongo",
-    //   consistency: "exceptional",
-    //   appearances: 160,
-    //   dob: 1993,
-    // },
-    // {
-    //   id: 13,
-    //   name: "Anthony Nyandigisi",
-    //   training_ratio: "1/4",
-    //   consistency: "poor",
-    //   appearances: 200,
-    //   dob: 1986,
-    // },
-    // {
-    //   id: 14,
-    //   name: "Martin Musau",
-    //   training_ratio: "3/4",
-    //   consistency: "good",
-    //   appearances: 15,
-    //   dob: 1995,
-    // },
+    {
+      id: 12,
+      name: "Quinto Oongo",
+      daysTrained: 4,
+      daysMissed: 6,
+      appearances: 400,
+      dob: "1/1/1988",
+      year: 1988,
+      team: "boks",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
+    {
+      id: 13,
+      name: "Anthony Nyandigisi",
+      daysTrained: 4,
+      daysMissed: 6,
+      appearances: 400,
+      dob: "1/1/1988",
+      year: 1988,
+      team: "boks",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
+    {
+      id: 14,
+      name: "Martin Musau",
+      daysTrained: 4,
+      daysMissed: 6,
+      appearances: 400,
+      dob: "1/1/1988",
+      year: 1988,
+      team: "boks",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
   ];
 
-  console.log(activeLink);
-  return (
-    <>
-      <section className='profile-card'>
-        <div className='profile-pic'>
-          <span></span>
-          <img src={impala} alt='' />
-
-          <span></span>
-        </div>
-
-        <div className='profile-meta'>
-          <h3>{username}</h3>
-          <strong>Phil 4:13</strong>
-          <p>I can do all things through Christ who strengthens me.</p>
-        </div>
-      </section>
-      {/* <TeamContext.Provider> */}
-      <ProfileLinks active={activeLink} setActive={setActiveLink} />
-      <Management players={players} active={activeLink} />
-      <Training players={players} active={activeLink} />
-      <Allowance players={players} active={activeLink} />
-      <Gazelles players={players} active={activeLink} />
-      <Boks players={players} active={activeLink} />
-      <Ladies players={players} active={activeLink} />
-      <Swaras players={players} active={activeLink} />
-      <Fixtures active={activeLink} />
-      {/* </TeamContext.Provider> */}
-    </>
-  );
+  setTeam(players);
+  const Context = createContext(team);
+  return Context;
 };

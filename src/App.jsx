@@ -1,14 +1,17 @@
 import "./Global.scss";
+import { Header } from "./Components/Header/Header";
+import { Menu } from "./Components/Menu/Menu";
 import { Login } from "./Components/Login/Login";
 import { GroupContainer } from "./Components/Groups/GroupContainer";
 import { Profile } from "./Components/Profile/Profile";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
 import { LoginContext } from "./Contexts/LoginContext";
 
 function App() {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   const [username, setUsername] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const logOut = () => {
     setLogin(false);
@@ -18,21 +21,13 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <ul>
-          <Link to='/'>Home</Link>
-          {login ? (
-            <a href='/' onClick={() => logOut}>
-              Logout
-            </a>
-          ) : (
-            <Link to='/'>Login</Link>
-          )}
-          <Link to='/groups'>Groups</Link>
-          <Link to='/about'>About</Link>
-        </ul>
-
-        <h1>Impala Time</h1>
-
+        <Header
+          login={login}
+          logOut={logOut}
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <LoginContext.Provider
           value={{ login, setLogin, username, setUsername }}>
           <Switch>
