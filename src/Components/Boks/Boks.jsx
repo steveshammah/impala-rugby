@@ -1,7 +1,7 @@
 import "./Boks.scss";
 
 export const Boks = ({ players, active }) => {
-  const currentYear = new Date().getFullYear();
+  // const currentYear = new Date().getFullYear();
   const boks = players.filter((player) => player.team === "boks");
 
   return (

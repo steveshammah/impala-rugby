@@ -16,10 +16,11 @@
     justify-content: space-around;
   }
   .img-container {
+    background-color: $black;
     img {
       width: 95%;
       height: 95%;
-      background-color: $defaultRed;
+
       object-fit: contain;
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;

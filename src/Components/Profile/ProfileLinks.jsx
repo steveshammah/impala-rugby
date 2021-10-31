@@ -10,12 +10,13 @@ export const ProfileLinks = ({ active, setActive }) => {
     { name: "Ladies", link: "ladies" },
     { name: "Swaras", link: "swaras" },
     { name: "Fixtures", link: "fixtures" },
+    { name: "Add Member", link: "addmember" },
   ];
   return (
     <div className='profile-links'>
       <ul>
         {actions.map((action) => (
-          <a href={`#${action.link}`}>
+          <a href={`#${action.link}`} key={action.link}>
             <li
               onClick={() => setActive(action.link)}
               className={action.link === active ? "active" : ""}>

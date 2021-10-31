@@ -13,11 +13,13 @@ export const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
     <header>
       {/* LOGO */}
       <div className='logo'>
-        <img src={impalaLogo} alt='LOGO' />
+        <Link to='#'>
+          <img src={impalaLogo} alt='LOGO' />
+        </Link>{" "}
       </div>
       <ul>
         {navItems.map((item) => (
-          <li>
+          <li key={item.name}>
             {" "}
             <Link to={`/${item.url}`}>{item.name}</Link>
           </li>

@@ -8,8 +8,9 @@ import { Boks } from "../Boks/Boks";
 import { Ladies } from "../Ladies/Ladies";
 import { Swaras } from "../Swaras/Swaras";
 import { Fixtures } from "../Fixtures/Fixtures";
+import { AddMember } from "../AddMember/AddMember";
 import { LoginContext } from "../../Contexts/LoginContext";
-import { TeamContext } from "../../Contexts/TeamContext";
+// import { TeamContext } from "../../Contexts/TeamContext";
 import { useContext, useState } from "react";
 import impala from "../../Resources/impala-logo.png";
 
@@ -78,7 +79,7 @@ export const Profile = () => {
       appearances: 400,
       dob: "1/1/1988",
       year: 1988,
-      team: "ladies",
+      team: "gazelles",
       socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
       phone: "795058630",
       email: "shammahranks@gmail.com",
@@ -174,32 +175,74 @@ export const Profile = () => {
       phone: "795058630",
       email: "shammahranks@gmail.com",
     },
-    // {
-    //   id: 12,
-    //   name: "Quinto Oongo",
-    //   consistency: "exceptional",
-    //   appearances: 160,
-    //   dob: 1993,
-    // },
-    // {
-    //   id: 13,
-    //   name: "Anthony Nyandigisi",
-    //   training_ratio: "1/4",
-    //   consistency: "poor",
-    //   appearances: 200,
-    //   dob: 1986,
-    // },
-    // {
-    //   id: 14,
-    //   name: "Martin Musau",
-    //   training_ratio: "3/4",
-    //   consistency: "good",
-    //   appearances: 15,
-    //   dob: 1995,
-    // },
+    {
+      id: 12,
+      name: "Quinto Oongo",
+      daysTrained: 2,
+      daysMissed: 8,
+      appearances: 400,
+      dob: "1/1/1988",
+      year: 1988,
+      team: "boks",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
+    {
+      id: 13,
+      name: "Anthony Nyandigisi",
+      daysTrained: 6,
+      daysMissed: 4,
+      appearances: 400,
+      dob: "1/1/1988",
+      year: 1988,
+      team: "boks",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
+    {
+      id: 14,
+      name: "Chris Makachia",
+      daysTrained: 8,
+      daysMissed: 2,
+      appearances: 400,
+      dob: "1/1/1978",
+      year: 1978,
+      team: "management",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
+    {
+      id: 15,
+      name: "Paul ",
+      daysTrained: 10,
+      daysMissed: 0,
+      appearances: 400,
+      dob: "1/1/1991",
+      year: 1981,
+      team: "management",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
+    {
+      id: 16,
+      name: "Oscar Osir",
+      daysTrained: 10,
+      daysMissed: 0,
+      appearances: 400,
+      dob: "1/1/1980",
+      year: 1980,
+      team: "management",
+      socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+      phone: "795058630",
+      email: "shammahranks@gmail.com",
+    },
   ];
 
-  console.log(activeLink);
+  // console.log(activeLink);
   return (
     <>
       <section className='profile-card'>
@@ -211,7 +254,7 @@ export const Profile = () => {
         </div>
 
         <div className='profile-meta'>
-          <h3>{username}</h3>
+          <h4>{username}</h4>
           <strong>Phil 4:13</strong>
           <p>I can do all things through Christ who strengthens me.</p>
         </div>
@@ -226,6 +269,7 @@ export const Profile = () => {
       <Ladies players={players} active={activeLink} />
       <Swaras players={players} active={activeLink} />
       <Fixtures active={activeLink} />
+      <AddMember active={activeLink} />
       {/* </TeamContext.Provider> */}
     </>
   );

@@ -30,6 +30,7 @@ export const GroupCard = () => {
             ) : (
               <img
                 src={group.img ? group.img : impala_2}
+                alt='GROUP LOGO'
                 className='group-logo'
               />
             )}

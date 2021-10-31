@@ -2,7 +2,7 @@ import "./Swaras.scss";
 import "../Profile/Profile.scss";
 
 export const Swaras = ({ players, active }) => {
-  const currentYear = new Date().getFullYear();
+  // const currentYear = new Date().getFullYear();
   const swaras = players.filter((player) => player.team === "swaras");
 
   return (

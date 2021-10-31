@@ -44,7 +44,7 @@ export const Training = ({ players, active }) => {
           <td>Average Appearances</td>
         </thead>
         {players.map((player, index) => (
-          <tr>
+          <tr key={player.name}>
             <td>
               {/* Set index count to start from 1 */}
               {index + 1}.{player.name}

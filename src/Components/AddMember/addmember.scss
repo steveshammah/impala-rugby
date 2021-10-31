@@ -1,0 +1,30 @@
+@import "../../Global.scss";
+
+.add-member-container {
+  height: 80vh;
+  tr {
+    form {
+      input {
+        padding: 10px;
+        height: 30px;
+        background-color: $blueDark;
+        color: $mainColor;
+        outline: none;
+        border: none;
+      }
+      button {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(20, 221, 20);
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border-radius: 6px;
+        color: $blueDark;
+        cursor: pointer;
+      }
+    }
+  }
+}

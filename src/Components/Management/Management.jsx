@@ -19,7 +19,7 @@ export const Management = ({ players, active }) => {
           <td>Year of Birth</td>
         </thead>
         {management.map((player) => (
-          <tr>
+          <tr key={player.name}>
             <td>{player.name}</td>
             <td>{player.appearances}</td>
             <td>{player.dob}</td>

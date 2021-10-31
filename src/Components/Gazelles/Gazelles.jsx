@@ -2,7 +2,7 @@ import "./Gazelles.scss";
 import "../Profile/Profile.scss";
 
 export const Gazelles = ({ players, active }) => {
-  const currentYear = new Date().getFullYear();
+  // const currentYear = new Date().getFullYear();
   const gazelles = players.filter((player) => player.team === "gazelles");
 
   return (

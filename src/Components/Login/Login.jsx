@@ -4,7 +4,7 @@ import "./Login.scss";
 import logo from "../../Resources/impala-logo.png";
 
 export const Login = () => {
-  const { login, setLogin, username, setUsername } = useContext(LoginContext);
+  const { setLogin, username, setUsername } = useContext(LoginContext);
   const loginForm = useRef();
 
   const onChange = (e) => {
@@ -28,7 +28,7 @@ export const Login = () => {
       </div>
       <div className='form-container'>
         <div className='head-container'>
-          <h2>Log in</h2> <span>{username}</span>
+          <h2>Log In</h2> <span>{username}</span>
         </div>
         <form ref={loginForm}>
           <span>
@@ -60,12 +60,12 @@ export const Login = () => {
           </span>
 
           <p>
-            <a href=''>
+            <a href='/'>
               {" "}
               <small>Can't log in? </small>
             </a>{" "}
             |{" "}
-            <a href=''>
+            <a href='/'>
               <small>Sign Up for an account</small>
             </a>
           </p>

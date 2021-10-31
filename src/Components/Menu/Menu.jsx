@@ -6,6 +6,7 @@ import image from "../../Resources/DSC_8204.jpg";
 
 export const Menu = ({ menuOpen, setMenuOpen }) => {
   const menuItems = [
+    "Tickets",
     "Competitions",
     "Official Membership",
     "Supporters's Club",
@@ -19,7 +20,7 @@ export const Menu = ({ menuOpen, setMenuOpen }) => {
       <div className='left-container'>
         <ul>
           {menuItems.map((item) => (
-            <a onClick={() => setMenuOpen(false)}>
+            <a href={`/${item}`} onClick={() => setMenuOpen(false)} key={item}>
               <li>{item}</li>
             </a>
           ))}
@@ -31,9 +32,10 @@ export const Menu = ({ menuOpen, setMenuOpen }) => {
           <h2>Latest On Impala Saracens</h2>
 
           <div className='image-container'>
-            <img src={image} alt='STORY IMAGE' />
+            <img src={image} alt='STORY' />
           </div>
           <div className='text-container'>
+            <h3>Catchy Headline</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
               vero ab a totam fuga reiciendis! Lorem ipsum dolor sit amet
