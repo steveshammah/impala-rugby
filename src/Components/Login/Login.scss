@@ -1,13 +1,15 @@
 @import "../../Global.scss";
 
 .login-container {
-  width: 70%;
-  height: 80vh;
+  width: 60%;
+  height: 70vh;
   display: flex;
   background-color: $defaultRed;
 
   border-radius: 6px;
-  margin: auto;
+  // margin: auto;
+  // margin-top: 100px;
+
   > div {
     flex: 1;
     display: flex;
@@ -17,6 +19,8 @@
   }
   .img-container {
     background-color: $black;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
     img {
       width: 95%;
       height: 95%;

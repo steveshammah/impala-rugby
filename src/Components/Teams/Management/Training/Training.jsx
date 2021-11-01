@@ -1,5 +1,5 @@
 import "./Training.scss";
-import "../Profile/Profile.scss";
+import "../../../Profile/profile.scss";
 
 export const Training = ({ players, active }) => {
   const getPercentage = (daysTrained, daysMissed) => {

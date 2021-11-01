@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
 import { LoginContext } from "../../Contexts/LoginContext";
-import "./Login.scss";
+import "./login.scss";
 import logo from "../../Resources/impala-logo.png";
 
 export const Login = () => {

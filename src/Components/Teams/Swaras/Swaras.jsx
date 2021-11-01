@@ -1,16 +1,17 @@
-import "./Management.scss";
-import "../Profile/Profile.scss";
+import "./Swaras.scss";
+import "../../Profile/profile.scss";
 
-export const Management = ({ players, active }) => {
-  const management = players.filter((player) => player.team === "management");
+export const Swaras = ({ players, active }) => {
+  // const currentYear = new Date().getFullYear();
+  const swaras = players.filter((player) => player.team === "swaras");
 
   return (
     <div
-      className={`management-container list-container && ${
-        active === "management" ? "active-link" : ""
+      className={`swaras-container list-container && ${
+        active === "swaras" ? "active-link" : ""
       }`}
       id={`${active}`}>
-      <h2>Management</h2>
+      <h2>Swaras</h2>
       <table>
         <thead>
           <td>Player Name</td>
@@ -18,8 +19,8 @@ export const Management = ({ players, active }) => {
           <td>Average Appearances</td>
           <td>Year of Birth</td>
         </thead>
-        {management.map((player) => (
-          <tr key={player.name}>
+        {swaras.map((player) => (
+          <tr>
             <td>{player.name}</td>
             <td>{player.appearances}</td>
             <td>{player.dob}</td>

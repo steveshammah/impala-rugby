@@ -1,17 +1,17 @@
-import "./Swaras.scss";
-import "../Profile/Profile.scss";
+import "./Gazelles.scss";
+import "../../Profile/profile.scss";
 
-export const Swaras = ({ players, active }) => {
+export const Gazelles = ({ players, active }) => {
   // const currentYear = new Date().getFullYear();
-  const swaras = players.filter((player) => player.team === "swaras");
+  const gazelles = players.filter((player) => player.team === "gazelles");
 
   return (
     <div
-      className={`swaras-container list-container && ${
-        active === "swaras" ? "active-link" : ""
+      className={`gazelles-container list-container && ${
+        active === "gazelles" ? "active-link" : ""
       }`}
       id={`${active}`}>
-      <h2>Swaras</h2>
+      <h2>Gazelles</h2>
       <table>
         <thead>
           <td>Player Name</td>
@@ -19,7 +19,7 @@ export const Swaras = ({ players, active }) => {
           <td>Average Appearances</td>
           <td>Year of Birth</td>
         </thead>
-        {swaras.map((player) => (
+        {gazelles.map((player) => (
           <tr>
             <td>{player.name}</td>
             <td>{player.appearances}</td>

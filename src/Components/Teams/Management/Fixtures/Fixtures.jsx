@@ -1,5 +1,6 @@
 import "./Fixtures.scss";
-import "../Profile/Profile.scss";
+import "../../../Profile/profile.scss";
+
 
 export const Fixtures = ({ active }) => {
   // const currentYear = new Date().getFullYear();

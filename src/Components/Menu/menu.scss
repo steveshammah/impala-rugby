@@ -1,73 +1,45 @@
 @import "../../Global.scss";
 
 .menu-container {
-  width: 100%;
-  height: calc((100vh - 90px));
-  position: absolute;
-  top: 90px;
+  top: 0px;
   left: 0;
-  display: none;
-  overflow: hidden;
+  position: absolute;
+  display: flex;
+  z-index: 10;
 
   &.active {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
+    animation: openMenu 2s forwards;
   }
 
   > div {
-    height: 100%;
-    width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     position: relative;
-    animation-duration: 2s;
-    transition: all ease-in-out 2s;
+    transition: all ease-in-out 1s;
+    animation-duration: 1.5s;
+    height: calc(100vh - 90px);
+    overflow: hidden;
 
-    @keyframes slideUp {
-      from {
-        top: 200px;
-        opacity: 0.9;
-        background-color: $black;
-        color: white;
-      }
-      to {
-        top: 0;
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        bottom: 200px;
-        opacity: 0.9;
-        background-color: white;
-        color: $black;
-      }
-      to {
-        bottom: 0;
-        opacity: 1;
-      }
+    &.inactive {
+      animation: closeMenu 1.5s forwards;
+      // flex: 1;
     }
   }
-
   .left-container {
-    animation-name: slideDown;
+    animation-name: slideUp;
     background-color: $black;
-
-    // margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
     ul {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       list-style: none;
-      height: 60%;
+      min-height: 60vh;
 
       a {
         text-decoration: none;
@@ -78,7 +50,10 @@
   }
 
   .right-container {
-    animation-name: slideUp;
+    animation-name: slideDown;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     text-align: center;
     background-color: white;
 
@@ -86,7 +61,6 @@
       width: 70%;
     }
 
-    // animation-direction: reverse;
     h2 {
       font-size: 2rem;
       margin-bottom: 10px;
@@ -104,7 +78,6 @@
       background-color: $black;
 
       img {
-        // flex: 1;
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -115,8 +88,6 @@
       text-align: left;
       position: relative;
       background-color: $black;
-
-      //   background-color: yellow;
 
       h3 {
         color: white;
@@ -131,19 +102,70 @@
         color: $mainColor;
         padding: 15px;
         z-index: 1;
-        // position: absolute;
         bottom: 0;
       }
       span {
         font-weight: 300;
-
         font-size: 0.8rem;
         color: rgb(31, 26, 26);
-        // position: absolute;
         bottom: 0%;
         margin-left: 10px;
         color: $defaultRed;
       }
+    }
+  }
+
+  @keyframes openMenu {
+    from {
+      top: 0px;
+      height: 0vh;
+    }
+    to {
+      top: 90px;
+      height: 100vh;
+      position: absolute;
+      // top: 0;
+    }
+  }
+  @keyframes closeMenu {
+    from {
+      display: flex;
+      top: 0px;
+      height: calc(100vh - 90px);
+    }
+    to {
+      top: 0px;
+      height: 0vh;
+      display: none;
+    }
+  }
+  @keyframes slideUp {
+    from {
+      top: 200px;
+      opacity: 0.9;
+      background-color: $black;
+      color: white;
+      height: 0vh;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+      height: calc(100vh - 90px);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      bottom: 500px;
+      opacity: 0.9;
+      background-color: white;
+      color: $black;
+      height: 0vh;
+    }
+    to {
+      bottom: 0;
+      opacity: 1;
+      height: calc(100vh - 90px);
     }
   }
 }

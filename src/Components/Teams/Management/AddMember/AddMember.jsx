@@ -1,5 +1,5 @@
 import "./addmember.scss";
-import "../Profile/Profile.scss";
+import "../../../Profile/profile.scss";
 import { useRef } from "react";
 
 export const AddMember = ({ players, active }) => {
@@ -52,26 +52,26 @@ export const AddMember = ({ players, active }) => {
           </tr>
         ))}
         <tr>
-          <form ref={formRef}>
-            <td>
-              <input type='text' placeholder='Full name' />
-            </td>
-            <td>
-              <input type='date' placeholder='Date of birth' />
-            </td>
-            <td>
-              <input type='text' placeholder='Phone' />
-            </td>
-            <td>
-              <input type='email' placeholder='Email' />
-            </td>
-            <td>
-              <input type='text' placeholder='Team' />
-            </td>
-            <td>
-              <input type='date' placeholder='Join date' />
-            </td>
-          </form>
+          {/* <form ref={formRef}> */}
+          <td>
+            <input type='text' placeholder='Full name' />
+          </td>
+          <td>
+            <input type='date' placeholder='Date of birth' />
+          </td>
+          <td>
+            <input type='text' placeholder='Phone' />
+          </td>
+          <td>
+            <input type='email' placeholder='Email' />
+          </td>
+          <td>
+            <input type='text' placeholder='Team' />
+          </td>
+          <td>
+            <input type='date' placeholder='Join date' />
+          </td>
+          {/* </form> */}
         </tr>
 
         <tr>

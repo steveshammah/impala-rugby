@@ -17,7 +17,10 @@ export const Menu = ({ menuOpen, setMenuOpen }) => {
       className={
         menuOpen ? "menu-container active" : "menu-container inactive"
       }>
-      <div className='left-container'>
+      <div
+        className={
+          menuOpen ? "left-container active" : "left-container inactive"
+        }>
         <ul>
           {menuItems.map((item) => (
             <a href={`/${item}`} onClick={() => setMenuOpen(false)} key={item}>
@@ -27,7 +30,10 @@ export const Menu = ({ menuOpen, setMenuOpen }) => {
         </ul>
       </div>
 
-      <div className='right-container'>
+      <div
+        className={
+          menuOpen ? "right-container active" : "right-container inactive"
+        }>
         <div className='menu-story'>
           <h2>Latest On Impala Saracens</h2>
 

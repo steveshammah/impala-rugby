@@ -1,5 +1,6 @@
 import "./Allowance.scss";
-import "../Profile/Profile.scss";
+import "../../../Profile/profile.scss";
+
 
 export const Allowance = ({ players, active }) => {
   const allowanceRate = 200;
