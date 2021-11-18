@@ -9,14 +9,14 @@ import { Ladies } from "../Teams/Ladies/Ladies";
 import { Swaras } from "../Teams/Swaras/Swaras";
 import { Fixtures } from "../Teams/Management/Fixtures/Fixtures";
 import { AddMember } from "../Teams/Management/AddMember/AddMember";
-import { LoginContext } from "../../Contexts/LoginContext";
+import { appContext } from "../../contexts/app-context";
 // import { TeamContext } from "../../Contexts/TeamContext";
 import { useContext, useState } from "react";
-import impala from "../../Resources/impala-logo.png";
+import { logos } from "../../resources/resources";
 
 export const Profile = () => {
-  const { username } = useContext(LoginContext);
-  const [activeLink, setActiveLink] = useState("");
+  const { username } = useContext(appContext);
+  const [activeLink, setActiveLink] = useState("training");
 
   const players = [
     {
@@ -248,7 +248,7 @@ export const Profile = () => {
       <section className='profile-card'>
         <div className='profile-pic'>
           <span></span>
-          <img src={impala} alt='' />
+          <img src={logos.logoMain} alt='Profile' />
 
           <span></span>
         </div>

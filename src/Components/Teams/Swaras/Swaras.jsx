@@ -1,4 +1,4 @@
-import "./Swaras.scss";
+import "./swaras.scss";
 import "../../Profile/profile.scss";
 
 export const Swaras = ({ players, active }) => {

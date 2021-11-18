@@ -1,4 +1,4 @@
-import './Team.scss';
+import './team.scss';
 
 export const Teams = () => {
   return (

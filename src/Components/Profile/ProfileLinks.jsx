@@ -1,17 +1,8 @@
-import "./Profile.scss";
+import "./profile.scss";
+import {actions} from '../../resources/resources'
 
 export const ProfileLinks = ({ active, setActive }) => {
-  const actions = [
-    { name: "Management", link: "management" },
-    { name: "Training Schedule", link: "training" },
-    { name: "Allowance Allocation", link: "allowance" },
-    { name: "Gazelles", link: "gazelles" },
-    { name: "Boks", link: "boks" },
-    { name: "Ladies", link: "ladies" },
-    { name: "Swaras", link: "swaras" },
-    { name: "Fixtures", link: "fixtures" },
-    { name: "Add Member", link: "addmember" },
-  ];
+ 
   return (
     <div className='profile-links'>
       <ul>

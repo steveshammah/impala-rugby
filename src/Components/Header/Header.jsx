@@ -1,5 +1,5 @@
 import "./header.scss";
-import impalaLogo from "../../Resources/impala-logo.png";
+import {logos} from '../../resources/resources'
 import { Link } from "react-router-dom";
 
 export const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
@@ -14,7 +14,7 @@ export const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
       {/* LOGO */}
       <div className='logo'>
         <Link to='#'>
-          <img src={impalaLogo} alt='LOGO' />
+          <img src={logos.logoMain} alt='LOGO' />
         </Link>{" "}
       </div>
       <ul>

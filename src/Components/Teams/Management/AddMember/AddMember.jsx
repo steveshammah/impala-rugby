@@ -1,30 +1,49 @@
 import "./addmember.scss";
 import "../../../Profile/profile.scss";
-import { useRef } from "react";
+import { useRef, useReducer } from "react";
 
-export const AddMember = ({ players, active }) => {
+const reducerFunction = (state, action) => {
+  switch (action.type) {
+    case "addMember":
+      console.log("ADD PLAYER");
+      return {};
+    case "deleteMember":
+      console.log("DELETE PLAYER");
+
+      return {};
+    default:
+      return state;
+  }
+};
+
+const initialState = {
+  players: {},
+};
+
+export const AddMember = ({ active }) => {
   const formRef = useRef();
-  const members = [
-    {
-      id: 0,
-      name: "Steve Shammah",
-      dob: "26/2/1996",
-      team: "swaras",
-      phone: "795058630",
-      email: "shammahranks@gmail.com",
-    },
-    {
-      id: 1,
-      name: "Tyson Okoth",
-      dob: "26/2/1996",
-      team: "gazelles",
-      phone: "795058630",
-      email: "shammahranks@gmail.com",
-    },
-  ];
+  const [state, dispatch] = useReducer(reducerFunction, initialState);
+  // const members = [
+  //   {
+  //     id: 0,
+  //     name: "Steve Shammah",
+  //     dob: "26/2/1996",
+  //     team: "swaras",
+  //     phone: "795058630",
+  //     email: "shammahranks@gmail.com",
+  //   },
+  //   {
+  //     id: 1,
+  //     name: "Tyson Okoth",
+  //     dob: "26/2/1996",
+  //     team: "gazelles",
+  //     phone: "795058630",
+  //     email: "shammahranks@gmail.com",
+  //   },
+  // ];
   const submitHandler = (e) => {
-    // e.preventDefault();
-    formRef.current.reset();
+    e.preventDefault();
+    // formRef.current.reset();
   };
   return (
     <div
@@ -33,53 +52,32 @@ export const AddMember = ({ players, active }) => {
       }`}
       id={`${active}`}>
       <h2>Add Member</h2>
-      <table>
-        <thead>
-          <td>Player Name</td>
-          <td>DOB</td>
-          <td>Phone</td>
-          <td>Email</td>
-          <td>Team</td>
-          <td>Join Date</td>
-        </thead>
-        {members.map((member) => (
-          <tr>
-            <td>{member.name}</td>
-            <td>{member.dob}</td>
-            <td>{member.phone}</td>
-            <td>{member.email}</td>
-            <td>{member.team}</td>
-          </tr>
-        ))}
-        <tr>
-          {/* <form ref={formRef}> */}
-          <td>
-            <input type='text' placeholder='Full name' />
-          </td>
-          <td>
-            <input type='date' placeholder='Date of birth' />
-          </td>
-          <td>
-            <input type='text' placeholder='Phone' />
-          </td>
-          <td>
-            <input type='email' placeholder='Email' />
-          </td>
-          <td>
-            <input type='text' placeholder='Team' />
-          </td>
-          <td>
-            <input type='date' placeholder='Join date' />
-          </td>
-          {/* </form> */}
-        </tr>
 
-        <tr>
-          <td>
-            <button onSubmit={submitHandler}>Save</button>
-          </td>
-        </tr>
-      </table>
+      <form ref={formRef} onSubmit={submitHandler}>
+        <div className='left-container'>
+          <input type='text' placeholder='Full name' />
+
+          <input type='date' placeholder='Date of birth' />
+
+          <input type='text' placeholder='Phone' />
+
+          <input type='email' placeholder='Email' />
+
+          <input type='text' placeholder='Team' />
+
+          <input type='date' placeholder='Join date' />
+        </div>
+        <div className='right-container'>
+          <div className='img'>
+            <img src='' alt='Logo' />
+          </div>
+          <input type='file' placeholder='Upload Image' />
+          <button onClick={() => dispatch({ type: "addMember" })}>Add</button>
+          <button onClick={() => dispatch({ type: "deleteMember" })}>
+            Delete
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

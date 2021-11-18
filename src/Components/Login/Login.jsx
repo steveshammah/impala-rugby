@@ -1,22 +1,23 @@
 import { useContext, useRef } from "react";
-import { LoginContext } from "../../Contexts/LoginContext";
+import { appContext } from "../../contexts/app-context";
 import "./login.scss";
-import logo from "../../Resources/impala-logo.png";
+import { logos } from "../../resources/resources";
 
 export const Login = () => {
-  const { setLogin, username, setUsername } = useContext(LoginContext);
+  const { activeUser } = useContext(appContext);
+  const { username, isAuth } = activeUser;
   const loginForm = useRef();
 
   const onChange = (e) => {
     const typedName = e.target.value;
     if (typedName === "admin") {
-      setUsername(typedName);
+      // setUsername(typedName);
     }
   };
 
   const handleClick = () => {
     if (username) {
-      setLogin(true);
+      // setIsAuth()
     }
     loginForm.current.reset();
   };
@@ -24,7 +25,7 @@ export const Login = () => {
   return (
     <div className='login-container'>
       <div className='img-container'>
-        <img src={logo} alt='' />
+        <img src={logos.logoMain} alt='' />
       </div>
       <div className='form-container'>
         <div className='head-container'>

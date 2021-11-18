@@ -1,4 +1,4 @@
-import "./Management.scss";
+import "./management.scss";
 import "../../Profile/profile.scss";
 
 export const Management = ({ players, active }) => {

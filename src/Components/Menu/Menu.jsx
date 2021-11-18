@@ -1,8 +1,5 @@
 import "./menu.scss";
-// import { Link } from "react-router-dom";
-// import image from "../../Resources/DSC_0840.jpg";
-// import image from "../../Resources/DSC_4411.jpg";
-import image from "../../Resources/DSC_8204.jpg";
+import { coverPhotos } from "../../resources/resources";
 
 export const Menu = ({ menuOpen, setMenuOpen }) => {
   const menuItems = [
@@ -38,7 +35,7 @@ export const Menu = ({ menuOpen, setMenuOpen }) => {
           <h2>Latest On Impala Saracens</h2>
 
           <div className='image-container'>
-            <img src={image} alt='STORY' />
+            <img src={coverPhotos.image3} alt='STORY' />
           </div>
           <div className='text-container'>
             <h3>Catchy Headline</h3>

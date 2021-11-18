@@ -1,4 +1,4 @@
-import "./Boks.scss";
+import "./boks.scss";
 
 export const Boks = ({ players, active }) => {
   // const currentYear = new Date().getFullYear();

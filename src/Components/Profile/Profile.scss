@@ -1,4 +1,4 @@
-@import "../../Global.scss";
+@import "../../global.scss";
 
 .profile-card {
   height: 400px;
@@ -133,6 +133,7 @@
 
   table {
     margin-top: 50px;
+    width: 80%;
     thead {
       td {
         color: $mainColor;

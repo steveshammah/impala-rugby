@@ -1,4 +1,4 @@
-import "./Gazelles.scss";
+import "./gazelles.scss";
 import "../../Profile/profile.scss";
 
 export const Gazelles = ({ players, active }) => {

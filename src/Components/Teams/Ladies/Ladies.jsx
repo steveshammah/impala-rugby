@@ -1,6 +1,5 @@
-import "./Ladies.scss";
+import "./ladies.scss";
 import "../../Profile/profile.scss";
-
 
 export const Ladies = ({ players, active }) => {
   // const currentYear = new Date().getFullYear();

@@ -1,4 +1,4 @@
-import "./Training.scss";
+import "./training.scss";
 import "../../../Profile/profile.scss";
 
 export const Training = ({ players, active }) => {

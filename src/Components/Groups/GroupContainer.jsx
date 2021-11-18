@@ -1,5 +1,5 @@
 import { GroupCard } from "./GroupCard";
-import "./Groups.scss";
+import "./groups.scss";
 import {
   Message,
   Settings,
