@@ -1,7 +1,11 @@
 import "./allowance.scss";
 import "../../../Profile/profile.scss";
+import { teamContext } from "../../../../contexts/team-context";
+import { useContext } from "react";
 
-export const Allowance = ({ players, active }) => {
+const Allowance = ({ active }) => {
+  const { players } = useContext(teamContext);
+
   const allowanceRate = 200;
 
   return (
@@ -38,3 +42,5 @@ export const Allowance = ({ players, active }) => {
     </div>
   );
 };
+
+export default Allowance;

@@ -1,8 +1,12 @@
 import "./ladies.scss";
 import "../../Profile/profile.scss";
+import { teamContext } from "../../../contexts/team-context";
+import { useContext } from "react";
 
-export const Ladies = ({ players, active }) => {
+const Ladies = ({ active }) => {
   // const currentYear = new Date().getFullYear();
+  const { players } = useContext(teamContext);
+
   const ladies = players.filter((player) => player.team === "ladies");
 
   return (
@@ -30,3 +34,5 @@ export const Ladies = ({ players, active }) => {
     </div>
   );
 };
+
+export default Ladies;

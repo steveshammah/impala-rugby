@@ -1,4 +1,4 @@
-import { GroupCard } from "./GroupCard";
+import GroupCard from "./GroupCard";
 import "./groups.scss";
 import {
   Message,
@@ -10,7 +10,7 @@ import {
   GridOff,
 } from "@material-ui/icons";
 
-export const GroupContainer = () => {
+const GroupContainer = () => {
   return (
     <div className='groups-section'>
       <div className='nav-panel'>
@@ -45,3 +45,5 @@ export const GroupContainer = () => {
     </div>
   );
 };
+
+export default GroupContainer;

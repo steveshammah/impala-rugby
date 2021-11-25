@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 
+export const appContext = createContext({});
+
 const AppState = (props) => {
   const initialState = {
     activeUser: { isAuth: false, username: "" },
@@ -12,6 +14,5 @@ const AppState = (props) => {
     </appContext.Provider>
   );
 };
-export const appContext = createContext({});
 
 export default AppState;

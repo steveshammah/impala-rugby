@@ -1,7 +1,10 @@
 import "./boks.scss";
+import { teamContext } from "../../../contexts/team-context";
+import { useContext } from "react";
 
-export const Boks = ({ players, active }) => {
+const Boks = ({ active }) => {
   // const currentYear = new Date().getFullYear();
+  const { players } = useContext(teamContext);
   const boks = players.filter((player) => player.team === "boks");
 
   return (
@@ -29,3 +32,5 @@ export const Boks = ({ players, active }) => {
     </div>
   );
 };
+
+export default Boks;

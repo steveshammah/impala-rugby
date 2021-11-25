@@ -1,8 +1,11 @@
 import "./gazelles.scss";
 import "../../Profile/profile.scss";
+import { teamContext } from "../../../contexts/team-context";
+import { useContext } from "react";
 
-export const Gazelles = ({ players, active }) => {
+const Gazelles = ({ active }) => {
   // const currentYear = new Date().getFullYear();
+  const { players } = useContext(teamContext);
   const gazelles = players.filter((player) => player.team === "gazelles");
 
   return (
@@ -30,3 +33,5 @@ export const Gazelles = ({ players, active }) => {
     </div>
   );
 };
+
+export default Gazelles;

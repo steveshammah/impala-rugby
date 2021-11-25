@@ -5,9 +5,9 @@ import AppState from "./contexts/app-context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppState.Provider>
+    <AppState>
       <App />
-    </AppState.Provider>
+    </AppState>
   </React.StrictMode>,
   document.getElementById("root")
 );

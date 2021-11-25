@@ -1,6 +1,6 @@
-import './team.scss';
+import "./team.scss";
 
-export const Teams = () => {
+const Teams = () => {
   return (
     <section className='teams'>
       <div className='mens-team'>
@@ -36,3 +36,5 @@ export const Teams = () => {
     </section>
   );
 };
+
+export default Teams;

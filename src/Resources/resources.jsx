@@ -1,11 +1,11 @@
-import impala_logo from "./impala-logo.png";
-import impala_logo_1 from "./impala-1.jpg";
-import impala_logo_2 from "./impala-2.jpg";
+import impala_logo from "./images/impala-logo.png";
+import impala_logo_1 from "./images/impala-1.jpg";
+import impala_logo_2 from "./images/impala-2.jpg";
 
-import image1 from "./DSC_0840.jpg";
-import image2 from "./DSC_4411.jpg";
-import image3 from "./DSC_8204.jpg";
-import image4 from "./DSC_9540.jpg";
+import image1 from "./images/DSC_0840.jpg";
+import image2 from "./images/DSC_4411.jpg";
+import image3 from "./images/DSC_8204.jpg";
+import image4 from "./images/DSC_9540.jpg";
 
 // Logo
 export const logos = { impala_logo, impala_logo_1, impala_logo_2 };
@@ -26,14 +26,26 @@ export const groups = [
   { id: 11, name: "Social", members: 200, img: impala_logo },
 ];
 
-export const actions = [
-  { name: "Management", link: "management" },
-  { name: "Training Schedule", link: "training" },
-  { name: "Allowance Allocation", link: "allowance" },
-  { name: "Gazelles", link: "gazelles" },
-  { name: "Boks", link: "boks" },
-  { name: "Ladies", link: "ladies" },
-  { name: "Swaras", link: "swaras" },
-  { name: "Fixtures", link: "fixtures" },
-  { name: "Add Member", link: "addmember" },
-];
+export const menuLinks = {
+  dashboard: [
+    { name: "Home", icon: "home" },
+    { name: "Training Schedule", icon: "training" },
+  ],
+  sales: [
+    { name: "Allowance & Payements", icon: "payments" },
+    { name: "Sales", icon: "sales" },
+    { name: "Tickets", icon: "tickets" },
+  ],
+  teams: [
+    { name: "Gazelles", icon: "gazelles" },
+    { name: "Boks", icon: "boks" },
+    { name: "Ladies", icon: "ladies" },
+    { name: "Swaras", icon: "swaras" },
+    { name: "Age Grade", icon: "age-grade" },
+  ],
+  website: [
+    { name: "Videos", icon: "videos" },
+    { name: "Podcasts", icon: "podcasts" },
+    { name: "Socials", icon: "socials" },
+  ],
+};

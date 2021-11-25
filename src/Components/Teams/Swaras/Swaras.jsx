@@ -1,7 +1,11 @@
 import "./swaras.scss";
 import "../../Profile/profile.scss";
+import { teamContext } from "../../../contexts/team-context";
+import { useContext } from "react";
 
-export const Swaras = ({ players, active }) => {
+const Swaras = ({ active }) => {
+  const { players } = useContext(teamContext);
+
   // const currentYear = new Date().getFullYear();
   const swaras = players.filter((player) => player.team === "swaras");
 
@@ -30,3 +34,5 @@ export const Swaras = ({ players, active }) => {
     </div>
   );
 };
+
+export default Swaras;

@@ -2,7 +2,7 @@ import "./groups.scss";
 import { AddCircle } from "@material-ui/icons";
 import { groups, logos } from "../../resources/resources";
 
-export const GroupCard = () => {
+const GroupCard = () => {
   return (
     <>
       {groups.map((group) => (
@@ -30,3 +30,5 @@ export const GroupCard = () => {
     </>
   );
 };
+
+export default GroupCard;

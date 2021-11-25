@@ -1,7 +1,7 @@
 import "./menu.scss";
 import { coverPhotos } from "../../resources/resources";
 
-export const Menu = ({ menuOpen, setMenuOpen }) => {
+const Menu = ({ menuOpen, setMenuOpen }) => {
   const menuItems = [
     "Tickets",
     "Competitions",
@@ -52,3 +52,5 @@ export const Menu = ({ menuOpen, setMenuOpen }) => {
     </div>
   );
 };
+
+export default Menu;

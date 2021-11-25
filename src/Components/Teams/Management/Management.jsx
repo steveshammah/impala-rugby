@@ -1,7 +1,11 @@
 import "./management.scss";
 import "../../Profile/profile.scss";
+import { teamContext } from "../../../contexts/team-context";
+import { useContext } from "react";
 
-export const Management = ({ players, active }) => {
+const Management = ({ active }) => {
+  const { players } = useContext(teamContext);
+
   const management = players.filter((player) => player.team === "management");
 
   return (
@@ -29,3 +33,5 @@ export const Management = ({ players, active }) => {
     </div>
   );
 };
+
+export default Management;

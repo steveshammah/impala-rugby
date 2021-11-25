@@ -1,10 +1,11 @@
 import "./header.scss";
-import {logos} from '../../resources/resources'
+import { logos } from "../../resources/resources";
 import { Link } from "react-router-dom";
 
-export const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
+const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
   const navItems = [
     { name: "home", url: "" },
+    { name: "dashboard", url: "dashboard" },
     { name: "channel", url: "channel" },
     { name: "groups", url: "groups" },
     { name: "about", url: "about" },
@@ -14,7 +15,7 @@ export const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
       {/* LOGO */}
       <div className='logo'>
         <Link to='#'>
-          <img src={logos.logoMain} alt='LOGO' />
+          <img src={logos.impala_logo} alt='LOGO' />
         </Link>{" "}
       </div>
       <ul>
@@ -42,3 +43,5 @@ export const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
     </header>
   );
 };
+
+export default Header;

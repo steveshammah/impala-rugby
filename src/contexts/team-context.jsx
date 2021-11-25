@@ -1,7 +1,8 @@
-import { useState, createContext } from "react";
+import { createContext } from "react";
 
-export const TeamContext = () => {
-  const [team, setTeam] = useState({});
+export const teamContext = createContext();
+
+export const TeamState = (props) => {
   const players = [
     {
       id: 0,
@@ -200,7 +201,11 @@ export const TeamContext = () => {
     },
   ];
 
-  setTeam(players);
-  const Context = createContext(team);
-  return Context;
+  return (
+    <teamContext.Provider value={{ players }}>
+      {props.children}
+    </teamContext.Provider>
+  );
 };
+
+export default TeamState;

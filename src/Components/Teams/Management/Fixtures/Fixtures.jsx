@@ -1,7 +1,7 @@
 import "./fixtures.scss";
 import "../../../Profile/profile.scss";
 
-export const Fixtures = ({ active }) => {
+const Fixtures = ({ active }) => {
   // const currentYear = new Date().getFullYear();
 
   return (
@@ -18,18 +18,9 @@ export const Fixtures = ({ active }) => {
           <td>Venue</td>
           <td>Standings</td>
         </thead>
-        {/* {players.map((player) => (
-          <tr>
-            <td>{player.name}</td>
-            <td>
-              <span className={player.consistency}></span>{" "}
-              <small> {player.training_ratio}</small>
-            </td>
-            <td>{player.appearances}</td>
-            <td>{player.dob}</td>
-          </tr>
-        ))} */}
       </table>
     </div>
   );
 };
+
+export default Fixtures;
