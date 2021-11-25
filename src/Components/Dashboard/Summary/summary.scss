@@ -2,12 +2,14 @@
 
 .summary-container {
   flex: 5;
-  height: 100vh;
+  height: auto;
   background-color: white;
+  padding: 5px;
 
   .summary {
     display: flex;
     justify-content: space-around;
+    padding-top: 20px;
 
     .summary-meta {
       display: flex;

@@ -1,6 +1,7 @@
 import impala_logo from "./images/impala-logo.png";
 import impala_logo_1 from "./images/impala-1.jpg";
 import impala_logo_2 from "./images/impala-2.jpg";
+import profile_picture from "./images/profile-picture.jpg";
 
 import image1 from "./images/DSC_0840.jpg";
 import image2 from "./images/DSC_4411.jpg";
@@ -49,3 +50,5 @@ export const menuLinks = {
     { name: "Socials", icon: "socials" },
   ],
 };
+
+export const profile = profile_picture;

@@ -1,6 +1,6 @@
 import SideMenu from "./SubMenu";
 
-const SideBar = ({ active, setActive }) => {
+const SideBar = () => {
   return (
     <div className='side-bar-links'>
       <SideMenu category={"dashboard"} />
