@@ -29,26 +29,37 @@ export const groups = [
 
 export const menuLinks = {
   dashboard: [
-    { name: "Home", icon: "home" },
-    { name: "Training Schedule", icon: "training" },
+    { name: "Home", icon: "home", url: "home" },
+    { name: "Training Schedule", icon: "training", url: "training" },
+    { name: "Allowance & Payements", icon: "payments", url: "payments" },
+    { name: "Sales", icon: "sales", url: "sales" },
   ],
-  sales: [
-    { name: "Allowance & Payements", icon: "payments" },
-    { name: "Sales", icon: "sales" },
-    { name: "Tickets", icon: "tickets" },
+  league: [
+    { name: "League", icon: "default", url: "tournament/league" },
+    { name: "7s", icon: "default", url: "tournament/sevens" },
+    { name: "Floodies", icon: "default", url: "tournament/floodies" },
+    { name: "Match Center", icon: "default", url: "matchcenter" },
+    { name: "Team Statistics", icon: "default", url: "teamstats" },
   ],
   teams: [
-    { name: "Gazelles", icon: "gazelles" },
-    { name: "Boks", icon: "boks" },
-    { name: "Ladies", icon: "ladies" },
-    { name: "Swaras", icon: "swaras" },
-    { name: "Age Grade", icon: "age-grade" },
+    { name: "Gazelles", icon: "gazelles", url: "teams/gazelles" },
+    { name: "Boks", icon: "boks", url: "teams/boks" },
+    { name: "Ladies", icon: "ladies", url: "teams/ladies" },
+    { name: "Age Grade", icon: "age-grade", url: "teams/agegrade" },
   ],
   website: [
-    { name: "Videos", icon: "videos" },
-    { name: "Podcasts", icon: "podcasts" },
-    { name: "Socials", icon: "socials" },
+    { name: "Videos", icon: "videos", url: "videos" },
+    { name: "Podcasts", icon: "podcasts", url: "podcasts" },
+    { name: "Socials", icon: "socials", url: "socials" },
   ],
 };
 
+// Nav Links
+export const navLinks = [
+  { name: "home", url: "home" },
+  { name: "home", url: "home" },
+  { name: "channel", url: "channel" },
+  { name: "groups", url: "groups" },
+  { name: "about", url: "about" },
+];
 export const profile = profile_picture;

@@ -1,0 +1,15 @@
+@import "../../global.scss";
+
+.chart {
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 30px;
+
+  .recharts-responsive-container {
+    // overflow: hidden;
+    width: 100%;
+    // background-color: red;
+  }
+}

@@ -1,28 +1,21 @@
 import "./header.scss";
-import { logos } from "../../resources/resources";
+import { logos, navLinks } from "../../resources/resources";
 import { Link } from "react-router-dom";
 
 const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
-  const navItems = [
-    { name: "home", url: "" },
-    { name: "dashboard", url: "dashboard" },
-    { name: "channel", url: "channel" },
-    { name: "groups", url: "groups" },
-    { name: "about", url: "about" },
-  ];
   return (
     <header>
       {/* LOGO */}
       <div className='logo'>
-        <Link to='#'>
+        <Link to='/'>
           <img src={logos.impala_logo} alt='LOGO' />
         </Link>{" "}
       </div>
       <ul>
-        {navItems.map((item) => (
-          <li key={item.name}>
+        {navLinks.map((link) => (
+          <li key={link.name}>
             {" "}
-            <Link to={`/${item.url}`}>{item.name}</Link>
+            <Link to={`/${link.url}`}>{link.name}</Link>
           </li>
         ))}
         <li>

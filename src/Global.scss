@@ -27,14 +27,6 @@ body {
   font-family: $mainFont;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  position: relative;
-}
-
 // media queries
 
 @mixin screen-size($res) {

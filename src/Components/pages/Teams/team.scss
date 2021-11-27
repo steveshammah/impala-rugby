@@ -1,0 +1,46 @@
+@import "../../../global.scss";
+
+.teams {
+  // background-color: aquamarine;
+
+  .list-container {
+    padding-top: 50px;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    // display: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+
+    h2 {
+      position: absolute;
+      top: 40px;
+      left: -200px;
+    }
+
+    table {
+      margin-top: 50px;
+      width: 80%;
+      thead {
+        td {
+          color: $mainColor;
+          background-color: $defaultRed;
+        }
+      }
+      tr {
+        color: black;
+
+        &:nth-child(even) {
+          // background-color: $blueDark;
+          color: black;
+        }
+        td {
+          // color: black;
+          min-width: 100px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import "../../../../global.scss";
+
+.summary-container {
+  flex: 5;
+  height: auto;
+  padding: 5px;
+
+  .summary {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+
+    .summary-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 150px;
+      width: 250px;
+      padding: 5px;
+      -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 2rem;
+        width: 80%;
+        margin: 5px auto;
+        flex: 1;
+
+        .icon {
+          font-size: 2rem;
+
+          &.increase {
+            color: green;
+          }
+          &.decrease {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
