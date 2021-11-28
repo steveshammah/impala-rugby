@@ -1,4 +1,3 @@
-import "./topbar.scss";
 import { NotificationImportant, Settings } from "@material-ui/icons";
 import { logos } from "../../../../resources/resources";
 

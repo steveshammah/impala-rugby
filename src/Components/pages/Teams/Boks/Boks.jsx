@@ -4,8 +4,8 @@ import { useContext } from "react";
 
 const Boks = ({ active }) => {
   // const currentYear = new Date().getFullYear();
-  const { players } = useContext(teamContext);
-  const boks = players.filter((player) => player.team === "boks");
+  const { team } = useContext(teamContext);
+  const boks = team.filter((player) => player.team === "boks");
 
   return (
     <div

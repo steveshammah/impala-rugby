@@ -3,10 +3,10 @@ import { teamContext } from "../../../../contexts/team-context";
 import { useContext } from "react";
 
 const AgeGrade = ({ active }) => {
-  const { players } = useContext(teamContext);
+  const { team } = useContext(teamContext);
 
   // const currentYear = new Date().getFullYear();
-  const swaras = players.filter((player) => player.team === "swaras");
+  const swaras = team.filter((player) => player.team === "swaras");
 
   return (
     <div

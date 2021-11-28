@@ -16,6 +16,7 @@
 
     .side-bar-links {
       flex: 1;
+      min-width: 200px;
       height: calc(100vh - 90px);
       border-right: 2px solid black;
       position: sticky;
@@ -27,6 +28,7 @@
       h4 {
         color: $defaultRed;
         text-transform: uppercase;
+        font-size: 1.2rem;
       }
 
       ul {
@@ -38,18 +40,18 @@
 
         a {
           text-decoration: none;
-          columns: $blueDark;
+          color: $blueDark;
           font-weight: 500;
 
           li {
             width: 100%;
             // padding: 5px;
-            font-size: 1rem;
+            // font-size: 1rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-
-            margin-top: 5px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
 
             &.active,
             &:hover {

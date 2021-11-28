@@ -1,30 +1,11 @@
 import "./gazelles.scss";
-import { teamContext } from "../../../../contexts/team-context";
-import { useContext } from "react";
+import Table from "../../../Table/Table";
 
 const Gazelles = ({ active }) => {
-  // const currentYear = new Date().getFullYear();
-  const { players } = useContext(teamContext);
-  const gazelles = players.filter((player) => player.team === "gazelles");
-
   return (
-    <div className={`gazelles-container list-container `} id={`${active}`}>
+    <div className={`team-container`} id={`${active}`}>
       <h2>Gazelles</h2>
-      <table>
-        <thead>
-          <td>Player Name</td>
-          <td>Consistency</td>
-          <td>Average Appearances</td>
-          <td>Year of Birth</td>
-        </thead>
-        {gazelles.map((player) => (
-          <tr>
-            <td>{player.name}</td>
-            <td>{player.appearances}</td>
-            <td>{player.dob}</td>
-          </tr>
-        ))}
-      </table>
+      <Table group={"gazelles"} />
     </div>
   );
 };

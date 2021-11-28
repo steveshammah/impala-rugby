@@ -1,4 +1,3 @@
-import "./summary.scss";
 import {
   Person,
   ArrowDownward,
@@ -6,8 +5,6 @@ import {
   AttachMoney,
 } from "@material-ui/icons";
 import Chart from "../../../Chart/Chart";
-import WidgetSm from "../Widgets/WidgetSm/WidgetSm";
-import WidgetBg from "../Widgets/WidgetBg/WidgetBg";
 
 const Summary = () => {
   const data = [
@@ -118,11 +115,6 @@ const Summary = () => {
       </div>
 
       <Chart title={"Training Statistics"} data={data} dataKey={"Month"} />
-
-      <div className='widgets'>
-        <WidgetSm />
-        <WidgetBg />
-      </div>
     </div>
   );
 };
