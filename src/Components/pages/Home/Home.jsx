@@ -40,6 +40,7 @@ const Home = () => {
             getConsistency={getConsistency}
             getPercentage={getPercentage}
           />
+          <WidgetSmX />
         </div>
         <WidgetBg />
       </div>

@@ -1,6 +1,7 @@
 @import "../../../global.scss";
 
 .home {
+  padding: 30px;
   .topbar {
     width: 200px;
     height: 50px;
@@ -43,8 +44,9 @@
         flex-direction: column;
         justify-content: space-around;
         height: 150px;
-        width: 250px;
-        padding: 5px;
+        width: 300px;
+        padding: 10px;
+        background-color: white;
         -webkit-box-shadow: 0px 10px 13px -7px #000000,
           5px 5px 15px 5px rgba(0, 0, 0, 0);
         box-shadow: 0px 10px 13px -7px #000000,
@@ -71,6 +73,15 @@
           }
         }
       }
+    }
+    .summary-graphs {
+      margin-top: 20px;
+      height: 60vh;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 50px;
     }
   }
 }

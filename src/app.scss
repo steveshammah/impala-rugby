@@ -15,12 +15,13 @@
     position: relative;
 
     .side-bar-links {
+      background-color: white;
       flex: 1;
       min-width: 200px;
-      height: calc(100vh - 90px);
+      height: calc(100vh - 70px);
       border-right: 2px solid black;
       position: sticky;
-      top: 90px;
+      top: 70px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
