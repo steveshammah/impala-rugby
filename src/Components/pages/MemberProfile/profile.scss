@@ -1,0 +1,191 @@
+@import "../../../global.scss";
+
+.member-profile {
+  // display: flex;
+  // padding: 10px;
+  // justify-content: space-between;
+  // align-items: center;
+  .profile-image {
+    height: 70vh;
+    // background-color: aqua;
+    background-attachment: fixed;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -100px;
+    height: 100vh;
+    z-index: 10;
+    padding: 20px;
+
+    .left-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      // background-color: red;
+
+      .member-profile-card {
+        // height: 500px;
+        flex: 4;
+
+        background-color: $blueDark;
+        display: flex;
+        color: $mainColor;
+        flex-direction: column;
+        align-items: center;
+        // margin: auto;
+        padding: 10px;
+        // border-radius: 6px;
+        // margin-top: 100px;
+
+        .profile-pic {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 50%;
+          width: 100%;
+          position: relative;
+          border-radius: 6px;
+
+          span {
+            flex: 1;
+            width: 95%;
+
+            &:first-child {
+              background-color: $defaultRed;
+              border-top-left-radius: 6px;
+              border-top-right-radius: 6px;
+            }
+            &:nth-child(3) {
+              background-color: white;
+              border-bottom-left-radius: 6px;
+              border-bottom-right-radius: 6px;
+            }
+          }
+
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            object-fit: contain;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+          }
+        }
+
+        .profile-meta {
+          height: 40%;
+          width: 95%;
+          background-color: $blueDark;
+          padding: 5px;
+          color: $mainColor;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          // align-items: center;
+
+          h3 {
+            font-weight: 700;
+            text-transform: capitalize;
+            margin: 0;
+            color: $defaultRed;
+          }
+          h5 {
+            text-transform: capitalize;
+            letter-spacing: 1.6px;
+          }
+        }
+        .member-dates {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          width: 90%;
+          font-size: 0.9rem;
+        }
+        button {
+          padding: 7px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: $defaultRed;
+          color: white;
+          outline: none;
+          border: none;
+          border-radius: 6px;
+          width: 100px;
+          cursor: pointer;
+
+          .icon {
+            color: white;
+          }
+        }
+      }
+
+      .profile-scripture {
+        margin-top: 10px;
+        padding: 10px;
+        flex: 1;
+        border: 1px solid $black;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .right-container {
+      // border-radius: 6px;
+      background-color: white;
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+      padding: 10px;
+      -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+      ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 2px;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
+
+          cursor: pointer;
+          padding: 5px;
+
+          &.active {
+            -webkit-box-shadow: 0px 10px 13px -7px #000000,
+              5px 5px 15px 5px rgba(0, 0, 0, 0);
+            box-shadow: 0px 10px 13px -7px #000000,
+              5px 5px 15px 5px rgba(0, 0, 0, 0);
+            color: $defaultRed;
+          }
+        }
+      }
+
+      .member-stats {
+        flex: 5;
+        border: 1px solid black;
+      }
+    }
+  }
+}
