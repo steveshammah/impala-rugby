@@ -1,4 +1,5 @@
-import { CalendarToday, CalendarViewDaySharp } from "@material-ui/icons";
+import { CalendarToday } from "@material-ui/icons";
+
 const WidgetSmX = () => {
   return (
     <div className='widget-sm-x'>

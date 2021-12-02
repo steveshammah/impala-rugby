@@ -444,7 +444,8 @@ export const menuLinks = {
     { name: "Gazelles", icon: "gazelles", url: "teams/gazelles" },
     { name: "Boks", icon: "boks", url: "teams/boks" },
     { name: "Ladies", icon: "ladies", url: "teams/ladies" },
-    { name: "Age Grade", icon: "age-grade", url: "teams/agegrade" },
+    { name: "Swaras", icon: "swaras", url: "teams/swaras" },
+    { name: "Age Grade", icon: "age-grade", url: "teams/age-grade" },
   ],
   website: [
     { name: "Videos", icon: "videos", url: "videos" },
@@ -474,25 +475,7 @@ export const leagueStandings = [
     points: 0,
   },
   {
-    name: "Kenya Harlequins",
-    played: 1,
-    won: 1,
-    lost: 0,
-    goalsFor: 29,
-    goalsAgainst: 20,
-    points: 0,
-  },
-  {
     name: "Homeboyz RFC",
-    played: 1,
-    won: 1,
-    lost: 0,
-    goalsFor: 29,
-    goalsAgainst: 20,
-    points: 0,
-  },
-  {
-    name: "Blak Blad",
     played: 1,
     won: 1,
     lost: 0,
@@ -510,7 +493,7 @@ export const leagueStandings = [
     points: 0,
   },
   {
-    name: "KCB RFC",
+    name: "Kabras Sugar RFC",
     played: 1,
     won: 1,
     lost: 0,
@@ -519,7 +502,17 @@ export const leagueStandings = [
     points: 0,
   },
   {
-    name: "Kabras Sugar RFC",
+    name: "KCB RFC",
+    played: 1,
+    won: 1,
+    lost: 0,
+    goalsFor: 29,
+    goalsAgainst: 20,
+    points: 0,
+  },
+
+  {
+    name: "Kenya Harlequins",
     played: 1,
     won: 1,
     lost: 0,
@@ -584,109 +577,109 @@ export const leagueStandings = [
 ];
 
 export const trainingData = [
-    {
-      Month: "Jan",
-      current: 100,
-      previous: 70,
-      amt: 30,
-    },
-    {
-      Month: "Feb",
-      current: 60,
-      previous: 100,
-      amt: -40,
-    },
-    {
-      Month: "Mar",
-      current: 100,
-      previous: 60,
-      amt: 40,
-    },
-    {
-      Month: "Apr",
-      current: 50,
-      previous: 100,
-      amt: -50,
-    },
-    {
-      Month: "May",
-      current: 20,
-      previous: 30,
-      amt: -10,
-    },
-    {
-      Month: "June",
-      current: 50,
-      previous: 20,
-      amt: 30,
-    },
+  {
+    Month: "Jan",
+    current: 100,
+    previous: 70,
+    amt: 30,
+  },
+  {
+    Month: "Feb",
+    current: 60,
+    previous: 100,
+    amt: -40,
+  },
+  {
+    Month: "Mar",
+    current: 100,
+    previous: 60,
+    amt: 40,
+  },
+  {
+    Month: "Apr",
+    current: 50,
+    previous: 100,
+    amt: -50,
+  },
+  {
+    Month: "May",
+    current: 20,
+    previous: 30,
+    amt: -10,
+  },
+  {
+    Month: "June",
+    current: 50,
+    previous: 20,
+    amt: 30,
+  },
 
-    {
-      Month: "Jul",
-      current: 80,
-      previous: 70,
-      amt: 40,
-    },
-    {
-      Month: "Aug",
-      current: 60,
-      previous: 80,
-      amt: -20,
-    },
-    {
-      Month: "Sep",
-      current: 90,
-      previous: 60,
-      amt: 30,
-    },
-    {
-      Month: "Oct",
-      current: 30,
-      previous: 90,
-      amt: -60,
-    },
-    {
-      Month: "Nov",
-      current: 70,
-      previous: 50,
-      amt: 20,
-    },
-    {
-      Month: "Dec",
-      current: 80,
-      previous: 70,
-      amt: 10,
-    },
-  ];
-  export const salesData = [
-    {
-      product: "Hoodies",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      product: "Jerseys",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      product: "T-Shirts",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      product: "Caps",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      product: "Training Kit",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-  ];
+  {
+    Month: "Jul",
+    current: 80,
+    previous: 70,
+    amt: 40,
+  },
+  {
+    Month: "Aug",
+    current: 60,
+    previous: 80,
+    amt: -20,
+  },
+  {
+    Month: "Sep",
+    current: 90,
+    previous: 60,
+    amt: 30,
+  },
+  {
+    Month: "Oct",
+    current: 30,
+    previous: 90,
+    amt: -60,
+  },
+  {
+    Month: "Nov",
+    current: 70,
+    previous: 50,
+    amt: 20,
+  },
+  {
+    Month: "Dec",
+    current: 80,
+    previous: 70,
+    amt: 10,
+  },
+];
+export const salesData = [
+  {
+    product: "Hoodies",
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    product: "Jerseys",
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    product: "T-Shirts",
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    product: "Caps",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    product: "Training Kit",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+];
