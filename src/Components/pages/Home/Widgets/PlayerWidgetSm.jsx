@@ -1,12 +1,12 @@
-import { Visibility } from "@material-ui/icons";
-import { profile } from "../../../../resources/resources";
+import { photos } from "../../../../resources/resources";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
   return (
-    <div className='player-info'>
+    <section className='player-info'>
       <div className='player-image'>
-        <img src={profile} alt='' />
+        <img src={photos.profile_picture} alt='' />
       </div>
       <div className='player-meta'>
         <h3>{member.name}</h3>
@@ -26,10 +26,10 @@ const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
           <strong> {member.team}</strong>
         </span>
       </div>
-      <Link to={`players-and-staff/${member.id}`} className='player-toggle'>
-        <i>View Profile</i> <Visibility className='icon' />
+      <Link to={`players-and-staff/${member.id}`}>
+        <Button variant='outlined'>View Profile</Button>
       </Link>
-    </div>
+    </section>
   );
 };
 

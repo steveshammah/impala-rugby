@@ -91,6 +91,18 @@
             }
           }
 
+          a {
+            color: $black;
+            padding: 3px;
+            text-decoration: none;
+            font-size: 0.7rem;
+
+            button {
+              padding: 5px;
+              font-size: 0.7rem;
+            }
+          }
+
           .player-toggle {
             flex: 2;
             display: flex;
@@ -125,12 +137,13 @@
         5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
       background-color: $blueDark;
-      color: $mainColor;
+      color: $black;
 
       h2 {
         height: 30px;
         padding: 10px;
         margin-bottom: 5px;
+        color: $mainColor;
       }
       .eventsWrapper {
         flex: 2;
@@ -138,6 +151,7 @@
         flex-direction: column;
         justify-content: space-around;
         padding: 10px;
+        margin-top: 50px;
 
         > div {
           display: flex;
@@ -146,7 +160,8 @@
           margin-bottom: 10px;
           // border-bottom: 1px solid $light;
           padding: 5px;
-          background-color: $light;
+          background-color: $mainColor;
+          color: $black;
 
           span {
             display: flex;

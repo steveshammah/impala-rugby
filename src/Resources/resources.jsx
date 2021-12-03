@@ -7,11 +7,19 @@ import image1 from "./images/DSC_0840.jpg";
 import image2 from "./images/DSC_4411.jpg";
 import image3 from "./images/DSC_8204.jpg";
 import image4 from "./images/DSC_9540.jpg";
+import teamPhoto from "./images/team_photo.jpg";
 
 // Logo
 export const logos = { impala_logo, impala_logo_1, impala_logo_2 };
 
-export const coverPhotos = { image1, image2, image3, image4 };
+export const photos = {
+  image1,
+  image2,
+  image3,
+  image4,
+  teamPhoto,
+  profile_picture,
+};
 
 // All Team Members
 export const team = [
@@ -434,9 +442,7 @@ export const menuLinks = {
     { name: "Sales", icon: "sales", url: "financials/sales" },
   ],
   league: [
-    { name: "League", icon: "default", url: "tournament/league" },
-    { name: "7s", icon: "default", url: "tournament/sevens" },
-    { name: "Floodies", icon: "default", url: "tournament/floodies" },
+    { name: "Competitons", icon: "default", url: "tournament/league" },
     { name: "Match Center", icon: "default", url: "statistics/matchcenter" },
     { name: "Team Statistics", icon: "default", url: "statistics/teamstats" },
   ],
@@ -462,7 +468,6 @@ export const navLinks = [
   { name: "videos", url: "videos" },
   { name: "about", url: "about" },
 ];
-export const profile = profile_picture;
 
 export const leagueStandings = [
   {

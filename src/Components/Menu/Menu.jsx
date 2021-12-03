@@ -1,5 +1,5 @@
 import "./menu.scss";
-import { coverPhotos } from "../../resources/resources";
+import { photos } from "../../resources/resources";
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
   const menuItems = [
@@ -35,7 +35,7 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
           <h2>Latest On Impala Saracens</h2>
 
           <div className='image-container'>
-            <img src={coverPhotos.image3} alt='STORY' />
+            <img src={photos.image3} alt='STORY' />
           </div>
           <div className='text-container'>
             <h3>Catchy Headline</h3>
