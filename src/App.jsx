@@ -12,6 +12,7 @@ import { appContext } from "./contexts/app-context";
 import Teams from "./components/pages/Teams/Teams";
 import TeamState from "./contexts/team-context";
 import MemberProfile from "./components/pages/MemberProfile/MemberProfile";
+import Website from "./Website/Website";
 
 const App = () => {
   // const [login, setLogin] = useState(false);
@@ -27,16 +28,19 @@ const App = () => {
   return (
     <div className='app'>
       <Router>
-        <Header
+        {/* <Header
           login={isAuth}
           logOut={logOut}
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
-        />
+        /> */}
         <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <div className='homepage'>
           <Switch>
             <Route path='/' exact>
+              <Website />
+            </Route>
+            <Route path='/login'>
               <Login />
             </Route>
 

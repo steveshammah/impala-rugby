@@ -8,7 +8,7 @@ const Header = ({ login, logOut, menuOpen, setMenuOpen }) => {
       {/* LOGO */}
       <div className='logo'>
         <Link to='/'>
-          <img src={logos.impala_logo} alt='LOGO' />
+          <img src={logos.impalaLogo} alt='LOGO' />
         </Link>{" "}
       </div>
       <ul>

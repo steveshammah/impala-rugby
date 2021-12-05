@@ -11,7 +11,9 @@ const TopBar = () => {
         <Settings />
       </span>
       <div className='imgContainer'>
-        <img src={logos.impala_logo} alt='' />
+        <a href='/'>
+          <img src={logos.impalaLogo} alt='' />
+        </a>
       </div>
     </div>
   );

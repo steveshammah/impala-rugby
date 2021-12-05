@@ -6,7 +6,7 @@ const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
   return (
     <section className='player-info'>
       <div className='player-image'>
-        <img src={photos.profile_picture} alt='' />
+        <img src={photos.profilePicture} alt='' />
       </div>
       <div className='player-meta'>
         <h3>{member.name}</h3>

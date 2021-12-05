@@ -6,7 +6,7 @@ const LogWidget = () => {
       <h2>Next Fixture</h2>
       <div className='fixture-details'>
         <div className='team'>
-          <img src={logos.impala_logo} alt='' />
+          <img src={logos.impalaLogo} alt='' />
           <span>1st</span>
         </div>
         <div className='fixture-meta'>
@@ -22,7 +22,7 @@ const LogWidget = () => {
         </div>
 
         <div className='team'>
-          <img src={logos.impala_logo} alt='' />
+          <img src={logos.impalaLogo} alt='' />
           <span>3rd</span>
         </div>
       </div>

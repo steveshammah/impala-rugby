@@ -1,24 +1,36 @@
-import impala_logo from "./images/impala-logo.png";
-import impala_logo_1 from "./images/impala-1.jpg";
-import impala_logo_2 from "./images/impala-2.jpg";
-import profile_picture from "./images/profile-picture.jpg";
+import impalaLogo from "./images/impala-logo.png";
+import impalaLogo1 from "./images/impala-1.jpg";
+import impalaLogo2 from "./images/impala-2.jpg";
+import profilePicture from "./images/profile-picture.jpg";
+import resolutionLogo from "./images/profile-picture.jpg";
+import stanchartLogo from "./images/profile-picture.jpg";
 
-import image1 from "./images/DSC_0840.jpg";
-import image2 from "./images/DSC_4411.jpg";
-import image3 from "./images/DSC_8204.jpg";
-import image4 from "./images/DSC_9540.jpg";
+import munai from "./images/DSC_0840.jpg";
+import solido from "./images/DSC_4411.jpg";
+import ajo from "./images/DSC_8204.jpg";
+import soi from "./images/DSC_9540.jpg";
+import player18 from "./images/player_18.jpg";
+import phonto from "./images/phonto.jpg";
 import teamPhoto from "./images/team_photo.jpg";
 
 // Logo
-export const logos = { impala_logo, impala_logo_1, impala_logo_2 };
+export const logos = {
+  impalaLogo,
+  impalaLogo1,
+  impalaLogo2,
+  resolutionLogo,
+  stanchartLogo,
+};
 
 export const photos = {
-  image1,
-  image2,
-  image3,
-  image4,
+  profilePicture,
+  munai,
+  solido,
+  ajo,
+  soi,
+  player18,
+  phonto,
   teamPhoto,
-  profile_picture,
 };
 
 // All Team Members
@@ -417,17 +429,17 @@ export const team = [
 
 export const videos = [
   { id: 0, name: "Create Group", count: "", img: "" },
-  { id: 1, name: "All Videos", count: 178, img: impala_logo },
-  { id: 2, name: "Kenya Cup", count: 6, img: impala_logo },
-  { id: 3, name: "Interviews", count: 55, img: impala_logo_1 },
-  { id: 5, name: "Match Reviews", count: 40, img: impala_logo_2 },
-  { id: 6, name: "Gazelles", count: 178, img: impala_logo_2 },
-  { id: 7, name: "Boks", count: 140, img: impala_logo },
-  { id: 7, name: "Ladies", count: 56, img: impala_logo },
-  { id: 8, name: "Swaras", count: 4, img: "" },
-  { id: 9, name: "Age Grade", count: 12, img: "" },
-  { id: 10, name: "Floodies", count: 150, img: "" },
-  { id: 11, name: "Sevens Circuit", count: 200, img: impala_logo },
+  { id: 1, name: "All Videos", count: 178, img: impalaLogo },
+  { id: 2, name: "Kenya Cup", count: 6, img: impalaLogo },
+  { id: 3, name: "Interviews", count: 55, img: impalaLogo1 },
+  { id: 5, name: "Match Reviews", count: 40, img: impalaLogo2 },
+  { id: 6, name: "Gazelles", count: 178, img: impalaLogo },
+  { id: 7, name: "Boks", count: 140, img: impalaLogo1 },
+  { id: 7, name: "Ladies", count: 56, img: impalaLogo },
+  { id: 8, name: "Swaras", count: 4, img: stanchartLogo },
+  { id: 9, name: "Age Grade", count: 12, img: stanchartLogo },
+  { id: 10, name: "Floodies", count: 150, img: resolutionLogo },
+  { id: 11, name: "Sevens Circuit", count: 200, img: resolutionLogo },
 ];
 
 export const menuLinks = {

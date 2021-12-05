@@ -1,0 +1,217 @@
+@import "../global.scss";
+
+.website-home {
+  background-color: $mainColor;
+  color: $light;
+  height: auto;
+  min-width: 100% !important;
+
+  .website-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      //   background-color: $black;
+      margin: 1px;
+      padding: 5px;
+
+      li {
+        margin: 3px;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+    }
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      background-color: $mainColor;
+      color: $black;
+      position: sticky;
+      top: 0;
+
+      .header-leagues {
+        display: flex;
+        // align-items: flex-start;
+        justify-content: flex-start;
+        flex: 3;
+      }
+      .mini-list {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+    }
+
+    .bottom-header {
+      padding: 5px;
+      height: 70px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $defaultRed;
+
+      //   overflow: hidden;
+      .logo {
+        height: 80%;
+        width: 80px;
+        margin-right: 100px;
+
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      ul {
+        flex: 1;
+        max-width: 900px;
+
+        li {
+          color: $mainColor;
+
+          a {
+            color: $mainColor;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .story-type {
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    color: $defaultRed;
+    // padding-left: 5px;
+  }
+
+  .website-landing-section {
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    // align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+
+    .main-story {
+      background-color: $black;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-right: 10px;
+      border-top: 10px solid $defaultRed;
+      border-right: 10px solid $defaultRed;
+      border-top-right-radius: 10px;
+      width: 100%;
+      cursor: pointer;
+
+      .title-wrapper {
+        // height: 100px;
+        // margin-bottom: 10px;
+        flex: 1;
+        // background-color: aqua;
+
+        h2 {
+          font-weight: 700;
+          padding: 10px;
+          font-size: 2.4rem;
+          color: $mainColor;
+
+          &:hover {
+            text-decoration: underline solid $defaultRed;
+          }
+        }
+      }
+
+      .main-story-image {
+        flex: 4;
+        // background-color: yellow;
+        width: 90%;
+        height: 500px;
+        width: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: fill;
+          transition: all ease-in-out 1s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .home-more-stories {
+      display: flex;
+      flex-wrap: wrap;
+      height: 70%;
+      justify-content: space-around;
+      //   background-color: red;
+
+      overflow-y: scroll;
+      //   -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .home-story {
+        height: 300px;
+        width: 350px;
+        background-color: $black;
+        color: $mainColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        border-bottom: 1px solid $defaultRed;
+        // border-right: 1px solid $defaultRed;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-right: 5px;
+
+        img {
+          height: 150px;
+          width: 100%;
+          object-fit: fill;
+          transition: all ease-in-out 1s;
+          //   object-position: left;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        .home-story-text {
+          flex: 1;
+          border-right: 1px solid $defaultRed;
+          padding: 10px 20px;
+
+          h2 {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

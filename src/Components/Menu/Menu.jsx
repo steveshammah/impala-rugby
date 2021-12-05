@@ -35,7 +35,7 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
           <h2>Latest On Impala Saracens</h2>
 
           <div className='image-container'>
-            <img src={photos.image3} alt='STORY' />
+            <img src={photos.ajo} alt='STORY' />
           </div>
           <div className='text-container'>
             <h3>Catchy Headline</h3>
