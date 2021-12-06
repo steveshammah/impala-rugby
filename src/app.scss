@@ -8,11 +8,16 @@
   position: relative;
   min-height: 100vh;
 
-  .homepage {
+  // .website-wrapper {
+  //   // height: auto;
+  //   // display: flex;
+  //   // flex-direction: column;
+  // }
+
+  .dashboard-home {
     display: flex;
     width: 100%;
     height: auto;
-    position: relative;
 
     .side-bar-links {
       background-color: white;
@@ -75,12 +80,13 @@
   }
 
   .btn {
-    background-color: $black;
-    color: $defaultRed;
+    background-color: $defaultRed;
+    color: white;
 
     &:hover {
-      background-color: $defaultRed;
+      background-color: $black;
       color: $mainColor;
+      border: 1px solid $defaultRed;
     }
   }
 }

@@ -8,9 +8,7 @@ import StoryPage from "./StoryPage/StoryPage";
 const Website = () => {
   return (
     <div className='website-home'>
-      <Header />
       <LandingSection />
-      <Footer />
     </div>
   );
 };

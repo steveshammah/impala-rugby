@@ -10,8 +10,22 @@ import solido from "./images/DSC_4411.jpg";
 import ajo from "./images/DSC_8204.jpg";
 import soi from "./images/DSC_9540.jpg";
 import player18 from "./images/player_18.jpg";
+import solidoRunning from "./images/bill-running.jpg";
 import phonto from "./images/phonto.jpg";
+import phontoCarry from "./images/phonto-2.jpg";
 import teamPhoto from "./images/team_photo.jpg";
+import ajoKenya from "./images/ajo-kenya.jpg";
+import anderson from "./images/anderson.jpg";
+import anya from "./images/anya.jpg";
+import oscarOsir from "./images/oscar-osir.jpg";
+import physio from "./images/physio.jpg";
+import onsomu from "./images/onsomu.jpg";
+import tata from "./images/tata.jpg";
+import tataRunning from "./images/tata-2.jpg";
+import ladiesCelebration from "./images/ladies-celebration.jpg";
+import rilSponsorPhoto from "./images/ril-sponsor-photo.jpg";
+import swaras from "./images/swaras.jpg";
+import ladiesRun from "./images/ladies-running.jpg";
 
 // Logo
 export const logos = {
@@ -31,6 +45,13 @@ export const photos = {
   player18,
   phonto,
   teamPhoto,
+  ajoKenya,
+  anderson,
+  anya,
+  onsomu,
+  tataRunning,
+  ladiesCelebration,
+  rilSponsorPhoto,
 };
 
 // All Team Members
@@ -444,7 +465,7 @@ export const videos = [
 
 export const menuLinks = {
   dashboard: [
-    { name: "Home", icon: "home", url: "home" },
+    { name: "Home", icon: "home", url: "dashboard/home" },
     { name: "Training Schedule", icon: "training", url: "training" },
     {
       name: "Allowance & Payments",
@@ -705,23 +726,23 @@ export const stories = [
   {
     id: 0,
     type: "report",
-    title: "Team Remarks",
+    title: "Ladies win the 10's tournament",
     headline:
-      " Mr Man on the team: Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " After an impressive run the ladies sealed off day two with a main cup victory against rivals.",
     dateCreated: "26/2/1996",
-    tags: ["Team", "Ladies", "Womens Tournament"],
+    tags: ["Team", "Ladies", "Womens Tournament", "Diana"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: teamPhoto,
+    img: ladiesCelebration,
   },
   {
     id: 1,
     type: "news",
-    title: "Match Day Report",
+    title: "Match Day 2 Report",
     headline:
-      " Show of grit - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " Show of great potential - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
     dateCreated: "26/2/1996",
-    tags: ["Team", "Ladies", "Womens Tournament"],
+    tags: ["Kenya Cup", "Israel Soi"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
     img: soi,
@@ -730,103 +751,125 @@ export const stories = [
     id: 2,
     type: "report",
     title: "Transfer Update",
-    headline:
-      " End of an era - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    headline: " End of an era - Samson Onsomu set to leave the club.",
     dateCreated: "26/2/1996",
     year: 1996,
-    tags: ["Bill Odhiambo", "Samson Onsomu"],
+    tags: ["Samson Onsomu"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: solido,
+    img: onsomu,
   },
   {
     id: 3,
     type: "report",
     title: "Phonto back in the squad",
     headline:
-      " Kenya 15 Backrow - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " Kenya 15 Backrow hit the ground running with the boys on match day 2 against Menengai oilers.",
     dateCreated: "26/2/1996",
-    tags: ["Bill Odhiambo", "Samson Onsomu"],
+    tags: ["Clinton Musonye", "Kenya 15s", "Kenya Cup"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: phonto,
+    img: phontoCarry,
   },
+
   {
     id: 4,
-    type: "news",
-    title: "Steve Shammah",
-    headline:
-      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    type: "report",
+    title: "Swaras to begin training",
+    headline: " Our top performing academy side to start training on Monday.",
     dateCreated: "26/2/1996",
     year: 1996,
-    tags: [],
+    tags: ["Academy", "Swaras", "Fred Ollows", "Nationwide"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: player18,
+    img: swaras,
   },
   {
     id: 5,
-    type: "report",
-    title: "Steve Shammah",
+    type: "news",
+    title: "Impala Ladies dominance",
     headline:
-      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " The girls have been on their best - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
     dateCreated: "26/2/1996",
     year: 1996,
-    tags: [],
+    tags: ["Impala Women", "Mitchele", "Mary", "Paul Mutsami"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: soi,
+    img: ladiesRun,
   },
   {
     id: 6,
     type: "news",
-    title: "Steve Shammah",
+    title: "Ajo back in training",
     headline:
-      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " After being part of the national team, Ajo is back - Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
     dateCreated: "26/2/1996",
     year: 1996,
-    tags: [],
+    tags: ["Ajo", "Kenya Cup", "Kenya 15s", "Clinton Musonye"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: ajo,
+    img: ajoKenya,
   },
   {
     id: 7,
     type: "report",
-    title: "Steve Shammah",
+    title: "Bill Odhiambo -Injury Update",
     headline:
-      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      "After sustaining an injury in the last fixtures of last season, Bill is recovering.",
     dateCreated: "26/2/1996",
     year: 1996,
     tags: [],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: solido,
+    img: solidoRunning,
   },
   {
     id: 8,
     type: "report",
-    title: "Steve Shammah",
+    title: "Meet Kenya Internation Christabel Lindo.",
     headline:
-      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " A promising youngster she is. - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
     dateCreated: "26/2/1996",
     year: 1996,
-    tags: [],
+    tags: ["Tata"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: phonto,
+    img: tataRunning,
   },
   {
     id: 9,
     type: "news",
-    title: "Steve Shammah",
+    title: "Kenya Cup is Back.",
     headline:
-      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " 18 days after the Floodlit tournament, we kick of the league against Keny Harlequins.",
     dateCreated: "26/2/1996",
-    year: 1996,
-    tags: [],
+    tags: ["Kenya Cup", "Derby", "Kenya Harlequins"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
     img: player18,
+  },
+  {
+    id: 10,
+    type: "news",
+    title: "Injury Update from the team physio.",
+    headline:
+      " Team physio Chris give an update on the injury list and timelines of players set to make a return on the pitch.",
+    dateCreated: "26/2/1996",
+    tags: ["Chris Makachia", "Kenya Cup", "Bill Odhiambo", "Injury"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: physio,
+  },
+  {
+    id: 11,
+    type: "news",
+    title: "Club legend appointed as new head coach.",
+    headline:
+      " After being part of the technical bench in previous regimes, Oscar osir has been appointed head coach after Mitch Ocholla's depature.",
+    dateCreated: "26/2/1996",
+    tags: ["Oscar Osir", "Mitch Ocholla"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: oscarOsir,
   },
 ];

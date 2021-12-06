@@ -4,17 +4,33 @@ const BottomNav = () => {
   return (
     <div className='bottom-header'>
       <div className='logo'>
-        <img src={logos.impalaLogo} alt='' />
+        <a href='/'>
+          <img src={logos.impalaLogo} alt='' />
+        </a>{" "}
       </div>
       <ul>
-        <li>Latest</li>
-        <li>Schedule</li>
-        <li>Players</li>
-        <li>Video</li>
-        <li>Standing</li>
-        <li>Teams</li>
         <li>
-          <a href='/home'>Dashboard</a>
+          <a href='/latest-news'>Latest</a>
+        </li>
+
+        {/* <li>
+          <a href='/events/tickets'>tickets</a>
+        </li> */}
+        <li>
+          <a href='/membership'>membership</a>
+        </li>
+
+        <li>
+          <a href='/squads'>squads</a>
+        </li>
+        <li>
+          <a href='/fixtures'>fixtures</a>
+        </li>
+        {/* <li>
+          <a href='/shop'>shop</a>
+        </li> */}
+        <li>
+          <a href='/dashboard/home'>Dashboard</a>
         </li>
       </ul>
     </div>

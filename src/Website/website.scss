@@ -1,92 +1,10 @@
 @import "../global.scss";
 
+
 .website-home {
   background-color: $mainColor;
   color: $light;
-  height: auto;
   min-width: 100% !important;
-
-  .website-nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    // margin-bottom: 20px;
-
-    ul {
-      display: flex;
-      justify-content: space-around;
-      list-style: none;
-      //   background-color: $black;
-      margin: 1px;
-      padding: 5px;
-
-      li {
-        margin: 3px;
-        font-size: 0.9rem;
-        cursor: pointer;
-      }
-    }
-    .top-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 50px;
-      width: 100%;
-      background-color: $black;
-      color: white;
-      position: sticky;
-      top: 0;
-
-      .header-leagues {
-        display: flex;
-        // align-items: flex-start;
-        justify-content: flex-start;
-        flex: 3;
-      }
-      .mini-list {
-        text-transform: uppercase;
-        font-size: 0.7rem;
-        font-weight: 700;
-      }
-    }
-
-    .bottom-header {
-      padding: 5px;
-      height: 70px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: $defaultRed;
-
-      //   overflow: hidden;
-      .logo {
-        height: 80%;
-        width: 80px;
-        margin-right: 100px;
-
-        img {
-          object-fit: cover;
-          height: 100%;
-          width: 100%;
-        }
-      }
-
-      ul {
-        flex: 1;
-        max-width: 900px;
-
-        li {
-          color: $mainColor;
-
-          a {
-            color: $mainColor;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
 
   .story-type {
     font-size: 0.6rem;

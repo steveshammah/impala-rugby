@@ -26,7 +26,7 @@ const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
           <strong> {member.team}</strong>
         </span>
       </div>
-      <Link to={`players-and-staff/${member.id}`}>
+      <Link to={`/players-and-staff/${member.id}`}>
         <Button variant='outlined'>View Profile</Button>
       </Link>
     </section>

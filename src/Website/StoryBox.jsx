@@ -1,4 +1,4 @@
-import { Container, Button, Box } from "@mui/material";
+import { Container, Button } from "@mui/material";
 import { stories } from "../resources/resources";
 import { Link } from "react-router-dom";
 
