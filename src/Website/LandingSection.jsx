@@ -1,5 +1,6 @@
-import { Box, Button, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { photos } from "../resources/resources";
+import StoryBox from "./StoryBox";
 
 const LandingSection = () => {
   return (
@@ -16,73 +17,7 @@ const LandingSection = () => {
         </div>
       </Container>
 
-      <Container className='home-more-stories'>
-        <Box className='home-story'>
-          <img src={photos.player18} alt='' />
-          <div className='home-story-text'>
-            <span className='story-type'>NEWS</span>
-            <p>
-              'It's terrible' - Mr Man Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit.
-            </p>
-          </div>
-        </Box>
-
-        <Box className='home-story'>
-          <img src={photos.munai} alt='' />
-
-          <div className='home-story-text'>
-            <span className='story-type'>REPORT</span>
-            <p>
-              Mr Man Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </Box>
-
-        <Box className='home-story'>
-          <img src={photos.ajo} alt='' />
-          <div className='home-story-text'>
-            <span className='story-type'>NEWS</span>
-            <p>
-              ESS: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Facilis.
-            </p>
-          </div>
-        </Box>
-
-        <Box className='home-story'>
-          <img src={photos.solido} alt='' />
-
-          <div className='home-story-text'>
-            <span className='story-type'>REPORT</span>
-            <p>
-              Captain remarks on Solido : Lorem ipsum dolor, sit amet
-              consectetur adipisicing elit. Et, numquam sequi!
-            </p>
-          </div>
-        </Box>
-
-        <Box className='home-story'>
-          <img src={photos.soi} alt='' />
-          <div className='home-story-text'>
-            <span className='story-type'>NEWS</span>
-            <p>
-              'Soi' -Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            </p>
-          </div>
-        </Box>
-
-        <Box className='home-story'>
-          <img src={photos.teamPhoto} alt='' />
-          <div className='home-story-text'>
-            <span className='story-type'>REPORT</span>
-            <p>
-              ' Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            </p>
-          </div>
-        </Box>
-        <Button variant='contained'>View latest news</Button>
-      </Container>
+      <StoryBox />
     </div>
   );
 };

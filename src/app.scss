@@ -73,4 +73,14 @@
       flex: 5;
     }
   }
+
+  .btn {
+    background-color: $black;
+    color: $defaultRed;
+
+    &:hover {
+      background-color: $defaultRed;
+      color: $mainColor;
+    }
+  }
 }

@@ -1,0 +1,106 @@
+@import "../../global.scss";
+
+footer {
+  height: 60vh;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+
+  .footer-list-wrapper {
+    padding: 20px;
+    flex: 2;
+    display: flex;
+    color: $mainColor;
+
+    .footer-list {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 5px;
+
+      h2 {
+        font-weight: 600;
+        flex: 1;
+        // justify-self: baseline;
+        // background-color: red;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 10px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+        // height: 60%;
+        flex: 3;
+        // background-color: red;
+
+        li {
+          cursor: pointer;
+          transition: all ease-in 0.5s;
+          &:hover {
+            color: $defaultRed;
+          }
+        }
+      }
+    }
+    .contacts-container {
+      display: flex;
+      align-items: center;
+      flex: 2;
+      justify-content: space-between;
+
+      .contacts-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        // width: 60%;
+
+        span {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          justify-content: flex-start;
+          width: 100%;
+          //   background-color: red;
+
+          > * {
+            margin-right: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .contacts-image {
+        height: 200px;
+        width: 200px;
+        img {
+          height: 80%;
+          width: 100%;
+          object-fit: fill;
+        }
+      }
+    }
+  }
+
+  .footer-logos {
+    display: flex;
+    height: 100px;
+    background-color: white;
+
+    .sponsor-footer {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      cursor: pointer;
+
+      img {
+        height: 50%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

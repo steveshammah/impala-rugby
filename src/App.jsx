@@ -13,6 +13,7 @@ import Teams from "./components/pages/Teams/Teams";
 import TeamState from "./contexts/team-context";
 import MemberProfile from "./components/pages/MemberProfile/MemberProfile";
 import Website from "./Website/Website";
+import StoryPage from "./Website/StoryPage/StoryPage";
 
 const App = () => {
   // const [login, setLogin] = useState(false);
@@ -34,7 +35,7 @@ const App = () => {
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
         /> */}
-        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        {/* <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} /> */}
         <div className='homepage'>
           <Switch>
             <Route path='/' exact>
@@ -43,6 +44,8 @@ const App = () => {
             <Route path='/login'>
               <Login />
             </Route>
+
+            <Route path='/stories/:id' component={StoryPage} />
 
             <TeamState className='dashboard-container'>
               <SideBar />

@@ -2,8 +2,8 @@ import impalaLogo from "./images/impala-logo.png";
 import impalaLogo1 from "./images/impala-1.jpg";
 import impalaLogo2 from "./images/impala-2.jpg";
 import profilePicture from "./images/profile-picture.jpg";
-import resolutionLogo from "./images/profile-picture.jpg";
-import stanchartLogo from "./images/profile-picture.jpg";
+import resolutionLogo from "./images/ril-logo.jpg";
+import stanchartLogo from "./images/sc-logo.jpg";
 
 import munai from "./images/DSC_0840.jpg";
 import solido from "./images/DSC_4411.jpg";
@@ -698,5 +698,135 @@ export const salesData = [
     uv: 1890,
     pv: 4800,
     amt: 2181,
+  },
+];
+
+export const stories = [
+  {
+    id: 0,
+    type: "report",
+    title: "Team Remarks",
+    headline:
+      " Mr Man on the team: Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    tags: ["Team", "Ladies", "Womens Tournament"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: teamPhoto,
+  },
+  {
+    id: 1,
+    type: "news",
+    title: "Match Day Report",
+    headline:
+      " Show of grit - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    tags: ["Team", "Ladies", "Womens Tournament"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: soi,
+  },
+  {
+    id: 2,
+    type: "report",
+    title: "Transfer Update",
+    headline:
+      " End of an era - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    year: 1996,
+    tags: ["Bill Odhiambo", "Samson Onsomu"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: solido,
+  },
+  {
+    id: 3,
+    type: "report",
+    title: "Phonto back in the squad",
+    headline:
+      " Kenya 15 Backrow - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    tags: ["Bill Odhiambo", "Samson Onsomu"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: phonto,
+  },
+  {
+    id: 4,
+    type: "news",
+    title: "Steve Shammah",
+    headline:
+      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    year: 1996,
+    tags: [],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: player18,
+  },
+  {
+    id: 5,
+    type: "report",
+    title: "Steve Shammah",
+    headline:
+      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    year: 1996,
+    tags: [],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: soi,
+  },
+  {
+    id: 6,
+    type: "news",
+    title: "Steve Shammah",
+    headline:
+      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    year: 1996,
+    tags: [],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: ajo,
+  },
+  {
+    id: 7,
+    type: "report",
+    title: "Steve Shammah",
+    headline:
+      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    year: 1996,
+    tags: [],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: solido,
+  },
+  {
+    id: 8,
+    type: "report",
+    title: "Steve Shammah",
+    headline:
+      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    year: 1996,
+    tags: [],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: phonto,
+  },
+  {
+    id: 9,
+    type: "news",
+    title: "Steve Shammah",
+    headline:
+      " It's terrible - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    dateCreated: "26/2/1996",
+    year: 1996,
+    tags: [],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: player18,
   },
 ];
