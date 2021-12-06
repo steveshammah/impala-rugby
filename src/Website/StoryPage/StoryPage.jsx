@@ -9,7 +9,7 @@ const StoryPage = ({ match }) => {
   const moreStories = stories.filter((story) => story.id != parseInt(storyId));
 
   return (
-    <div className='story-container'>
+    <div className='story-section'>
       <div className='story-title-container'>
         <h2>{story.title}</h2>
 
@@ -23,25 +23,26 @@ const StoryPage = ({ match }) => {
       </div>
       <div className='story-image'>
         <img src={story.img} alt='' />
-
-        <div className='more-stories'>
-          <h3>Latest</h3>
-          <ul>
-            {moreStories.map((story) => (
-              <li>
-                <a href={`/stories/${story.id}`}>
-                  <img src={story.img} alt='' /> <i>{story.title}</i>
-                </a>{" "}
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
+
       <div className='story-wrapper'>
-        <h3>{story.headline}</h3>
-        <br />
         <div className='story-container'>
-          <p>{story.story}</p>
+          <div className='story-content'>
+            <h3>{story.headline}</h3>
+
+            <p>{story.story}</p>
+          </div>
+
+          <div className='more-stories'>
+            <h3>Latest</h3>
+            <div className='news-widgets-container'>
+              {moreStories.map((story) => (
+                <a href={`/stories/${story.id}`} className='latest-news-widget'>
+                  <img src={story.img} alt='' /> <i>{story.title}</i>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

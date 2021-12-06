@@ -13,7 +13,7 @@ const LandingSection = () => {
           </h2>
         </div>
         <div className='main-story-image'>
-          <img src={photos.phonto} alt='' />
+          <img src={photos.tola} alt='' />
         </div>
       </Container>
 

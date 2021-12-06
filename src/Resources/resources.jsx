@@ -1,31 +1,36 @@
-import impalaLogo from "./images/impala-logo.png";
-import impalaLogo1 from "./images/impala-1.jpg";
-import impalaLogo2 from "./images/impala-2.jpg";
-import profilePicture from "./images/profile-picture.jpg";
-import resolutionLogo from "./images/ril-logo.jpg";
-import stanchartLogo from "./images/sc-logo.jpg";
+import impalaLogo from "./images/logos/impala-logo.png";
+import impalaLogo1 from "./images/logos/impala-1.jpg";
+import impalaLogo2 from "./images/logos/impala-2.jpg";
+import resolutionLogo from "./images/logos/ril-logo.jpg";
+import stanchartLogo from "./images/logos/sc-logo.jpg";
 
-import munai from "./images/DSC_0840.jpg";
-import solido from "./images/DSC_4411.jpg";
-import ajo from "./images/DSC_8204.jpg";
-import soi from "./images/DSC_9540.jpg";
-import player18 from "./images/player_18.jpg";
-import solidoRunning from "./images/bill-running.jpg";
-import phonto from "./images/phonto.jpg";
-import phontoCarry from "./images/phonto-2.jpg";
-import teamPhoto from "./images/team_photo.jpg";
-import ajoKenya from "./images/ajo-kenya.jpg";
-import anderson from "./images/anderson.jpg";
-import anya from "./images/anya.jpg";
-import oscarOsir from "./images/oscar-osir.jpg";
-import physio from "./images/physio.jpg";
-import onsomu from "./images/onsomu.jpg";
-import tata from "./images/tata.jpg";
-import tataRunning from "./images/tata-2.jpg";
-import ladiesCelebration from "./images/ladies-celebration.jpg";
-import rilSponsorPhoto from "./images/ril-sponsor-photo.jpg";
-import swaras from "./images/swaras.jpg";
-import ladiesRun from "./images/ladies-running.jpg";
+import munai from "./images/mens-team/DSC_0840.jpg";
+import solido from "./images/mens-team/DSC_4411.jpg";
+import ajo from "./images/mens-team/DSC_8204.jpg";
+import soi from "./images/mens-team/DSC_9540.jpg";
+import player18 from "./images/mens-team/player_18.jpg";
+import tola from "./images/mens-team/tola-2.jpg";
+import phonto from "./images/mens-team/phonto.jpg";
+import phontoCarry from "./images/mens-team/phonto-2.jpg";
+import teamPhoto from "./images/mens-team/team_photo.jpg";
+import ajoKenya from "./images/mens-team/ajo-kenya.jpg";
+import anderson from "./images/mens-team/anderson.jpg";
+import anya from "./images/mens-team/anya.jpg";
+import oscarOsir from "./images/mens-team/oscar-osir.jpg";
+import physio from "./images/mens-team/physio.jpg";
+import onsomu from "./images/mens-team/onsomu.jpg";
+import tyson from "./images/mens-team/tyson.jpg";
+import boi from "./images/mens-team/boi.jpg";
+import marube from "./images/mens-team/marube-2.jpg";
+import tata from "./images/ladies-team/tata.jpg";
+import tataRunning from "./images/ladies-team/tata-2.jpg";
+import stella from "./images/ladies-team/stella-2.jpg";
+import olympicsLadies from "./images/ladies-team/ladies-olympics.jpg";
+import olympicsLadies2 from "./images/ladies-team/ladies-olympics-2.jpg";
+import ladiesCelebration from "./images/ladies-team/ladies-celebration.jpg";
+import rilSponsorPhoto from "./images/mens-team/ril-sponsor-photo.jpg";
+import swaras from "./images/mens-team/swaras.jpg";
+import ladiesRun from "./images/ladies-team/ladies-running.jpg";
 
 // Logo
 export const logos = {
@@ -37,7 +42,6 @@ export const logos = {
 };
 
 export const photos = {
-  profilePicture,
   munai,
   solido,
   ajo,
@@ -52,6 +56,7 @@ export const photos = {
   tataRunning,
   ladiesCelebration,
   rilSponsorPhoto,
+  tola,
 };
 
 // All Team Members
@@ -726,13 +731,14 @@ export const stories = [
   {
     id: 0,
     type: "report",
-    title: "Ladies win the 10's tournament",
+    title: "Ladies win the 10's tournament.",
     headline:
       " After an impressive run the ladies sealed off day two with a main cup victory against rivals.",
     dateCreated: "26/2/1996",
     tags: ["Team", "Ladies", "Womens Tournament", "Diana"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+
     img: ladiesCelebration,
   },
   {
@@ -750,114 +756,111 @@ export const stories = [
   {
     id: 2,
     type: "report",
-    title: "Transfer Update",
+    title: "Transfer Update.",
     headline: " End of an era - Samson Onsomu set to leave the club.",
     dateCreated: "26/2/1996",
-    year: 1996,
     tags: ["Samson Onsomu"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+
     img: onsomu,
   },
   {
     id: 3,
     type: "report",
-    title: "Phonto back in the squad",
+    title: "Phonto back in the squad.",
     headline:
-      " Kenya 15 Backrow hit the ground running with the boys on match day 2 against Menengai oilers.",
+      " Kenya 15s Backrow hit the ground running with the boys on match day 2 against Menengai oilers.",
     dateCreated: "26/2/1996",
     tags: ["Clinton Musonye", "Kenya 15s", "Kenya Cup"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
     img: phontoCarry,
   },
 
   {
     id: 4,
-    type: "report",
-    title: "Swaras to begin training",
-    headline: " Our top performing academy side to start training on Monday.",
+    type: "news",
+    title: "Swaras to begin training.",
+    headline: " Our academy side is set to start on Monday.",
     dateCreated: "26/2/1996",
-    year: 1996,
     tags: ["Academy", "Swaras", "Fred Ollows", "Nationwide"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
     img: swaras,
   },
   {
     id: 5,
     type: "news",
-    title: "Impala Ladies dominance",
+    title: "Impala Ladies dominance.",
     headline:
-      " The girls have been on their best - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+      " The girls have been on their best - Head coach comments after impressive win.",
     dateCreated: "26/2/1996",
-    year: 1996,
     tags: ["Impala Women", "Mitchele", "Mary", "Paul Mutsami"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi.",
     img: ladiesRun,
   },
   {
     id: 6,
     type: "news",
-    title: "Ajo back in training",
-    headline:
-      " After being part of the national team, Ajo is back - Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    title: "Ajo back in training.",
+    headline: " From the national team... Ajo is back.",
     dateCreated: "26/2/1996",
-    year: 1996,
     tags: ["Ajo", "Kenya Cup", "Kenya 15s", "Clinton Musonye"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi.",
     img: ajoKenya,
   },
   {
     id: 7,
     type: "report",
-    title: "Bill Odhiambo -Injury Update",
+    title: "Bill Odhiambo -Injury Update.",
     headline:
       "After sustaining an injury in the last fixtures of last season, Bill is recovering.",
     dateCreated: "26/2/1996",
-    year: 1996,
-    tags: [],
+    tags: ["Bill", "Karl Williams", "Steve Otieno", "Tyson Okoth"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: solidoRunning,
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+
+    img: solido,
   },
   {
     id: 8,
-    type: "report",
-    title: "Meet Kenya Internation Christabel Lindo.",
-    headline:
-      " A promising youngster she is. - Mr Man Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+    type: "feature",
+    title: "Meet Kenya International Christabel Lindo.",
+    headline: " A promising youngster she is. - Get to know the impala.",
     dateCreated: "26/2/1996",
     year: 1996,
-    tags: ["Tata"],
+    tags: ["Tata", "Olympics", "Kenya 7s"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
-    img: tataRunning,
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+
+    img: tata,
   },
   {
     id: 9,
     type: "news",
     title: "Kenya Cup is Back.",
     headline:
-      " 18 days after the Floodlit tournament, we kick of the league against Keny Harlequins.",
+      " 18 days after the Floodlit tournament, we kick off the league against Keny Harlequins.",
     dateCreated: "26/2/1996",
-    tags: ["Kenya Cup", "Derby", "Kenya Harlequins"],
+    tags: ["Kenya Cup", "Derby", "Kenya Harlequins", "Floodies"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
     img: player18,
   },
   {
     id: 10,
-    type: "news",
+    type: "report",
     title: "Injury Update from the team physio.",
     headline:
       " Team physio Chris give an update on the injury list and timelines of players set to make a return on the pitch.",
     dateCreated: "26/2/1996",
     tags: ["Chris Makachia", "Kenya Cup", "Bill Odhiambo", "Injury"],
     story:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+
     img: physio,
   },
   {
@@ -865,11 +868,129 @@ export const stories = [
     type: "news",
     title: "Club legend appointed as new head coach.",
     headline:
-      " After being part of the technical bench in previous regimes, Oscar osir has been appointed head coach after Mitch Ocholla's depature.",
+      " After being part of the technical bench in previous regimes, Oscar Osir has been appointed head coach after Mitch Ocholla's depature.",
     dateCreated: "26/2/1996",
-    tags: ["Oscar Osir", "Mitch Ocholla"],
+    tags: ["Oscar Osir", "Mitch Ocholla", "Kenya Cup", "ESS"],
     story:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
     img: oscarOsir,
+  },
+  {
+    id: 12,
+    type: "news",
+    title: "New rugby sensation in town.",
+    headline: "From the academy and making headlines in the big leagues.",
+    dateCreated: "26/2/1996",
+    tags: ["Anderson Oduor", "Academy", "Kenya Cup", "Chipu"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+
+    img: anderson,
+  },
+  {
+    id: 13,
+    type: "feature",
+    title: "A word from the young veteran.",
+    headline:
+      "Tyson shares his views on the teams performance and gives update on possible return.",
+    dateCreated: "26/2/1996",
+    tags: ["Tyson Okoth", "Oscar Osir", "Kenya Cup"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: tyson,
+  },
+
+  {
+    id: 14,
+    type: "feature",
+    title: "Marube on his Kenya 7s debut season.",
+    headline:
+      "The latest kenya 7s addition gives more insight on his recent call up to duty and the experience.",
+    dateCreated: "26/2/1996",
+    tags: ["Kenya 7s", "Innocent Simiyu", "Kenya Cup"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: marube,
+  },
+  {
+    id: 15,
+    type: "feature",
+    title: "Going for a good outing this season.",
+    headline:
+      "Boi hopeful the new season will bring a better performance out of the team.",
+    dateCreated: "26/2/1996",
+    tags: ["Paul Mutsami", "Kenya Cup", "Ladies Team"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: boi,
+  },
+  {
+    id: 16,
+    type: "news",
+    title: "Guess who's back in the Kenya 7s squad.",
+    headline: "Anya to travel with the team to Dubai.",
+    dateCreated: "26/2/1996",
+    tags: ["Edmund Anya", "Alvin Marube", "Kenya 7s"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: anya,
+  },
+  {
+    id: 17,
+    type: "new",
+    title: "The olympic team is back.",
+    headline: "Impala ladies from the olypmics landed earlier today.",
+    dateCreated: "26/2/1996",
+    tags: ["Diana", "Stella", "Tata", "Olympics"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: olympicsLadies2,
+  },
+  {
+    id: 19,
+    type: "update",
+    title: "TOKYO 2020 - The ladies off to a flying start.",
+    headline:
+      "Kenya lionesses start their proceedings with a 18-5 win over Canada.",
+    dateCreated: "26/2/1996",
+    tags: ["Diana", "Stella", "Tata", "Olympics"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: tataRunning,
+  },
+
+  {
+    id: 18,
+    type: "news",
+    title: "For our partners.",
+    headline: "Resolution Insurance with the team during the new jersey launch",
+    dateCreated: "26/2/1996",
+    tags: ["Resolution Insurance", "ESS", "Kenya Cup"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: rilSponsorPhoto,
+  },
+  {
+    id: 20,
+    type: "report",
+    title: "All the best to our ladies in TOKYO 2020.",
+    headline:
+      "Diana, Stella and Tata among the ladies representing the nation at the long awaited olympics.",
+    dateCreated: "26/2/1996",
+    tags: ["Diana", "Stella", "Tata", "Olympics"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: olympicsLadies,
+  },
+  {
+    id: 21,
+    type: "news",
+    title: "Cheki man",
+    headline: "Do you have your tickets for the next fixtures.",
+    dateCreated: "26/2/1996",
+    tags: ["Stella", "Kenya Cup", "Ladies Tournament", "ESS"],
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus architecto voluptates odio veritatis perferendis, voluptatibus aliquid culpa veniam mollitia magni, saepe molestias earum! Porro aliquam unde est, officiis eaque officia veniam numquam molestias laboriosam quaerat voluptatem animi. Quod consequatur consequuntur hic provident modi nemo aut, itaque praesentium, laborum minus accusamus magnam tempore? Ratione illo pariatur quasi amet nostrum similique harum ex ducimus cupiditate! Sapiente, repudiandae expedita quaerat fugiat repellat facere nobis iusto temporibus molestias dolorum libero accusamus adipisci ea ducimus fuga assumenda error eligendi perspiciatis ex ab ipsam nostrum consectetur tenetur. Perspiciatis enim odio aliquid repellendus! Tempore, sunt quidem.",
+    img: stella,
   },
 ];
