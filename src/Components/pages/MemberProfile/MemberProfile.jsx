@@ -31,7 +31,7 @@ const MemberProfile = ({ match }) => {
     <section className='member-profile container'>
       {/* Member Cover Photo */}
       <div className='profile-image'>
-        <img src={photos.teamPhoto} alt='' />
+        <img src={member.img} alt='' />
       </div>
       <div className='container-wrapper'>
         <div className='left-container'>
@@ -53,7 +53,7 @@ const MemberProfile = ({ match }) => {
             <CardMedia
               component='img'
               height='200'
-              image={photos.profile_picture}
+              image={member.img}
               alt='User profile'
             />
             <CardContent>

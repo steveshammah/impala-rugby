@@ -1,12 +1,12 @@
 import { photos } from "../../../../resources/resources";
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
+import {Button} from "@mui/material";
 
 const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
   return (
     <section className='player-info'>
       <div className='player-image'>
-        <img src={photos.profilePicture} alt='' />
+        <img src={member.img} alt='' />
       </div>
       <div className='player-meta'>
         <h3>{member.name}</h3>

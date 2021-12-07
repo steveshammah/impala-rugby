@@ -1,6 +1,5 @@
 @import "../global.scss";
 
-
 .website-home {
   background-color: $mainColor;
   color: $light;
@@ -32,7 +31,7 @@
       margin-right: 10px;
       border-top: 10px solid $defaultRed;
       border-right: 10px solid $defaultRed;
-      border-top-right-radius: 10px;
+      border-top-right-radius: 40px;
       width: 100%;
       cursor: pointer;
 
@@ -102,7 +101,7 @@
         overflow: hidden;
         border-bottom: 1px solid $defaultRed;
         // border-right: 1px solid $defaultRed;
-        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: 40px;
         cursor: pointer;
         margin-bottom: 10px;
         margin-right: 5px;

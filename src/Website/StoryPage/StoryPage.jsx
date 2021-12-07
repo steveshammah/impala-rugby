@@ -1,4 +1,5 @@
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import { stories } from "../../resources/resources";
 // import Header from "../Header/Header";
 import "./stories.scss";
@@ -10,19 +11,31 @@ const StoryPage = ({ match }) => {
 
   return (
     <div className='story-section'>
-      <div className='story-title-container'>
-        <h2>{story.title}</h2>
-
-        <div className='story-tags'>
-          {story.tags.map((tag) => (
-            <span>
-              <Button>{tag}</Button>
-            </span>
-          ))}
+      <div className='heading-wrapper'>
+        <div className='story-title-container'>
+          <h2>{story.title}</h2>
+          <div className='story-tags'>
+            {story.tags.map((tag) => (
+              <span>
+                <Button>{tag}</Button>
+              </span>
+            ))}
+          </div>
+          <div className='story-author'>
+            <div className='author-image'>
+              <img alt='' />
+            </div>
+            <div className='author-meta'>
+              <h3>impala11110111</h3>
+              <span></span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className='story-image'>
-        <img src={story.img} alt='' />
+        <div className='story-image'>
+          <div className='shadow-container'></div>
+
+          <img src={story.img} alt='' />
+        </div>
       </div>
 
       <div className='story-wrapper'>

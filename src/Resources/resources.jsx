@@ -19,9 +19,16 @@ import anya from "./images/mens-team/anya.jpg";
 import oscarOsir from "./images/mens-team/oscar-osir.jpg";
 import physio from "./images/mens-team/physio.jpg";
 import onsomu from "./images/mens-team/onsomu.jpg";
+import danku from "./images/mens-team/danku.jpg";
 import tyson from "./images/mens-team/tyson.jpg";
+import spice from "./images/mens-team/spice.jpg";
+import nyando from "./images/mens-team/nyando.jpg";
+import cosy from "./images/mens-team/cosy-front.jpg";
+import kimakwa from "./images/mens-team/kimakwa.jpg";
+import marube from "./images/mens-team/marube.jpg";
+import brian from "./images/mens-team/brian.jpg";
 import boi from "./images/mens-team/boi.jpg";
-import marube from "./images/mens-team/marube-2.jpg";
+import marube2 from "./images/mens-team/marube-2.jpg";
 import tata from "./images/ladies-team/tata.jpg";
 import tataRunning from "./images/ladies-team/tata-2.jpg";
 import stella from "./images/ladies-team/stella-2.jpg";
@@ -63,16 +70,17 @@ export const photos = {
 export const team = [
   {
     id: 0,
-    name: "Steve Shammah",
+    name: "Edmund Anya",
     daysTrained: 6,
     daysMissed: 4,
     appearances: 60,
     dob: "26/2/1996",
     year: 1996,
-    team: "swaras",
+    team: "Gazelles",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
-    email: "shammahranks@gmail.com",
+    email: "edmund@gmail.com",
+    img: anya,
   },
   {
     id: 1,
@@ -84,12 +92,13 @@ export const team = [
     year: 1996,
     team: "gazelles",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
-    phone: "795058630",
-    email: "shammahranks@gmail.com",
+    phone: "795256158",
+    email: "tyson@gmail.com",
+    img: tyson,
   },
   {
     id: 2,
-    name: "Nato Simiyu ",
+    name: "Sam Kimakwa ",
     daysTrained: 8,
     daysMissed: 2,
     appearances: 400,
@@ -99,6 +108,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
+    img: kimakwa,
   },
   {
     id: 3,
@@ -112,10 +122,11 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
+    img: danku,
   },
   {
     id: 4,
-    name: "Sammy Oliech",
+    name: "Alvin Marube",
     daysTrained: 3,
     daysMissed: 7,
     appearances: 400,
@@ -123,8 +134,9 @@ export const team = [
     year: 1988,
     team: "ladies",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
-    phone: "795058630",
+    phone: "712345678",
     email: "shammahranks@gmail.com",
+    img: marube2,
   },
   {
     id: 5,
@@ -136,8 +148,9 @@ export const team = [
     year: 1988,
     team: "ladies",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
-    phone: "795058630",
-    email: "shammahranks@gmail.com",
+    phone: "786595742",
+    email: "paul@gmail.com",
+    img: boi,
   },
   {
     id: 6,
@@ -162,8 +175,9 @@ export const team = [
     year: 1988,
     team: "ladies",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
-    phone: "795058630",
-    email: "shammahranks@gmail.com",
+    phone: "795056853",
+    email: "spice@gmail.com",
+    img: spice,
   },
   {
     id: 8,
@@ -175,8 +189,9 @@ export const team = [
     year: 1988,
     team: "ladies",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
-    phone: "795058630",
-    email: "shammahranks@gmail.com",
+    phone: "711564789",
+    email: "cosy@gmail.com",
+    img: cosy,
   },
   {
     id: 9,
@@ -189,7 +204,8 @@ export const team = [
     team: "swaras",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
-    email: "shammahranks@gmail.com",
+    email: "tola@gmail.com",
+    img: tola,
   },
   {
     id: 10,
@@ -203,6 +219,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
+    img: "",
   },
   {
     id: 11,
@@ -215,7 +232,8 @@ export const team = [
     team: "boks",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
-    email: "shammahranks@gmail.com",
+    email: "george@gmail.com",
+    img: "",
   },
   {
     id: 12,
@@ -228,7 +246,7 @@ export const team = [
     team: "boks",
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
-    email: "shammahranks@gmail.com",
+    email: "quinto@gmail.com",
   },
   {
     id: 13,
@@ -242,6 +260,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
+    img: nyando,
   },
   {
     id: 14,
