@@ -5,9 +5,7 @@ import {
   XAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
-  YAxis,
 } from "recharts";
 
 const LineGraph = ({ title, data, dataKey }) => {
@@ -17,10 +15,10 @@ const LineGraph = ({ title, data, dataKey }) => {
       <ResponsiveContainer>
         <LineChart width={500} aspect={4 / 1} data={data}>
           <CartesianGrid />
-          {/* <YAxis /> */}
+
           <XAxis dataKey={dataKey} />
           <Tooltip />
-          {/* <Legend /> */}
+
           <Line
             type='monotone'
             dataKey='previous'

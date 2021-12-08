@@ -11,22 +11,35 @@ const TopNav = () => {
       </ul>
 
       <ul className='mini-list'>
-        <li>Shop | </li>
-        <li>Tickets | </li>
-        <li>Stories</li>
+        <li>
+          <a href='/shop'>Shop |</a>
+        </li>
+        <li>
+          <a href='/tickets'>Tickets |</a>
+        </li>
+
+        <li>
+          <a href='/my-story'>Stories |</a>
+        </li>
       </ul>
 
       <ul>
         <li>
-          <Button variant='contained' className='btn'>
-            Impala TV
-          </Button>
+          <a href='/impala-tv'>
+            <Button variant='contained' className='btn'>
+              Impala TV
+            </Button>
+          </a>
         </li>
         <li>
-          <Button variant='outlined'> Sign In</Button>
+          <a href='/login'>
+            <Button variant='outlined'> Sign In</Button>
+          </a>
         </li>
         <li>
-          <Button variant='outlined'>Subscribe</Button>
+          <a href='/membership'>
+            <Button variant='outlined'>Subscribe</Button>
+          </a>
         </li>
       </ul>
     </Box>

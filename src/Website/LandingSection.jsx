@@ -8,9 +8,7 @@ const LandingSection = () => {
       <Container mxWidth='sm' className='main-story'>
         <div className='title-wrapper'>
           <span className='story-type'>FEATURE</span>
-          <h2>
-            5 things we learned from the pre-season friendlies held at impala
-          </h2>
+          <h2>5 things we learned from the pre-season friendlies.</h2>
         </div>
         <div className='main-story-image'>
           <img src={photos.tola} alt='' />

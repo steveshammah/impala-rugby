@@ -1,11 +1,11 @@
 import "./profile.scss";
 import { useContext, useState } from "react";
-import { logos, photos } from "../../../resources/resources";
+
 import { teamContext } from "../../../contexts/team-context";
 import MemberAbout from "./MemberAbout";
 import MemberSettings from "./MemberSettings";
 import MemberStatistics from "./MemberStatistics";
-import { ChatBubble } from "@material-ui/icons";
+
 import {
   Card,
   CardActions,
@@ -35,20 +35,6 @@ const MemberProfile = ({ match }) => {
       </div>
       <div className='container-wrapper'>
         <div className='left-container'>
-          {/* <Container maxWidth='sm' className='member-profile-card'>
-            <div className='profile-pic'>
-              <span></span>
-              <img src={logos.impala_logo} alt='Profile' />
-
-              <span></span>
-            </div>
-
-        
-            <button>
-              <ChatBubble className='icon' /> Message
-            </button>
-          </Container> */}
-
           <Card sx={{ maxWidth: 500 }}>
             <CardMedia
               component='img'
@@ -108,8 +94,6 @@ const MemberProfile = ({ match }) => {
           </div>
 
           <Container maxWidth='lg'>
-            {/* <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }} /> */}
-
             <MemberAbout member={member} activeWindow={activeWindow} />
             <MemberSettings member={member} activeWindow={activeWindow} />
             <MemberStatistics member={member} activeWindow={activeWindow} />

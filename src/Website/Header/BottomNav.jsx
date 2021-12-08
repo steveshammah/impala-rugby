@@ -10,7 +10,7 @@ const BottomNav = () => {
       </div>
       <ul>
         <li>
-          <a href='/latest-news'>Latest</a>
+          <a href='/feed/stories'>Latest</a>
         </li>
 
         {/* <li>

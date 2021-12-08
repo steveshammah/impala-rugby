@@ -15,9 +15,11 @@ const StoryBox = () => {
         </Link>
       ))}
       ;
-      <Button variant='contained' className='btn'>
-        View latest news
-      </Button>
+      <a href='/feed/stories'>
+        <Button variant='contained' className='btn'>
+          View latest news
+        </Button>
+      </a>
     </Container>
   );
 };

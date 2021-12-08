@@ -3,9 +3,7 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -24,11 +22,10 @@ const BarGraph = ({ title, data, dataKey }) => {
             left: 20,
             bottom: 5,
           }}>
-          {/* <CartesianGrid strokeDasharray='3 3' /> */}
           <XAxis dataKey={dataKey} />
           <YAxis />
           <Tooltip />
-          {/* <Legend /> */}
+
           <Bar dataKey='pv' fill='#ff002b' />
           <Bar dataKey='uv' fill='#1d2537' />
         </BarChart>

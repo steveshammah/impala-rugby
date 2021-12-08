@@ -1,10 +1,4 @@
-import {
-  Email,
-  LocationCity,
-  LocationCityRounded,
-  Phone,
-  PinDrop,
-} from "@material-ui/icons";
+import { Email, Phone, PinDrop } from "@material-ui/icons";
 import "./footer.scss";
 import { logos } from "../../resources/resources";
 

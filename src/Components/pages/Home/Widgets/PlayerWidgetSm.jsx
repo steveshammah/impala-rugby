@@ -1,6 +1,5 @@
-import { photos } from "../../../../resources/resources";
 import { Link } from "react-router-dom";
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 
 const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
   return (
