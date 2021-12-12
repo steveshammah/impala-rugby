@@ -5,9 +5,6 @@ import Login from "./components/pages/Login/Login";
 import VideoContainer from "./components/pages/Videos/VideoContainer";
 import Home from "./components/pages/Home/Home";
 import SideBar from "./components/SideBar/SideBar";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { useContext } from "react";
-// import { appContext } from "./contexts/app-context";
 import Teams from "./components/pages/Teams/Teams";
 import TeamState from "./contexts/team-context";
 import MemberProfile from "./components/pages/MemberProfile/MemberProfile";
@@ -16,10 +13,10 @@ import Header from "./Website/Header/Header";
 import StoryPage from "./Website/StoryPage/StoryPage";
 import Footer from "./Website/Footer/Footer";
 import StoryFeed from "./Website/StoryPage/StoryFeed";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ArticleState from "./contexts/articles-context";
 
 const App = () => {
-  // const { activeUser } = useContext(appContext);
-
   return (
     <div className='app'>
       <Router>
@@ -29,10 +26,14 @@ const App = () => {
           <Route path='/login'>
             <Login />
           </Route>
+          {/* Access to all articles */}
+          <ArticleState>
+            <Route path='/' exact component={Website} />
+            <Route path='/feed/stories' component={StoryFeed} />
+            <Route path='/stories/:id' component={StoryPage} />
+          </ArticleState>
 
-          <Route path='/' exact component={Website} />
-          <Route path='/feed/stories' component={StoryFeed} />
-          <Route path='/stories/:id' component={StoryPage} />
+          
           <div className='dashboard-home'>
             <TeamState className='dashboard-container'>
               <SideBar />
