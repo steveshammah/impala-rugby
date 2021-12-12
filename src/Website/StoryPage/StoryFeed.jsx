@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { articlesContext } from "../../contexts/articles-context";
+import { photos } from "../../resources/resources";
 // import { stories } from "../../resources/resources";
 import "./stories.scss";
 
@@ -33,7 +34,7 @@ const StoryFeed = () => {
           {articles.map((story) => (
             <a href={`/stories/${story.id}`} className='feed-story'>
               <div className='feed-img-wrapper'>
-                <img src={story.img} alt='' />
+                <img src={photos.teamPhoto} alt='' />
               </div>
               <div className='feed-story-text'>
                 <span className='story-type'>{story.type}</span>

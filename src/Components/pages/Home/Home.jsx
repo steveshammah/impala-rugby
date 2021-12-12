@@ -5,7 +5,9 @@ import WidgetBg from "./Widgets/WidgetBg";
 import WidgetSm from "./Widgets/WidgetSm";
 import WidgetSmX from "./Widgets/WidgetSmX";
 
+
 const Home = () => {
+
   const getPercentage = (daysTrained, daysMissed) => {
     let percentage;
     if (daysMissed === 0) {

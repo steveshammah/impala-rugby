@@ -15,7 +15,7 @@ const LandingSection = () => {
           <h2>{latestArticle.title}</h2>
         </div>
         <div className='main-story-image'>
-          <img src={photos.tola} alt='' />
+          <img src={photos.ladiesCelebration} alt='' />
         </div>
       </Container>
 

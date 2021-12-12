@@ -15,7 +15,6 @@ const ArticlesState = (props) => {
       const response = await fetch(url);
       const data = await response.json();
       setArticles(data);
-      console.log("Articles", articles);
     } catch (error) {
       console.log("Error Occured:", error);
     }

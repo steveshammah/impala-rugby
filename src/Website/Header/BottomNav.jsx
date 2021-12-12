@@ -30,7 +30,7 @@ const BottomNav = () => {
           <a href='/shop'>shop</a>
         </li> */}
         <li>
-          <a href='/dashboard/home'>Dashboard</a>
+          <a href='/dashboard/'>Dashboard</a>
         </li>
       </ul>
     </div>

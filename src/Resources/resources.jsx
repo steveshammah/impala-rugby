@@ -513,6 +513,7 @@ export const menuLinks = {
     { name: "Age Grade", icon: "age-grade", url: "teams/age-grade" },
   ],
   website: [
+    { name: "Articles", icon: "articles", url: "dashboard/articles" },
     { name: "Videos", icon: "videos", url: "videos" },
     { name: "Podcasts", icon: "podcasts", url: "podcasts" },
     { name: "Socials", icon: "socials", url: "socials" },
@@ -763,7 +764,7 @@ export const stories = [
   {
     id: 100,
     type: "Feature",
-    title: "Keny Cup Returns.",
+    title: "Kenya Cup Returns.",
     headline: " Off season complete. New season begins.",
     dateCreated: "40min",
     tags: ["Kenya Cup", "Floodies", "Sam Onsomu"],

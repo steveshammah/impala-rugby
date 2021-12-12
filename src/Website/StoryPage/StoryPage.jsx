@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 // import { Link } from "react-router-dom";
-import { stories, logos } from "../../resources/resources";
+import { stories, logos, photos } from "../../resources/resources";
 import { useState, useEffect } from "react";
 
 // import Header from "../Header/Header";
@@ -38,7 +38,7 @@ const StoryPage = ({ match }) => {
         <div className='story-image'>
           <div className='shadow-container'></div>
 
-          <img src={article.img} alt='' />
+          <img src={photos.tola} alt='' />
         </div>
       </div>
 
@@ -54,8 +54,8 @@ const StoryPage = ({ match }) => {
         <div className='story-author'>
           <div className='author-image'>
             <img src={logos.impalaLogo1} alt='' />
-            <strong>by: Shammah Ranks</strong>
-            <i className='author-meta'>{article.dateCreated}</i>
+            <strong>{article.author}</strong>
+            <i className='author-meta'>{article.created}</i>
           </div>
         </div>
         <div className='story-container'>

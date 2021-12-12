@@ -13,46 +13,56 @@ import Header from "./Website/Header/Header";
 import StoryPage from "./Website/StoryPage/StoryPage";
 import Footer from "./Website/Footer/Footer";
 import StoryFeed from "./Website/StoryPage/StoryFeed";
+import ArticlesFeed from "./components/pages/Home/Articles/ArticlesFeed";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ArticleState from "./contexts/articles-context";
+import CreateArticle from "./components/pages/Home/Articles/CreateArticle";
 
 const App = () => {
   return (
     <div className='app'>
-      <Router>
-        <Header />
+      <ArticleState>
+        <Router>
+          <Header />
 
-        <Switch>
-          <Route path='/login'>
-            <Login />
-          </Route>
-          {/* Access to all articles */}
-          <ArticleState>
+          <Switch>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            {/* Access to all articles */}
             <Route path='/' exact component={Website} />
             <Route path='/feed/stories' component={StoryFeed} />
             <Route path='/stories/:id' component={StoryPage} />
-          </ArticleState>
 
-          
-          <div className='dashboard-home'>
-            <TeamState className='dashboard-container'>
-              <SideBar />
-              <Route path='/dashboard/home' component={Home} />
-              <Route path='/teams/:name' component={Teams} />
-              <Route path='/players-and-staff/:id' component={MemberProfile} />
-              {/* <Route path='/financials/:name' component={Finacials} /> */}
-              <Route path='/videos' component={VideoContainer} />
-              <Route path='/podcasts' component={VideoContainer} />
-              <Route path='/socials' component={VideoContainer} />
-              <Route path='/tournament/:league' component={VideoContainer} />
-            </TeamState>
-          </div>
+            <div className='dashboard-home'>
+              <TeamState className='dashboard-container'>
+                <SideBar />
+                <Route path='/dashboard/' exact component={Home} />
+                <Route path='/teams/:name' component={Teams} />
+                <Route
+                  path='/players-and-staff/:id'
+                  component={MemberProfile}
+                />
+                {/* <Route path='/financials/:name' component={Finacials} /> */}
+                <Route path='/dashboard/articles/' component={ArticlesFeed} />
+                <Route
+                  path='/admin/create-article/'
+                  component={CreateArticle}
+                />
 
-          <Route path='/about' component={Website}></Route>
-        </Switch>
+                <Route path='/videos' component={VideoContainer} />
+                <Route path='/podcasts' component={VideoContainer} />
+                <Route path='/socials' component={VideoContainer} />
+                <Route path='/tournament/:league' component={VideoContainer} />
+              </TeamState>
+            </div>
 
-        <Footer />
-      </Router>
+            <Route path='/about' component={Website}></Route>
+          </Switch>
+
+          <Footer />
+        </Router>
+      </ArticleState>
     </div>
   );
 };
