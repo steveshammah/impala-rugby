@@ -5,10 +5,91 @@ import { TextField, Button, Alert } from "@mui/material/";
 
 const CreateArticle = () => {
   const [wordCount, setWordCount] = useState("");
+  const [title, setTitle] = useState("");
+  const [headline, setHeadline] = useState("");
+  const [story, setStory] = useState("");
+  const [type, setType] = useState("");
+  const [tags, setTags] = useState("");
+  const [author, setAuthor] = useState(2);
+
   const handleChange = (e) => {
-    const textCount = e.target.value.split(" ").length;
-    setWordCount(textCount);
+    console.log(e.target.name);
+    switch (e.target.name) {
+      case "Title":
+        return setTitle(e.target.value);
+      case "Headline":
+        return setHeadline(e.target.value);
+      case "Content":
+        const textCount = e.target.value.split(" ").length;
+        setWordCount(textCount);
+        return setStory(e.target.value);
+      case "Type":
+        return setType(e.target.value);
+      case "Tags":
+        return setTags(e.target.value);
+      default:
+        return "";
+    }
   };
+
+  const handleSubmit = (e) => {
+    switch (e.target.name) {
+      case "Save":
+        createPost();
+
+        console.log("Save");
+        return;
+      case "Post":
+        console.log(createPost());
+
+        console.log("Post");
+        return;
+    }
+  };
+
+  const getCookie = (name) => {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  };
+
+  let csrftoken = getCookie("csrftoken");
+  console.log("Token", csrftoken);
+
+  const createPost = async () => {
+    const url = "http://localhost:8000/api/article-create/";
+    const newArticle = {
+      title,
+      headline,
+      story,
+      type,
+      author,
+    };
+    console.log(newArticle);
+    try {
+      const article = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          "X-CSRFToken": csrftoken,
+        },
+        body: JSON.stringify(newArticle),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className='container'>
       <ArticlesHeader />
@@ -20,22 +101,27 @@ const CreateArticle = () => {
             <TextField
               id='standard-multiline-flexible'
               label='Title'
+              name='Title'
               multiline
               maxRows={4}
               variant='standard'
+              onChange={handleChange}
             />
             <TextField
               id='standard-textarea'
+              name='Headline'
               label='Headline'
               placeholder='Impala time'
               multiline
               variant='standard'
+              onChange={handleChange}
             />
           </div>
           <div className='article-content'>
             <TextField
               fullWidth
               multiline
+              name='Content'
               label='Article Content'
               placeholder='Impala all the way'
               id='fullWidth'
@@ -59,27 +145,37 @@ const CreateArticle = () => {
               <TextField
                 id='standard-multiline-flexible'
                 label='Type'
+                name='Type'
                 placeholder='Article, Feature, Update, News'
                 variant='standard'
                 className='tag-input'
+                onChange={handleChange}
               />
             </span>
             <span>
               <TextField
                 id='standard-multiline-flexible'
                 label='Tags: Seperate with commas'
+                name='Tags'
                 placeholder='Kenya Cup, Ess, Nationwide, e.t.c.'
                 variant='standard'
                 className='tag-input'
+                onChange={handleChange}
               />
             </span>
           </div>
 
           <div className='article-buttons'>
-            <Button variant='contained' color='success'>
+            <Button
+              variant='contained'
+              color='success'
+              name='Save'
+              onClick={handleSubmit}>
               Save
             </Button>
-            <Button variant='contained'>Post</Button>
+            <Button variant='contained' name='Post' onClick={handleSubmit}>
+              Post
+            </Button>
           </div>
 
           <div className='article-disclaimer'>
@@ -98,3 +194,25 @@ const CreateArticle = () => {
 };
 
 export default CreateArticle;
+
+//  fetch(url, {
+//       method:'POST',
+//       headers:{
+//         'Content-type':'application/json',
+//         'X-CSRFToken':csrftoken,
+//       },
+//       body:JSON.stringify(this.state.activeItem)
+//     }).then((response)  => {
+//         this.fetchTasks()
+//         this.setState({
+//            activeItem:{
+//           id:null,
+//           title:'',
+//           completed:false,
+//         }
+//         })
+//     }).catch(function(error){
+//       console.log('ERROR:', error)
+//     })
+
+//   }

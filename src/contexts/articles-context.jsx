@@ -10,7 +10,7 @@ const ArticlesState = (props) => {
 
   // Call to DB
   const fetchArticles = async () => {
-    const url = "http://localhost:8000/articles/";
+    const url = "http://localhost:8000/api/articles/";
     try {
       const response = await fetch(url);
       const data = await response.json();

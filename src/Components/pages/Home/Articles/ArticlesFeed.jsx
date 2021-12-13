@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material/";
 import { photos } from "../../../../resources/resources";
-import { Delete, Edit, EditOutlined } from "@material-ui/icons";
+import { Delete, Edit } from "@material-ui/icons";
 
 const ArticlesFeed = () => {
   const { articles } = useContext(articlesContext);
