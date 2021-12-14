@@ -10,7 +10,7 @@ const ArticlesState = (props) => {
   }, []);
 
   // BASE URL
-  const BASE_URL = "http://localhost:8000/api";
+  const BASE_URL = "http://localhost:8000";
 
   // CSRF TOKEN
   const getCookie = (name) => {
@@ -31,7 +31,7 @@ const ArticlesState = (props) => {
 
   // CALL TO DATABASE TO FETCH ALL ARTICLES
   const fetchArticles = async () => {
-    const url = BASE_URL + "/articles/";
+    const url = BASE_URL + "/api/articles/";
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -48,5 +48,3 @@ const ArticlesState = (props) => {
 };
 
 export default ArticlesState;
-
-

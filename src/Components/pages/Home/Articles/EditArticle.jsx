@@ -71,7 +71,7 @@ const EditArticle = ({ match }) => {
   // console.log("Token", csrftoken);
 
   const createPost = async () => {
-    const url = `${BASE_URL}/article-create/`;
+    const url = `${BASE_URL}/api/article-create/`;
     const newArticle = {
       title,
       headline,
@@ -134,7 +134,7 @@ const EditArticle = ({ match }) => {
               fullWidth
               id='fullWidth'
               multiline
-              defaultValue={editArticle.story}
+              defaultValue={editArticle.content}
               helperText='Changing the story. Hmmm...'
               variant='standard'
               className='article-field'

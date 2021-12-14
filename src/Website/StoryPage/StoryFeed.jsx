@@ -1,11 +1,11 @@
-import {  useContext } from "react";
+import { useContext } from "react";
 import { articlesContext } from "../../contexts/articles-context";
 import { photos } from "../../resources/resources";
 // import { stories } from "../../resources/resources";
 import "./stories.scss";
 
 const StoryFeed = () => {
-  const { articles } = useContext(articlesContext);
+  const { articles, BASE_URL } = useContext(articlesContext);
   return (
     <div className='feeds-home'>
       <div className='feeds-container'>
@@ -13,16 +13,16 @@ const StoryFeed = () => {
         <h2>Latest Stories</h2>
 
         <div className='feeds-section'>
-          {articles.map((story) => (
-            <a href={`/stories/${story.id}`} className='feed-story'>
+          {articles.map((article) => (
+            <a href={`/stories/${article.id}`} className='feed-story'>
               <div className='feed-img-wrapper'>
-                <img src={photos.teamPhoto} alt='' />
+                <img src={BASE_URL + article.image_1} alt='' />
               </div>
               <div className='feed-story-text'>
-                <span className='story-type'>{story.type}</span>
-                <h3>{story.title}</h3>
-                <p>{story.headline}</p>
-                <span className='date-created'>{story.dateCreated}</span>
+                <span className='story-type'>{article.type}</span>
+                <h3>{article.title}</h3>
+                <p>{article.headline}</p>
+                <span className='date-created'>{article.dateCreated}</span>
               </div>
             </a>
           ))}

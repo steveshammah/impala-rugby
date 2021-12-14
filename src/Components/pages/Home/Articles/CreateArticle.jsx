@@ -1,14 +1,23 @@
 import { useContext, useState, useRef } from "react";
 import ArticlesHeader from "./ArticlesHeader";
 import "./articles-admin.scss";
-import { TextField, Button, Alert } from "@mui/material/";
+import {
+  TextField,
+  Button,
+  Alert,
+  IconButton,
+  Stack,
+  styled,
+} from "@mui/material/";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { articlesContext } from "../../../../contexts/articles-context";
 
 const CreateArticle = () => {
   const [wordCount, setWordCount] = useState("");
   const [title, setTitle] = useState("");
   const [headline, setHeadline] = useState("");
-  const [story, setStory] = useState("");
+  const [content, setContent] = useState("");
+  const [images, setImages] = useState("");
   const [type, setType] = useState("");
   const [tags, setTags] = useState("");
   const [author, setAuthor] = useState(2);
@@ -18,19 +27,24 @@ const CreateArticle = () => {
 
   const handleChange = (e) => {
     console.log(e.target.name);
+    const input = e.target.value;
     switch (e.target.name) {
       case "Title":
-        return setTitle(e.target.value);
+        return setTitle(input);
       case "Headline":
-        return setHeadline(e.target.value);
+        return setHeadline(input);
       case "Content":
-        const textCount = e.target.value.split(" ").length;
+        const textCount = input.split(" ").length;
         setWordCount(textCount);
-        return setStory(e.target.value);
+        return setContent(input);
+      case "Images":
+        console.log("Images: ", input);
+        setImages(input);
+        return setContent(input);
       case "Type":
-        return setType(e.target.value);
+        return setType(input);
       case "Tags":
-        return setTags(e.target.value);
+        return setTags(input);
       default:
         return "";
     }
@@ -52,15 +66,19 @@ const CreateArticle = () => {
     }
   };
 
+  const Input = styled("input")({
+    display: "none",
+  });
+
   let csrftoken = getCookie("csrftoken");
   // console.log("Token", csrftoken);
 
   const createPost = async () => {
-    const url = `${BASE_URL}/article-create/`;
+    const url = `${BASE_URL}/api/article-create/`;
     const newArticle = {
       title,
       headline,
-      story,
+      content,
       type,
       author,
     };
@@ -153,6 +171,43 @@ const CreateArticle = () => {
                 className='tag-input'
                 onChange={handleChange}
               />
+            </span>
+            <span>
+              {/* <Stack direction='row' alignItems='center' spacing={2}>
+                <label htmlFor='contained-button-file'>
+                  <Input
+                    accept='image/*'
+                    id='contained-button-file'
+                    multiple
+                    type='file'
+                  />
+                  <Button variant='contained' component='span'>
+                    Upload
+                  </Button>
+                </label>
+                <label htmlFor='icon-button-file'>
+                  <Input accept='image/*' id='icon-button-file' type='file' />
+                  <IconButton
+                    color='primary'
+                    aria-label='upload picture'
+                    component='span'>
+                    <PhotoCamera />
+                  </IconButton>
+                </label>
+              </Stack> */}
+            </span>
+            <span>
+              <label htmlFor='contained-button-file'>
+                <Input
+                  accept='image/*'
+                  id='contained-button-file'
+                  multiple
+                  type='file'
+                />
+                <Button variant='contained' component='span'>
+                  Upload
+                </Button>
+              </label>
             </span>
           </div>
 

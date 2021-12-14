@@ -1,24 +1,24 @@
 import { Container } from "@mui/material";
-import { photos } from "../resources/resources";
 import StoryBox from "./StoryBox";
 import { useContext } from "react";
 import { articlesContext } from "../contexts/articles-context";
 
 const LandingSection = () => {
-  const { articles } = useContext(articlesContext);
+  const { articles, BASE_URL } = useContext(articlesContext);
   const latestArticle = articles[0];
   return (
     <div className='website-landing-section'>
       <Container mxWidth='sm' className='main-story'>
-        <div className='title-wrapper'>
-          <span className='story-type'>{latestArticle.type}</span>
-          <h2>{latestArticle.title}</h2>
-        </div>
-        <div className='main-story-image'>
-          <img src={photos.ladiesCelebration} alt='' />
-        </div>
+        <a href={`/stories/${latestArticle.id}`}>
+          <div className='title-wrapper'>
+            <span className='story-type'>{latestArticle.type}</span>
+            <h2>{latestArticle.title}</h2>
+          </div>
+          <div className='main-story-image'>
+            <img src={BASE_URL + latestArticle.image_2} alt='' />
+          </div>
+        </a>
       </Container>
-
       <StoryBox />
     </div>
   );

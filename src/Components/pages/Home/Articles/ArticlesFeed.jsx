@@ -12,7 +12,7 @@ const ArticlesFeed = () => {
   const handleClose = () => setModalOpen(false);
   const { articles, getCookie, BASE_URL } = useContext(articlesContext);
   const deletePost = async (articleId) => {
-    const url = `${BASE_URL}/article-delete/${articleId}`;
+    const url = `${BASE_URL}/api/article-delete/${articleId}`;
     const response = await fetch(url, {
       method: "DELETE",
       headers: {

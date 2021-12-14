@@ -2,18 +2,20 @@ import { Container, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { articlesContext } from "../contexts/articles-context";
-import { photos } from "../resources/resources";
 
 const StoryBox = () => {
-  const { articles } = useContext(articlesContext);
+  const { articles, BASE_URL } = useContext(articlesContext);
   return (
     <Container className='home-more-stories'>
-      {articles.map((story) => (
-        <Link className='home-story' key={story.id} to={`/stories/${story.id}`}>
-          <img src={photos.munai} alt='' />
+      {articles.map((article) => (
+        <Link
+          className='home-story'
+          key={article.id}
+          to={`/stories/${article.id}`}>
+          <img src={BASE_URL + article.image_1} alt='' />
           <div className='home-story-text'>
-            <span className='story-type'>{story.type}</span>
-            <p>{story.headline}</p>
+            <span className='story-type'>{article.type}</span>
+            <p>{article.headline}</p>
           </div>
         </Link>
       ))}

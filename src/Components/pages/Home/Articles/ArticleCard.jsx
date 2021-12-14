@@ -8,14 +8,17 @@ import {
   IconButton,
   Typography,
 } from "@mui/material/";
-import { photos } from "../../../../resources/resources";
 import { Delete, Edit } from "@material-ui/icons";
+import { useContext } from "react";
+import { articlesContext } from "../../../../contexts/articles-context";
 
 const ArticleCard = ({ article, handleOpen, setActiveArticle }) => {
+  const { BASE_URL } = useContext(articlesContext);
   const handleClick = (id) => {
     handleOpen();
     setActiveArticle(id);
   };
+  console.log(article);
   return (
     <Card sx={{ maxWidth: 300 }} className='article'>
       <CardHeader
@@ -23,7 +26,11 @@ const ArticleCard = ({ article, handleOpen, setActiveArticle }) => {
         title={article.title}
         subheader={article.created}
       />
-      <CardMedia component='img' height='150' image={photos.onsomu} />
+      <CardMedia
+        component='img'
+        height='150'
+        image={BASE_URL + article.image_1}
+      />
       <CardContent>
         <Typography variant='body2' color='text.secondary'>
           {article.headline}

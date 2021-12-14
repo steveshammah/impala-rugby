@@ -9,7 +9,7 @@ import "./stories.scss";
 
 const StoryPage = ({ match }) => {
   const storyId = match.params.id;
-  const { articles } = useContext(articlesContext);
+  const { articles, BASE_URL } = useContext(articlesContext);
 
   const [article, setArticle] = useState({});
   useEffect(() => {
@@ -18,7 +18,7 @@ const StoryPage = ({ match }) => {
 
   // Call to DB
   const fetchArticle = async () => {
-    const url = `http://localhost:8000/api/articles/${storyId}`;
+    const url = `${BASE_URL}/api/articles/${storyId}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -42,7 +42,7 @@ const StoryPage = ({ match }) => {
         <div className='story-image'>
           <div className='shadow-container'></div>
 
-          <img src={photos.tola} alt='' />
+          <img src={BASE_URL + article.image_1} alt='' />
         </div>
       </div>
 
@@ -65,16 +65,23 @@ const StoryPage = ({ match }) => {
         <div className='story-container'>
           <div className='story-content'>
             <h3>{article.headline}</h3>
+            <div className='story-image'>
+              <div className='shadow-container'></div>
 
-            <p>{article.story}</p>
+              <img src={BASE_URL + article.image_2} alt='' />
+            </div>
+            <p>{article.content}</p>
           </div>
 
           <div className='more-stories'>
             <h3>Latest</h3>
             <div className='news-widgets-container'>
-              {moreStories.map((story) => (
-                <a href={`/stories/${story.id}`} className='latest-news-widget'>
-                  <img src={logos.impalaLogo} alt='' /> <i>{story.title}</i>
+              {moreStories.map((article) => (
+                <a
+                  href={`/stories/${article.id}`}
+                  className='latest-news-widget'>
+                  <img src={BASE_URL + article.image_1} alt='' />{" "}
+                  <i>{article.title}</i>
                 </a>
               ))}
             </div>
