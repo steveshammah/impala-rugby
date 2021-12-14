@@ -1,10 +1,10 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
+import { articlesContext } from "../../../../contexts/articles-context";
 import ArticlesHeader from "./ArticlesHeader";
 import "./articles-admin.scss";
 import { TextField, Button, Alert } from "@mui/material/";
-import { articlesContext } from "../../../../contexts/articles-context";
 
-const CreateArticle = () => {
+const EditArticle = ({ match }) => {
   const [wordCount, setWordCount] = useState("");
   const [title, setTitle] = useState("");
   const [headline, setHeadline] = useState("");
@@ -12,9 +12,25 @@ const CreateArticle = () => {
   const [type, setType] = useState("");
   const [tags, setTags] = useState("");
   const [author, setAuthor] = useState(2);
+  const articleId = match.params.id;
+  const [editArticle, setEditArticle] = useState([{}]);
   const { getCookie, BASE_URL } = useContext(articlesContext);
 
-  const articleForm = useRef();
+  const fetchArticle = async () => {
+    const url = `${BASE_URL}/articles/${articleId}`;
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log("Data", data);
+      setEditArticle(data);
+    } catch (error) {
+      console.log("Error Occured:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchArticle();
+  }, []);
 
   const handleChange = (e) => {
     console.log(e.target.name);
@@ -40,7 +56,6 @@ const CreateArticle = () => {
     switch (e.target.name) {
       case "Save":
         createPost();
-        articleForm.current.reset();
 
         console.log("Save");
         return;
@@ -79,43 +94,49 @@ const CreateArticle = () => {
     }
   };
 
+  //   console.log("Article", editArticle.title);
   return (
     <div className='container'>
       <ArticlesHeader />
 
-      <form className='create-post' ref={articleForm}>
+      <div className='create-post '>
         <div className='left-wrapper'>
-          <h2>+New Article</h2>
+          <h2>Edit Article</h2>
           <div className='article-meta'>
             <TextField
-              id='standard-multiline-flexible'
-              label='Title'
               name='Title'
+              id='standard-helperText'
               multiline
-              maxRows={4}
+              defaultValue={editArticle.title}
+              helperText='Have a better Title?'
               variant='standard'
+              className='article-field'
               onChange={handleChange}
-              required
             />
+
             <TextField
-              id='standard-textarea'
               name='Headline'
-              label='Headline'
-              placeholder='Impala time'
+              id='standard-helperText'
+              fullWidth
+              id='fullWidth'
               multiline
+              defaultValue={editArticle.headline}
+              helperText=''
               variant='standard'
+              className='article-field'
               onChange={handleChange}
-              required
             />
           </div>
           <div className='article-content'>
             <TextField
-              fullWidth
-              multiline
               name='Content'
-              label='Article Content'
-              placeholder='Impala all the way'
+              id='standard-helperText'
+              fullWidth
               id='fullWidth'
+              multiline
+              defaultValue={editArticle.story}
+              helperText='Changing the story. Hmmm...'
+              variant='standard'
               className='article-field'
               onChange={handleChange}
             />
@@ -134,24 +155,30 @@ const CreateArticle = () => {
           <div className='article-tags'>
             <span>
               <TextField
-                id='standard-multiline-flexible'
-                label='Type'
                 name='Type'
-                placeholder='Article, Feature, Update, News'
+                id='standard-helperText'
+                fullWidth
+                id='fullWidth'
+                multiline
+                defaultValue={editArticle.type}
+                helperText=''
                 variant='standard'
-                className='tag-input'
                 onChange={handleChange}
+                className='tag-input'
               />
             </span>
             <span>
               <TextField
-                id='standard-multiline-flexible'
-                label='Tags: Seperate with commas'
                 name='Tags'
-                placeholder='Kenya Cup, Ess, Nationwide, e.t.c.'
+                id='standard-helperText'
+                fullWidth
+                id='fullWidth'
+                multiline
+                defaultValue={editArticle.tags}
+                helperText=''
                 variant='standard'
-                className='tag-input'
                 onChange={handleChange}
+                className='tag-input'
               />
             </span>
           </div>
@@ -159,13 +186,13 @@ const CreateArticle = () => {
           <div className='article-buttons'>
             <Button
               variant='contained'
-              color='success'
+              color='primary'
               name='Save'
               onClick={handleSubmit}>
               Save
             </Button>
-            <Button variant='contained' name='Post' onClick={handleSubmit}>
-              Post
+            <Button variant='contained' color='error' name='Post'>
+              <a href='/dashboard/articles'>Cancel</a>
             </Button>
           </div>
 
@@ -179,9 +206,9 @@ const CreateArticle = () => {
           </div>
         </div>
         <div className='right-wrapper'>Right Panel</div>
-      </form>
+      </div>
     </div>
   );
 };
 
-export default CreateArticle;
+export default EditArticle;

@@ -17,6 +17,7 @@ import ArticlesFeed from "./components/pages/Home/Articles/ArticlesFeed";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ArticleState from "./contexts/articles-context";
 import CreateArticle from "./components/pages/Home/Articles/CreateArticle";
+import EditArticle from "./components/pages/Home/Articles/EditArticle";
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
                   path='/admin/create-article/'
                   component={CreateArticle}
                 />
+                <Route path='/admin/edit-article/:id' component={EditArticle} />
 
                 <Route path='/videos' component={VideoContainer} />
                 <Route path='/podcasts' component={VideoContainer} />

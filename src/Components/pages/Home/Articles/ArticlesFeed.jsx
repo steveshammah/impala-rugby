@@ -1,22 +1,33 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { articlesContext } from "../../../../contexts/articles-context";
 import "./articles-admin.scss";
 import ArticlesHeader from "./ArticlesHeader";
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Avatar,
-  IconButton,
-  Typography,
-} from "@mui/material/";
-import { photos } from "../../../../resources/resources";
-import { Delete, Edit } from "@material-ui/icons";
+import ArticleCard from "./ArticleCard";
+import DeleteModal from "./DeleteModal";
 
 const ArticlesFeed = () => {
-  const { articles } = useContext(articlesContext);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeArticle, setActiveArticle] = useState();
+  const handleOpen = () => setModalOpen(true);
+  const handleClose = () => setModalOpen(false);
+  const { articles, getCookie, BASE_URL } = useContext(articlesContext);
+  const deletePost = async (articleId) => {
+    const url = `${BASE_URL}/article-delete/${articleId}`;
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        "X-CSRFToken": getCookie("csrftoken"),
+      },
+    });
+    console.log(response.json());
+    return response;
+  };
+  const handleDelete = (id) => {
+    deletePost(id);
+    // console.log("Deleting Post: ", id);
+    setModalOpen(false);
+  };
   return (
     <div className='container'>
       <ArticlesHeader />
@@ -24,26 +35,22 @@ const ArticlesFeed = () => {
       <div className='articles-admin'>
         <div className='all-articles'>
           {articles.map((article) => (
-            <Card sx={{ maxWidth: 300 }} className='article'>
-              <CardHeader
-                avatar={<Avatar aria-label='recipe'>{article.author}</Avatar>}
-                title={article.title}
-                subheader={article.created}
-              />
-              <CardMedia component='img' height='150' image={photos.onsomu} />
-              <CardContent>
-                <Typography variant='body2' color='text.secondary'>
-                  {article.headline}
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label='add to favorites'>
-                  <Edit />
-                </IconButton>
-                <IconButton aria-label='share'>{<Delete />}</IconButton>
-              </CardActions>
-            </Card>
+            <ArticleCard
+              article={article}
+              handleDelete={handleDelete}
+              handleOpen={handleOpen}
+              setActiveArticle={setActiveArticle}
+              // handleClose={handleClose}
+            />
           ))}
+
+          <DeleteModal
+            modalOpen={modalOpen}
+            activeArticle={activeArticle}
+            handleDelete={handleDelete}
+            handleClose={handleClose}
+            setModalOpen={setModalOpen}
+          />
         </div>
       </div>
     </div>

@@ -1,13 +1,15 @@
 import { Button } from "@mui/material";
 // import { Link } from "react-router-dom";
 import { stories, logos, photos } from "../../resources/resources";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { articlesContext } from "../../contexts/articles-context";
 
 // import Header from "../Header/Header";
 import "./stories.scss";
 
 const StoryPage = ({ match }) => {
   const storyId = match.params.id;
+  const { articles } = useContext(articlesContext);
 
   const [article, setArticle] = useState({});
   useEffect(() => {
@@ -16,7 +18,7 @@ const StoryPage = ({ match }) => {
 
   // Call to DB
   const fetchArticle = async () => {
-    const url = `http://localhost:8000/articles/${storyId}`;
+    const url = `http://localhost:8000/api/articles/${storyId}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -27,7 +29,9 @@ const StoryPage = ({ match }) => {
     }
   };
   // const story = stories.filter((story) => story.id === parseInt(storyId))[0];
-  const moreStories = stories.filter((story) => story.id !== parseInt(storyId));
+  const moreStories = articles.filter(
+    (story) => story.id !== parseInt(storyId)
+  );
 
   return (
     <div className='story-section'>
@@ -70,7 +74,7 @@ const StoryPage = ({ match }) => {
             <div className='news-widgets-container'>
               {moreStories.map((story) => (
                 <a href={`/stories/${story.id}`} className='latest-news-widget'>
-                  <img src={story.img} alt='' /> <i>{story.title}</i>
+                  <img src={logos.impalaLogo} alt='' /> <i>{story.title}</i>
                 </a>
               ))}
             </div>
