@@ -11,9 +11,10 @@ import {
   CalendarToday,
 } from "@material-ui/icons";
 import "../pages/Home/home.scss";
-import { Link } from "react-router-dom";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 
-const SideBarLink = ({ name, icon, url, active, setActiveLink }) => {
+const SideBarLink = ({ name, icon, active, setActiveLink }) => {
   const setIcon = (name) => {
     switch (name) {
       case "home":
@@ -49,15 +50,21 @@ const SideBarLink = ({ name, icon, url, active, setActiveLink }) => {
     }
   };
   return (
-    <Link to={`/${url}`} className='link'>
-      <li
-        className={active === name ? "active" : ""}
-        onClick={() => setActiveLink(name)}>
-        {setIcon(icon)}
-        {name}
-      </li>
-    </Link>
+    <>
+      <ListItemIcon>{setIcon(icon)}</ListItemIcon>
+
+      <ListItemText
+        className={active === name ? "link-text active" : "link-text"}
+        onClick={() => setActiveLink(name)}
+        primary={name}
+      />
+    </>
   );
 };
 
 export default SideBarLink;
+
+{
+  /*
+   */
+}

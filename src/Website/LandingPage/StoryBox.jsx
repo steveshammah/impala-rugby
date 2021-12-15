@@ -1,7 +1,7 @@
 import { Container, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { articlesContext } from "../contexts/articles-context";
+import { articlesContext } from "../../contexts/articles-context";
 
 const StoryBox = () => {
   const { articles, BASE_URL } = useContext(articlesContext);

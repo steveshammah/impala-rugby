@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import StoryBox from "./StoryBox";
 import { useContext } from "react";
-import { articlesContext } from "../contexts/articles-context";
+import { articlesContext } from "../../contexts/articles-context";
 
 const LandingSection = () => {
   const { articles, BASE_URL } = useContext(articlesContext);

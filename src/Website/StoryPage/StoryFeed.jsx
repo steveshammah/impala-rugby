@@ -1,7 +1,5 @@
 import { useContext } from "react";
 import { articlesContext } from "../../contexts/articles-context";
-import { photos } from "../../resources/resources";
-// import { stories } from "../../resources/resources";
 import "./stories.scss";
 
 const StoryFeed = () => {
@@ -9,9 +7,29 @@ const StoryFeed = () => {
   return (
     <div className='feeds-home'>
       <div className='feeds-container'>
-        {/* <span className='story-type'>Feeds</span> */}
-        <h2>Latest Stories</h2>
-
+        <div className='feeds-nav'>
+          <h2>Latest Stories</h2>
+          <ul>
+            <li>
+              <a href=''>Latest</a>
+            </li>
+            <li>
+              <a href=''>Men</a>
+            </li>
+            <li>
+              <a href=''>Women</a>
+            </li>
+            <li>
+              <a href=''>Swaras</a>
+            </li>
+            <li>
+              <a href=''>Age Grade</a>
+            </li>
+            <li>
+              <a href=''>Club</a>
+            </li>
+          </ul>
+        </div>
         <div className='feeds-section'>
           {articles.map((article) => (
             <a href={`/stories/${article.id}`} className='feed-story'>

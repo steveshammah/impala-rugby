@@ -8,7 +8,7 @@ import SideBar from "./components/SideBar/SideBar";
 import Teams from "./components/pages/Teams/Teams";
 import TeamState from "./contexts/team-context";
 import MemberProfile from "./components/pages/MemberProfile/MemberProfile";
-import Website from "./Website/Website";
+import Website from "./Website/LandingPage/Website";
 import Header from "./Website/Header/Header";
 import StoryPage from "./Website/StoryPage/StoryPage";
 import Footer from "./Website/Footer/Footer";
@@ -38,7 +38,7 @@ const App = () => {
             <div className='dashboard-home'>
               <TeamState className='dashboard-container'>
                 <SideBar />
-                <Route path='/dashboard/' exact component={Home} />
+                <Route path='/dashboard/home/' exact component={Home} />
                 <Route path='/teams/:name' component={Teams} />
                 <Route
                   path='/players-and-staff/:id'

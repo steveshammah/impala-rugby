@@ -12,8 +12,10 @@ const StoryPage = ({ match }) => {
   const { articles, BASE_URL } = useContext(articlesContext);
 
   const [article, setArticle] = useState({});
+  const [tags, setTags] = useState([]);
   useEffect(() => {
     fetchArticle();
+    console.log(article.tags);
   }, []);
 
   // Call to DB
@@ -24,11 +26,15 @@ const StoryPage = ({ match }) => {
       const data = await response.json();
       console.log("Data", data);
       setArticle(data);
+
+      // Seperate String from DB to list of tags
+      const tags = data.tags.split(",");
+      setTags(tags);
     } catch (error) {
       console.log("Error Occured:", error);
     }
   };
-  // const story = stories.filter((story) => story.id === parseInt(storyId))[0];
+
   const moreStories = articles.filter(
     (story) => story.id !== parseInt(storyId)
   );
@@ -43,18 +49,20 @@ const StoryPage = ({ match }) => {
           <div className='shadow-container'></div>
 
           <img src={BASE_URL + article.image_1} alt='' />
+          <i>{article.caption_1}</i>
         </div>
       </div>
 
       <div className='story-wrapper'>
-        {/* <div className='story-tags'>
+        <div className='story-tags'>
           <strong>Tags:</strong>
-          {article.tags.map((tag) => (
+
+          {tags.map((tag) => (
             <span>
               <Button>{tag}</Button>
             </span>
           ))}
-        </div> */}
+        </div>
         <div className='story-author'>
           <div className='author-image'>
             <img src={logos.impalaLogo1} alt='' />
@@ -65,12 +73,17 @@ const StoryPage = ({ match }) => {
         <div className='story-container'>
           <div className='story-content'>
             <h3>{article.headline}</h3>
-            <div className='story-image'>
+
+            <p>{article.content_1}</p>
+
+            <div className='story-image small'>
               <div className='shadow-container'></div>
 
               <img src={BASE_URL + article.image_2} alt='' />
+              <i>{article.caption_2}</i>
             </div>
-            <p>{article.content}</p>
+
+            <p>{article.content_2}</p>
           </div>
 
           <div className='more-stories'>

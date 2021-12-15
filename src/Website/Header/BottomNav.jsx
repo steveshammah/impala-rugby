@@ -10,7 +10,7 @@ const BottomNav = () => {
       </div>
       <ul>
         <li>
-          <a href='/feed/stories'>Latest</a>
+          <a href='/feed/stories'>News</a>
         </li>
 
         {/* <li>
@@ -30,7 +30,7 @@ const BottomNav = () => {
           <a href='/shop'>shop</a>
         </li> */}
         <li>
-          <a href='/dashboard/'>Dashboard</a>
+          <a href='/dashboard/home'>Dashboard</a>
         </li>
       </ul>
     </div>
