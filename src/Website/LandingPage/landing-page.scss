@@ -174,26 +174,25 @@
 }
 
 .shop-container {
-  height: 80vh;
+  height: 70vh;
   width: 100%;
-  background-color: black;
-
-  color: white;
+  // background-color: black;
+  background-color: rgba(245, 243, 243, 0.945);
+  color: black;
   overflow: hidden;
-  margin-bottom: 50px;
+  // margin-bottom: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
 
   a {
-    color: white;
+    color: black;
     text-decoration: none;
-    text-align: left;
+    text-align: right;
     width: 90%;
     // background-color: red;
-    margin-top: 10px;
     h2 {
-      font-weight: 100;
+      font-weight: 300;
 
       &:hover {
         text-decoration: underline 1px;
@@ -202,20 +201,35 @@
   }
 
   .product-wrapper {
+    margin-top: 10px;
     width: 90%;
-    height: 80%;
+    height: 90%;
     display: flex;
     // background-color: red;
     // flex-direction: column;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 
     .product {
       height: 400px;
-      width: 250px;
+      width: 300px;
       // background-color: red;
       border-radius: 10px;
+      position: relative;
+
+      &:hover {
+        -webkit-box-shadow: 0px 10px 13px -7px #ffffff,
+          5px 5px 15px 5px rgba(255, 255, 255, 0);
+        box-shadow: 0px 10px 13px -7px #000000,
+          5px 5px 15px 5px rgba(255, 255, 255, 0);
+
+        span {
+          // display: block;
+          display: flex;
+          flex-direction: column;
+        }
+      }
 
       img {
         border-radius: 10px;
@@ -223,6 +237,110 @@
         width: 100%;
         object-fit: cover;
         // display: none;
+      }
+      span {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        height: 30%;
+        background-color: $black;
+        color: white;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.matches-container {
+  height: 55vh;
+  display: flex;
+  background-color: rgba(245, 243, 243, 0.945);
+  // align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+
+  > span {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 10px;
+    // background-color: red;
+  }
+  .matches-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+
+    .match {
+      height: 350px;
+      width: 300px;
+      background-color: white;
+      color: $black;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      // justify-content: baseline;
+
+      &:hover {
+        -webkit-box-shadow: 0px 10px 13px -7px #000000,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+      }
+
+      .date-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // background-color: red;
+        // align-self: baseline;
+      }
+      .team-logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+        flex: 2;
+
+        img {
+          height: 70px;
+          width: 70px;
+          object-fit: contain;
+        }
+
+        span {
+          background-color: $black;
+          color: white;
+          font-size: 2rem;
+          font-weight: 800;
+          padding: 5px;
+          border-radius: 10px;
+        }
+      }
+      .teams {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 90%;
+
+        span {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+        }
+        button {
+          border-radius: 30px;
+        }
       }
     }
   }

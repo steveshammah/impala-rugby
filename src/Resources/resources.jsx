@@ -45,6 +45,11 @@ import ladiesCelebration from "./images/ladies-team/ladies-celebration.jpg";
 import rilSponsorPhoto from "./images/mens-team/ril-sponsor-photo.jpg";
 import swaras from "./images/mens-team/swaras.jpg";
 import ladiesRun from "./images/ladies-team/ladies-running.jpg";
+import hoodieRed from "./images/hoodie.jpg";
+import hoodieBlack from "./images/hoodie-black.jpg";
+import eatRugby from "./images/eat_sleep_rugby.jpg";
+
+// Products
 
 // Logo
 export const logos = {
@@ -56,6 +61,9 @@ export const logos = {
 };
 
 export const photos = {
+  hoodieBlack,
+  hoodieRed,
+  eatRugby,
   impalaBamboo,
   impalaBlaze,
   impalaBlazeSunny,
