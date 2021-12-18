@@ -1,8 +1,8 @@
-import Banner from "./Banner";
-import LandingSection from "./LandingSection";
-import MatchesContainer from "./MatchesContainer";
-import MoreStories from "./MoreStories";
-import ShopContainer from "./ShopContainer";
+import Banner from "./LandingPage/Banner";
+import LandingSection from "./LandingPage/LandingSection";
+import MatchesContainer from "./LandingPage/MatchesContainer";
+import MoreStories from "./LandingPage/MoreStories";
+import ShopContainer from "./LandingPage/ShopContainer";
 import "./website.scss";
 // import ArticlesContext from "../contexts/articles-context";
 

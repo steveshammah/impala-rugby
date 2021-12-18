@@ -67,7 +67,10 @@ const StoryPage = ({ match }) => {
           <div className='author-image'>
             <img src={logos.impalaLogo1} alt='' />
             <strong>{article.author}</strong>
-            <i className='author-meta'>{article.created}</i>
+            {/* UTC time conversion to string */}
+            <i className='author-meta'>
+              {new Date(article.created).toUTCString().slice(0, 16)}
+            </i>
           </div>
         </div>
         <div className='story-container'>

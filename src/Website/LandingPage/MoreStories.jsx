@@ -1,22 +1,32 @@
-import React from "react";
-
-const style = {
-  height: "80vh",
-  backgroundColor: "black",
-  backgroundAttachment: "fixed",
-  color: "white",
-  overflow: "hidden",
-  cursor: "pointer",
-  marginBottom: "50px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
+import { photos } from "../../resources/resources";
+import "./landing-page.scss";
 
 const MoreStories = () => {
   return (
-    <div className='editors-pick' style={style}>
+    <div className='editors-pick'>
       <h2>Editor's Pick</h2>
+
+      <div className='picksWrapper'>
+        <div className='picks'>
+          <img src={photos.oscarOsir} alt='' />
+          <h2>Osir Appointed Head Coach</h2>
+        </div>
+
+        <div className='picks'>
+          <img src={photos.physio} alt='' />
+          <h2>Physio Update</h2>
+        </div>
+
+        <div className='picks'>
+          <img src={photos.onsomu} alt='' />
+          <h2>Transfer Update</h2>
+        </div>
+
+        <div className='picks'>
+          <img src={photos.teamPhoto2} alt='' />
+          <h2>Kenya Cup Returns</h2>
+        </div>
+      </div>
     </div>
   );
 };

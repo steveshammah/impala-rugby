@@ -3,7 +3,7 @@
 .feeds-home {
   // background-color: $mainColor;
   color: $black;
-  width: 100vw;
+  // width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -26,12 +26,39 @@
     // width: 100%;
     cursor: pointer;
 
-    h2 {
-      width: 100%;
-      font-size: 2.4rem;
-      font-weight: 500;
-      text-indent: 50px;
-      color: $black;
+    .feeds-nav {
+      width: 95%;
+
+      h2 {
+        width: 100%;
+        font-size: 2.4rem;
+        font-weight: 500;
+        // text-indent: 50px;
+        color: $black;
+      }
+
+      ul {
+        width: 35%;
+        // background-color: red;
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+
+        li {
+          a {
+            text-decoration: none;
+            color: $mainColor;
+          }
+
+          &.active {
+            border-bottom: 1px solid $defaultRed;
+
+            a {
+              color: $black;
+            }
+          }
+        }
+      }
     }
 
     .feeds-section {

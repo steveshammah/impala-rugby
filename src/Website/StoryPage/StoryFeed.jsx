@@ -1,32 +1,45 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { articlesContext } from "../../contexts/articles-context";
 import "./stories.scss";
 
 const StoryFeed = () => {
   const { articles, BASE_URL } = useContext(articlesContext);
+  const [activeLink, setActiveLink] = useState("Latest");
   return (
     <div className='feeds-home'>
       <div className='feeds-container'>
         <div className='feeds-nav'>
           <h2>Latest Stories</h2>
           <ul>
-            <li>
-              <a href=''>Latest</a>
+            <li
+              className={activeLink === "Latest" && "active"}
+              onClick={() => setActiveLink("Latest")}>
+              <a href='#'>Latest</a>
             </li>
-            <li>
-              <a href=''>Men</a>
+            <li
+              className={activeLink === "Men" && "active"}
+              onClick={() => setActiveLink("Men")}>
+              <a href='#'>Men</a>
             </li>
-            <li>
-              <a href=''>Women</a>
+            <li
+              className={activeLink === "Women" && "active"}
+              onClick={() => setActiveLink("Women")}>
+              <a href='#'>Women</a>
             </li>
-            <li>
-              <a href=''>Swaras</a>
+            <li
+              className={activeLink === "Swaras" && "active"}
+              onClick={() => setActiveLink("Swaras")}>
+              <a href='#'>Swaras</a>
             </li>
-            <li>
-              <a href=''>Age Grade</a>
+            <li
+              className={activeLink === "Age Grade" && "active"}
+              onClick={() => setActiveLink("Age Grade")}>
+              <a href='#'>Age Grade</a>
             </li>
-            <li>
-              <a href=''>Club</a>
+            <li
+              className={activeLink === "Club" && "active"}
+              onClick={() => setActiveLink("Club")}>
+              <a href='#'>Club</a>
             </li>
           </ul>
         </div>
