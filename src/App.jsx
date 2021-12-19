@@ -23,6 +23,7 @@ import {
 import ArticleState from "./contexts/articles-context";
 import CreateArticle from "./components/pages/Home/Articles/CreateArticle";
 import EditArticle from "./components/pages/Home/Articles/EditArticle";
+import Squads from "./Website/Squads/Squads";
 
 const App = () => {
   return (
@@ -38,11 +39,12 @@ const App = () => {
             <Route path='/' exact component={Website} />
 
             {/* Redirect all paths not defined to home page */}
-            <Route path='*'>
+            {/* <Route path='*'>
               <Redirect to='/' />
-            </Route>
+            </Route> */}
             <Route path='/feed/stories' component={StoryFeed} />
             <Route path='/stories/:id' component={StoryPage} />
+            <Route path='/squads' component={Squads} />
 
             <div className='dashboard-home'>
               <TeamState className='dashboard-container'>

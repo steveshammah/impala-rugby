@@ -1,0 +1,132 @@
+@import "../../global.scss";
+
+.squad-container {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $black;
+  color: $mainColor;
+
+  > h2 {
+    height: 30vh;
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+
+  .join-banner {
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $defaultRed;
+    margin-bottom: 30px;
+
+    h2 {
+      font-weight: 700;
+      font-size: 1.6rem;
+      width: 150px;
+    }
+
+    .banner-text {
+      height: 90%;
+      width: 250px;
+      //   background-color: lime;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+
+      h3 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.6rem;
+      }
+
+      button {
+        width: 200px;
+        border: 2px solid black;
+        color: white;
+        background-color: $black;
+      }
+    }
+  }
+
+  .squad-nav {
+    height: 50px;
+    width: 50%;
+    border: 3px solid $defaultRed;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      list-style: none;
+
+      li {
+        font-size: 1.2rem;
+        border-right: 3px solid $defaultRed;
+        height: 100%;
+        flex: 1;
+        padding: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+          background-color: $defaultRed;
+          a {
+            color: white;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: $mainColor;
+        }
+      }
+    }
+  }
+  .squad-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: $light;
+    padding: 10px;
+    width: 80%;
+
+    .member {
+      height: 300px;
+      width: 200px;
+      margin: 10px;
+      cursor: pointer;
+
+      img {
+        height: 80%;
+        width: 100%;
+        object-fit: fill;
+      }
+
+      span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        h5 {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ const StoryBox = () => {
           </div>
         </Link>
       ))}
-      ;
+
       <a href='/feed/stories'>
         <Button variant='contained' className='btn'>
           View latest news

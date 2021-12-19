@@ -38,7 +38,7 @@ header {
       align-items: center;
       height: 50px;
       background-color: $black;
-      color: white;
+      color: $mainColor;
 
       .header-leagues {
         display: flex;
@@ -79,7 +79,6 @@ header {
         // background-color: lime;
 
         li {
-          color: $mainColor;
           height: 100%;
           // background-color: #fff;
           display: flex;
@@ -95,7 +94,7 @@ header {
           }
 
           a {
-            color: $mainColor;
+            color: white;
             text-decoration: none;
             text-transform: uppercase;
             // background-color: aqua;

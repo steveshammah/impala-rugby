@@ -1,10 +1,36 @@
-import { Email, Phone, PinDrop } from "@material-ui/icons";
+import {
+  Email,
+  Facebook,
+  Instagram,
+  Phone,
+  PinDrop,
+  Twitter,
+} from "@material-ui/icons";
 import "./footer.scss";
 import { logos } from "../../resources/resources";
 
 const Footer = () => {
   return (
     <footer>
+      <div className='footer-logos'>
+        <img src={logos.resolutionLogo} alt='' />
+
+        <img src={logos.stanchartLogo} alt='' />
+
+        <img src={logos.resolutionLogo} alt='' />
+
+        <img src={logos.stanchartLogo} alt='' />
+
+        <img src={logos.resolutionLogo} alt='' />
+
+        <img src={logos.stanchartLogo} alt='' />
+
+        <img src={logos.resolutionLogo} alt='' />
+
+        <img src={logos.stanchartLogo} alt='' />
+
+        <img src={logos.stanchartLogo} alt='' />
+      </div>
       <div className='footer-list-wrapper'>
         <div className='footer-list'>
           <h2>SITEMAP</h2>
@@ -21,16 +47,7 @@ const Footer = () => {
             <li>Contact</li>
             <li>How to find us</li>
             <li>Support Forum</li>
-            <li>Jobs at Impala Club</li>
-          </ul>
-        </div>
-        <div className='footer-list'>
-          <h2>CLUB POLICIES</h2>
-          <ul>
-            <li>Privacy policy</li>
-            <li>Cookie policy</li>
-            <li>Season ticket FAQs</li>
-            <li>Membership</li>
+            <li>Jobs & Careers</li>
           </ul>
         </div>
 
@@ -51,14 +68,18 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      <div className='footer-logos'>
-        <div className='sponsor-footer'>
-          <img src={logos.resolutionLogo} alt='' />
+      <div className='socials'>
+        <ul>
+          <li>Privacy policy</li>
+          <li>Cookies</li>
+          <li>Contact Us</li>
+          <li>Terms of Use</li>
+          <li>Terms & Conditions</li>
+        </ul>
+        <div className='icons'>
+          <Instagram /> <Twitter /> <Facebook />
         </div>
-        <div className='sponsor-footer'>
-          <img src={logos.stanchartLogo} alt='' />
-        </div>
+        <span>&copy;2022 Impala Rugby</span>
       </div>
     </footer>
   );
