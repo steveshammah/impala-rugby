@@ -11,8 +11,8 @@ const Website = () => {
     <div className='website-home'>
       <LandingSection />
       <Banner />
-      <MoreStories />
       <ShopContainer />
+      <MoreStories />
       <MatchesContainer />
     </div>
   );

@@ -14,7 +14,12 @@ import StoryPage from "./Website/StoryPage/StoryPage";
 import Footer from "./Website/Footer/Footer";
 import StoryFeed from "./Website/StoryPage/StoryFeed";
 import ArticlesFeed from "./components/pages/Home/Articles/ArticlesFeed";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import ArticleState from "./contexts/articles-context";
 import CreateArticle from "./components/pages/Home/Articles/CreateArticle";
 import EditArticle from "./components/pages/Home/Articles/EditArticle";
@@ -30,8 +35,12 @@ const App = () => {
             <Route path='/login'>
               <Login />
             </Route>
-            {/* Access to all articles */}
             <Route path='/' exact component={Website} />
+
+            {/* Redirect all paths not defined to home page */}
+            <Route path='*'>
+              <Redirect to='/' />
+            </Route>
             <Route path='/feed/stories' component={StoryFeed} />
             <Route path='/stories/:id' component={StoryPage} />
 

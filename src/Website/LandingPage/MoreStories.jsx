@@ -19,7 +19,7 @@ const MoreStories = () => {
 
         <div className='picks'>
           <img src={photos.onsomu} alt='' />
-          <h2>Transfer Update</h2>
+          <h2>Transfer News</h2>
         </div>
 
         <div className='picks'>

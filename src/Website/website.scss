@@ -135,4 +135,22 @@
       }
     }
   }
+
+  .container-card {
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    color: $black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    // justify-content: baseline;
+
+    &:hover {
+      -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+  }
 }
