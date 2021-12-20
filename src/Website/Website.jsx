@@ -1,8 +1,10 @@
 import Banner from "./LandingPage/Banner";
+import CardsWrapper from "./LandingPage/CardsWrapper";
 import LandingSection from "./LandingPage/LandingSection";
 import MatchesContainer from "./LandingPage/MatchesContainer";
 import MoreStories from "./LandingPage/MoreStories";
 import ShopContainer from "./LandingPage/ShopContainer";
+
 import "./website.scss";
 // import ArticlesContext from "../contexts/articles-context";
 
@@ -11,9 +13,9 @@ const Website = () => {
     <div className='website-home'>
       <LandingSection />
       <Banner />
-      <ShopContainer />
+      <CardsWrapper items={"Shop"} />
       <MoreStories />
-      <MatchesContainer />
+      <CardsWrapper items={"Matches"} />
     </div>
   );
 };

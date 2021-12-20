@@ -25,7 +25,7 @@
       width: 100%;
       background-position: center;
       object-fit: cover;
-      opacity: 0.4;
+      opacity: 0.6;
     }
   }
   .textWrapper {
@@ -173,68 +173,108 @@
   }
 }
 
-.container-md-wrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 120%;
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  transform: translateX(10px);
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  .container-card {
-    height: 350px;
-    width: 300px;
-    background-color: white;
-    color: $black;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 3px;
-    // justify-content: baseline;
-
-    &:hover {
-      -webkit-box-shadow: 0px 10px 13px -7px #000000,
-        5px 5px 15px 5px rgba(0, 0, 0, 0);
-      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    }
-  }
-}
-.shop-container {
-  height: 60vh;
+.card-lg-container {
+  height: 55vh;
   display: flex;
   background-color: rgba(245, 243, 243, 0.945);
-  // align-items: center;
+  align-items: center;
   justify-content: space-around;
   flex-direction: column;
   width: 100%;
-  overflow-y: hidden;
   padding: 10px;
+  overflow: hidden;
 
   &::-webkit-scrollbar {
     display: none;
   }
-
-  a {
-    color: rgb(139, 136, 136);
-    text-decoration: none;
-    text-align: right;
+  .container-nav {
+    display: flex;
+    justify-content: space-between;
+    // text-align: left;
     width: 90%;
     // background-color: red;
-    h4 {
-      font-weight: 300;
-      text-transform: uppercase;
+    align-items: center;
+    height: 50px;
+
+    .nav-title {
+      display: flex;
+      align-items: center;
+
+      h2 {
+        text-transform: uppercase;
+      }
+      a {
+        color: rgb(139, 136, 136);
+        text-decoration: none;
+        padding-left: 50px;
+
+        h5 {
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+        &:hover {
+          color: black;
+          text-decoration: underline 1px $defaultRed;
+        }
+      }
     }
-    &:hover {
-      color: black;
-      text-decoration: underline 1px $defaultRed;
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      .icon {
+        padding: 5px;
+        font-size: 2rem;
+        background-color: $defaultRed;
+        margin: 2px;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:nth-child(2) {
+          background-color: white;
+        }
+      }
     }
   }
 
+  .container-md-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: auto;
+    overflow-y: scroll;
+    transition: all ease 0.8s;
+
+    scrollbar-width: none; /* Firefox */
+    // transform: translateX(100px);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .container-card {
+      width: 270px;
+      margin-right: 30px;
+      background-color: white;
+      color: $black;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 3px;
+      // justify-content: baseline;
+
+      &:hover {
+        -webkit-box-shadow: 0px 10px 13px -7px #000000,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000,
+          5px 5px 15px 5px rgba(0, 0, 0, 0);
+      }
+    }
+  }
+}
+
+// Shop Section
+.shop-container {
   .products {
     .product {
       &:hover {
@@ -275,34 +315,11 @@
   }
 }
 
+// Matches Section
 .matches-container {
-  height: 55vh;
-  display: flex;
-  background-color: rgba(245, 243, 243, 0.945);
-  // align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 100%;
-  overflow-y: hidden;
-  padding: 10px;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  > span {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 300px;
-    margin-bottom: 10px;
-    // background-color: red;
-
-    h5 {
-      font-weight: 500;
-    }
-  }
   .matches {
+    // background-color: green;
+
     .match {
       .date-details {
         flex: 1;
@@ -335,8 +352,8 @@
           color: white;
           font-size: 1.8rem;
           font-weight: 300;
-          padding: 5px;
-          border-radius: 10px;
+          padding: 3px;
+          border-radius: 6px;
         }
       }
       .teams {

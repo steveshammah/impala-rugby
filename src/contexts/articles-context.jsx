@@ -5,6 +5,7 @@ export const articlesContext = createContext();
 const ArticlesState = (props) => {
   // const initialState = {};
   const [articles, setArticles] = useState([{}]);
+  
   useEffect(() => {
     fetchArticles();
   }, []);
