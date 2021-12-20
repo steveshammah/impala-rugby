@@ -24,6 +24,7 @@ import ArticleState from "./contexts/articles-context";
 import CreateArticle from "./components/pages/Home/Articles/CreateArticle";
 import EditArticle from "./components/pages/Home/Articles/EditArticle";
 import Squads from "./Website/Squads/Squads";
+import MatchCenter from "./Website/MatchCenter/MatchCenter";
 
 const App = () => {
   return (
@@ -45,6 +46,7 @@ const App = () => {
             <Route path='/feed/stories' component={StoryFeed} />
             <Route path='/stories/:id' component={StoryPage} />
             <Route path='/squads' component={Squads} />
+            <Route path='/match-center' component={MatchCenter} />
 
             <div className='dashboard-home'>
               <TeamState className='dashboard-container'>

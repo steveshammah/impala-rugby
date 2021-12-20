@@ -24,7 +24,7 @@ const BottomNav = () => {
           <a href='/squads'>squads</a>
         </li>
         <li>
-          <a href='/fixtures'>fixtures</a>
+          <a href='/match-center'>fixtures</a>
         </li>
         {/* <li>
           <a href='/shop'>shop</a>
