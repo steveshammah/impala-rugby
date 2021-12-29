@@ -1,17 +1,17 @@
 import { Container } from "@mui/material";
 
-const MemberSettings = ({ member, activeWindow }) => {
-  const display = activeWindow === "settings" ? true : false;
+const MemberGallery = ({ member, activeWindow }) => {
+  const display = activeWindow === "gallery" ? true : false;
 
   return (
     <Container maxWidth='sm'>
       <section
         className='memberSettings'
         style={{ display: display ? "block" : "none" }}>
-        <h2>MemberSettings</h2>
+        <h2>Member Gallery</h2>
       </section>
     </Container>
   );
 };
 
-export default MemberSettings;
+export default MemberGallery;

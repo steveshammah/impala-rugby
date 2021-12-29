@@ -5,8 +5,6 @@ const Fixtures = ({ activeTeam }) => {
   const [teamFixtures, setTeamFixtures] = useState([{}]);
   useEffect(() => {
     const team = allFixtures[`${activeTeam}`];
-    console.log(allFixtures["Men"]);
-    console.log(team);
     setTeamFixtures(team);
     return () => {};
   }, [activeTeam]);

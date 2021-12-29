@@ -1,13 +1,14 @@
 import { Button } from "@mui/material";
-import { fixtures, logos } from "../../resources/resources";
+import { allFixtures, logos } from "../../resources/resources";
 import "./landing-page.scss";
 
 const MatchesContainer = ({ position }) => {
+  const { Men } = allFixtures;
   return (
     <div
       className='matches container-md-wrapper'
       style={{ transform: `translateX(${position}%)` }}>
-      {fixtures.map((match) => {
+      {Men.map((match) => {
         return (
           <div className='match container-card'>
             <div className='date-details'>

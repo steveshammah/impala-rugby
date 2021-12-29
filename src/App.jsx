@@ -18,7 +18,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import ArticleState from "./contexts/articles-context";
 import CreateArticle from "./components/pages/Home/Articles/CreateArticle";
@@ -47,16 +47,14 @@ const App = () => {
             <Route path='/stories/:id' component={StoryPage} />
             <Route path='/squads' component={Squads} />
             <Route path='/match-center' component={MatchCenter} />
+            <Route path='/players-and-staff/:id' component={MemberProfile} />
 
-            <div className='dashboard-home'>
-              <TeamState className='dashboard-container'>
+            <TeamState className='dashboard-container'>
+              <div className='dashboard-home'>
                 <SideBar />
                 <Route path='/dashboard/home/' exact component={Home} />
                 <Route path='/teams/:name' component={Teams} />
-                <Route
-                  path='/players-and-staff/:id'
-                  component={MemberProfile}
-                />
+
                 {/* <Route path='/financials/:name' component={Finacials} /> */}
                 <Route path='/dashboard/articles/' component={ArticlesFeed} />
                 <Route
@@ -69,8 +67,8 @@ const App = () => {
                 <Route path='/podcasts' component={VideoContainer} />
                 <Route path='/socials' component={VideoContainer} />
                 <Route path='/tournament/:league' component={VideoContainer} />
-              </TeamState>
-            </div>
+              </div>
+            </TeamState>
 
             <Route path='/about' component={Website}></Route>
           </Switch>

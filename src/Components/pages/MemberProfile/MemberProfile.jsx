@@ -1,9 +1,10 @@
 import "./profile.scss";
-import { useContext, useState } from "react";
+import { useState } from "react";
+import { team } from "../../../resources/resources";
 
-import { teamContext } from "../../../contexts/team-context";
+// import { teamContext } from "../../../contexts/team-context";
 import MemberAbout from "./MemberAbout";
-import MemberSettings from "./MemberSettings";
+import MemberGallery from "./MemberGallery";
 import MemberStatistics from "./MemberStatistics";
 
 import {
@@ -20,15 +21,18 @@ import {
 } from "@mui/material";
 
 const MemberProfile = ({ match }) => {
-  const { team } = useContext(teamContext);
+  // const { team } = useContext(teamContext);
   const [value, setValue] = useState(0);
   const [activeWindow, setActiveWindow] = useState("about");
+
+
   const member = team.filter(
     (user) => user.id === parseInt(match.params.id)
   )[0];
+ 
 
   return (
-    <section className='member-profile container'>
+    <section className='member-profile'>
       {/* Member Cover Photo */}
       <div className='profile-image'>
         <img src={member.img} alt='' />
@@ -74,7 +78,7 @@ const MemberProfile = ({ match }) => {
               <BottomNavigation
                 showLabels
                 value={value}
-                onChange={(event, newValue) => {
+                onChange={(newValue) => {
                   setValue(newValue);
                 }}>
                 <BottomNavigationAction
@@ -86,8 +90,8 @@ const MemberProfile = ({ match }) => {
                   label='Statistics'
                 />
                 <BottomNavigationAction
-                  onClick={() => setActiveWindow("settings")}
-                  label='Settings'
+                  onClick={() => setActiveWindow("gallery")}
+                  label='Gallery'
                 />
               </BottomNavigation>
             </Box>
@@ -95,7 +99,7 @@ const MemberProfile = ({ match }) => {
 
           <Container maxWidth='lg'>
             <MemberAbout member={member} activeWindow={activeWindow} />
-            <MemberSettings member={member} activeWindow={activeWindow} />
+            <MemberGallery member={member} activeWindow={activeWindow} />
             <MemberStatistics member={member} activeWindow={activeWindow} />
           </Container>
         </div>

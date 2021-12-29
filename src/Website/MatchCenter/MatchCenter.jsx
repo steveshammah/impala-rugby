@@ -4,26 +4,24 @@ import "./matchcenter.scss";
 import Results from "./Results";
 import Standings from "./Standings";
 
+const teams = ["Men", "Women", "Swaras"];
+const navList = ["Fixtures", "Results", "Standings"];
+
+
 const MatchCenter = () => {
   const [activeContainer, setActiveContainer] = useState("Fixtures");
   const [activeTeam, setActiveTeam] = useState("Men");
-  const teams = ["Men", "Women", "Swaras"];
-  console.log("Active Team", activeTeam);
-  const navList = ["Fixtures", "Results", "Standings"];
+
   const teamSelect = useRef();
-  useEffect(() => {
-    console.log("Rerender");
-  }, [activeTeam]);
+  useEffect(() => {}, [activeTeam]);
 
   const handleClick = (name) => {
     setActiveContainer(name);
-    // console.log(teamSelect.current.value);
   };
 
   const handleChange = (e) => {
-    const team = e.target.value;
-    console.log("Team on change", teamSelect.current.value);
-    setActiveTeam(teamSelect.current.value);
+    const team = teamSelect.current.value;
+    setActiveTeam(team);
   };
   return (
     <div className='match-center'>

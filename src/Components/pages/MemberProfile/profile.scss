@@ -5,12 +5,15 @@
   // padding: 10px;
   // justify-content: space-between;
   // align-items: center;
+  width: 100%;
   .profile-image {
     height: 70vh;
     // background-color: aqua;
     background-attachment: fixed;
+    // background-position: top;
     img {
       object-fit: cover;
+      object-position: top;
       height: 100%;
       width: 100%;
     }
@@ -19,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: -100px;
-    height: 100vh;
+    height: 80vh;
     z-index: 10;
     padding: 20px;
 
@@ -68,79 +71,46 @@
               border-bottom-right-radius: 6px;
             }
           }
-
-          img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 50%;
-            object-fit: contain;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-          }
-        }
-
-        .profile-meta {
-          height: 40%;
-          width: 95%;
-          background-color: $blueDark;
-          padding: 5px;
-          color: $mainColor;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          // align-items: center;
-
-          h3 {
-            font-weight: 700;
-            text-transform: capitalize;
-            margin: 0;
-            color: $defaultRed;
-          }
-          h5 {
-            text-transform: capitalize;
-            letter-spacing: 1.6px;
-          }
-        }
-        .member-dates {
-          margin-top: 20px;
-          display: flex;
-          justify-content: space-between;
-          width: 90%;
-          font-size: 0.9rem;
-        }
-        button {
-          padding: 7px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          background-color: $defaultRed;
-          color: white;
-          outline: none;
-          border: none;
-          border-radius: 6px;
-          width: 100px;
-          cursor: pointer;
-
-          .icon {
-            color: white;
-          }
         }
       }
+      img {
+        object-position: top;
+      }
 
-      .profile-scripture {
+      .profile-meta {
         margin-top: 10px;
-        padding: 10px;
-        flex: 1;
-        border: 1px solid $black;
-        -webkit-box-shadow: 0px 10px 13px -7px #000000,
-          5px 5px 15px 5px rgba(0, 0, 0, 0);
-        box-shadow: 0px 10px 13px -7px #000000,
-          5px 5px 15px 5px rgba(0, 0, 0, 0);
+        height: 40%;
+        // width: 95%;
+        background-color: $black;
+        padding: 5px;
+        color: $mainColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        // align-items: center;
 
-        p {
+        h5 {
           font-size: 1rem;
+          font-weight: 700;
+          text-transform: capitalize;
+          margin: 0;
+          letter-spacing: 1.6px;
+        }
+
+        .profile-scripture {
+          margin-top: 10px;
+          padding: 10px;
+          flex: 1;
+          color: $defaultRed;
+          border: 1px solid $black;
+          -webkit-box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+          box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+          p {
+            font-size: 1rem;
+          }
         }
       }
     }
