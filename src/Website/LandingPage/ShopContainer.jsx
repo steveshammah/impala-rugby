@@ -8,7 +8,7 @@ const ShopContainer = ({ position }) => {
   return (
     <div
       className='products container-md-wrapper'
-      style={{ transform: `translateX(${position}px)` }}>
+      style={{ transform: `translateX(${position}%)` }}>
       {products.map((product) => {
         return (
           <div className='product container-card'>

@@ -6,7 +6,7 @@ const MatchesContainer = ({ position }) => {
   return (
     <div
       className='matches container-md-wrapper'
-      style={{ transform: `translateX(${position}px)` }}>
+      style={{ transform: `translateX(${position}%)` }}>
       {fixtures.map((match) => {
         return (
           <div className='match container-card'>

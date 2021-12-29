@@ -1,13 +1,22 @@
-import React from "react";
-import { fixtures, logos } from "../../resources/resources";
+import { useEffect, useState } from "react";
+import {  allFixtures, logos } from "../../resources/resources";
 
-const Fixtures = () => {
-  const toBePlayed = fixtures.filter((fixture) => !fixture.played);
+const Fixtures = ({ activeTeam }) => {
+  const [teamFixtures, setTeamFixtures] = useState([{}]);
+  useEffect(() => {
+    const team = allFixtures[`${activeTeam}`];
+    console.log(allFixtures["Men"]);
+    console.log(team);
+    setTeamFixtures(team);
+    return () => {};
+  }, [activeTeam]);
+
+
+  const toBePlayed = teamFixtures.filter((fixture) => !fixture.played);
   return (
     <div className='fixtures-center'>
       <div className='fixtures-wrapper'>
         <div className='monthly-fixtures'>
-          <h2>DECEMBER 2021</h2>
           {toBePlayed.map((fixture) => (
             <div className='fixture-container'>
               <div className='date-details'>
@@ -17,7 +26,7 @@ const Fixtures = () => {
                 <div className='teams'>
                   <div className='team-details'>
                     <h4>Impala</h4>
-                    <img src={logos.impalaLogo1} alt='' />
+                    <img src={logos.impalaLogo} alt='' />
                   </div>
                   <span>{fixture.kickOff}</span>
 
@@ -35,7 +44,7 @@ const Fixtures = () => {
                   </div>
                   <span>{fixture.kickOff}</span>
                   <div className='team-details'>
-                    <img src={logos.impalaLogo1} alt='' />
+                    <img src={logos.impalaLogo} alt='' />
 
                     <h4>Impala</h4>
                   </div>

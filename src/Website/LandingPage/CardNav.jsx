@@ -14,11 +14,11 @@ const CardNav = ({ item, changePosition }) => {
       <div className='nav-btn'>
         <ArrowBackIosNewIcon
           className='icon'
-          onClick={() => changePosition("+")}
+          onClick={() => changePosition("-")}
         />
         <ArrowForwardIosIcon
           className='icon'
-          onClick={() => changePosition("-")}
+          onClick={() => changePosition("+")}
         />
       </div>
     </div>

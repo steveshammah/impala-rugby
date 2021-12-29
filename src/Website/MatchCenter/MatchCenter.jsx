@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Fixtures from "./Fixtures";
 import "./matchcenter.scss";
 import Results from "./Results";
@@ -6,18 +6,32 @@ import Standings from "./Standings";
 
 const MatchCenter = () => {
   const [activeContainer, setActiveContainer] = useState("Fixtures");
+  const [activeTeam, setActiveTeam] = useState("Men");
+  const teams = ["Men", "Women", "Swaras"];
+  console.log("Active Team", activeTeam);
   const navList = ["Fixtures", "Results", "Standings"];
+  const teamSelect = useRef();
+  useEffect(() => {
+    console.log("Rerender");
+  }, [activeTeam]);
 
   const handleClick = (name) => {
     setActiveContainer(name);
+    // console.log(teamSelect.current.value);
+  };
+
+  const handleChange = (e) => {
+    const team = e.target.value;
+    console.log("Team on change", teamSelect.current.value);
+    setActiveTeam(teamSelect.current.value);
   };
   return (
     <div className='match-center'>
       <div className='match-center-nav'>
-        <select name='team' id=''>
-          <option value='MEN'>Men</option>
-          <option value='WOMEN'>Women</option>
-          <option value='SWARAS'>Swaras</option>
+        <select name='team' id='' ref={teamSelect} onClick={handleChange}>
+          {teams.map((team) => (
+            <option value={team}>{team}</option>
+          ))}
         </select>
         <ul>
           {navList.map((link) => (
@@ -30,9 +44,9 @@ const MatchCenter = () => {
         </ul>
       </div>
 
-      {activeContainer === "Fixtures" && <Fixtures />}
-      {activeContainer === "Results" && <Results />}
-      {activeContainer === "Standings" && <Standings />}
+      {activeContainer === "Fixtures" && <Fixtures activeTeam={activeTeam} />}
+      {activeContainer === "Results" && <Results activeTeam={activeTeam} />}
+      {activeContainer === "Standings" && <Standings activeTeam={activeTeam} />}
     </div>
   );
 };

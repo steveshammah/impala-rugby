@@ -26,9 +26,9 @@ const BottomNav = () => {
         <li>
           <a href='/match-center'>fixtures</a>
         </li>
-        {/* <li>
+        <li>
           <a href='/shop'>shop</a>
-        </li> */}
+        </li>
         <li>
           <a href='/dashboard/home'>Dashboard</a>
         </li>

@@ -6,12 +6,12 @@ import ShopContainer from "./ShopContainer";
 const CardsWrapper = ({ items }) => {
   const [container, setContainer] = useState();
   const [count, setCount] = useState(0);
-  const [position, setPosition] = useState(900);
+  const [position, setPosition] = useState(30);
   const shop = { title: "Shop", linkName: "Enter Shop", url: "shop" };
   const match = {
     title: "Match",
     linkName: "All Matches",
-    url: "matchcenter",
+    url: "match-center",
   };
 
   useEffect(() => {
@@ -19,18 +19,17 @@ const CardsWrapper = ({ items }) => {
   }, []);
 
   const changePosition = (direction) => {
-    if (direction === "-") {
-      console.log("Position", position);
-      console.log("Count", count);
-
+    if (direction === "+") {
       setCount(count < 2 && count + 1);
-      count === 2 ? setPosition(900) : setPosition(position - 1400);
+      count === 2
+        ? setPosition(-60)
+        : setPosition(position === -60 ? 30 : position - 30);
     } else {
-      console.log("Count", count);
-      console.log("Position", position);
       setCount(count < 2 && count + 1);
 
-      count === 2 ? setPosition(900) : setPosition(position + 1400);
+      count === 2
+        ? setPosition(30)
+        : setPosition(position === -30 ? 30 : position - 30);
     }
   };
   return (

@@ -342,9 +342,10 @@
         flex: 2;
 
         img {
-          height: 70px;
-          width: 70px;
+          height: 60px;
+          width: 60px;
           object-fit: contain;
+          border-radius: 50%;
         }
 
         span {
