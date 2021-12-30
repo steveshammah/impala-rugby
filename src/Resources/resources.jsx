@@ -630,7 +630,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
-    img: physio,
+    img: impalaLogo,
   },
   {
     id: 36,
@@ -645,6 +645,20 @@ export const team = [
     phone: "795058630",
     email: "shammahranks@gmail.com",
     img: impalaLogo,
+  },
+  {
+    id: 37,
+    name: "Chris Makachia",
+    daysTrained: 4,
+    daysMissed: 6,
+    appearances: 400,
+    dob: "1/1/1988",
+    year: 1988,
+    team: "Coaches",
+    socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+    phone: "795058630",
+    email: "shammahranks@gmail.com",
+    img: physio,
   },
 ];
 
