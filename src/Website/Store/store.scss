@@ -1,6 +1,170 @@
 @import "../../global.scss";
 
+.store-container {
+  height: auto;
+  //   background-color: red;
+  width: 100%;
 
-.store-container{
-    height: 100vw;
+  header {
+    height: 60px;
+    background-color: $black;
+    width: 90%;
+    margin: auto;
+    position: sticky;
+    top: 70px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      li {
+        display: flex;
+        align-items: center;
+        // text-transform: uppercase;
+
+        a {
+          color: $mainColor;
+          text-decoration: none;
+        }
+
+        &.active {
+          text-decoration: underline 2px solid;
+          a {
+            color: $defaultRed;
+          }
+        }
+      }
+    }
+  }
+
+  .store-sticker {
+    height: 500px;
+    background-color: $black;
+    background-attachment: fixed;
+    position: relative;
+
+    button {
+      height: 40px;
+      width: 150px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      border: none;
+      outline: none;
+      background-color: white;
+
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: $mainColor;
+      }
+    }
+  }
+  .shop-container {
+    padding-top: 70px;
+    padding-left: 30px;
+    height: auto;
+    // background-color: aqua;
+
+    .product-wrapper {
+      margin-bottom: 10px;
+      position: relative;
+      height: 450px;
+      transition: all ease-in-out 0.5s;
+      //   background-color: red;
+      overflow-y: hidden;
+
+      .category-container {
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .product {
+          height: 400px;
+          width: 250px;
+          margin: 20px;
+          cursor: pointer;
+
+          img {
+            height: 70%;
+            width: 100%;
+            object-fit: fill;
+          }
+
+          .product-details {
+            background-color: $black;
+            color: $mainColor;
+            padding: 5px;
+
+            button {
+              background-color: $defaultRed;
+              color: white;
+              outline: none;
+              border: none;
+              padding: 5px;
+              margin: 2px;
+
+              a {
+                color: white;
+                text-decoration: none;
+              }
+            }
+
+            span {
+              font-size: small;
+              margin-left: 5px;
+            }
+
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+
+      .more {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        bottom: 0px;
+        right: 120px;
+        cursor: pointer;
+
+        h5 {
+          font-size: 1rem;
+        }
+
+        .icon {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+.product-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+
+  .image-container {
+    height: 100%;
+    flex: 2;
+  
+
+    img {
+      height: 100%;
+      width: 80%;
+      object-fit: fill;
+    }
+  }
+
+  .product-details {
+    flex: 1;
+  }
 }

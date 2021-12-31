@@ -19,6 +19,7 @@ const CardsWrapper = ({ items }) => {
   }, []);
 
   const changePosition = (direction) => {
+    // Get direction and current position and build logic
     if (direction === "+") {
       setCount(count < 2 && count + 1);
       count === 2

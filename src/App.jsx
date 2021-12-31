@@ -9,6 +9,7 @@ import Teams from "./components/pages/Teams/Teams";
 import TeamState from "./contexts/team-context";
 import MemberProfile from "./components/pages/MemberProfile/MemberProfile";
 import Store from "./Website/Store/Store";
+import Product from "./Website/Store/Product";
 import Website from "./Website/Website";
 import Header from "./Website/Header/Header";
 import StoryPage from "./Website/StoryPage/StoryPage";
@@ -49,7 +50,8 @@ const App = () => {
             <Route path='/squads' component={Squads} />
             <Route path='/match-center' component={MatchCenter} />
             <Route path='/players-and-staff/:id' component={MemberProfile} />
-            <Route path='/shop' component={Store} />
+            <Route path='/shop' exact component={Store} />
+            <Route path='/shop/:id' component={Product} />
 
             <TeamState className='dashboard-container'>
               <div className='dashboard-home'>
