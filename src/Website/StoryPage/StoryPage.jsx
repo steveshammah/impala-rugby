@@ -90,7 +90,7 @@ const StoryPage = ({ match }) => {
           </div>
 
           <div className='more-stories'>
-            <h3>Latest</h3>
+            <h3>More Stories</h3>
             <div className='news-widgets-container'>
               {moreStories.map((article) => (
                 <a

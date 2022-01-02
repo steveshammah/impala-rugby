@@ -260,6 +260,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 20px;
 
@@ -274,16 +275,18 @@
 
     .story-author {
       height: 100%;
-      // display: flex;
+      width: 50%;
+      display: flex;
+      // background-color: red;
       // overflow: hidden;
       font-size: 1rem;
 
       .author-image {
         height: 100%;
-        width: 55%;
+        width: 100%;
         display: flex;
         align-items: center;
-        // justify-content: space-between;
+        justify-content: space-around;
         // width: 50%;
         // font-size: small;
 
@@ -309,7 +312,8 @@
 
     .story-container {
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       //   background-color: $mainColor;
       width: 100%;
 
@@ -334,22 +338,25 @@
       }
 
       .more-stories {
-        flex: 1;
-        // height: 100px;
-        // width: 100%;
+        // flex: 1;
+        height: 500px;
+        width: 80%;
         display: flex;
-        align-items: flex-start;
+        // align-items: flex-start;
         justify-content: space-between;
         flex-direction: column;
         margin-bottom: 5px;
-        -webkit-box-shadow: 0px 10px 13px -7px #000000,
-          5px 5px 15px 5px rgba(0, 0, 0, 0);
-        box-shadow: 0px 10px 13px -7px #000000,
-          5px 5px 15px 5px rgba(0, 0, 0, 0);
+        // -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        //   5px 5px 15px 5px rgba(0, 0, 0, 0);
+        // box-shadow: 0px 10px 13px -7px #000000,
+        //   5px 5px 15px 5px rgba(0, 0, 0, 0);
         font-weight: 400;
         padding: 10px;
         cursor: pointer;
-        background-color: $mainColor;
+        // background-color: $mainColor;
+        border-right: 10px solid $defaultRed;
+        border-top: 10px solid $defaultRed;
+        border-radius: 0px 30px 0px 0px;
 
         h3 {
           font-weight: 700;
@@ -357,50 +364,64 @@
         }
 
         .news-widgets-container {
-          max-height: 600px;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          // background-color: aqua;
+          // height: 600px;
+          // display: none;
           overflow-y: scroll;
           //   -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
-          width: 95%;
+          // width: 200px;
 
           &::-webkit-scrollbar {
             display: none;
           }
 
           .latest-news-widget {
+            height: 200px;
+            width: 250px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: space-around;
+            flex-wrap: wrap;
             text-decoration: none;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            font-size: 2rem;
+            margin: 5px;
             color: $black;
-            width: 100%;
+            transition: all ease-in-out;
+            // width: 100%;
             -webkit-box-shadow: 0px 10px 13px -7px #000000,
               5px 5px 15px 5px rgba(0, 0, 0, 0);
             box-shadow: 0px 10px 13px -7px #000000,
               5px 5px 15px 5px rgba(0, 0, 0, 0);
 
             &:hover {
+              background-color: $black;
+
               color: $defaultRed;
             }
 
             img {
-              flex: 1;
-              height: 80px;
-              width: 80px;
+              // flex: 1;
+              height: 70%;
+              width: 100%;
               //   border-radius: 50%;
               object-fit: fill;
             }
 
             i {
-              flex: 3;
+              // flex: 3;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
               padding: 5px;
-              height: 90%;
-              font-size: 1rem;
+              // height: 90%;
+              font-size: 1.2rem;
             }
           }
         }
