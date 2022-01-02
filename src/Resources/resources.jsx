@@ -59,9 +59,39 @@ import ladiesCelebration from "./images/ladies-team/ladies-celebration.jpg";
 import rilSponsorPhoto from "./images/mens-team/ril-sponsor-photo.jpg";
 import swaras from "./images/mens-team/swaras.jpg";
 import ladiesRun from "./images/ladies-team/ladies-running.jpg";
-import hoodieRed from "./images/hoodie.jpg";
-import hoodieBlack from "./images/hoodie-black.jpg";
-import eatRugby from "./images/eat_sleep_rugby.jpg";
+
+// Products Imports
+import awayKitReplicaW from "./images/merchandise/away kit-replica-w-2016.jpg";
+import awayKitReplicaM from "./images/merchandise/away kit-replica-m-2016.jpg";
+import billGithinji from "./images/merchandise/bill-githinji-branded.jpg";
+import mato from "./images/merchandise/mato-branded.jpg";
+import spanner from "./images/merchandise/spanner-hoodie.jpg";
+import damimaKitted from "./images/merchandise/damima-branded.jpg";
+
+import wristBands from "./images/merchandise/bands.jpg";
+import jacketKids from "./images/merchandise/jacket-kids.jpg";
+import trackSuitBlueKids from "./images/merchandise/track-suit-navy-blue-kids.jpg";
+import trackSuitBlackWomen from "./images/merchandise/track-suit-black-ladies.jpg";
+import trackJacket from "./images/merchandise/track-jacket-red.jpg";
+import hoodieBlackMin from "./images/merchandise/hoodie-black-minimal.jpg";
+import travelHat from "./images/merchandise/hat-travel.jpg";
+import capOpenRed from "./images/merchandise/cap-open.jpg";
+import hoodieGrey from "./images/merchandise/hoodie-grey.JPG";
+import hoodieBlack from "./images/merchandise/hoodie-black.JPG";
+import hoodieRed from "./images/merchandise/hoodie-red.JPG";
+import eatRugbyTshirt from "./images/merchandise/eat_sleep_rugby.jpg";
+import floodies2016 from "./images/merchandise/tshirt-black-floodies.jpg";
+import pinkTshirtWomen from "./images/merchandise/tshirt-pink-women.jpg";
+import blackTshirtWomen from "./images/merchandise/tshirt-black-women.jpg";
+import blackTshirtMen from "./images/merchandise/tshirt-black-men.jpg";
+import redTshirtMen from "./images/merchandise/tshirt-red-men.jpg";
+import blackSweatShirtMen from "./images/merchandise/sweat-shirt-black-men.jpg";
+import waterBottleWhite from "./images/merchandise/water-bottle-white.jpg";
+import poloTshirtRed from "./images/merchandise/polo-tshirt-red.jpg";
+import hoodiesRedMinW from "./images/merchandise/hoodie-red-minimal-women.jpg";
+import hoodiesRedMinM from "./images/merchandise/hoodie-red-minimal-men.jpg";
+import cupWhite from "./images/merchandise/cup-ceramic-white.jpg";
+import cupMetallic from "./images/merchandise/cup-metallic.jpg";
 
 // Products
 
@@ -88,9 +118,11 @@ export const logos = {
 };
 
 export const photos = {
+  billGithinji,
+  spanner,
+  mato,
   hoodieBlack,
   hoodieRed,
-  eatRugby,
   impalaBamboo,
   impalaBlaze,
   impalaBlazeSunny,
@@ -940,103 +972,263 @@ export const salesData = [
 export const products = [
   {
     id: 0,
-    name: "Hoodie - Red",
-    img: hoodieRed,
-    price: "3500",
+    name: "Away Kit - 2016",
+    img: awayKitReplicaW,
+    price: "4500",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Women's Away Kit - Replica Jersey",
     inStock: true,
+    category: ["women", "kit", "away"],
   },
   {
     id: 1,
-    name: "Hoodie - Black",
+    name: "Hoodie Black",
     img: hoodieBlack,
-    price: "3500",
+    price: "4000",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Black Hoodie Elite Fan - Black",
     inStock: true,
+    category: ["Hoodies", "men", "women"],
   },
   {
     id: 2,
-    name: " Eat - Sleep - Rugby - Repeat - Black",
-    img: eatRugby,
-    price: "1000",
+    name: "Jacket Kids",
+    img: jacketKids,
+    price: "1500",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Short Sleeved black & red - Kids",
     inStock: true,
+    category: ["kids", "jacket"],
   },
   {
     id: 3,
-    name: "Hoodie - Red",
-    img: hoodieRed,
+    name: "Track Suit",
+    img: trackSuitBlueKids,
     price: "3500",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Track Suit Kids - Navy Blue",
     inStock: true,
+    category: ["kids", "jacket"],
   },
   {
     id: 4,
-    name: "Hoodie - Black",
-    img: hoodieBlack,
-    price: "3500",
+    name: "Wrist Bands",
+    img: wristBands,
+    price: "100",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Wrist Bands - Red & White",
     inStock: true,
+    category: ["accessories", "wrist bands"],
   },
   {
     id: 5,
-    name: "Hoodie - Red",
-    img: hoodieRed,
+    name: "Track Suit Women",
+    img: trackSuitBlackWomen,
     price: "3500",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Track Suit Women - Blue",
     inStock: true,
+    category: ["women", "track suit"],
   },
   {
     id: 6,
-    name: "Hoodie - Black",
-    img: hoodieBlack,
-    price: "3500",
+    name: "Training Jacket - Red",
+    img: trackJacket,
+    price: "2000",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Men's training jacket - Red",
     inStock: true,
+    category: ["men", "track suit", "jacket"],
   },
   {
     id: 7,
-    name: " Eat - Sleep - Rugby - Repeat - Black",
-    img: eatRugby,
-    price: "1000",
+    name: "Sweat Shirt - Black",
+    img: blackSweatShirtMen,
+    price: "2200",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Sweat Shirt - Black",
     inStock: true,
+    category: ["men", "sweat-shirt"],
   },
   {
     id: 8,
-    name: "Hoodie - Red",
-    img: hoodieRed,
+    name: "Hoodie Min Black",
+    img: hoodieBlackMin,
     price: "3500",
     sizes: ["S", "L", "XL"],
-    price: "3500",
-    details: "Men's Nike Black Away Jersey",
+    details: "Hoodie Min - Black",
     inStock: true,
+    category: ["men", "track suit", "jacket", "women"],
   },
   {
     id: 9,
-    name: "Hoodie - Black",
-    img: hoodieBlack,
+    name: "Polo T-Shirt",
+    img: poloTshirtRed,
     price: "3500",
     sizes: ["S", "L", "XL"],
-    price: "3500",
+    details: "Polo T-Shirt - Red",
+    inStock: true,
+    category: ["men", "tshirt", "jacket"],
+  },
+  {
+    id: 10,
+    name: "Water Bottle",
+    img: waterBottleWhite,
+    price: "700",
+    sizes: ["S", "L", "XL"],
+    details: "Metallic water bottle - White",
+    inStock: true,
+    category: ["accessories", "water bottle"],
+  },
+  {
+    id: 11,
+    name: "Travel Hat",
+    img: travelHat,
+    price: "700",
+    sizes: ["S", "L", "XL"],
+    details: "Travel Hat - Beige",
+    inStock: true,
+    category: ["accessories", "hat", "cap"],
+  },
+  {
+    id: 12,
+    name: "T-Shirt Women",
+    img: pinkTshirtWomen,
+    price: "700",
+    sizes: ["S", "L", "XL"],
+    details: "T-Shirt Women - Pink",
+    inStock: true,
+    category: ["tshirt", "women"],
+  },
+  {
+    id: 13,
+    name: "T-Shirt Women",
+    img: blackTshirtWomen,
+    price: "700",
+    sizes: ["S", "L", "XL"],
+    details: "T-Shirt Women - Black",
+    inStock: true,
+    category: ["tshirt", "women"],
+  },
+  {
+    id: 14,
+    name: "T-Shirt Men",
+    img: blackTshirtMen,
+    price: "700",
+    sizes: ["S", "L", "XL"],
+    details: "T-Shirt Men - Black",
+    inStock: true,
+    category: ["tshirt", "men"],
+  },
+  {
+    id: 15,
+    name: "Cap Open - Red",
+    img: capOpenRed,
+    price: "1100",
+    sizes: ["S", "L", "XL"],
+    details: "Cap Open - Red",
+    inStock: true,
+    category: ["cap", "accessories"],
+  },
+  {
+    id: 16,
+    name: "Hoodie Elite Fan - Grey",
+    img: hoodieGrey,
+    price: "1100",
+    sizes: ["S", "L", "XL"],
+    details: "Hoodie Elite Fan - Grey",
+    inStock: true,
+    category: ["hoodie", "men", "women"],
+  },
+  {
+    id: 16,
+    name: "T-Shirt Floodies - Back",
+    img: floodies2016,
+    price: "1100",
+    sizes: ["S", "L", "XL"],
+    details: "T-Shirt Floodies - Back",
+    inStock: true,
+    category: ["tshirt", "floodies", "men"],
+  },
+  {
+    id: 17,
+    name: " Eat - Sleep - Rugby - Repeat - Black",
+    img: eatRugbyTshirt,
+    price: "1000",
+    sizes: ["S", "L", "XL"],
     details: "Men's Nike Black Away Jersey",
     inStock: true,
+    category: ["men", "floodies", "tshirt"],
+  },
+  {
+    id: 18,
+    name: "Hoodie Min Red",
+    img: hoodiesRedMinM,
+    price: "3500",
+    sizes: ["S", "L", "XL"],
+    details: "Hoodie Min Black - Men",
+    inStock: true,
+    category: ["men", "track suit", "jacket", "men"],
+  },
+  {
+    id: 18,
+    name: "Hoodie Min Red",
+    img: hoodiesRedMinW,
+    price: "3500",
+    sizes: ["S", "L", "XL"],
+    details: "Hoodie Min Black - Women",
+    inStock: true,
+    category: ["track suit", "jacket", "women"],
+  },
+  {
+    id: 19,
+    name: "Away Kit 2016",
+    img: awayKitReplicaM,
+    price: "3500",
+    sizes: ["S", "L", "XL"],
+    details: "Away Kit 2016 Replica - Men",
+    inStock: true,
+    category: ["men", "track suit", "jacket"],
+  },
+  {
+    id: 20,
+    name: "Red T-Shirt",
+    img: damimaKitted,
+    price: "3500",
+    sizes: ["S", "L", "XL"],
+    details: "Red T-Shirt - Women",
+    inStock: true,
+    category: ["women", "track suit", "tshirt"],
+  },
+  {
+    id: 21,
+    name: "Cup Ceramic",
+    img: cupWhite,
+    price: "1100",
+    sizes: ["S", "L", "XL"],
+    details: "Cup Ceramic",
+    inStock: true,
+    category: ["accessories", "cup"],
+  },
+  {
+    id: 22,
+    name: "Cup Metallic",
+    img: cupMetallic,
+    price: "1600",
+    sizes: ["S", "L", "XL"],
+    details: "Cup Metallic",
+    inStock: true,
+    category: ["accessories", "cup"],
+  },
+  {
+    id: 23,
+    name: "T-Shirt - Red ",
+    img: redTshirtMen,
+    price: "3500",
+    sizes: ["S", "L", "XL"],
+    details: "T-Shirt - Red",
+    inStock: true,
+    category: ["tshirt", "men"],
   },
 ];
 

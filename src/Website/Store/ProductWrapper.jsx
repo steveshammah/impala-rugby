@@ -6,12 +6,11 @@ const ProductWrapper = ({ title, products }) => {
   useEffect(() => {}, [open]);
 
   const handleClick = () => {
-    console.log("Open", open);
-
+    // console.log("Open", open);
     setOpen(!open);
   };
   return (
-    <div className='product-wrapper' style={{ height: open && "900px" }}>
+    <div className='product-wrapper' style={{ height: open && "800px" }}>
       <h2>{title}</h2>
       <div className='category-container'>
         {products.map((product) => {

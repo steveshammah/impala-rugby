@@ -15,7 +15,9 @@ const ShopContainer = ({ position }) => {
             <img src={product.img} alt='' />
             <span>
               {product.name}
-              <Button variant='outlined'>Shop Now</Button>
+              <Button variant='outlined'>
+                <a href={`/shop/${product.id}`}>Shop Now</a>
+              </Button>
             </span>
           </div>
         );

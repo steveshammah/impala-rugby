@@ -50,11 +50,17 @@ const MatchesContainer = ({ position }) => {
                 </span>
               )}
               {match.played ? (
-                <Button variant='outlined'>Match Review</Button>
+                <Button variant='outlined'>
+                  <a href={`/match-review/${match.id}`}> Match Review</a>
+                </Button>
               ) : match.home ? (
-                <Button variant='outlined'>Tickets</Button>
+                <Button variant='outlined'>
+                  <a href={`/tickets/${match.id}`}>Tickets</a>
+                </Button>
               ) : (
-                <Button variant='outlined'>Match Center</Button>
+                <Button variant='outlined'>
+                  <a href={`/match-center/${match.id}`}> Match Center</a>
+                </Button>
               )}
             </div>
           </div>

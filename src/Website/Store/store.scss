@@ -8,7 +8,7 @@
   header {
     height: 60px;
     background-color: $black;
-    width: 90%;
+    width: 60%;
     margin: auto;
     position: sticky;
     top: 70px;
@@ -45,7 +45,33 @@
     background-color: $black;
     background-attachment: fixed;
     position: relative;
+    overflow-y: hidden;
 
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+      //   object-position: top;
+      position: absolute;
+      opacity: 0.5;
+
+      //   &:nth-child(1) {
+      //     left: 0;
+      //     top: 0px;
+      //     transform: rotate(-45deg);
+      //   }
+      //   &:nth-child(2) {
+      //     right: 120px;
+      //     top: 50px;
+
+      //     transform: rotate(45deg);
+      //   }
+      //   &:nth-child(3) {
+      //     top: 0px;
+      //     left: 50%;
+      //     transform: translate(-50%, 20%);
+      //   }
+    }
     button {
       height: 40px;
       width: 150px;
@@ -54,7 +80,7 @@
       left: 10px;
       border: none;
       outline: none;
-      background-color: white;
+      background-color: $defaultRed;
 
       a {
         text-decoration: none;
@@ -72,10 +98,14 @@
     .product-wrapper {
       margin-bottom: 10px;
       position: relative;
-      height: 450px;
+      height: 400px;
       transition: all ease-in-out 0.5s;
       //   background-color: red;
       overflow-y: hidden;
+
+      h2 {
+        text-transform: uppercase;
+      }
 
       .category-container {
         height: auto;
@@ -84,9 +114,9 @@
         overflow: hidden;
 
         .product {
-          height: 400px;
+          height: 380px;
           width: 250px;
-          margin: 20px;
+          margin: 0px 20px;
           cursor: pointer;
 
           img {
@@ -155,7 +185,6 @@
   .image-container {
     height: 100%;
     flex: 2;
-  
 
     img {
       height: 100%;
