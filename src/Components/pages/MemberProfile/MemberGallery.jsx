@@ -1,16 +1,33 @@
-import { Container } from "@mui/material";
+import { useState } from "react";
+import ImageViewer from "./ImageViewer";
 
 const MemberGallery = ({ member, activeWindow }) => {
   const display = activeWindow === "gallery" ? true : false;
 
+  const [activeImage, setActiveImage] = useState("");
+
+  const handleClick = (img) => {
+    setActiveImage(img);
+  };
+
   return (
-    <Container maxWidth='sm'>
-      <section
-        className='memberSettings'
-        style={{ display: display ? "block" : "none" }}>
-        <h2>Member Gallery</h2>
-      </section>
-    </Container>
+    <section
+      className='images-container'
+      style={{ display: display ? "block" : "none" }}>
+      <h2>Member Gallery</h2>
+
+      <div className='images-wrapper'>
+        <div className='image'>
+          <img
+            src={member.img}
+            alt=''
+            onClick={() => handleClick(member.img)}
+          />
+        </div>
+      </div>
+
+      <ImageViewer img={activeImage} setActiveImage={setActiveImage} />
+    </section>
   );
 };
 
