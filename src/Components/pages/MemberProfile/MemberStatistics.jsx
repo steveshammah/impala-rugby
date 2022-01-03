@@ -1,12 +1,11 @@
-import { Container } from "@mui/material";
 
 const MemberStatistics = ({ member, activeWindow }) => {
   const display = activeWindow === "statistics" ? true : false;
 
   return (
-    <Container maxWidth='sm'>
+ 
       <section
-        className='meber-statistics'
+        className='member-statistics'
         style={{ display: display ? "block" : "none" }}>
         <h2>Statistics</h2>
         <div className='stats-wrapper'>
@@ -31,7 +30,7 @@ const MemberStatistics = ({ member, activeWindow }) => {
           </div>
         </div>
       </section>
-    </Container>
+
   );
 };
 

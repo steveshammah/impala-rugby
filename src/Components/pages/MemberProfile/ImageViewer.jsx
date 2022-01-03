@@ -1,5 +1,3 @@
-import React from "react";
-// import {Ar} from '@material-ui/icons'
 
 const ImageViewer = ({ img, setActiveImage }) => {
   return (

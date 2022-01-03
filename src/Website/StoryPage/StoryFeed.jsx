@@ -4,6 +4,7 @@ import "./stories.scss";
 
 const StoryFeed = () => {
   const { articles, BASE_URL } = useContext(articlesContext);
+  console.log("Articles feed: ", articles);
   const [activeLink, setActiveLink] = useState("Latest");
   return (
     <div className='feeds-home'>
@@ -47,7 +48,8 @@ const StoryFeed = () => {
           {articles.map((article) => (
             <a href={`/stories/${article.id}`} className='feed-story'>
               <div className='feed-img-wrapper'>
-                <img src={BASE_URL + article.image_1} alt='' />
+                <img src={article.image_1} alt='' />
+                {/* <img src={BASE_URL + article.image_1} alt='' /> */}
               </div>
               <div className='feed-story-text'>
                 <span className='story-type'>{article.type}</span>

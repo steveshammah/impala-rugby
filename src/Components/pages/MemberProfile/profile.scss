@@ -181,6 +181,20 @@
           }
         }
       }
+      .member-statistics {
+        color: red;
+        h2 {
+          font-size: 2rem;
+        }
+
+        .stats-wrapper {
+          // display: flex;
+        }
+        .training-stats {
+          display: flex;
+          color: rebeccapurple;
+        }
+      }
 
       .images-container {
         // background-color: red;

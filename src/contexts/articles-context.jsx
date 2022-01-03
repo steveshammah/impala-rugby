@@ -1,13 +1,19 @@
 import { createContext, useState, useEffect } from "react";
+import { localArticles } from "../resources/resources";
 
 export const articlesContext = createContext();
 
 const ArticlesState = (props) => {
   // const initialState = {};
   const [articles, setArticles] = useState([{}]);
-  
+
   useEffect(() => {
     fetchArticles();
+    if (!fetchArticles()) {
+      setArticles(localArticles);
+    }
+    // console.log("articles: ", articles);
+    // eslint-disable-next-line
   }, []);
 
   // BASE URL
@@ -38,6 +44,9 @@ const ArticlesState = (props) => {
       const data = await response.json();
       setArticles(data);
     } catch (error) {
+      setArticles(localArticles);
+      console.log("Data:", articles);
+
       console.log("Error Occured:", error);
     }
   };
