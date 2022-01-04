@@ -25,6 +25,7 @@ const StoryPage = ({ match }) => {
   }, []);
 
   // Call to DB
+  // eslint-disable-next-line
   const fetchArticle = async () => {
     const url = `${"BASE_URL"}/api/articles/${storyId}`;
     try {

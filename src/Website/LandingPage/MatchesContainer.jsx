@@ -51,7 +51,7 @@ const MatchesContainer = ({ position }) => {
               )}
               {match.played ? (
                 <Button variant='outlined'>
-                  <a href={`/match-review/${match.id}`}> Match Review</a>
+                  <a href={`/match-review/Men/${match.id}`}> Match Review</a>
                 </Button>
               ) : match.home ? (
                 <Button variant='outlined'>

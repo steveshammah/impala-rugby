@@ -1277,7 +1277,7 @@ export const allFixtures = {
       logo: kabrasLogo,
       day: "Saturday 19 December 2021",
       kickOff: "15:00",
-      home: false,
+      home: true,
       venue: "Impala Grounds",
       scores: "28-12",
       played: true,
@@ -1379,7 +1379,7 @@ export const allFixtures = {
       venue: "RFUEA",
       scores: "9-62",
       played: true,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
 
     {
@@ -1392,7 +1392,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "58-12",
       played: true,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
     {
       id: 3,
@@ -1404,7 +1404,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "54-5",
       played: true,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
     {
       id: 4,
@@ -1416,7 +1416,7 @@ export const allFixtures = {
       venue: "Ask Showground, Ruaraka",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
     {
       id: 5,
@@ -1428,7 +1428,7 @@ export const allFixtures = {
       venue: "Show Grounds, Jamhuri",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
     {
       id: 6,
@@ -1440,7 +1440,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
     {
       id: 7,
@@ -1452,7 +1452,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
     {
       id: 8,
@@ -1464,7 +1464,7 @@ export const allFixtures = {
       venue: "Blad Bin",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Womens League",
     },
   ],
   Swaras: [
@@ -1478,7 +1478,7 @@ export const allFixtures = {
       venue: "RFUEA",
       scores: "28-12",
       played: true,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 1,
@@ -1490,7 +1490,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "12-28",
       played: true,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 2,
@@ -1502,7 +1502,7 @@ export const allFixtures = {
       venue: "Strathmore",
       scores: "28-12",
       played: true,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 3,
@@ -1514,7 +1514,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "28-12",
       played: true,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 4,
@@ -1526,7 +1526,7 @@ export const allFixtures = {
       venue: "Den, Ruaraka",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 5,
@@ -1538,7 +1538,7 @@ export const allFixtures = {
       venue: "Show Grounds, Jamhuri",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 6,
@@ -1550,7 +1550,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 7,
@@ -1562,7 +1562,7 @@ export const allFixtures = {
       venue: "Impala Grounds",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
     {
       id: 8,
@@ -1574,7 +1574,7 @@ export const allFixtures = {
       venue: "Ngong Racecourse",
       scores: "",
       played: false,
-      league: "Kenya Cup",
+      league: "Nationwide",
     },
   ],
 };
@@ -1698,7 +1698,8 @@ export const localArticles = [
   {
     id: 9,
     title: "Injury Update.",
-    headline: "The team physio ives update on injury list and possible return.",
+    headline:
+      "The team physio gives update on injury list and possible return.",
     image_1: physio,
     image_2: solido,
     type: "update",

@@ -28,6 +28,7 @@ import CreateArticle from "./components/pages/Home/Articles/CreateArticle";
 import EditArticle from "./components/pages/Home/Articles/EditArticle";
 import Squads from "./Website/Squads/Squads";
 import MatchCenter from "./Website/MatchCenter/MatchCenter";
+import MatchReview from "./Website/MatchCenter/MatchReview";
 
 const App = () => {
   return (
@@ -50,6 +51,7 @@ const App = () => {
             <Route path='/stories/:id' component={StoryPage} />
             <Route path='/squads' component={Squads} />
             <Route path='/match-center' component={MatchCenter} />
+            <Route path='/match-review/:team/:id' component={MatchReview} />
             <Route path='/players-and-staff/:id' component={MemberProfile} />
             <Route path='/shop' exact component={Store} />
             <Route path='/shop/:id' component={Product} />

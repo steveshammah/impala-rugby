@@ -8,10 +8,10 @@ const ArticlesState = (props) => {
   const [articles, setArticles] = useState([{}]);
 
   useEffect(() => {
-    fetchArticles();
-    if (!fetchArticles()) {
-      setArticles(localArticles);
-    }
+    // fetchArticles();
+
+    setArticles(localArticles);
+
     // console.log("articles: ", articles);
     // eslint-disable-next-line
   }, []);
