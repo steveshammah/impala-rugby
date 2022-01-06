@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { allFixtures, logos } from "../../resources/resources";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+
 import "./matchcenter.scss";
 
 const MatchReview = ({ match }) => {
   const [activeMatch, setActiveMatch] = useState({});
+  const [position, setPosition] = useState(0);
   const team = match.params.team;
   const matchId = match.params.id;
 
@@ -14,6 +18,19 @@ const MatchReview = ({ match }) => {
     setActiveMatch(...matchToReview);
     return () => {};
   }, []);
+
+  const changePosition = (direction) => {
+    // Get direction and current position and build logic
+    if (direction === "+") {
+      // setCount(count < 2 && count + 1);
+
+      setPosition(0);
+    } else {
+      // setCount(count < 2 && count + 1);
+
+      setPosition(-40);
+    }
+  };
 
   return (
     <div className='match-review-container'>
@@ -61,28 +78,60 @@ const MatchReview = ({ match }) => {
           </div>
         </div>
         <div className='match-stats'>
-          <h2>Match Stats</h2>
-          <div className='match-report'>
-            <div className='report-card'>
-              <h3>Scores</h3>
-              <h5>Impala:{12} </h5>
-              <h5>{activeMatch.opponent}: 28</h5>
+          <div className='title-nav'>
+            <h2>Match Stats</h2>
+
+            <div className='nav-btn'>
+              <ArrowBackIosNewIcon
+                className='icon'
+                onClick={() => changePosition("+")}
+              />
+              <ArrowForwardIosIcon
+                className='icon'
+                onClick={() => changePosition("-")}
+              />
             </div>
-            <div className='report-card'>
-              <h3>Trys</h3>
-              <h5>Impala: 2 </h5>
-              <h5>{activeMatch.opponent}: 5</h5>
-            </div>
-            <div className='report-card'>
-              <h3>Conversions</h3>
-              <h5>Impala: 2/2</h5>
-              <h5>{activeMatch.opponent} 3/5</h5>
-            </div>
-            <div className='report-card'>
-              <h3>Penalties</h3>
-              <h5>Impala: 4/6 </h5>
-              <h5>{activeMatch.opponent}: 1/3</h5>
-            </div>
+          </div>
+
+          <div
+            className='match-report'
+            style={{ transform: `translateX(${position}%)` }}>
+            {activeMatch.played ? (
+              <>
+                <div className='report-card'>
+                  <h3>Scores</h3>
+                  <h5>Impala:{12} </h5>
+                  <h5>{activeMatch.opponent}: 28</h5>
+                </div>
+                <div className='report-card'>
+                  <h3>Trys</h3>
+                  <h5>Impala: 2 </h5>
+                  <h5>{activeMatch.opponent}: 5</h5>
+                </div>
+                <div className='report-card'>
+                  <h3>Conversions</h3>
+                  <h5>Impala: 2/2</h5>
+                  <h5>{activeMatch.opponent} 3/5</h5>
+                </div>
+                <div className='report-card'>
+                  <h3>Penalties</h3>
+                  <h5>Impala: 4/6 </h5>
+                  <h5>{activeMatch.opponent}: 1/3</h5>
+                </div>
+
+                <div className='report-card'>
+                  <h3>Venue</h3>
+                  <h5>{activeMatch.venue}</h5>
+                </div>
+              </>
+            ) : (
+              <div className='report-card'>
+                <h3>Not Played</h3>
+
+                {/* <h5>Match</h5> */}
+                <h5>Stats Unavailable</h5>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -91,26 +140,32 @@ const MatchReview = ({ match }) => {
           <h3>Impala</h3>
           <div className='starting'>
             {/* <h4> Line Ups</h4> */}
-            <ol>
-              <li>Loose Head Prop</li>
-              <li>Hooker</li>
-              <li>Tight Head Prop</li>
-              <li>Second Row</li>
-              <li>Second Row</li>
-              <li>Blind Side Flanker</li>
-              <li>Open Side Flanker</li>
-              <li>8th Man</li>
-              <li>Scrum Half</li>
-              <li>Fly Half</li>
-              <li>Left Wing</li>
-              <li>Inside Center</li>
-              <li>Outside Center</li>
-              <li>Right Wing</li>
-              <li>Full Back</li>
-            </ol>
+            {activeMatch.played ? (
+              <ol style={{ display: activeMatch.played ? "block" : "none" }}>
+                <li>Loose Head Prop</li>
+                <li>Hooker</li>
+                <li>Tight Head Prop</li>
+                <li>Second Row</li>
+                <li>Second Row</li>
+                <li>Blind Side Flanker</li>
+                <li>Open Side Flanker</li>
+                <li>8th Man</li>
+                <li>Scrum Half</li>
+                <li>Fly Half</li>
+                <li>Left Wing</li>
+                <li>Inside Center</li>
+                <li>Outside Center</li>
+                <li>Right Wing</li>
+                <li>Full Back</li>
+              </ol>
+            ) : (
+              <h2>Line Ups will be available on match day</h2>
+            )}
           </div>
 
-          <div className='substitutes'>
+          <div
+            className='substitutes'
+            style={{ display: activeMatch.played ? "block" : "none" }}>
             <h4>Substitutes</h4>
             <ol start={16}>
               <li>Front Row</li>
@@ -128,26 +183,32 @@ const MatchReview = ({ match }) => {
           <h3>{activeMatch.opponent}</h3>
           <div className='starting'>
             {/* <h4> Line Ups</h4> */}
-            <ol>
-              <li>Loose Head Prop</li>
-              <li>Hooker</li>
-              <li>Tight Head Prop</li>
-              <li>Second Row</li>
-              <li>Second Row</li>
-              <li>Blind Side Flanker</li>
-              <li>Open Side Flanker</li>
-              <li>8th Man</li>
-              <li>Scrum Half</li>
-              <li>Fly Half</li>
-              <li>Left Wing</li>
-              <li>Inside Center</li>
-              <li>Outside Center</li>
-              <li>Right Wing</li>
-              <li>Full Back</li>
-            </ol>
+            {activeMatch.played ? (
+              <ol style={{ display: activeMatch.played ? "block" : "none" }}>
+                <li>Loose Head Prop</li>
+                <li>Hooker</li>
+                <li>Tight Head Prop</li>
+                <li>Second Row</li>
+                <li>Second Row</li>
+                <li>Blind Side Flanker</li>
+                <li>Open Side Flanker</li>
+                <li>8th Man</li>
+                <li>Scrum Half</li>
+                <li>Fly Half</li>
+                <li>Left Wing</li>
+                <li>Inside Center</li>
+                <li>Outside Center</li>
+                <li>Right Wing</li>
+                <li>Full Back</li>
+              </ol>
+            ) : (
+              <h2>Line Ups will be available on match day</h2>
+            )}
           </div>
 
-          <div className='substitutes'>
+          <div
+            className='substitutes'
+            style={{ display: activeMatch.played ? "block" : "none" }}>
             <h4>Substitutes</h4>
             <ol start={16}>
               <li>Front Row</li>

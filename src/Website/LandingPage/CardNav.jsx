@@ -1,5 +1,7 @@
+// import {ArrowForwardIosIcon, ArrowBackIosNewIcon} from "@mui/icons-material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+
 import "./landing-page.scss";
 
 const CardNav = ({ item, changePosition }) => {

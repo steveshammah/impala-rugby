@@ -49,19 +49,11 @@ const MatchesContainer = ({ position }) => {
                   <h3>Impala</h3>
                 </span>
               )}
-              {match.played ? (
+              {
                 <Button variant='outlined'>
                   <a href={`/match-review/Men/${match.id}`}> Match Review</a>
                 </Button>
-              ) : match.home ? (
-                <Button variant='outlined'>
-                  <a href={`/tickets/${match.id}`}>Tickets</a>
-                </Button>
-              ) : (
-                <Button variant='outlined'>
-                  <a href={`/match-center/${match.id}`}> Match Center</a>
-                </Button>
-              )}
+              }
             </div>
           </div>
         );

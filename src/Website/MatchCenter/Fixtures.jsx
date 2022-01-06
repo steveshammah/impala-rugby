@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {  allFixtures, logos } from "../../resources/resources";
+import { allFixtures, logos } from "../../resources/resources";
 
 const Fixtures = ({ activeTeam }) => {
   const [teamFixtures, setTeamFixtures] = useState([{}]);
@@ -8,7 +8,6 @@ const Fixtures = ({ activeTeam }) => {
     setTeamFixtures(team);
     return () => {};
   }, [activeTeam]);
-
 
   const toBePlayed = teamFixtures.filter((fixture) => !fixture.played);
   return (
@@ -48,6 +47,9 @@ const Fixtures = ({ activeTeam }) => {
                   </div>
                 </div>
               )}
+              <a href={`/match-review/${activeTeam}/${fixture.id}`}>
+                Match Review
+              </a>
             </div>
           ))}
         </div>

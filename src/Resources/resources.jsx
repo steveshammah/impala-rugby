@@ -1611,8 +1611,7 @@ export const localArticles = [
   {
     id: 2,
     title: "Osir appointed head coach",
-    headline:
-      "After seasons of being part of the technical bench, Double O gets to manage the team.",
+    headline: "Double O gets to manage the team afters seasons of involvement.",
     image_1: oscarOsir,
     image_2: teamPhoto2,
     type: "news",

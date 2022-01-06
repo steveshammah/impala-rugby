@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { allFixtures, logos } from "../../resources/resources";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Results = ({ activeTeam }) => {
   const [teamFixtures, setTeamFixtures] = useState([{}]);
@@ -48,6 +49,9 @@ const Results = ({ activeTeam }) => {
                   </div>
                 </div>
               )}
+              <a href={`/match-review/${activeTeam}/${fixture.id}`}>
+                Match Review
+              </a>
             </div>
           ))}
         </div>
