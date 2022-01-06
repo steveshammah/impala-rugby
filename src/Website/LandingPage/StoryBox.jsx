@@ -12,7 +12,9 @@ const StoryBox = () => {
           className='home-story'
           key={article.id}
           to={`/stories/${article.id}`}>
-          <img src={article.image_1} alt='' />
+          <div className='img-container'>
+            <img src={article.image_1} alt='' />
+          </div>{" "}
           {/* <img src={BASE_URL + article.image_1} alt='' /> */}
           <div className='home-story-text'>
             <span className='story-type'>{article.type}</span>

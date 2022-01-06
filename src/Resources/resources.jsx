@@ -59,6 +59,8 @@ import ladiesCelebration from "./images/ladies-team/ladies-celebration.jpg";
 import rilSponsorPhoto from "./images/mens-team/ril-sponsor-photo.jpg";
 import swaras from "./images/mens-team/swaras.jpg";
 import ladiesRun from "./images/ladies-team/ladies-running.jpg";
+import coding from "./images/anonymous-hacker.jpg";
+import situationControl from "./images/situation.jpeg";
 
 // Products Imports
 import awayKitReplicaW from "./images/merchandise/away kit-replica-w-2016.jpg";
@@ -67,7 +69,6 @@ import billGithinji from "./images/merchandise/bill-githinji-branded.jpg";
 import mato from "./images/merchandise/mato-branded.jpg";
 import spanner from "./images/merchandise/spanner-hoodie.jpg";
 import damimaKitted from "./images/merchandise/damima-branded.jpg";
-
 import wristBands from "./images/merchandise/bands.jpg";
 import jacketKids from "./images/merchandise/jacket-kids.jpg";
 import trackSuitBlueKids from "./images/merchandise/track-suit-navy-blue-kids.jpg";
@@ -118,6 +119,7 @@ export const logos = {
 };
 
 export const photos = {
+  coding,
   billGithinji,
   spanner,
   mato,
@@ -1585,7 +1587,7 @@ export const localArticles = [
     title: "Kenya Cup Is Back",
     headline: "The off-season complete. Match day 1 confirmed!",
     image_1: teamPhoto,
-    image_2: onsomuNondies,
+    image_2: anderson,
     type: "news",
     tags: "Kenya Cup, Off-Season",
     author: "Impala Media",
@@ -1613,7 +1615,7 @@ export const localArticles = [
     title: "Osir appointed head coach",
     headline: "Double O gets to manage the team afters seasons of involvement.",
     image_1: oscarOsir,
-    image_2: teamPhoto2,
+    image_2: kimakwa,
     type: "news",
     tags: "Kenya Cup, Oscar Osir, Mitch Ocholla",
     created: "2021-12-19T00:13:58.804188+03:00",
@@ -1624,10 +1626,10 @@ export const localArticles = [
     id: 3,
     title: "Mitch Ocholla leaves.",
     headline: "Mitch ocholla heads back to Nakuru.",
-    image_1: teamPhoto,
+    image_1: teamPhoto2,
     image_2: oscarOsir,
     type: "update",
-    tags: "Kenya Cup, Oscar Osir, Mitch Otcholla",
+    tags: "Kenya Cup, Oscar Osir, Mitch Ocholla",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1646,10 +1648,10 @@ export const localArticles = [
   },
   {
     id: 5,
-    title: "Resolution Now.",
-    headline: "Resolution insurance renew sponsorship with Impala.",
-    image_1: rilSponsorPhoto,
-    image_2: resolutionLogo,
+    title: "Young Boks now Gazelles",
+    headline: "From the academy to the big league.",
+    image_1: cosy,
+    image_2: spice,
     type: "article",
     tags: "Resolution Insurance, Sponsorships, C2C, Club",
     created: "2021-12-19T00:13:58.804188+03:00",
@@ -1730,7 +1732,7 @@ export const localArticles = [
     tags: "Resolution Insurance, Sponsorships, C2C",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
-    author: "Sponsor",
+    author: "Impala Media",
   },
   {
     id: 12,
@@ -1742,10 +1744,22 @@ export const localArticles = [
     tags: "Kenya 15s, Kenya Cup, Academy,",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
-    author: "Sponsor",
+    author: "Impala Media",
   },
   {
     id: 13,
+    title: "Transfer News.",
+    headline: "2021 transfer window: Onsomu to leave the club",
+    image_1: onsomuNondies,
+    image_2: onsomu,
+    type: "news",
+    tags: "Samson Onsomu, Kenya Cup, Sam Kimakwa",
+    created: "2021-12-19T00:13:58.804188+03:00",
+    posted: "2021-12-19T00:13:58.804188+03:00",
+    author: "Impala Media",
+  },
+  {
+    id: 14,
     title: "Catch up with Christabel Lindo.",
     headline:
       "Impala ladies among squad that flew in this morning from tokyo olympics.",
@@ -1755,6 +1769,19 @@ export const localArticles = [
     tags: "Ladies, Tokyo Olympics, Tata, Christabel",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
-    author: "Sponsor",
+    author: "Impala Media",
+  },
+  {
+    id: 15,
+    title: "Website Built by Steve Shammah.",
+    headline:
+      "Frontend of the application. Data used may be random and/or inaccurate. ",
+    image_1: coding,
+    image_2: situationControl,
+    type: "feature",
+    tags: "React Js, Django, Javascript, Python, API, Fullstack Development",
+    created: "2022-01-07T00:22:25.804188+03:00",
+    posted: "2022-01-07T00:22:25.804188+03:00",
+    author: "Steve Shammah",
   },
 ];

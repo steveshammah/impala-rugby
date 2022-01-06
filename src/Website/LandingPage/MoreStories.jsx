@@ -7,25 +7,25 @@ const MoreStories = () => {
       <h2>Editor's Pick</h2>
 
       <div className='picksWrapper'>
-        <div className='picks'>
+        <a href='/stories/15' className='picks'>
+          <img src={photos.coding} alt='' />
+          <h2>Website Details</h2>
+        </a>
+        
+        <a href='/stories/2' className='picks'>
           <img src={photos.oscarOsir} alt='' />
           <h2>Osir Appointed Head Coach</h2>
-        </div>
+        </a>
 
-        <div className='picks'>
-          <img src={photos.physio} alt='' />
-          <h2>Physio Update</h2>
-        </div>
-
-        <div className='picks'>
+        <a href='/stories/13' className='picks'>
           <img src={photos.onsomu} alt='' />
           <h2>Transfer News</h2>
-        </div>
+        </a>
 
-        <div className='picks'>
-          <img src={photos.teamPhoto2} alt='' />
-          <h2>Kenya Cup Returns</h2>
-        </div>
+        <a href='/stories/10' className='picks'>
+          <img src={photos.rilSponsorPhoto} alt='' />
+          <h2>Resolution Now</h2>
+        </a>
       </div>
     </div>
   );

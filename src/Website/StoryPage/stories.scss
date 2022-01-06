@@ -182,7 +182,7 @@
     position: relative;
 
     .story-title-container {
-      color: white;
+      // color: white;
       font-size: 2.4rem;
       height: auto;
       //   max-width: 70%;
@@ -200,6 +200,7 @@
         padding: 10px;
         text-align: center;
         text-transform: uppercase;
+        color: $mainColor;
 
         // background-color: aqua;
       }
@@ -228,8 +229,9 @@
     }
 
     &.small {
-      height: 400px;
-      width: 70%;
+      height: 500px;
+      width: 90%;
+      margin: 20px;
       // display: none;
     }
 
@@ -240,11 +242,20 @@
       position: absolute;
       top: 0;
       left: 0;
+      transition: all ease-in-out 10s !important;
       background-image: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.5)
+        rgba(33, 37, 41, 0.6),
+        rgba(33, 37, 41, 0.6)
       );
+
+      &:hover {
+        background-image: linear-gradient(
+          to bottom,
+          rgba(33, 37, 41, 0.2),
+          rgba(33, 37, 41, 0.4)
+        );
+      }
     }
 
     img {
@@ -263,6 +274,7 @@
     align-items: center;
     width: 100%;
     padding: 20px;
+    // background-color: lime;
 
     .story-tags {
       // background-color: aqua;
@@ -271,6 +283,11 @@
       align-items: center;
       // justify-content: space-between;
       margin-bottom: 10px;
+
+      i {
+        cursor: pointer;
+        color: $defaultRed;
+      }
     }
 
     .story-author {
@@ -280,6 +297,7 @@
       // background-color: red;
       // overflow: hidden;
       font-size: 1rem;
+      cursor: pointer;
 
       .author-image {
         height: 100%;
@@ -314,38 +332,44 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      //   background-color: $mainColor;
-      width: 100%;
+      // background-color: $mainColor;
+      width: 60%;
 
       .story-content {
         flex: 3;
-        padding: 20px;
+        padding: 10px;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: flex-start;
 
+        // width: 90%;
+
         h3 {
           font-size: 2rem;
-          width: 80%;
+          width: 100%;
+          // background-color: red;
+          // padding: 5px;
+          margin-bottom: 10px;
         }
 
         p {
-          width: 80%;
+          // width: 100%;
           line-height: 40px;
           letter-spacing: 2.2px;
+          margin-bottom: 20px;
         }
       }
 
       .more-stories {
         // flex: 1;
         height: 500px;
-        width: 80%;
+        width: 100%;
         display: flex;
         // align-items: flex-start;
         justify-content: space-between;
         flex-direction: column;
-        margin-bottom: 5px;
+        margin: 10px;
         // -webkit-box-shadow: 0px 10px 13px -7px #000000,
         //   5px 5px 15px 5px rgba(0, 0, 0, 0);
         // box-shadow: 0px 10px 13px -7px #000000,
@@ -382,18 +406,21 @@
           }
 
           .latest-news-widget {
-            height: 200px;
-            width: 250px;
+            height: 250px;
+            width: 300px;
+            border-radius: 6px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
             text-decoration: none;
             font-size: 2rem;
             margin: 5px;
+            margin-bottom: 20px;
             color: $black;
-            transition: all ease-in-out;
+            transition: all ease-in-out 0.5s;
+            overflow: hidden;
             // width: 100%;
             -webkit-box-shadow: 0px 10px 13px -7px #000000,
               5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -402,25 +429,30 @@
 
             &:hover {
               background-color: $black;
+              color: white;
 
-              color: $defaultRed;
+              img {
+                transform: scale(1.1);
+              }
             }
-
             img {
-              // flex: 1;
+              // flex: 2;
               height: 70%;
               width: 100%;
               //   border-radius: 50%;
               object-fit: fill;
+              border-radius: 6px 6px 0 0;
+              transition: all ease-in-out 0.5s;
             }
 
             i {
-              // flex: 3;
+              // flex: 2;
               display: flex;
-              flex-direction: column;
-              justify-content: space-between;
+              // flex-direction: column;
+              justify-content: center;
+              align-items: center;
               padding: 5px;
-              // height: 90%;
+              height: 30%;
               font-size: 1.2rem;
             }
           }

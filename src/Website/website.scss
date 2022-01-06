@@ -87,19 +87,20 @@
       .home-story {
         text-decoration: none;
         height: 300px;
-        width: 350px;
+        width: 320px;
         background-color: white;
         color: black;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        overflow: hidden;
         border-bottom: 1px solid $defaultRed;
+        border-right: 1px solid $defaultRed;
         border-bottom-right-radius: 40px;
         cursor: pointer;
         margin-bottom: 10px;
-        margin-right: 5px;
+        // margin-right: 5px;
         transition: all ease-in-out 0.5s;
+        // background-color: aqua;
 
         &:hover {
           background-color: $black;
@@ -116,22 +117,47 @@
           }
         }
 
-        img {
-          height: 150px;
+        .img-container {
+          overflow: hidden;
           width: 100%;
-          object-fit: cover;
-          transition: all ease-in-out 0.5s;
-          object-position: 50% 10%;
+          img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+            transition: all ease-in-out 0.5s;
+            object-position: 50% 10%;
+          }
         }
 
         .home-story-text {
           flex: 1;
-          border-right: 1px solid $defaultRed;
-          padding: 10px 20px;
+          width: 100%;
+          // background-color: green;
+          // border-right: 1px solid $defaultRed;
+          border: hidden;
+          // border-bottom-right-radius: 30px;
 
           h2 {
             font-size: 1.2rem;
           }
+          p {
+            width: 100%;
+            // color: white;
+            // background-color: yellow;
+            padding: 10px 20px;
+          }
+        }
+      }
+
+      a {
+        // display: block;
+        // background-color: lime;
+        text-decoration: none;
+        margin-left: 5px;
+        margin: 10px;
+
+        button {
+          width: 300px;
         }
       }
     }

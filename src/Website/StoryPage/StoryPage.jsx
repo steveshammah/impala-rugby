@@ -60,21 +60,22 @@ const StoryPage = ({ match }) => {
 
           {/* <img src={BASE_URL + article.image_1} alt='' /> */}
           <img src={article.image_1} alt='' />
-          <i>{article.caption_1}</i>
+          <i>Caption goes here</i>
+          {/* <i>{article.caption_1}</i> */}
         </div>
       </div>
 
       <div className='story-wrapper'>
         <div className='story-tags'>
-          <strong>Tags:</strong>
+          <strong>Tags: </strong>
           {/* 
           {article.tags.split(",").map((tag) => (
             <span>
               <Button>{tag}</Button>
             </span>
           ))} */}
-
-          <i>{article.tags}</i>
+          &nbsp;&nbsp;
+          <i> {article.tags}</i>
         </div>
         <div className='story-author'>
           <div className='author-image'>
@@ -119,14 +120,7 @@ const StoryPage = ({ match }) => {
               dicta, magnam eos eius ullam! Totam perspiciatis quaerat
               cupiditate, dolore quidem dignissimos neque ea veniam ex impedit
               rerum voluptates numquam ad possimus modi cumque hic, quis nam
-              tempore atque unde eum quo! Quod assumenda quos sunt repellat
-              itaque delectus! Labore laborum necessitatibus impedit consectetur
-              voluptates tempore quia, fugit atque recusandae fuga adipisci ut
-              mollitia modi, earum nostrum porro. Quasi deleniti, quaerat ea
-              officiis veritatis architecto ad quod, hic, odio praesentium totam
-              dignissimos! Similique laboriosam cumque perspiciatis pariatur est
-              numquam eum ad consequuntur, maiores quas! Dicta minus nemo ipsa,
-              rem sint sed pariatur minima aut laborum repellat eveniet!
+              tempore atque unde eum quo!
             </p>
 
             <div className='story-image small'>
@@ -134,7 +128,8 @@ const StoryPage = ({ match }) => {
 
               {/* <img src={BASE_URL + article.image_2} alt='' /> */}
               <img src={article.image_2} alt='' />
-              <i>{article.caption_2}</i>
+              {/* <i>{article.caption_2}</i> */}
+              <i>Caption goes here</i>
             </div>
 
             {/* <p>{article.content_2}</p> */}
@@ -158,15 +153,7 @@ const StoryPage = ({ match }) => {
               recusandae blanditiis tempore modi. Reiciendis non sunt expedita
               laborum magni illo, quod natus harum at praesentium, architecto
               sint. Accusamus enim, fugiat ullam mollitia aut architecto.
-              Aperiam enim distinctio architecto repellat? Inventore ratione
-              explicabo totam quaerat rem placeat ipsum dolorem dignissimos
-              repudiandae dicta, at cupiditate, incidunt eius nihil officiis
-              aliquid et harum quasi? Exercitationem, dolorum. Odit cum quos
-              illum modi molestias ipsa quisquam rerum et officia sapiente
-              dicta, magnam eos eius ullam! Totam perspiciatis quaerat
-              cupiditate, dolore quidem dignissimos neque ea veniam ex impedit
-              rerum voluptates numquam ad possimus modi cumque hic, quis nam
-              tempore atque unde eum quo!
+              Aperiam enim distinctio architecto repellat?
             </p>
           </div>
 
