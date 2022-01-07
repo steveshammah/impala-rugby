@@ -10,7 +10,7 @@ const ProductWrapper = ({ title, products }) => {
     setOpen(!open);
   };
   return (
-    <div className='product-wrapper' style={{ height: open && "800px" }}>
+    <div className={`product-wrapper  ${open && "open"}`} id={title}>
       <h2>{title}</h2>
       <div className='category-container'>
         {products.map((product) => {
@@ -49,5 +49,4 @@ const ProductWrapper = ({ title, products }) => {
   );
 };
 
-const wrapperStyle = {};
 export default ProductWrapper;

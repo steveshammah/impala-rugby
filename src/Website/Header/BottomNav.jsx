@@ -16,9 +16,6 @@ const BottomNav = () => {
         {/* <li>
           <a href='/events/tickets'>tickets</a>
         </li> */}
-        <li>
-          <a href='/membership'>membership</a>
-        </li>
 
         <li>
           <a href='/squads'>squads</a>
@@ -28,6 +25,9 @@ const BottomNav = () => {
         </li>
         <li>
           <a href='/shop'>shop</a>
+        </li>
+        <li>
+          <a href='/about'>More</a>
         </li>
         <li>
           <a href='/dashboard/home'>Dashboard</a>

@@ -90,25 +90,38 @@
     }
   }
   .shop-container {
-    padding-top: 70px;
+    // padding-top: 30px;
     padding-left: 30px;
     height: auto;
     // background-color: aqua;
 
     .product-wrapper {
-      margin-bottom: 10px;
+      // margin: 100px 0 50px 0;
+      // padding-top: 20px;
       position: relative;
-      height: 400px;
-      transition: all ease-in-out 0.5s;
+      height: 500px;
+      transition: all ease-in-out 1s;
       //   background-color: red;
       overflow-y: hidden;
 
+      &.open {
+        height: 100%;
+
+        // @keyframes open {
+        //   to {
+        //     height: 1000px;
+        //     background-color: $black;
+        //     color: white;
+        //   }
+        // }
+      }
       h2 {
         text-transform: uppercase;
+        margin: 80px 0 20px 20px;
       }
 
       .category-container {
-        height: auto;
+        height: 100%;
         display: flex;
         flex-wrap: wrap;
         overflow: hidden;
@@ -180,12 +193,28 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  padding: 50px;
+  padding: 10px;
 
   .image-container {
-    height: 100%;
+    // height: 100%;
     flex: 2;
+    // background-color: red;
+    display: flex;
+    .more-images {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
 
+      img {
+        height: 120px;
+        width: 100px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border: 1px solid $black;
+      }
+    }
     img {
       height: 100%;
       width: 80%;
@@ -193,7 +222,174 @@
     }
   }
 
-  .product-details {
+  .right-wrapper {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    // background-color: lime;
+    // width: 100%;
+
+    .product-details {
+      flex: 2;
+      // background-color: red;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        font-weight: 300;
+        color: $defaultRed;
+      }
+      span {
+        display: flex;
+
+        h4 {
+          font-weight: 200;
+          margin-left: 5px;
+          color: $black;
+        }
+      }
+
+      .sizes {
+        display: flex;
+        height: 50px;
+        border: 1px solid $mainColor;
+        margin: 20px 0;
+
+        // background-color: red;
+
+        span {
+          align-items: center;
+          justify-content: center;
+          // height: 100%;
+          flex: 1;
+          // width: 20px;
+          padding: 20px;
+          border-right: 1px solid $mainColor;
+          cursor: pointer;
+
+          &.active {
+            background-color: $black;
+            color: white;
+          }
+        }
+      }
+
+      .add-to-cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        margin: 20px 0;
+
+        button {
+          height: 100%;
+          width: 200px;
+          border: none;
+          outline: none;
+          background-color: $black;
+          cursor: pointer;
+          color: $mainColor;
+        }
+
+        .like {
+          height: 100%;
+          width: 50px;
+          background-color: $mainColor;
+          color: $defaultRed;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .my-cart {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: $black;
+      border-radius: 30px 30px 0 0;
+      padding: 10px;
+      width: 100%;
+      color: white;
+
+      strong {
+        color: $defaultRed;
+        font-weight: 500;
+      }
+      .added-items {
+        // background-color: green;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+
+        .item {
+          display: flex;
+          background-color: $mainColor;
+          border: 1px solid $light;
+          width: 90%;
+          color: $black;
+
+          .img-holder {
+            height: 100px;
+            width: 100px;
+
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+
+          .item-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            flex: 2;
+            h3 {
+              font-weight: 300;
+              font-size: 1rem;
+            }
+
+            span {
+              display: flex;
+              align-items: center;
+              margin-left: 20px;
+              color: $defaultRed;
+              font-size: 0.8rem;
+              cursor: pointer;
+
+              .icon {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+        a {
+          height: 40px;
+          width: 200px;
+          margin-top: 20px;
+          text-transform: uppercase;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
   }
 }

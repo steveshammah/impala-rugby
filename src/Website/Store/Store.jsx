@@ -25,38 +25,36 @@ const Store = () => {
       <header>
         <ul>
           <li className='active'>
-            <a href=''>Jerseys</a>
+            <a href='#Jersey'>Jerseys</a>
           </li>
           <li>
-            <a href=''>Men</a>
+            <a href='#Men'>Men</a>
           </li>
           <li>
-            <a href=''>Women</a>
+            <a href='#Women'>Women</a>
           </li>
           <li>
-            <a href=''>Kids</a>
+            <a href='#Kids'>Kids</a>
           </li>
           <li>
-            <a href=''>Floodies</a>
+            <a href='#Floodies'>Floodies</a>
           </li>
           <li>
-            <a href=''>Accessories</a>
+            <a href='#Accessories'>Accessories</a>
           </li>
           <li>
-            <a href=''>Home & Office</a>
+            <a href='#Home & Office'>Home & Office</a>
           </li>
         </ul>
       </header>
 
-      <div className='store-sticker'>
-        {/* <img src={photos.billGithinji} alt='' /> */}
+      {/* <div className='store-sticker'>
         <img src={photos.spanner} alt='' />
-        {/* <img src={photos.mato} alt='' /> */}
 
         <button>
           <a href='#main'>Shop Now</a>
         </button>
-      </div>
+      </div> */}
       {/* <h2>The Store</h2> */}
       <div className='shop-container' id='main'>
         <ProductWrapper title={"Men"} products={menProducts} />
