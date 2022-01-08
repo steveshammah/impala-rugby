@@ -40,64 +40,11 @@
     }
   }
 
-  .store-sticker {
-    height: 500px;
-    background-color: $black;
-    background-attachment: fixed;
-    position: relative;
-    overflow-y: hidden;
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: fill;
-      //   object-position: top;
-      position: absolute;
-      opacity: 0.5;
-
-      //   &:nth-child(1) {
-      //     left: 0;
-      //     top: 0px;
-      //     transform: rotate(-45deg);
-      //   }
-      //   &:nth-child(2) {
-      //     right: 120px;
-      //     top: 50px;
-
-      //     transform: rotate(45deg);
-      //   }
-      //   &:nth-child(3) {
-      //     top: 0px;
-      //     left: 50%;
-      //     transform: translate(-50%, 20%);
-      //   }
-    }
-    button {
-      height: 40px;
-      width: 150px;
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      border: none;
-      outline: none;
-      background-color: $defaultRed;
-
-      a {
-        text-decoration: none;
-        font-size: 1rem;
-        color: $mainColor;
-      }
-    }
-  }
   .shop-container {
-    // padding-top: 30px;
     padding-left: 30px;
     height: auto;
-    // background-color: aqua;
 
     .product-wrapper {
-      // margin: 100px 0 50px 0;
-      // padding-top: 20px;
       position: relative;
       height: 500px;
       transition: all ease-in-out 1s;
@@ -106,14 +53,8 @@
 
       &.open {
         height: 100%;
-
-        // @keyframes open {
-        //   to {
-        //     height: 1000px;
-        //     background-color: $black;
-        //     color: white;
-        //   }
-        // }
+        background-color: $black;
+        color: $mainColor;
       }
       h2 {
         text-transform: uppercase;

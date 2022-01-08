@@ -6,7 +6,6 @@ const ProductWrapper = ({ title, products }) => {
   useEffect(() => {}, [open]);
 
   const handleClick = () => {
-    // console.log("Open", open);
     setOpen(!open);
   };
   return (

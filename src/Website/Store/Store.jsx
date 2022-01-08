@@ -1,5 +1,5 @@
 import "./store.scss";
-import { products, photos } from "../../resources/resources";
+import { products } from "../../resources/resources";
 
 import ProductWrapper from "./ProductWrapper";
 
@@ -24,9 +24,6 @@ const Store = () => {
     <div className='store-container'>
       <header>
         <ul>
-          <li className='active'>
-            <a href='#Jersey'>Jerseys</a>
-          </li>
           <li>
             <a href='#Men'>Men</a>
           </li>
@@ -42,20 +39,9 @@ const Store = () => {
           <li>
             <a href='#Accessories'>Accessories</a>
           </li>
-          <li>
-            <a href='#Home & Office'>Home & Office</a>
-          </li>
         </ul>
       </header>
 
-      {/* <div className='store-sticker'>
-        <img src={photos.spanner} alt='' />
-
-        <button>
-          <a href='#main'>Shop Now</a>
-        </button>
-      </div> */}
-      {/* <h2>The Store</h2> */}
       <div className='shop-container' id='main'>
         <ProductWrapper title={"Men"} products={menProducts} />
         <ProductWrapper title={"Women"} products={womenProducts} />
@@ -64,7 +50,6 @@ const Store = () => {
 
         <ProductWrapper title={"Floodies"} products={floodiesProducts} />
         <ProductWrapper title={"Accessories"} products={accessoryProducts} />
-        {/* <ProductWrapper title={"Home & Office"} products={products} /> */}
       </div>
     </div>
   );
