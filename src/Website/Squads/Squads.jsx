@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+
 import { useEffect, useState } from "react";
 import { team } from "../../resources/resources";
 import "./squad.scss";
@@ -19,14 +19,7 @@ const Squads = () => {
   return (
     <div className='squad-container'>
       <h2>Impala Squad</h2>
-      {/* 
-      <div className='join-banner'>
-        <h2>One Team One Dream</h2>
-        <div className='banner-text'>
-          <h3>Join our free membership today</h3>
-          <Button variant='contained'>Join the family</Button>
-        </div>
-      </div> */}
+   
 
       <div className='squad-nav'>
         <ul>

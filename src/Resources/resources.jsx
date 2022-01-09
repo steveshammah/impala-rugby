@@ -1,6 +1,7 @@
 import impalaLogo from "./images/logos/impala-logo.png";
 import impalaLogo1 from "./images/logos/impala-1.jpg";
 import impalaLogo2 from "./images/logos/impala-2.jpg";
+import floodies from "./images/logos/floodies-logo.jpg";
 import resolutionLogo from "./images/logos/ril-logo.jpg";
 import blazeLogo from "./images/logos/blaze-logo.png";
 import saracensLogo from "./images/logos/saracens-logo.svg";
@@ -25,7 +26,7 @@ import impalaBlazeSunny from "./images/general/impala-blaze-sunny.jpg";
 import kevoUfc from "./images/mens-team/kevo-ufc.jpg";
 import kevoDanku from "./images/mens-team/kevo-danku.jpg";
 import munai from "./images/mens-team/DSC_0840.jpg";
-import solido from "./images/mens-team/DSC_4411.jpg";
+import solido from "./images/mens-team/bill-okoyo.jpg";
 import ajo from "./images/mens-team/DSC_8204.jpg";
 import soi from "./images/mens-team/DSC_9540.jpg";
 import player18 from "./images/mens-team/player_18.jpg";
@@ -38,7 +39,11 @@ import ajoKenya from "./images/mens-team/ajo-kenya.jpg";
 import anderson from "./images/mens-team/anderson.jpg";
 import anya from "./images/mens-team/anya.jpg";
 import oscarOsir from "./images/mens-team/oscar-osir.jpg";
+import mitchOcholla from "./images/mens-team/mitch-ocholla.jpg";
+import alphaAcademy from "./images/mens-team/alpha-academy.jpg";
+import kakaiAlpha from "./images/mens-team/kakai-alpha-academy.jpg";
 import physio from "./images/mens-team/physio.jpg";
+import oimbo from "./images/mens-team/oimbo.jpg";
 import onsomu from "./images/mens-team/onsomu.jpg";
 import onsomuNondies from "./images/mens-team/onsomu-nondies.jpg";
 import danku from "./images/mens-team/danku.jpg";
@@ -50,15 +55,20 @@ import kimakwa from "./images/mens-team/kimakwa.jpg";
 import marube from "./images/mens-team/marube.jpg";
 import brian from "./images/mens-team/brian.jpg";
 import boi from "./images/mens-team/boi.jpg";
+import muchiri from "./images/mens-team/anthony-muchiri.jpg";
 import marube2 from "./images/mens-team/marube-2.jpg";
 import tata from "./images/ladies-team/tata.jpg";
 import tataRunning from "./images/ladies-team/tata-2.jpg";
-import stella from "./images/ladies-team/stella-2.jpg";
+import stella from "./images/ladies-team/stella-kenya.jpg";
+import anne from "./images/ladies-team/anne-goreti.jpg";
+import diana from "./images/ladies-team/diana-awino.jpg";
+import judith from "./images/ladies-team/judith-auma.jpg";
 import mitchelle from "./images/ladies-team/mitchelle.jpg";
 import olympicsLadies from "./images/ladies-team/ladies-olympics.jpg";
 import olympicsLadies2 from "./images/ladies-team/ladies-olympics-2.jpg";
 import ladiesCelebration from "./images/ladies-team/ladies-celebration.jpg";
 import rilSponsorPhoto from "./images/mens-team/ril-sponsor-photo.jpg";
+import rilSponsorPhoto1 from "./images/mens-team/ril-sponsor-photo-1.jpg";
 import swaras from "./images/mens-team/swaras.jpg";
 import ladiesRun from "./images/ladies-team/ladies-running.jpg";
 import coding from "./images/anonymous-hacker.jpg";
@@ -103,6 +113,7 @@ export const logos = {
   impalaLogo,
   impalaLogo1,
   impalaLogo2,
+  floodies,
   resolutionLogo,
   stanchartLogo,
   saracensLogo,
@@ -602,7 +613,7 @@ export const team = [
   },
   {
     id: 31,
-    name: "Sharon Impala",
+    name: "Diana Awino",
     daysTrained: 4,
     daysMissed: 6,
     appearances: 400,
@@ -612,7 +623,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
-    img: impalaLogo1,
+    img: diana,
   },
   {
     id: 32,
@@ -698,6 +709,48 @@ export const team = [
     email: "shammahranks@gmail.com",
     img: physio,
   },
+  {
+    id: 38,
+    name: "Anthony Muchiri",
+    daysTrained: 4,
+    daysMissed: 6,
+    appearances: 400,
+    dob: "1/1/1988",
+    year: 1988,
+    team: "Coaches",
+    socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+    phone: "795058630",
+    email: "shammahranks@gmail.com",
+    img: muchiri,
+  },
+  {
+    id: 39,
+    name: "Judith Auma",
+    daysTrained: 4,
+    daysMissed: 6,
+    appearances: 400,
+    dob: "1/1/1988",
+    year: 1988,
+    team: "Women",
+    socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+    phone: "795058630",
+    email: "shammahranks@gmail.com",
+    img: judith,
+  },
+  {
+    id: 40,
+    name: "Anne Goreti",
+    daysTrained: 4,
+    daysMissed: 6,
+    appearances: 400,
+    dob: "1/1/1988",
+    year: 1988,
+    team: "Women",
+    socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
+    phone: "795058630",
+    email: "shammahranks@gmail.com",
+    img: anne,
+  },
 ];
 
 export const videos = [
@@ -754,7 +807,48 @@ export const navLinks = [
   { name: "videos", url: "videos" },
   { name: "about", url: "about" },
 ];
-
+export const partners = [
+  {
+    id: 0,
+    name: "Resolution Insurance",
+    url: "resolution",
+    website: "resolution.co.ke",
+    img: resolutionLogo,
+    about:
+      "Resolution Insurance Kenya is a Kenyan insurance brand trusted by individuals and businesses who enjoy our well designed and unique insurance covers.",
+    tag: "Impala Title and Offical Health Sponsor.",
+  },
+  {
+    id: 1,
+    name: "Standard Chartered Bank",
+    url: "stanchart",
+    website: "resolution.co.ke",
+    img: stanchartLogo,
+    about:
+      "At Standard Chartered Kenya, we help you achieve financial freedom with products such as savings accounts, personal loans, credit cards & wealth solutions.",
+    tag: "Offical Academy Sponsor",
+  },
+  {
+    id: 2,
+    name: "Saracens Official",
+    url: "saracens",
+    website: "saracens.com",
+    img: saracensLogo,
+    about:
+      "Established in 1876, Saracens Rugby Club are London's premier rugby club competing on the Gallagher Premiership, The European Champions Cup, The Tyrells Premier 15s and the Premiership Rugby Cup.",
+    tag: "",
+  },
+  {
+    id: 3,
+    name: "Blaze",
+    url: "blaze",
+    website: "blaze.co.ke",
+    img: blazeLogo,
+    about:
+      "BLAZE is a youth network. We celebrate their passion to succeed in unconventional careers.",
+    tag: "Offical Floodlit Sponsor",
+  },
+];
 export const leagueStandings = [
   {
     name: "Blak Blad",
@@ -1619,7 +1713,7 @@ export const localArticles = [
     image_1: teamPhoto,
     image_2: anderson,
     type: "news",
-    tags: "Kenya Cup, Off-Season",
+    tags: "Kenya Cup, Off-Season, Men",
     author: "Impala Media",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
@@ -1628,7 +1722,6 @@ export const localArticles = [
     id: 1,
     title: "The Millers Win On Tour",
     headline: "Defeat at the Impala Grounds",
-
     image_1: tola,
     caption_1: "Tola in previous match against Kabras",
     image_2: kabrasLogo,
@@ -1647,7 +1740,7 @@ export const localArticles = [
     image_1: oscarOsir,
     image_2: kimakwa,
     type: "news",
-    tags: "Kenya Cup, Oscar Osir, Mitch Ocholla",
+    tags: "Kenya Cup, Oscar Osir, Mitch Ocholla, Men, Club",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1656,10 +1749,10 @@ export const localArticles = [
     id: 3,
     title: "Mitch Ocholla leaves.",
     headline: "Mitch ocholla heads back to Nakuru.",
-    image_1: teamPhoto2,
+    image_1: mitchOcholla,
     image_2: oscarOsir,
     type: "update",
-    tags: "Kenya Cup, Oscar Osir, Mitch Ocholla",
+    tags: "Kenya Cup, Oscar Osir, Mitch Ocholla, Men, Club",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1669,9 +1762,9 @@ export const localArticles = [
     title: "Match Day One!!.",
     headline: "Derby Day.",
     image_1: kevoDanku,
-    image_2: oscarOsir,
+    image_2: kevoUfc,
     type: "news",
-    tags: "Kenya Cup, Harlequins, Derby, Nato Simiyu",
+    tags: "Kenya Cup, Harlequins, Derby, Nato Simiyu, Men",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1683,7 +1776,7 @@ export const localArticles = [
     image_1: cosy,
     image_2: spice,
     type: "article",
-    tags: "Resolution Insurance, Sponsorships, C2C, Club",
+    tags: "Men, Swaras, Kenya Cup",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Sponsor",
@@ -1695,7 +1788,7 @@ export const localArticles = [
     image_1: swaras,
     image_2: swaras,
     type: "update",
-    tags: "Academy, Agegrade, ",
+    tags: "Academy, Age grade, Swaras ",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1721,7 +1814,7 @@ export const localArticles = [
     image_1: phonto,
     image_2: phontoCarry,
     type: "feature",
-    tags: "Kenya Cup, Phonto, Elkeans Musonye",
+    tags: "Kenya Cup, Phonto, Elkeans Musonye, Men",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1734,7 +1827,7 @@ export const localArticles = [
     image_1: physio,
     image_2: solido,
     type: "update",
-    tags: "Bill Okoyo, Karl Williams, Steve Otieno",
+    tags: "Bill Okoyo, Karl Williams, Steve Otieno, Men",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1744,9 +1837,9 @@ export const localArticles = [
     title: "Resolution Now.",
     headline: "Resolution insurance renew sponsorship with Impala.",
     image_1: rilSponsorPhoto,
-    image_2: resolutionLogo,
+    image_2: rilSponsorPhoto1,
     type: "article",
-    tags: "Resolution Insurance, Sponsorships, C2C",
+    tags: "Resolution Insurance, Sponsorships, C2C, Club",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Sponsor",
@@ -1759,7 +1852,7 @@ export const localArticles = [
     image_1: olympicsLadies,
     image_2: olympicsLadies2,
     type: "article",
-    tags: "Resolution Insurance, Sponsorships, C2C",
+    tags: "Tokyo 2020, Olympics, Women",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1771,7 +1864,7 @@ export const localArticles = [
     image_1: ajoKenya,
     image_2: ajo,
     type: "feature",
-    tags: "Kenya 15s, Kenya Cup, Academy,",
+    tags: "Kenya 15s, Kenya Cup, Academy, Men",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1783,7 +1876,7 @@ export const localArticles = [
     image_1: onsomuNondies,
     image_2: onsomu,
     type: "news",
-    tags: "Samson Onsomu, Kenya Cup, Sam Kimakwa",
+    tags: "Samson Onsomu, Kenya Cup, Sam Kimakwa, Men, Club",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
@@ -1796,20 +1889,56 @@ export const localArticles = [
     image_1: tata,
     image_2: tataRunning,
     type: "feature",
-    tags: "Ladies, Tokyo Olympics, Tata, Christabel",
+    tags: "Ladies, Tokyo Olympics, Tata, Christabel, Women",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",
     author: "Impala Media",
   },
   {
     id: 15,
+    title: "Alpha Academy.",
+    headline: "Shaping lives, one player at a time.",
+    image_1: alphaAcademy,
+    image_2: kakaiAlpha,
+    type: "feature",
+    tags: "Alpha Academy, Age Grade,Club",
+    created: "2022-01-07T00:22:25.804188+03:00",
+    posted: "2022-01-07T00:22:25.804188+03:00",
+    author: "Impala Media",
+  },
+  {
+    id: 16,
+    title: "Tokyo 2020.",
+    headline: "Impala ladies to represent the country in this years olympics",
+    image_1: stella,
+    image_2: ladiesRun,
+    type: "feature",
+    tags: "Ladies, Stella,Diana, Christabel, Women",
+    created: "2021-12-19T00:13:58.804188+03:00",
+    posted: "2021-12-19T00:13:58.804188+03:00",
+    author: "Impala Media",
+  },
+  {
+    id: 17,
+    title: "2021-2022 Technical Bench",
+    headline: "Get top know this season's technical bench.",
+    image_1: muchiri,
+    image_2: physio,
+    type: "feature",
+    tags: "Club, Men, Kenya Cup",
+    created: "2022-01-07T00:22:25.804188+03:00",
+    posted: "2022-01-07T00:22:25.804188+03:00",
+    author: "Impala Media",
+  },
+  {
+    id: 18,
     title: "Website Built by Steve Shammah.",
     headline:
       "Frontend of the application. Data used may be random and/or inaccurate. ",
     image_1: coding,
     image_2: situationControl,
     type: "feature",
-    tags: "React Js, Django, Javascript, Python, API, Fullstack Development",
+    tags: "React Js, Django, Javascript, Python, API, Fullstack Development, Club",
     created: "2022-01-07T00:22:25.804188+03:00",
     posted: "2022-01-07T00:22:25.804188+03:00",
     author: "Steve Shammah",

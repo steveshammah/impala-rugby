@@ -1,11 +1,26 @@
-import { useContext, useState } from "react";
-import { articlesContext } from "../../contexts/articles-context";
+import {  useState, useEffect } from "react";
+// import { articlesContext } from "../../contexts/articles-context";
+import { localArticles } from "../../resources/resources";
 import "./stories.scss";
 
 const StoryFeed = () => {
-  const { articles, BASE_URL } = useContext(articlesContext);
-  console.log("Articles feed: ", articles);
+  // const { articles, BASE_URL } = useContext(articlesContext);
+  const [displayArticles, setDisplayArticles] = useState([{}]);
   const [activeLink, setActiveLink] = useState("Latest");
+
+  useEffect(() => {
+    const filteredArticles = localArticles.filter((article) =>
+      article.tags.includes(activeLink)
+    );
+    setDisplayArticles(
+      activeLink === "Latest" ? localArticles : filteredArticles
+    );
+  }, [activeLink]);
+
+  const handleClick = (details) => {
+    setActiveLink(details);
+  };
+
   return (
     <div className='feeds-home'>
       <div className='feeds-container'>
@@ -14,38 +29,38 @@ const StoryFeed = () => {
           <ul>
             <li
               className={activeLink === "Latest" && "active"}
-              onClick={() => setActiveLink("Latest")}>
+              onClick={() => handleClick("Latest")}>
               <a href='#'>Latest</a>
             </li>
             <li
               className={activeLink === "Men" && "active"}
-              onClick={() => setActiveLink("Men")}>
+              onClick={() => handleClick("Men")}>
               <a href='#'>Men</a>
             </li>
             <li
               className={activeLink === "Women" && "active"}
-              onClick={() => setActiveLink("Women")}>
+              onClick={() => handleClick("Women")}>
               <a href='#'>Women</a>
             </li>
             <li
               className={activeLink === "Swaras" && "active"}
-              onClick={() => setActiveLink("Swaras")}>
+              onClick={() => handleClick("Swaras")}>
               <a href='#'>Swaras</a>
             </li>
             <li
-              className={activeLink === "Age Grade" && "active"}
-              onClick={() => setActiveLink("Age Grade")}>
-              <a href='#'>Age Grade</a>
+              className={activeLink === "Academy" && "active"}
+              onClick={() => handleClick("Academy")}>
+              <a href='#'>Academy</a>
             </li>
             <li
               className={activeLink === "Club" && "active"}
-              onClick={() => setActiveLink("Club")}>
+              onClick={() => handleClick("Club")}>
               <a href='#'>Club</a>
             </li>
           </ul>
         </div>
         <div className='feeds-section'>
-          {articles.map((article) => (
+          {displayArticles.map((article) => (
             <a href={`/stories/${article.id}`} className='feed-story'>
               <div className='feed-img-wrapper'>
                 <img src={article.image_1} alt='' />
