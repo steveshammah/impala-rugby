@@ -10,7 +10,7 @@ import TeamState from "./contexts/team-context";
 import MemberProfile from "./components/pages/MemberProfile/MemberProfile";
 import Store from "./Website/Store/Store";
 import Product from "./Website/Store/Product";
-import Tickets from "./Website/Tickets/Tickets";
+import Sponsors from "./Website/Sponsors/Sponsors";
 import Website from "./Website/Website";
 import Header from "./Website/Header/Header";
 import StoryPage from "./Website/StoryPage/StoryPage";
@@ -55,7 +55,7 @@ const App = () => {
             <Route path='/players-and-staff/:id' component={MemberProfile} />
             <Route path='/shop' exact component={Store} />
             <Route path='/shop/:id' component={Product} />
-            <Route path='/tickets/' component={Tickets} />
+            <Route path='/partners-sponsors/' component={Sponsors} />
 
             <TeamState className='dashboard-container'>
               <div className='dashboard-home'>

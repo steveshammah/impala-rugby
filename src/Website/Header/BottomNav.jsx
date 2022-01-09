@@ -27,7 +27,7 @@ const BottomNav = () => {
           <a href='/shop'>shop</a>
         </li>
         <li>
-          <a href='/about'>More</a>
+          <a href='/partners-sponsors'>Sponsors</a>
         </li>
         <li>
           <a href='/dashboard/home'>Dashboard</a>

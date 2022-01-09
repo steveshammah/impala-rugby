@@ -2,6 +2,8 @@ import impalaLogo from "./images/logos/impala-logo.png";
 import impalaLogo1 from "./images/logos/impala-1.jpg";
 import impalaLogo2 from "./images/logos/impala-2.jpg";
 import resolutionLogo from "./images/logos/ril-logo.jpg";
+import blazeLogo from "./images/logos/blaze-logo.png";
+import saracensLogo from "./images/logos/saracens-logo.svg";
 import stanchartLogo from "./images/logos/sc-logo.jpg";
 import hbrLogo from "./images/logos/hbr-logo.jpg";
 import kabrasLogo from "./images/logos/kabras-logo.jpg";
@@ -103,6 +105,8 @@ export const logos = {
   impalaLogo2,
   resolutionLogo,
   stanchartLogo,
+  saracensLogo,
+  blazeLogo,
   quinsLogo,
   kcbLogo,
   kabrasLogo,
