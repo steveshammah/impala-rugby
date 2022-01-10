@@ -31,7 +31,7 @@ const ArticlesFeed = () => {
   return (
     <div className='container'>
       <ArticlesHeader />
-      <h2>Admin Articles Feed</h2>
+      <h2>Articles Feed</h2>
       <div className='articles-admin'>
         <div className='all-articles'>
           {articles.map((article) => (

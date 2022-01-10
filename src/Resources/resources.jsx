@@ -789,9 +789,9 @@ export const menuLinks = {
   ],
   teams: [
     { name: "Men", icon: "Men", url: "teams/Men" },
-    { name: "Boks", icon: "boks", url: "teams/boks" },
-    { name: "Ladies", icon: "ladies", url: "teams/ladies" },
-    { name: "Swaras", icon: "swaras", url: "teams/swaras" },
+    { name: "Boks", icon: "boks", url: "teams/Boks" },
+    { name: "Ladies", icon: "ladies", url: "teams/Women" },
+    { name: "Swaras", icon: "swaras", url: "teams/Swaras" },
     { name: "Age Grade", icon: "age-grade", url: "teams/age-grade" },
   ],
   website: [

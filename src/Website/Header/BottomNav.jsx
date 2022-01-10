@@ -1,6 +1,6 @@
 import { logos } from "../../resources/resources";
 
-const BottomNav = () => {
+const BottomNav = ({ menuOpen, setMenuOpen }) => {
   return (
     <div className='bottom-header'>
       <div className='logo'>
@@ -8,14 +8,10 @@ const BottomNav = () => {
           <img src={logos.impalaLogo} alt='' />
         </a>{" "}
       </div>
-      <ul>
+      <ul style={{ display: menuOpen ? "flex" : "none" }}>
         <li>
           <a href='/feed/stories'>News</a>
         </li>
-
-        {/* <li>
-          <a href='/events/tickets'>tickets</a>
-        </li> */}
 
         <li>
           <a href='/squads'>squads</a>
@@ -33,6 +29,11 @@ const BottomNav = () => {
           <a href='/dashboard/home'>Dashboard</a>
         </li>
       </ul>
+
+      <div className='burger-nav' onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 };

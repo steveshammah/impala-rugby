@@ -40,7 +40,7 @@ body {
       @content;
     }
   } @else if $res == desktop {
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1100px) {
       @content;
     }
   }

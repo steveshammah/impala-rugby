@@ -283,10 +283,11 @@ const ArticleForm = ({ createPost, editPost, action }) => {
 
         <div className='article-disclaimer'>
           <Alert severity='info'>
-            All information and resources provided on &nbsp;
-            <a href='#'>impalarugbyke.com</a> are based on your opinions as the
-            author (unless otherwise noted). All information is intended to
-            motivate readers to want to be part of the Impala Fraternity.
+            All information and resources provided on
+            <a href='#'> impalarugby.com</a> are based on your opinions as the
+            author (unless otherwise stated). All information is intended to
+            grow the audience and make them want to be part of the Impala
+            Fraternity.
           </Alert>
         </div>
       </div>
