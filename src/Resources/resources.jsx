@@ -43,7 +43,7 @@ import mitchOcholla from "./images/mens-team/mitch-ocholla.jpg";
 import alphaAcademy from "./images/mens-team/alpha-academy.jpg";
 import kakaiAlpha from "./images/mens-team/kakai-alpha-academy.jpg";
 import physio from "./images/mens-team/physio.jpg";
-import oimbo from "./images/mens-team/oimbo.jpg";
+import shammah from "./images/mens-team/shammah.jpg";
 import onsomu from "./images/mens-team/onsomu.jpg";
 import onsomuNondies from "./images/mens-team/onsomu-nondies.jpg";
 import danku from "./images/mens-team/danku.jpg";
@@ -62,7 +62,10 @@ import tataRunning from "./images/ladies-team/tata-2.jpg";
 import stella from "./images/ladies-team/stella-kenya.jpg";
 import anne from "./images/ladies-team/anne-goreti.jpg";
 import diana from "./images/ladies-team/diana-awino.jpg";
+import dianaKemunto from "./images/ladies-team/diana-kemunto.jpg";
+import winnie from "./images/ladies-team/winnie.jpg";
 import judith from "./images/ladies-team/judith-auma.jpg";
+import mitchelleAkinyi from "./images/ladies-team/mitchelle-akinyi.jpg";
 import mitchelle from "./images/ladies-team/mitchelle.jpg";
 import olympicsLadies from "./images/ladies-team/ladies-olympics.jpg";
 import olympicsLadies2 from "./images/ladies-team/ladies-olympics-2.jpg";
@@ -399,7 +402,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
-    img: impalaLogo2,
+    img: shammah,
   },
   {
     id: 16,
@@ -539,7 +542,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
-    img: mitchelle,
+    img: mitchelleAkinyi,
   },
   {
     id: 26,
@@ -585,7 +588,7 @@ export const team = [
   },
   {
     id: 29,
-    name: "Diana Atieno",
+    name: "Diana Kemunto",
     daysTrained: 4,
     daysMissed: 6,
     appearances: 400,
@@ -595,11 +598,11 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
-    img: olympicsLadies2,
+    img: dianaKemunto,
   },
   {
     id: 30,
-    name: "Judith Auma",
+    name: "Winnie Owino",
     daysTrained: 4,
     daysMissed: 6,
     appearances: 400,
@@ -609,7 +612,7 @@ export const team = [
     socials: [{ instagram: "steveshammah_", twitter: "steveshammah_" }],
     phone: "795058630",
     email: "shammahranks@gmail.com",
-    img: ladiesRun,
+    img: winnie,
   },
   {
     id: 31,
@@ -816,7 +819,7 @@ export const partners = [
     img: resolutionLogo,
     about:
       "Resolution Insurance Kenya is a Kenyan insurance brand trusted by individuals and businesses who enjoy our well designed and unique insurance covers.",
-    tag: "Impala Title and Offical Health Sponsor.",
+    tag: "Offical Sponsor of Impala.",
   },
   {
     id: 1,
@@ -836,7 +839,7 @@ export const partners = [
     img: saracensLogo,
     about:
       "Established in 1876, Saracens Rugby Club are London's premier rugby club competing on the Gallagher Premiership, The European Champions Cup, The Tyrells Premier 15s and the Premiership Rugby Cup.",
-    tag: "",
+    tag: "Global Network Partneship",
   },
   {
     id: 3,
@@ -1413,19 +1416,19 @@ export const allFixtures = {
       id: 4,
       opponent: "KCB",
       logo: kcbLogo,
-      day: "Saturday 15 January 2022",
+      day: "Saturday 8 January 2022",
       kickOff: "15:00",
       home: false,
       venue: "Den, Ruaraka",
-      scores: "",
-      played: false,
+      scores: "47-0",
+      played: true,
       league: "Kenya Cup",
     },
     {
       id: 5,
       opponent: "Homeboyz",
       logo: hbrLogo,
-      day: "Saturday 22 January 2022",
+      day: "Saturday 15 January 2022",
       kickOff: "15:00",
       home: false,
       venue: "Show Grounds, Jamhuri",
@@ -1437,7 +1440,7 @@ export const allFixtures = {
       id: 6,
       opponent: "Nakuru",
       logo: nakuruLogo,
-      day: "Saturday 29 January 2022",
+      day: "Saturday 22 January 2022",
       kickOff: "15:00",
       home: true,
       venue: "Impala Grounds",
@@ -1449,7 +1452,7 @@ export const allFixtures = {
       id: 7,
       opponent: "Mwamba",
       logo: mwambaLogo,
-      day: "Saturday 5 February 2022",
+      day: "Saturday 29 January 2022",
       kickOff: "15:00",
       home: true,
       venue: "Impala Grounds",
@@ -1461,7 +1464,7 @@ export const allFixtures = {
       id: 8,
       opponent: "Nondiescript",
       logo: nondiesLogo,
-      day: "Saturday 12 February 2022",
+      day: "Saturday 5 February 2022",
       kickOff: "15:00",
       home: false,
       venue: "Ngong Racecourse",
@@ -1473,7 +1476,7 @@ export const allFixtures = {
       id: 9,
       opponent: "Blak Blad",
       logo: bladLogo,
-      day: "Saturday 19 February 2022",
+      day: "Saturday 12 February 2022",
       kickOff: "15:00",
       home: false,
       venue: "Blad Bin",
@@ -1485,7 +1488,7 @@ export const allFixtures = {
       id: 10,
       opponent: "MMUST",
       logo: mmustLogo,
-      day: "Saturday 26 February 2022",
+      day: "Saturday 19 February 2022",
       kickOff: "15:00",
       home: false,
       venue: "Nandi Bears",
@@ -1536,7 +1539,7 @@ export const allFixtures = {
       id: 4,
       opponent: "Nakuru",
       logo: nakuruLogo,
-      day: "Saturday 15 January 2022",
+      day: "Saturday 8 January 2022",
       kickOff: "12:00",
       home: false,
       venue: "Ask Showground, Ruaraka",
@@ -1548,7 +1551,7 @@ export const allFixtures = {
       id: 5,
       opponent: "Homeboyz",
       logo: hbrLogo,
-      day: "Saturday 22 January 2022",
+      day: "Saturday 15 January 2022",
       kickOff: "12:00",
       home: false,
       venue: "Show Grounds, Jamhuri",
@@ -1560,7 +1563,7 @@ export const allFixtures = {
       id: 6,
       opponent: "Nakuru",
       logo: nakuruLogo,
-      day: "Saturday 29 January 2022",
+      day: "Saturday 22 January 2022",
       kickOff: "12:00",
       home: true,
       venue: "Impala Grounds",
@@ -1572,7 +1575,7 @@ export const allFixtures = {
       id: 7,
       opponent: "Mwamba",
       logo: mwambaLogo,
-      day: "Saturday 5 February 2022",
+      day: "Saturday 29 January 2022",
       kickOff: "15:00",
       home: true,
       venue: "Impala Grounds",
@@ -1584,7 +1587,7 @@ export const allFixtures = {
       id: 8,
       opponent: "Blak Blad",
       logo: bladLogo,
-      day: "Saturday 19 February 2022",
+      day: "Saturday 5 February 2022",
       kickOff: "15:00",
       home: false,
       venue: "Blad Bin",
@@ -1646,7 +1649,7 @@ export const allFixtures = {
       id: 4,
       opponent: "Comras",
       logo: kcbLogo,
-      day: "Saturday 15 January 2022",
+      day: "Saturday 8 January 2022",
       kickOff: "15:00",
       home: false,
       venue: "Den, Ruaraka",
@@ -1658,7 +1661,7 @@ export const allFixtures = {
       id: 5,
       opponent: "Moh Spice",
       logo: hbrLogo,
-      day: "Saturday 22 January 2022",
+      day: "Saturday 15 January 2022",
       kickOff: "15:00",
       home: false,
       venue: "Show Grounds, Jamhuri",
@@ -1670,7 +1673,7 @@ export const allFixtures = {
       id: 6,
       opponent: "CUEA",
       logo: nakuruLogo,
-      day: "Saturday 29 January 2022",
+      day: "Saturday 22 January 2022",
       kickOff: "15:00",
       home: true,
       venue: "Impala Grounds",
@@ -1682,7 +1685,7 @@ export const allFixtures = {
       id: 7,
       opponent: "KCA",
       logo: mwambaLogo,
-      day: "Saturday 5 February 2022",
+      day: "Saturday 29 January 2022",
       kickOff: "15:00",
       home: true,
       venue: "Impala Grounds",
@@ -1694,7 +1697,7 @@ export const allFixtures = {
       id: 8,
       opponent: "Zetech",
       logo: nondiesLogo,
-      day: "Saturday 12 February 2022",
+      day: "Saturday 5 February 2022",
       kickOff: "15:00",
       home: false,
       venue: "Ngong Racecourse",

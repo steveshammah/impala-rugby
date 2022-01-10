@@ -3,7 +3,7 @@ const ImageViewer = ({ img, setActiveImage }) => {
   return (
     <div id='slide' style={{ display: img && "flex" }} className='image-viewer'>
       <span className='close' onClick={() => setActiveImage("")}>
-        <Close />
+        <Close className='icon' />
       </span>
       <img src={img} alt='' />
 

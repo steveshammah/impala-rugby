@@ -1,6 +1,8 @@
 import { products } from "../../resources/resources";
-import { Favorite, FavoriteBorderRounded, Close } from "@material-ui/icons";
+import { Favorite, FavoriteBorderRounded } from "@material-ui/icons";
 import { useState } from "react";
+import Summary from "./Summary";
+import SuggestedProducts from "./SuggestedProducts";
 
 const Product = ({ match }) => {
   const productId = match.params.id;
@@ -16,7 +18,7 @@ const Product = ({ match }) => {
     <div className='product-container'>
       {product.map((item) => {
         return (
-          <>
+          <div className='product-details-wrapper'>
             <div className='image-container'>
               <div className='more-images'>
                 <img src={item.img} alt='' />
@@ -54,39 +56,17 @@ const Product = ({ match }) => {
                   </div>
                 </div>
               </div>
-              <div className='my-cart'>
-                <h2>Summary</h2>
-
-                {cartItem ? (
-                  <div className='added-items'>
-                    {product.map((item) => (
-                      <div className='item'>
-                        <div className='img-holder'>
-                          <img src={item.img} alt='' />
-                        </div>
-                        <div className='item-details'>
-                          <div className='meta'>
-                            <h3>{item.details}</h3>
-                            <h5>Size: {selectSize}</h5>
-                          </div>
-                          <span onClick={() => setCartItem("")}>
-                            Remove <Close className='icon' />
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                    <a href='/cart' className='btn'>
-                      View Bag
-                    </a>
-                  </div>
-                ) : (
-                  <strong>Your bag is empty</strong>
-                )}
-              </div>
+              <Summary
+                cartItem={cartItem}
+                selectSize={selectSize}
+                setCartItem={setCartItem}
+                product={product}
+              />
             </div>
-          </>
+          </div>
         );
       })}
+      <SuggestedProducts activeProductId={productId}/>
     </div>
   );
 };

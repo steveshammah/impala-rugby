@@ -264,12 +264,11 @@
           img {
             height: 80%;
             width: 80%;
-            object-fit: fill;
+            object-fit: contain;
           }
           .close {
-            background-color: $defaultRed;
             color: white;
-            font-size: 2rem;
+
             cursor: pointer;
             position: absolute;
             top: 10%;
@@ -279,6 +278,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: all ease-in-out 0.3s;
+
+            .icon {
+              font-size: 2rem;
+            }
+
+            &:hover {
+              background-color: $defaultRed;
+            }
           }
           .arrow {
             position: absolute;
