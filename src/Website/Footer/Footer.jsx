@@ -13,41 +13,70 @@ const Footer = () => {
   return (
     <footer>
       <div className='footer-logos'>
-        <img src={logos.resolutionLogo} alt='' />
+        <a href='partners-sponsors/resolution'>
+          <img src={logos.resolutionLogo} alt='' />
+        </a>
+        <a href='partners-sponsors/stanchart'>
+          <img src={logos.stanchartLogo} alt='' />
+        </a>
 
-        <img src={logos.stanchartLogo} alt='' />
+        <a href='partners-sponsors/blaze'>
+          <img src={logos.blazeLogo} alt='' />
+        </a>
 
-        <img src={logos.resolutionLogo} alt='' />
+        <a href='partners-sponsors/saracens'>
+          <img src={logos.saracensLogo} alt='' />
+        </a>
 
-        <img src={logos.stanchartLogo} alt='' />
+        <a href='partners-sponsors'>
+          <img src={logos.resolutionLogo} alt='' />
+        </a>
 
-        <img src={logos.resolutionLogo} alt='' />
+        <a href='partners-sponsors'>
+          <img src={logos.impalaLogo} alt='' />
+        </a>
 
-        <img src={logos.stanchartLogo} alt='' />
+        <a href='partners-sponsors/stanchart'>
+          <img src={logos.stanchartLogo} alt='' />
+        </a>
 
-        <img src={logos.resolutionLogo} alt='' />
-
-        <img src={logos.stanchartLogo} alt='' />
-
-        <img src={logos.stanchartLogo} alt='' />
+        <a href='partners-sponsors/blaze'>
+          <img src={logos.blazeLogo} alt='' />
+        </a>
       </div>
       <div className='footer-list-wrapper'>
         <div className='footer-list'>
           <h2>SITEMAP</h2>
           <ul>
-            <li>News</li>
-            <li>Fixtures</li>
-            <li>Tickets</li>
-            <li>Membership</li>
+            <li>
+              <a href='/feed/stories'>News</a>
+            </li>
+            <li>
+              <a href='/match-center'>Fixtures</a>
+            </li>
+            <li>
+              <a href='/squads'>Squads</a>
+            </li>
+            <li>
+              <a href='/partners-sponsors'>Partners & Sponsors</a>
+            </li>
           </ul>
         </div>
         <div className='footer-list'>
           <h2>CONTACT US</h2>
           <ul>
-            <li>Contact</li>
-            <li>How to find us</li>
-            <li>Support Forum</li>
-            <li>Jobs & Careers</li>
+            <li>
+              <a href='#contact'>Contact</a>
+            </li>
+            <li>
+              <a href='#about'>About</a>
+            </li>
+            <li>
+              <a href='#support'>Support Forum</a>
+            </li>
+            <li>
+              <a href='/shop'>Shop</a>
+            </li>
           </ul>
         </div>
 

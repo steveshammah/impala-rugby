@@ -9,22 +9,22 @@ const MoreStories = () => {
       <div className='picksWrapper'>
         <a href='/stories/18' className='picks'>
           <img src={photos.coding} alt='' />
-          <h2>Website Built By Shammah</h2>
+          <h3>Website Built By Shammah</h3>
         </a>
 
         <a href='/stories/2' className='picks'>
           <img src={photos.oscarOsir} alt='' />
-          <h2>Osir Appointed Head Coach</h2>
+          <h3>Osir Appointed Head Coach</h3>
         </a>
 
         <a href='/stories/13' className='picks'>
           <img src={photos.onsomu} alt='' />
-          <h2>Transfer News</h2>
+          <h3>Transfer News</h3>
         </a>
 
         <a href='/stories/10' className='picks'>
           <img src={photos.rilSponsorPhoto} alt='' />
-          <h2>Resolution Now</h2>
+          <h3>Resolution Now</h3>
         </a>
       </div>
     </div>

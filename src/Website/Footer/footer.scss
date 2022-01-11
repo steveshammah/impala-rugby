@@ -14,18 +14,35 @@ footer {
     display: flex;
     flex-wrap: wrap;
     height: 300px;
-    width: 60%;
     align-items: center;
     justify-content: space-around;
 
-    img {
+    @include screen-size(phone) {
+      width: 90%;
+    }
+    @include screen-size(tablet) {
+      width: 80%;
+    }
+    @include screen-size(desktop) {
+      width: 60%;
+    }
+
+    a {
+      text-decoration: none;
       height: 60px;
       width: 200px;
-      cursor: pointer;
-      object-fit: contain;
       -webkit-box-shadow: 0px 10px 13px -7px #000000,
         5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      @include screen-size(phone) {
+        width: 120px;
+      }
     }
   }
 
@@ -36,12 +53,27 @@ footer {
     color: $mainColor;
     width: 100%;
     background-color: $black;
+    flex-wrap: wrap;
+
+    @include screen-size(phone) {
+      // flex-direction: column;
+      // align-items: center;
+    }
 
     .footer-list {
       display: flex;
       flex-direction: column;
       flex: 1;
       margin: 5px;
+
+      @include screen-size(phone) {
+        margin-bottom: 20px;
+      }
+      @include screen-size(tablet) {
+        // background-color: red;
+        width: 50%;
+        // flex: 2;
+      }
 
       h2 {
         font-weight: 600;
@@ -58,9 +90,8 @@ footer {
         flex-direction: column;
         justify-content: space-around;
         list-style: none;
-        // height: 60%;
+        width: 100%;
         flex: 3;
-        // background-color: red;
 
         li {
           cursor: pointer;
@@ -68,14 +99,29 @@ footer {
           &:hover {
             color: $defaultRed;
           }
+
+          a {
+            text-decoration: none;
+            color: $mainColor;
+          }
         }
       }
     }
     .contacts-container {
       display: flex;
       align-items: center;
-      flex: 2;
+
       justify-content: space-around;
+
+      @include screen-size(tablet) {
+        // background-color: red;
+        // width: 100%;
+        flex: 1;
+      }
+      @include screen-size(desktop) {
+        background-color: initial;
+        flex: 2;
+      }
 
       .contacts-text {
         display: flex;
@@ -99,7 +145,6 @@ footer {
       }
 
       .contacts-image {
-        display: flex;
         align-items: center;
 
         height: 220px;
@@ -108,6 +153,18 @@ footer {
           height: 70%;
           width: 100%;
           object-fit: fill;
+        }
+
+        @include screen-size(phone) {
+          display: none;
+        }
+
+        @include screen-size(tablet) {
+          display: none;
+        }
+
+        @include screen-size(desktop) {
+          display: flex;
         }
       }
     }
@@ -126,12 +183,30 @@ footer {
     ul {
       display: flex;
       justify-content: space-around;
-      flex: 2;
       list-style: none;
       // background-color: green;
 
       li {
         cursor: pointer;
+        @include screen-size(phone) {
+          font-size: 0.5rem;
+        }
+        @include screen-size(tablet) {
+          font-size: 0.6rem;
+        }
+
+        @include screen-size(desktop) {
+          font-size: 0.8rem;
+        }
+      }
+      @include screen-size(phone) {
+        flex: 4;
+      }
+      @include screen-size(tablet) {
+        flex: 3;
+      }
+      @include screen-size(desktop) {
+        flex: 2;
       }
     }
 
@@ -144,11 +219,20 @@ footer {
       padding: 3px;
 
       * {
-        font-size: 2.2rem;
         color: $mainColor;
 
         &:hover {
           color: $defaultRed;
+        }
+
+        @include screen-size(phone) {
+          font-size: 1.5rem;
+        }
+        @include screen-size(tablet) {
+          font-size: 1.8rem;
+        }
+        @include screen-size(desktop) {
+          font-size: 2.2rem;
         }
       }
     }
@@ -157,6 +241,17 @@ footer {
       display: flex;
       justify-content: flex-end;
       flex: 1;
+
+      @include screen-size(phone) {
+        font-size: 0.4rem;
+        // padding: 0px;
+      }
+      @include screen-size(tablet) {
+        font-size: 0.6rem;
+      }
+      @include screen-size(desktop) {
+        font-size: 0.8rem;
+      }
     }
   }
 }

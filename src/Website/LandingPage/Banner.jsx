@@ -12,20 +12,22 @@ const Banner = () => {
         <h2>#MACHOREDSINCE</h2>
 
         <p>
-          You'll never forget the moment you realised Impala was the club for
-          you.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
+          itaque, ipsa asperiores .
         </p>
 
-        <Button variant='contained' className='btn'>
-          <a href='/membership'>VIEW MORE</a>
-        </Button>
+        <a href='/partners-sponsors' className='btn'>
+          VIEW MORE
+        </a>
       </div>
 
       <div className='join-herd'>
         <p>Sign Up to join the Herd for free</p>
-        <Button variant='outlined' className='btn'>
-          <a href='/membership'>JOIN THE FAMILY</a>
-        </Button>
+        {/* <Button variant='outlined'> */}
+        <a href='/partners-sponsors' className='btn'>
+          JOIN THE FAMILY
+        </a>
+        {/* </Button> */}
       </div>
     </div>
   );
