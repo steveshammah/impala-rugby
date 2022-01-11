@@ -5,12 +5,12 @@ import BottomNav from "./BottomNav";
 import "./header.scss";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(true);
   return (
     <header>
       <Box maxWidth='bg' className='website-nav'>
         {/* <TopNav /> */}
-        <BottomNav menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+        <BottomNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </Box>
     </header>
   );

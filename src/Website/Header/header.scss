@@ -94,6 +94,7 @@ header {
           height: calc(100vh - 70px);
           width: 100%;
           padding: 0px;
+          z-index: 10;
 
           li {
             font-size: 1.4rem;
