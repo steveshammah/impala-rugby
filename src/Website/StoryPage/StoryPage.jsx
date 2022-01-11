@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
 // import { Link } from "react-router-dom";
 import { logos, localArticles } from "../../resources/resources";
 import { useState, useEffect, useContext } from "react";
@@ -12,7 +12,7 @@ const StoryPage = ({ match }) => {
   // const { articles, BASE_URL } = useContext(articlesContext);
 
   const [article, setArticle] = useState({});
-  const [tags, setTags] = useState([]);
+  // const [tags, setTags] = useState([]);
 
   const data = localArticles.filter((story) => {
     return story.id === parseInt(storyId);
@@ -31,12 +31,12 @@ const StoryPage = ({ match }) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      // console.log("Data", data);
-      setArticle(data);
+
+      // setArticle(data);
 
       // Seperate String from DB to list of tags
-      const tags = data.tags.split(",");
-      setTags(tags);
+      const tagsList = data.tags.split(",");
+      // setTags(tagsList);
     } catch (error) {
       console.log("Error Occured:", error);
     }

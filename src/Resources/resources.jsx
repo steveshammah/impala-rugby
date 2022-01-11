@@ -1712,7 +1712,7 @@ export const localArticles = [
   {
     id: 0,
     title: "Kenya Cup Is Back",
-    headline: "The off-season complete. Match day 1 confirmed!",
+    headline: "The off-season is complete. Match day 1 confirmed!",
     image_1: teamPhoto,
     image_2: anderson,
     type: "news",

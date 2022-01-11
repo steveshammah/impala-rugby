@@ -141,14 +141,23 @@
 
     .home-more-stories {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      overflow-y: scroll;
+      flex-direction: column;
+      // flex-wrap: wrap;
+      // justify-content: space-around;
+      // overflow-y: scroll;
       //   -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
 
-      &::-webkit-scrollbar {
-        display: none;
+      .more-stories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow-y: scroll;
+        //   -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
 
       @include screen-size(phone) {
@@ -158,10 +167,9 @@
       }
 
       @include screen-size(tablet) {
-                padding-top: 40px;
+        padding-top: 40px;
         position: relative;
         // background-color: red;
-
       }
 
       @include screen-size(desktop) {
@@ -171,7 +179,6 @@
 
       h2 {
         color: $defaultRed;
-        
 
         @include screen-size(phone) {
           display: block;
@@ -181,7 +188,7 @@
         }
 
         @include screen-size(tablet) {
-        display: block;
+          display: block;
           position: absolute;
           top: 0px;
           left: 10px;
