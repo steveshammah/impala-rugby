@@ -7,10 +7,20 @@
   // align-items: center;
   width: 100%;
   .profile-image {
-    height: 70vh;
     // background-color: aqua;
     background-attachment: fixed;
     // background-position: top;
+
+    @include screen-size(phone) {
+      display: none;
+    }
+    @include screen-size(tablet) {
+      display: none;
+    }
+    @include screen-size(desktop) {
+      display: block;
+      height: 70vh;
+    }
     img {
       object-fit: cover;
       object-position: top;
@@ -21,30 +31,71 @@
   .container-wrapper {
     display: flex;
     justify-content: space-between;
-    margin-top: -100px;
-    height: 80vh;
     z-index: 10;
     padding: 20px;
 
+    @include screen-size(phone) {
+      flex-direction: column;
+      height: auto;
+      margin-top: 0;
+    }
+
+    @include screen-size(tablet) {
+      flex-direction: column;
+      height: auto;
+      margin-top: 0px;
+    }
+
+    @include screen-size(desktop) {
+      flex-direction: initial;
+      margin-top: -100px;
+      height: 80vh;
+
+      height: auto;
+    }
+
     .left-container {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      // background-color: red;
+
+      @include screen-size(phone) {
+        margin-bottom: 20px;
+        width: 100%;
+        // background-color: red;
+        align-items: center;
+      }
+
+      @include screen-size(tablet) {
+        width: 100%;
+        // background-color: red;
+        align-items: center;
+      }
+
+      @include screen-size(desktop) {
+        // margin-bottom: 20px;
+        flex: 1;
+      }
 
       .member-profile-card {
-        // height: 500px;
-        flex: 4;
-
-        background-color: $blueDark;
         display: flex;
-        color: $mainColor;
+        color: $black;
         flex-direction: column;
         align-items: center;
-        // margin: auto;
-        padding: 10px;
-        // border-radius: 6px;
-        // margin-top: 100px;
+
+        @include screen-size(phone) {
+          width: 100%;
+        }
+
+        @include screen-size(tablet) {
+          height: 500px;
+          width: 100%;
+        }
+
+        @include screen-size(desktop) {
+          width: 500px;
+
+          height: 70vh;
+        }
 
         .profile-pic {
           display: flex;
@@ -55,6 +106,7 @@
           width: 100%;
           position: relative;
           border-radius: 6px;
+          // background-color: red;
 
           span {
             flex: 1;
@@ -75,11 +127,16 @@
       }
       img {
         object-position: top;
+        height: 100%;
+
+        @include screen-size(tablet) {
+          height: 70%;
+        }
       }
 
       .profile-meta {
         margin-top: 10px;
-        height: 40%;
+        height: 20%;
         // width: 95%;
         background-color: $black;
         padding: 5px;
@@ -88,6 +145,14 @@
         flex-direction: column;
         justify-content: space-around;
         // align-items: center;
+
+        @include screen-size(tablet) {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        @include screen-size(desktop) {
+          margin-bottom: 0px;
+        }
 
         h5 {
           font-size: 1rem;
@@ -131,6 +196,11 @@
         5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 
+      @include screen-size(phone) {
+        width: 100%;
+        margin-left: 0;
+      }
+
       .profile-nav-links {
         display: flex;
         align-items: center;
@@ -145,24 +215,15 @@
             5px 5px 15px 5px rgba(0, 0, 0, 0);
         }
       }
-      // > section {
-      //   padding: 20px;
-      //   flex: 5;
-      //   background-color: lime;
-      //   display: flex;
-      //   flex-direction: column;
-      //   justify-content: space-around;
-      //   // width: 100%;
-
-      //   h2 {
-      //     text-align: center;
-      //   }
-      // }
 
       .member-about {
         height: 60vh;
         flex: initial;
-        // background-color: green;
+
+        @include screen-size(phone) {
+          height: auto;
+          padding-top: 10px;
+        }
         .member-about-text {
           // background-color: red;
           height: 90%;
@@ -177,13 +238,15 @@
             width: 90%;
             letter-spacing: 2px;
 
-            // background-color: blue;
+            @include screen-size(phone) {
+              line-height: 30px;
+              letter-spacing: initial;
+              padding: 10px;
+            }
           }
         }
       }
       .member-statistics {
-        // color: red;
-        // background-color: aqua;
         height: 100%;
         h2 {
           font-size: 2rem;
@@ -192,10 +255,8 @@
         .stats-wrapper {
           display: flex;
           justify-content: space-around;
-
-          margin-top: 50px;
-          // flex-direction: column;
-          // background-color: red;
+          flex-wrap: wrap;
+          padding-top: 20px;
 
           h3 {
             color: $defaultRed;
@@ -209,7 +270,21 @@
             color: white;
             padding: 10px;
             border-radius: 10px;
-            min-width: 25%;
+            margin-bottom: 10px;
+
+            @include screen-size(phone) {
+              width: 80%;
+              height: 150px;
+            }
+
+            @include screen-size(tablet) {
+              width: 80%;
+              height: 150px;
+            }
+
+            @include screen-size(desktop) {
+              width: 30%;
+            }
 
             div {
               display: flex;
@@ -222,6 +297,7 @@
       .images-container {
         // background-color: red;
         width: 100%;
+        padding-top: 20px;
         // position: relative;
 
         .images-wrapper {
@@ -238,6 +314,10 @@
             width: 200px;
             margin: 5px;
             cursor: pointer;
+
+            @include screen-size(phone) {
+              width: 160px;
+            }
 
             img {
               height: 100%;
@@ -298,6 +378,10 @@
             .icon {
               font-size: 2.5rem;
               cursor: pointer;
+
+              @include screen-size(phone) {
+                font-size: 1.4rem;
+              }
             }
             &.left {
               left: 5%;

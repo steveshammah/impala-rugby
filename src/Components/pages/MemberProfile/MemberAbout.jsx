@@ -1,10 +1,10 @@
-const MemberAbout = ({ member, activeWindow }) => {
+const MemberAbout = ({ activeWindow }) => {
   const display = activeWindow === "about" ? true : false;
   return (
     <section
       className='member-about'
       style={{ display: display ? "block" : "none" }}>
-      <h2>About</h2>
+      {/* <h2>About</h2> */}
       <div className='member-about-text'>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio

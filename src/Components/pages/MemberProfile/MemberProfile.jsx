@@ -25,11 +25,9 @@ const MemberProfile = ({ match }) => {
   const [value, setValue] = useState(0);
   const [activeWindow, setActiveWindow] = useState("about");
 
-
   const member = team.filter(
     (user) => user.id === parseInt(match.params.id)
   )[0];
- 
 
   return (
     <section className='member-profile'>
@@ -39,7 +37,7 @@ const MemberProfile = ({ match }) => {
       </div>
       <div className='container-wrapper'>
         <div className='left-container'>
-          <Card sx={{ maxWidth: 500 }}>
+          <Card className='member-profile-card'>
             <CardMedia
               component='img'
               height='200'

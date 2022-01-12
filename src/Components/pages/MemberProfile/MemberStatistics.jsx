@@ -5,7 +5,7 @@ const MemberStatistics = ({ member, activeWindow }) => {
     <section
       className='member-statistics'
       style={{ display: display ? "block" : "none" }}>
-      <h2>Player Statistics</h2>
+      {/* <h2>Player Statistics</h2> */}
       <div className='stats-wrapper'>
         <div className='match stats'>
           <h3>Personal Statistics</h3>

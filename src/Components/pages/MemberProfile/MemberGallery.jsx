@@ -14,7 +14,7 @@ const MemberGallery = ({ member, activeWindow }) => {
     <section
       className='images-container'
       style={{ display: display ? "block" : "none" }}>
-      <h2>{member.name}'s Gallery</h2>
+      {/* <h2>{member.name}'s Gallery</h2> */}
 
       <div className='images-wrapper'>
         <div className='image'>
