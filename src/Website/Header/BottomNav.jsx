@@ -1,6 +1,9 @@
 import { logos } from "../../resources/resources";
+import { useRef } from "react";
 
 const BottomNav = ({ menuOpen, setMenuOpen }) => {
+  const burgerNav = useRef();
+
   return (
     <div className='bottom-header'>
       <div className='logo'>
@@ -8,7 +11,11 @@ const BottomNav = ({ menuOpen, setMenuOpen }) => {
           <img src={logos.impalaLogo} alt='' />
         </a>{" "}
       </div>
-      <ul style={{ display: menuOpen ? "flex" : "none" }}>
+      <ul
+        style={{
+          display: "flex",
+          visibility: Boolean(burgerNav) && menuOpen && "visible",
+        }}>
         <li>
           <a href='/feed/stories'>News</a>
         </li>
@@ -30,7 +37,10 @@ const BottomNav = ({ menuOpen, setMenuOpen }) => {
         </li>
       </ul>
 
-      <div className='burger-nav' onClick={() => setMenuOpen(!menuOpen)}>
+      <div
+        className='burger-nav'
+        onClick={() => setMenuOpen(!menuOpen)}
+        ref={burgerNav}>
         <span></span>
         <span></span>
       </div>

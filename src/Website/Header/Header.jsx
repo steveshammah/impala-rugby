@@ -5,7 +5,7 @@ import BottomNav from "./BottomNav";
 import "./header.scss";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header>
       <Box maxWidth='bg' className='website-nav'>

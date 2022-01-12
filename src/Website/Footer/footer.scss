@@ -243,8 +243,8 @@ footer {
       flex: 1;
 
       @include screen-size(phone) {
-        font-size: 0.4rem;
-        // padding: 0px;
+        font-size: 7px;
+        
       }
       @include screen-size(tablet) {
         font-size: 0.6rem;

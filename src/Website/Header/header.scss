@@ -75,6 +75,7 @@ header {
       ul {
         transition: all ease-in-out;
         background-color: $defaultRed;
+        transition: all ease-in-out;
 
         @include screen-size(phone) {
           flex-direction: column;
@@ -84,6 +85,7 @@ header {
           left: 0;
           height: calc(100vh - 70px);
           width: 100%;
+          visibility: hidden;
         }
         @include screen-size(tablet) {
           flex-direction: column;
@@ -95,6 +97,7 @@ header {
           width: 100%;
           padding: 0px;
           z-index: 10;
+          visibility: hidden;
 
           li {
             font-size: 1.4rem;
@@ -109,6 +112,8 @@ header {
           position: relative;
           top: 0;
           height: 100%;
+          visibility: visible;
+
           // margin: 1px;
 
           li {

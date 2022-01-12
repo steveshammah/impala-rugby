@@ -13,34 +13,34 @@ const Footer = () => {
   return (
     <footer>
       <div className='footer-logos'>
-        <a href='partners-sponsors/resolution'>
+        <a href='/partners-sponsors/resolution'>
           <img src={logos.resolutionLogo} alt='' />
         </a>
-        <a href='partners-sponsors/stanchart'>
+        <a href='/partners-sponsors/stanchart'>
           <img src={logos.stanchartLogo} alt='' />
         </a>
 
-        <a href='partners-sponsors/blaze'>
+        <a href='/partners-sponsors/blaze'>
           <img src={logos.blazeLogo} alt='' />
         </a>
 
-        <a href='partners-sponsors/saracens'>
+        <a href='/partners-sponsors/saracens'>
           <img src={logos.saracensLogo} alt='' />
         </a>
 
-        <a href='partners-sponsors'>
+        <a href='/partners-sponsors'>
           <img src={logos.resolutionLogo} alt='' />
         </a>
 
-        <a href='partners-sponsors'>
+        <a href='/partners-sponsors'>
           <img src={logos.impalaLogo} alt='' />
         </a>
 
-        <a href='partners-sponsors/stanchart'>
+        <a href='/partners-sponsors/stanchart'>
           <img src={logos.stanchartLogo} alt='' />
         </a>
 
-        <a href='partners-sponsors/blaze'>
+        <a href='/partners-sponsors/blaze'>
           <img src={logos.blazeLogo} alt='' />
         </a>
       </div>

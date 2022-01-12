@@ -167,8 +167,9 @@
       }
 
       @include screen-size(tablet) {
-        padding-top: 40px;
+        padding-top: 30px;
         position: relative;
+        height: 30%;
         // background-color: red;
       }
 
@@ -235,8 +236,8 @@
           width: 170px;
         }
         @include screen-size(tablet) {
-          height: 200px;
-          width: 250px;
+          height: 90%;
+          width: 270px;
         }
 
         @include screen-size(desktop) {
