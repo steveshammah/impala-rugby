@@ -1,7 +1,6 @@
 @import "../../global.scss";
 
 .match-center {
-  //   background-color: red;
   color: $light;
   width: 100%;
 
@@ -24,9 +23,16 @@
       font-family: $mainFont;
       margin-right: 100px;
       border-radius: 6px 6px 0 0;
+      text-align: center;
+
+      @include screen-size(phone) {
+        width: 90px;
+        height: 50%;
+        font-size: 0.9rem;
+      }
 
       option {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
     }
     ul {
@@ -47,6 +53,13 @@
         border-radius: 6px 6px 0 0;
         transition: all ease;
 
+        @include screen-size(phone) {
+          // width: 100px;
+          height: 50%;
+          padding: 5px;
+          font-size: 0.9rem;
+        }
+
         &.active,
         &:hover {
           background-color: white;
@@ -57,7 +70,10 @@
   }
 
   .fixtures-center {
-    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
     .fixtures-wrapper {
       display: flex;
@@ -65,14 +81,29 @@
       justify-content: center;
       flex-direction: column;
       width: 90%;
-      //   background-color: red;
+
+      @include screen-size(phone) {
+        width: 100%;
+        // background-color: red;
+      }
 
       .monthly-fixtures {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 60%;
+
+        @include screen-size(phone) {
+          width: 100%;
+        }
+
+        @include screen-size(tablet) {
+          width: 90%;
+        }
+
+        @include screen-size(desktop) {
+          width: 70%;
+        }
 
         .fixture-container {
           width: 90%;
@@ -156,13 +187,27 @@
   }
 
   .league-standings {
-    margin: 0px 5px;
+    margin: 0px 10px;
     background-color: $black;
     padding: 10px;
     color: white;
 
+    h2 {
+      text-transform: uppercase;
+
+      @include screen-size(phone) {
+        font-size: 1rem;
+      }
+    }
+
     table {
       width: 100%;
+
+      th {
+        @include screen-size(phone) {
+          font-size: 0.8rem;
+        }
+      }
 
       tr {
         -webkit-box-shadow: 0px 10px 13px -7px #000000,
@@ -179,8 +224,13 @@
         }
 
         td {
-          min-width: 100px;
+          width: 100px;
           text-align: center;
+
+          @include screen-size(phone) {
+            width: 50px;
+            font-size: 0.8rem;
+          }
         }
       }
     }
