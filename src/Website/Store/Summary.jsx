@@ -22,7 +22,7 @@ const Summary = ({ cartItem, selectSize, setCartItem, product }) => {
               </div>
             </div>
           ))}
-          <a href='/cart' className='btn'>
+          <a href='#ToCart' className='btn'>
             View Bag
           </a>
         </div>

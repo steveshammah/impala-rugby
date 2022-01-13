@@ -25,7 +25,7 @@ const Product = ({ match }) => {
                 <img src={item.img} alt='' />
                 <img src={item.img} alt='' />
               </div>
-              <img src={item.img} alt='' />
+              <img src={item.img} alt='PRODUCT-IMG' />
             </div>
             <div className='right-wrapper'>
               <div className='product-details'>
@@ -66,7 +66,7 @@ const Product = ({ match }) => {
           </div>
         );
       })}
-      <SuggestedProducts activeProductId={productId}/>
+      <SuggestedProducts activeProductId={productId} />
     </div>
   );
 };

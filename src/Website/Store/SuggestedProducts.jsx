@@ -11,8 +11,9 @@ const SuggestedProducts = ({ activeProductId }) => {
   }, []);
   return (
     <div className='suggested-products'>
-      <h2>Suggested Products</h2>
       <div className='products'>
+        <h2>Suggested</h2>
+
         {suggested.map((product) => (
           <a href={`/shop/${product.id}`} className='product' key={product.id}>
             <img src={product.img} alt='' />
@@ -20,7 +21,6 @@ const SuggestedProducts = ({ activeProductId }) => {
           </a>
         ))}
       </div>
-      
     </div>
   );
 };

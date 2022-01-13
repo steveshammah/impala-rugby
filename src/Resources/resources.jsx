@@ -1261,7 +1261,7 @@ export const products = [
     color: "Grey",
   },
   {
-    id: 16,
+    id: 17,
     name: "T-Shirt Floodies",
     img: floodies2016,
     price: "1100",
@@ -1272,7 +1272,7 @@ export const products = [
     color: "Black",
   },
   {
-    id: 17,
+    id: 18,
     name: " Eat - Sleep - Rugby - Repeat",
     img: eatRugbyTshirt,
     price: "1000",
@@ -1294,7 +1294,7 @@ export const products = [
     color: "Black",
   },
   {
-    id: 18,
+    id: 19,
     name: "Hoodie Min",
     img: hoodiesRedMinW,
     price: "3500",
@@ -1305,7 +1305,7 @@ export const products = [
     color: "Red",
   },
   {
-    id: 19,
+    id: 20,
     name: "Away Kit 2016",
     img: awayKitReplicaM,
     price: "3500",
@@ -1316,7 +1316,7 @@ export const products = [
     color: "White",
   },
   {
-    id: 20,
+    id: 21,
     name: "Women Tshirt",
     img: damimaKitted,
     price: "3500",
@@ -1327,7 +1327,7 @@ export const products = [
     color: "Red",
   },
   {
-    id: 21,
+    id: 22,
     name: "Cup Ceramic",
     img: cupWhite,
     price: "1100",
@@ -1338,7 +1338,7 @@ export const products = [
     color: "White",
   },
   {
-    id: 22,
+    id: 23,
     name: "Cup Metallic",
     img: cupMetallic,
     price: "1600",
@@ -1349,7 +1349,7 @@ export const products = [
     color: "Metallic",
   },
   {
-    id: 23,
+    id: 24,
     name: "Impala T-Shirt",
     img: redTshirtMen,
     price: "3500",
