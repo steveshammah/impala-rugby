@@ -238,18 +238,45 @@
 }
 
 .match-review-container {
-  height: calc(100vh - 70px);
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
+  @include screen-size(phone) {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
+  @include screen-size(tablet) {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  @include screen-size(desktop) {
+    flex-direction: initial;
+    height: calc(100vh - 70px);
+  }
   .match-details {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
     flex: 1;
-    // background-color: $black;
+
+    @include screen-size(phone) {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    @include screen-size(tablet) {
+      width: 100%;
+      // background-color: lime;
+      margin-bottom: 20px;
+    }
+    @include screen-size(desktop) {
+      margin-bottom: 0;
+      width: 70%;
+    }
 
     // padding: 10px;
 
@@ -260,6 +287,11 @@
       height: 50%;
       // flex: 2;
       width: 80%;
+      margin-bottom: 20px;
+
+      @include screen-size(phone) {
+        width: 100%;
+      }
 
       .tournament {
         background-color: $defaultRed;
@@ -277,12 +309,23 @@
         height: 80%;
         width: 100%;
 
+        @include screen-size(phone) {
+          // flex-direction: column;
+          // background-color: lime;
+        }
+
         h1 {
           height: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 3rem;
+
+          @include screen-size(phone) {
+            // font-size: 2rem;
+            // background-color: lime;
+            // padding: 10px;
+          }
         }
 
         .team {
@@ -295,10 +338,18 @@
           justify-content: center;
           flex-direction: column;
 
+          @include screen-size(phone) {
+            // width: 30%;
+          }
+
           h2 {
             // flex: 2;
             height: 50px;
             text-transform: uppercase;
+
+            @include screen-size(phone) {
+              font-size: 1.2rem;
+            }
           }
           .team-logo {
             // flex: 2;
@@ -306,6 +357,11 @@
             width: 200px;
             border-radius: 50%;
             // background-color: aqua;
+
+            @include screen-size(phone) {
+              height: 150px;
+              width: 150px;
+            }
 
             img {
               height: 100%;
@@ -330,12 +386,21 @@
       overflow-x: hidden;
       // padding: 10px;
 
+      @include screen-size(phone) {
+        width: 100%;
+        margin-top: 20px;
+      }
+
       .title-nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
         padding: 5px;
         background-color: $defaultRed;
+
+        @include screen-size(phone) {
+          padding: 2px;
+        }
 
         h2 {
           text-transform: uppercase;
@@ -357,12 +422,23 @@
       }
 
       .match-report {
-        width: 150%;
         display: flex;
         justify-content: space-around;
         transition: all ease-in-out 1s;
-        // background-color: yellow;
+
         color: $black;
+
+        @include screen-size(phone) {
+          width: 900px;
+        }
+
+        @include screen-size(tablet) {
+          width: 900px;
+        }
+
+        @include screen-size(desktop) {
+          width: 150%;
+        }
 
         .report-card {
           height: 100px;
@@ -372,6 +448,12 @@
           border-radius: 6px;
           padding: 10px;
           // margin-right: 10px;
+
+          @include screen-size(phone) {
+            padding: 5px;
+            margin-right: 10px;
+            // background-color: brown;
+          }
 
           h3 {
             color: $light;
@@ -401,6 +483,17 @@
     flex: 1;
     color: $mainColor;
 
+    @include screen-size(phone) {
+      width: 100%;
+    }
+
+    @include screen-size(tablet) {
+      width: 90%;
+    }
+    @include screen-size(desktop) {
+      width: 30%;
+    }
+
     .line-up {
       flex: 1;
       display: flex;
@@ -410,6 +503,7 @@
       padding: 5px;
       color: $black;
       position: relative;
+      height: 100%;
       // background-color: red;
 
       &.home {
@@ -424,6 +518,7 @@
       }
       &.away {
         color: $black;
+        background-color: white;
 
         .substitutes {
           background-color: initial;
@@ -432,9 +527,8 @@
       }
       h3 {
         margin: 10px;
-
         text-transform: uppercase;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
       h4 {
         font-size: 1.1rem;

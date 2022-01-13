@@ -8,10 +8,21 @@
   header {
     height: 60px;
     background-color: $black;
-    width: 60%;
     margin: auto;
     position: sticky;
     top: 70px;
+
+    @include screen-size(phone) {
+      width: 100%;
+    }
+
+    @include screen-size(tablet) {
+      width: 80%;
+    }
+
+    @include screen-size(desktop) {
+      width: 60%;
+    }
 
     ul {
       display: flex;
@@ -41,15 +52,21 @@
   }
 
   .shop-container {
-    padding-left: 30px;
+    // padding-left: 30px;
     height: auto;
+    // background-color: red;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
 
     .product-wrapper {
       position: relative;
       height: 500px;
       transition: all ease-in-out 1s;
-      //   background-color: red;
+      background-color: aqua;
       overflow-y: hidden;
+      width: 100%;
 
       &.open {
         height: 100%;
@@ -64,14 +81,31 @@
       .category-container {
         height: 100%;
         display: flex;
+        justify-content: flex-start;
         flex-wrap: wrap;
         overflow: hidden;
+        // background-color: lime;
 
         .product {
-          height: 380px;
-          width: 250px;
+          height: 80%;
+
           margin: 0px 20px;
+
           cursor: pointer;
+
+          @include screen-size(phone) {
+            width: 40%;
+            height: 350px;
+            margin-right: 10px;
+          }
+
+          @include screen-size(tablet) {
+            width: 220px;
+          }
+
+          @include screen-size(desktop) {
+            width: 250px;
+          }
 
           img {
             height: 70%;
@@ -92,6 +126,11 @@
               padding: 5px;
               margin: 2px;
 
+              @include screen-size(phone) {
+                // padding: 0;
+                display: block;
+              }
+
               a {
                 color: white;
                 text-decoration: none;
@@ -101,10 +140,18 @@
             span {
               font-size: small;
               margin-left: 5px;
+
+              @include screen-size(phone) {
+                font-size: smaller;
+              }
             }
 
             p {
               font-size: 0.9rem;
+
+              @include screen-size(phone) {
+                font-size: 0.8rem;
+              }
             }
           }
         }
@@ -118,8 +165,10 @@
         right: 120px;
         cursor: pointer;
 
-        h5 {
+        a {
           font-size: 1rem;
+          text-decoration: none;
+          color: $mainColor;
         }
 
         .icon {

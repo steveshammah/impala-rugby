@@ -32,13 +32,15 @@ const ProductWrapper = ({ title, products }) => {
       <div className='more' onClick={handleClick}>
         {open ? (
           <>
-            <h5 onClick={handleClick}>Less</h5>
+            <a href={`#${title}`} onClick={handleClick}>
+              Less
+            </a>
 
             <ArrowDropUp className='icon' />
           </>
         ) : (
           <>
-            <h5>More</h5>
+            <a href={`#${title}`}>More</a>
 
             <ArrowDropDown className='icon' />
           </>

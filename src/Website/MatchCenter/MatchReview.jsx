@@ -28,7 +28,7 @@ const MatchReview = ({ match }) => {
     } else {
       // setCount(count < 2 && count + 1);
 
-      setPosition(-40);
+      setPosition(-440);
     }
   };
 
@@ -95,7 +95,7 @@ const MatchReview = ({ match }) => {
 
           <div
             className='match-report'
-            style={{ transform: `translateX(${position}%)` }}>
+            style={{ transform: `translateX(${position}px)` }}>
             {activeMatch.played ? (
               <>
                 <div className='report-card'>
