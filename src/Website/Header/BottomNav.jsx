@@ -3,6 +3,24 @@ import { useRef } from "react";
 
 const BottomNav = ({ menuOpen, setMenuOpen }) => {
   const burgerNav = useRef();
+  const navLinks = [
+    {
+      name: "News",
+      url: "feed/stories",
+    },
+    {
+      name: "Squads",
+      url: "squads",
+    },
+    {
+      name: "Shop",
+      url: "shop",
+    },
+    {
+      name: "Dashboard",
+      url: "dashboard/home",
+    },
+  ];
 
   return (
     <div className='bottom-header'>
@@ -16,25 +34,14 @@ const BottomNav = ({ menuOpen, setMenuOpen }) => {
           display: "flex",
           visibility: Boolean(burgerNav) && menuOpen && "visible",
         }}>
-        <li>
-          <a href='/feed/stories'>News</a>
-        </li>
-
-        <li>
-          <a href='/squads'>squads</a>
-        </li>
-        <li>
-          <a href='/match-center'>fixtures</a>
-        </li>
-        <li>
-          <a href='/shop'>shop</a>
-        </li>
-        <li>
-          <a href='/partners-sponsors'>Sponsors</a>
-        </li>
-        <li>
-          <a href='/dashboard/home'>Dashboard</a>
-        </li>
+        {navLinks.map((link) => (
+          <li
+            style={{
+              visibility: Boolean(burgerNav) && menuOpen && "visible",
+            }}>
+            <a href={link.url}>{link.name}</a>
+          </li>
+        ))}
       </ul>
 
       <div

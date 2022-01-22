@@ -142,11 +142,33 @@
     .home-more-stories {
       display: flex;
       flex-direction: column;
-      // flex-wrap: wrap;
-      // justify-content: space-around;
-      // overflow-y: scroll;
-      //   -ms-overflow-style: none; /* IE and Edge */
+      -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
+
+      > a {
+        color: $defaultRed;
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 700;
+
+        @include screen-size(phone) {
+          display: block;
+          position: absolute;
+          top: -20px;
+          left: 10px;
+        }
+
+        @include screen-size(tablet) {
+          display: block;
+          position: absolute;
+          top: -20px;
+          left: 10px;
+        }
+
+        @include screen-size(desktop) {
+          display: none;
+        }
+      }
 
       .more-stories {
         display: flex;
@@ -174,30 +196,8 @@
       }
 
       @include screen-size(desktop) {
-        height: 90%;
+        height: 100%;
         flex: 1;
-      }
-
-      h2 {
-        color: $defaultRed;
-
-        @include screen-size(phone) {
-          display: block;
-          position: absolute;
-          top: 0px;
-          left: 10px;
-        }
-
-        @include screen-size(tablet) {
-          display: block;
-          position: absolute;
-          top: 0px;
-          left: 10px;
-        }
-
-        @include screen-size(desktop) {
-          display: none;
-        }
       }
 
       .home-story {

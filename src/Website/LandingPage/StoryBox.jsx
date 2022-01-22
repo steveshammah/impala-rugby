@@ -7,7 +7,7 @@ const StoryBox = () => {
   const { articles, BASE_URL } = useContext(articlesContext);
   return (
     <Container className='home-more-stories'>
-      <h2>More Stories</h2>
+      <a href='/feed/stories'>More Stories</a>
       <div className='more-stories'>
         {articles.map((article) => (
           <Link

@@ -52,7 +52,6 @@ header {
     }
 
     .bottom-header {
-      padding: 5px;
       height: 70px;
       display: flex;
       align-items: center;
@@ -62,7 +61,7 @@ header {
 
       .logo {
         height: 90%;
-        width: 80px;
+        width: 100px;
         margin-left: 10px;
 
         img {
@@ -99,6 +98,10 @@ header {
           z-index: 10;
           visibility: hidden;
 
+          * {
+            visibility: hidden;
+          }
+
           li {
             font-size: 1.4rem;
           }
@@ -106,7 +109,6 @@ header {
         @include screen-size(desktop) {
           display: flex;
           flex-direction: initial;
-          padding: 10px;
           flex: 1;
           max-width: 900px;
           position: relative;
@@ -123,8 +125,11 @@ header {
         li {
           height: 100%;
           // background-color: #fff;
+          padding: 10px;
+          width: 120px;
           display: flex;
           align-items: center;
+          justify-content: center;
           transition: all ease-in-out 0.2s;
 
           &:hover {

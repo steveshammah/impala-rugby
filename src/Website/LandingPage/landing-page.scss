@@ -13,10 +13,10 @@
   justify-content: center;
   position: relative;
   padding-top: 10px;
+  margin-top: 20px;
 
   @include screen-size(phone) {
     height: 30vh;
-    // margin-top: 10px;
   }
 
   .imageWrapper {
