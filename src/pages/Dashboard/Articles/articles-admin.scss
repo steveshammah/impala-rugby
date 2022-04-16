@@ -1,0 +1,140 @@
+@import "../../../global.scss";
+
+.articles-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 70%;
+    height: 40px;
+    background-color: $black;
+    justify-content: space-around;
+
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.articles-admin {
+  display: flex;
+  justify-content: space-around;
+  //   flex-wrap: wrap;
+  background-color: red;
+  flex: 4;
+
+  .all-articles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 5px;
+    background-color: #fff;
+
+    .article {
+      margin: 5px;
+      height: 400px;
+
+      > span {
+        font-weight: 500 !important;
+      }
+    }
+  }
+}
+
+.create-post {
+  min-height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .left-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    flex: 4;
+    h2 {
+      font-size: 2rem;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10px;
+      width: 50%;
+      height: 20vh;
+      //   background-color: red;
+
+      input {
+        outline: none;
+        height: 40px;
+      }
+    }
+    .article-content {
+      //   background-color: red;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.7rem !important;
+      margin-bottom: 20px;
+
+      .article-field {
+        width: 90%;
+        height: 100%;
+        font-size: 0.8rem !important;
+      }
+      span {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .article-tags {
+      display: flex;
+      justify-content: space-between;
+      //   background-color: red;
+      width: 90%;
+
+      span {
+        display: flex;
+        align-items: flex-end;
+        flex: 1;
+
+        .tag-input {
+          width: 80%;
+        }
+      }
+    }
+
+    .article-buttons {
+      height: 100px;
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      //   padding: 20px;
+
+      button {
+        width: 110px;
+      }
+    }
+    .article-disclaimer {
+      margin-bottom: 0;
+    }
+  }
+  .right-wrapper {
+    flex: 1;
+    background-color: $light;
+  }
+}

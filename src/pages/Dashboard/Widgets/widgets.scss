@@ -1,0 +1,291 @@
+@import "../../../global.scss";
+
+.widgets {
+  display: flex;
+  height: auto;
+  // background-color: white;
+
+  > div {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  .widgets-small-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .widget-small {
+      height: 600px;
+      width: 100%;
+      -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      font-weight: 400;
+      padding: 5px;
+      background-color: white;
+
+      .player-widgets-sm {
+        overflow-y: scroll;
+        scrollbar-width: none; /* Firefox */
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        height: 90%;
+
+        .player-info {
+          height: 100px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 5px;
+          -webkit-box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+          box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+          font-weight: 400;
+          padding: 5px;
+          cursor: pointer;
+
+          .player-image {
+            flex: 1;
+
+            img {
+              height: 80px;
+              width: 80px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+          .player-meta {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            height: 90%;
+            // background-color: green;
+
+            h3 {
+              font-weight: 500;
+              font-size: 1rem;
+            }
+
+            span {
+              font-size: 0.7rem;
+
+              strong {
+                font-size: 0.7rem;
+                text-transform: capitalize;
+
+                &.consistent {
+                  color: rgba(0, 128, 0, 1);
+                }
+                &.good {
+                  color: rgba(0, 128, 0, 0.8);
+                }
+
+                &.inconsistent {
+                  color: rgba(250, 4, 4, 0.8);
+                }
+              }
+            }
+          }
+
+          a {
+            color: $black;
+            padding: 3px;
+            text-decoration: none;
+            font-size: 0.7rem;
+
+            button {
+              padding: 5px;
+              font-size: 0.7rem;
+            }
+          }
+
+          .player-toggle {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $mainColor;
+            border-radius: 10px;
+            padding: 5px;
+            text-decoration: none;
+            color: $black;
+
+            i {
+              font-size: 0.8rem;
+            }
+            .icon {
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+    .widget-sm-x {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-top: 20px;
+      padding: 5px;
+      flex: 1;
+      -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      background-color: $blueDark;
+      color: $black;
+
+      h2 {
+        height: 30px;
+        padding: 10px;
+        margin-bottom: 5px;
+        color: $mainColor;
+      }
+      .eventsWrapper {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+        margin-top: 50px;
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          margin-bottom: 10px;
+          // border-bottom: 1px solid $light;
+          padding: 5px;
+          background-color: $mainColor;
+          color: $black;
+
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            strong {
+              font-size: 0.9rem;
+              margin-right: 10px;
+            }
+            i {
+              flex: 2;
+            }
+
+            .icon {
+              margin-right: 20px;
+              font-size: 1rem;
+            }
+            small {
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .widget-big {
+    height: auto;
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    // -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    //   5px 5px 15px 5px rgba(0, 0, 0, 0);
+    // box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    font-weight: 400;
+
+    .league-standings {
+      margin: 0px 5px;
+      background-color: $black;
+      padding: 10px;
+      color: white;
+
+      table {
+        width: 100%;
+
+        tr {
+          -webkit-box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+          box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+          height: 40px;
+          color: $mainColor;
+
+          &.impala {
+            background-color: $defaultRed;
+            color: white;
+          }
+
+          td {
+            min-width: 100px;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .next-fixture {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      background-color: white;
+      padding: 10px;
+
+      .fixture-details {
+        //   height: 80%;
+        padding: 20px;
+        width: 80%;
+        display: flex;
+        height: 90%;
+
+        .team {
+          flex: 3;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          img {
+            flex: 4;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+          span {
+            flex: 1;
+            font-weight: 700;
+          }
+        }
+        .fixture-meta {
+          flex: 4;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
