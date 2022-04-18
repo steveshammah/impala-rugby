@@ -1,6 +1,8 @@
 import BarGraph from "../../../components/Chart/BarGraph";
 import Chart from "../../../components/Chart/LineGraph";
 import { trainingData, salesData } from "../../../../public/resources/resources";
+import LineGraph from "../../../components/Chart/LineGraph";
+
 import SummaryWidget from "../Widgets/SummaryWidget";
 
 const Summary = () => {
@@ -9,7 +11,7 @@ const Summary = () => {
       <h2>Summary</h2>
       <SummaryWidget />
       <div className="summary-graphs">
-        <Chart
+        <LineGraph
           title={"Training Statistics"}
           data={trainingData}
           dataKey={"Month"}
