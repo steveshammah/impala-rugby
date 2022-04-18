@@ -6,11 +6,12 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { IGraph } from "./types";
 
-const BarGraph = ({ title, data, dataKey }) => {
+const BarGraph = ({ title, data, dataKey }: IGraph) => {
   return (
-    <div className='graph'>
-      <h3 className='graph-title'>{title}</h3>
+    <div className="graph">
+      <h3 className="graph-title">{title}</h3>
       <ResponsiveContainer>
         <BarChart
           width={500}
@@ -21,13 +22,14 @@ const BarGraph = ({ title, data, dataKey }) => {
             right: 30,
             left: 20,
             bottom: 5,
-          }}>
+          }}
+        >
           <XAxis dataKey={dataKey} />
           <YAxis />
           <Tooltip />
 
-          <Bar dataKey='pv' fill='#ff002b' />
-          <Bar dataKey='uv' fill='#1d2537' />
+          <Bar dataKey="pv" fill="#ff002b" />
+          <Bar dataKey="uv" fill="#1d2537" />
         </BarChart>
       </ResponsiveContainer>
     </div>
