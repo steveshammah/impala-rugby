@@ -3,6 +3,11 @@ import { localArticles } from "../../public/resources/resources";
 import { createContext, useState, useEffect, FC } from "react";
 
 
+interface IArticlesContext {
+  articles: IArticles[];
+  getCookie: (name: string) => void;
+  BASE_URL: string;
+}
 export interface IArticles {
   id: number;
   title: string;
@@ -17,11 +22,11 @@ export interface IArticles {
   caption_1?: string;
   caption_2?: string;
 }
-export const articlesContext = createContext({});
+export const articlesContext = createContext({} as IArticlesContext);
 
 const ArticlesState: FC = ({ children }) => {
   // const initialState = {};
-  const [articles, setArticles] = useState([{}]);
+  const [articles, setArticles] = useState([{}] as IArticles[]);
 
   useEffect(() => {
     // fetchArticles();

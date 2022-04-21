@@ -1,7 +1,11 @@
 import { Button } from "@mui/material";
 import { allFixtures, logos } from "../../../public/resources/resources";
 
-const MatchesContainer = ({ position }) => {
+export interface ICardsContainerProps {
+  position: number;
+}
+
+const MatchesContainer = ({ position }: ICardsContainerProps) => {
   const { Men } = allFixtures;
   return (
     <div

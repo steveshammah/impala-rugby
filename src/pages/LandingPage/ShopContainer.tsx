@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
 import { products } from "../../../public/resources/resources";
 import "./landing-page.scss";
-// import CardNav from "./CardNav";
-// import { useState } from "react";
+import { ICardsContainerProps } from "./MatchesContainer";
 
-const ShopContainer = ({ position }) => {
+const ShopContainer = ({ position }: ICardsContainerProps) => {
   return (
     <div
       className="products container-md-wrapper"

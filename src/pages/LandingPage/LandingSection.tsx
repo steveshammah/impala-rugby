@@ -1,14 +1,15 @@
 import { Container } from "@mui/material";
 import StoryBox from "./StoryBox";
-import { useContext } from "react";
+import { FC, useContext } from "react";
 import { articlesContext } from "../../contexts/articles-context";
 // import { articlesContext } from "../../contexts/articles-context";
 
-const LandingSection = () => {
+const LandingSection: FC = () => {
   const { articles, BASE_URL } = useContext(articlesContext);
   const latestArticle = articles[0];
   return (
     <div className="website-landing-section">
+      {/* @ts-ignore: next-line */}
       <Container mxWidth="sm" className="main-story">
         <a href={`/stories/${latestArticle.id}`}>
           <div className="title-wrapper">

@@ -10,7 +10,10 @@ import {
 } from "@mui/material/";
 import { Delete, Edit } from "@material-ui/icons";
 // import { useContext } from "react";
-import { articlesContext } from "../../../contexts/articles-context";
+// import { articlesContext } from "../../../contexts/articles-context";
+
+
+
 
 const ArticleCard = ({ article, handleOpen, setActiveArticle }) => {
   // const { BASE_URL } = useContext(articlesContext);
