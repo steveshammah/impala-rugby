@@ -92,9 +92,9 @@ import trackJacket from "../assets/images/merchandise/track-jacket-red.jpg";
 import hoodieBlackMin from "../assets/images/merchandise/hoodie-black-minimal.jpg";
 import travelHat from "../assets/images/merchandise/hat-travel.jpg";
 import capOpenRed from "../assets/images/merchandise/cap-open.jpg";
-import hoodieGrey from "../assets/images/merchandise/hoodie-grey.JPG";
-import hoodieBlack from "../assets/images/merchandise/hoodie-black.JPG";
-import hoodieRed from "../assets/images/merchandise/hoodie-red.JPG";
+import hoodieGrey from "../assets/images/merchandise/hoodie-grey.jpg";
+import hoodieBlack from "../assets/images/merchandise/hoodie-black.jpg";
+import hoodieRed from "../assets/images/merchandise/hoodie-red.jpg";
 import eatRugbyTshirt from "../assets/images/merchandise/eat_sleep_rugby.jpg";
 import floodies2016 from "../assets/images/merchandise/tshirt-black-floodies.jpg";
 import pinkTshirtWomen from "../assets/images/merchandise/tshirt-pink-women.jpg";
@@ -108,6 +108,7 @@ import hoodiesRedMinW from "../assets/images/merchandise/hoodie-red-minimal-wome
 import hoodiesRedMinM from "../assets/images/merchandise/hoodie-red-minimal-men.jpg";
 import cupWhite from "../assets/images/merchandise/cup-ceramic-white.jpg";
 import cupMetallic from "../assets/images/merchandise/cup-metallic.jpg";
+import { IMenuLinks } from "../components/SideBar/SubMenu";
 
 // Products
 
@@ -771,7 +772,7 @@ export const videos = [
   { id: 11, name: "Sevens Circuit", count: 200, img: resolutionLogo },
 ];
 
-export const menuLinks = {
+export const menuLinks: IMenuLinks = {
   dashboard: [
     { name: "Home", icon: "home", url: "dashboard/home" },
     { name: "Training Schedule", icon: "training", url: "training" },

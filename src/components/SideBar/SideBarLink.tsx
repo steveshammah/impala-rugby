@@ -13,9 +13,21 @@ import {
 
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import { Dispatch, SetStateAction } from "react";
+interface ISideBarLinkProps {
+  name: string;
+  icon: string;
+  activeLink: string;
+  setActiveLink: Dispatch<SetStateAction<string>>;
+}
 
-const SideBarLink = ({ name, icon, active, setActiveLink }) => {
-  const setIcon = (name) => {
+const SideBarLink = ({
+  name,
+  icon,
+  activeLink,
+  setActiveLink,
+}: ISideBarLinkProps) => {
+  const setIcon = (name: string) => {
     switch (name) {
       case "home":
         return <Home />;
@@ -54,7 +66,7 @@ const SideBarLink = ({ name, icon, active, setActiveLink }) => {
       <ListItemIcon>{setIcon(icon)}</ListItemIcon>
 
       <ListItemText
-        className={active === name ? "link-text active" : "link-text"}
+        className={activeLink === name ? "link-text active" : "link-text"}
         onClick={() => setActiveLink(name)}
         primary={name}
       />
@@ -63,8 +75,3 @@ const SideBarLink = ({ name, icon, active, setActiveLink }) => {
 };
 
 export default SideBarLink;
-
-{
-  /*
-   */
-}

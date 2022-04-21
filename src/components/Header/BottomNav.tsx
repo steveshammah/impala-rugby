@@ -1,8 +1,15 @@
 // import { impalaLogo } from "/assets/images/logos/impalaLogo.png";
-import { useRef } from "react";
 
-const BottomNav = ({ menuOpen, setMenuOpen }) => {
-  const burgerNav = useRef();
+import { logos } from "../../resources/resources";
+import { useRef, Dispatch, SetStateAction } from "react";
+
+interface IBottomNav {
+  menuOpen: boolean;
+  setMenuOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const BottomNav = ({ menuOpen, setMenuOpen }: IBottomNav) => {
+  const burgerNav = useRef<HTMLDivElement>(null);
   const navLinks = [
     {
       name: "News",
@@ -32,13 +39,13 @@ const BottomNav = ({ menuOpen, setMenuOpen }) => {
       <ul
         style={{
           display: "flex",
-          visibility: Boolean(burgerNav) && menuOpen && "visible",
+          visibility: Boolean(burgerNav) && menuOpen ? "visible" : "hidden",
         }}
       >
         {navLinks.map((link) => (
           <li
             style={{
-              visibility: Boolean(burgerNav) && menuOpen && "visible",
+              visibility: Boolean(burgerNav) && menuOpen ? "visible" : "hidden",
             }}
           >
             <a href={link.url}>{link.name}</a>
