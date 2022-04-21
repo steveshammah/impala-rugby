@@ -109,6 +109,8 @@ import hoodiesRedMinM from "../assets/images/merchandise/hoodie-red-minimal-men.
 import cupWhite from "../assets/images/merchandise/cup-ceramic-white.jpg";
 import cupMetallic from "../assets/images/merchandise/cup-metallic.jpg";
 import { IMenuLinks } from "../components/SideBar/SubMenu";
+import { ITeam } from "../contexts/team-context";
+import { IArticles } from "../contexts/articles-context";
 
 // Products
 
@@ -180,7 +182,7 @@ export const photos = {
 };
 
 // All Team Members
-export const team = [
+export const team: ITeam[] = [
   {
     id: 0,
     name: "Edmund Anya",
@@ -1709,7 +1711,7 @@ export const allFixtures = {
   ],
 };
 
-export const localArticles = [
+export const localArticles: IArticles[] = [
   {
     id: 0,
     title: "Kenya Cup Is Back",

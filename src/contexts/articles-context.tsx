@@ -1,9 +1,25 @@
-import { createContext, useState, useEffect } from "react";
+
 import { localArticles } from "../../public/resources/resources";
+import { createContext, useState, useEffect, FC } from "react";
 
-export const articlesContext = createContext();
 
-const ArticlesState = ({ children }) => {
+export interface IArticles {
+  id: number;
+  title: string;
+  headline: string;
+  image_1: string;
+  image_2: string;
+  type: string;
+  tags: string;
+  author: string;
+  created: string;
+  posted: string;
+  caption_1?: string;
+  caption_2?: string;
+}
+export const articlesContext = createContext({});
+
+const ArticlesState: FC = ({ children }) => {
   // const initialState = {};
   const [articles, setArticles] = useState([{}]);
 
@@ -20,7 +36,7 @@ const ArticlesState = ({ children }) => {
   const BASE_URL = "http://localhost:8000";
 
   // CSRF TOKEN
-  const getCookie = (name) => {
+  const getCookie = (name: string) => {
     var cookieValue = null;
     if (document.cookie && document.cookie !== "") {
       var cookies = document.cookie.split(";");

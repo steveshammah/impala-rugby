@@ -2,7 +2,14 @@ import { DataGrid } from "@material-ui/data-grid";
 import { teamContext } from "../../contexts/team-context";
 import { useContext } from "react";
 
-const columns = [
+interface IColumns {
+  field: string;
+  headerName: string;
+  type?: string;
+  width: number;
+  editable?: boolean;
+}
+const columns: IColumns[] = [
   { field: "id", headerName: "ID", width: 100 },
   {
     field: "name",
@@ -66,7 +73,10 @@ const columns = [
   // },
 ];
 
-const Table = ({ group }) => {
+interface ITableProps {
+  group: string;
+}
+const Table = ({ group }: ITableProps) => {
   const { team } = useContext(teamContext);
   const rows = team.filter((member) => member.team === group);
   // console.log(rows);
