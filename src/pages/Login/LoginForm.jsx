@@ -1,4 +1,4 @@
-import { logos } from "../../resources/resources";
+import { logos } from "../../../public/resources/resources";
 import { useRef } from "react";
 
 const LoginForm = () => {

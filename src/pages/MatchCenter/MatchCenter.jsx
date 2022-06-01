@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Fixtures from "./Fixtures";
-import "./matchcenter.scss";
+
 import Results from "./Results";
 import Standings from "./Standings";
 

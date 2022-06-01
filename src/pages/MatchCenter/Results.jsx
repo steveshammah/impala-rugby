@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { allFixtures, logos } from "../../resources/resources";
+import { allFixtures, logos } from "../../../public/resources/resources";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Results = ({ activeTeam }) => {

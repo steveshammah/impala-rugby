@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { products } from "../../resources/resources";
+import { products } from "../../../public/resources/resources";
 import "./landing-page.scss";
 // import CardNav from "./CardNav";
 // import { useState } from "react";

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { team } from "../resources/resources";
+import { team } from "../../public/resources/resources";
 
 export const teamContext = createContext({});
 

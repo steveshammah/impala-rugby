@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { partners } from "../../resources/resources";
+import { partners } from "../../../public/resources/resources";
 import './sponsors.scss';
 
 const Partner = ({ match }) => {

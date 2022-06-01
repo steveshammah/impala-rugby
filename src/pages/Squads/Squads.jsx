@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { team } from "../../resources/resources";
+import { team } from "../../../public/resources/resources";
 import "./squad.scss";
 
 const Squads = () => {

@@ -1,0 +1,186 @@
+@import "./global.scss";
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  .website-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    // margin-bottom: 20px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      // background-color: $black;
+      padding: 5px;
+
+      li {
+        margin: 3px;
+        font-size: 0.9rem;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      background-color: $black;
+      color: $mainColor;
+
+      .header-leagues {
+        display: flex;
+        justify-content: flex-start;
+        flex: 3;
+      }
+      .mini-list {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+    }
+
+    .bottom-header {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $defaultRed;
+      width: 100%;
+
+      .logo {
+        height: 90%;
+        width: 100px;
+        margin-left: 10px;
+
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      ul {
+        transition: all ease-in-out;
+        background-color: $defaultRed;
+        transition: all ease-in-out;
+
+        @include screen-size(phone) {
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          height: calc(100vh - 70px);
+          width: 100%;
+          visibility: hidden;
+        }
+        @include screen-size(tablet) {
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          height: calc(100vh - 70px);
+          width: 100%;
+          padding: 0px;
+          z-index: 10;
+          visibility: hidden;
+
+          * {
+            visibility: hidden;
+          }
+
+          li {
+            font-size: 1.4rem;
+          }
+        }
+        @include screen-size(desktop) {
+          display: flex;
+          flex-direction: initial;
+          flex: 1;
+          max-width: 900px;
+          position: relative;
+          top: 0;
+          height: 100%;
+          visibility: visible;
+
+          // margin: 1px;
+
+          li {
+            font-size: 1rem;
+          }
+        }
+        li {
+          height: 100%;
+          // background-color: #fff;
+          padding: 10px;
+          width: 120px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all ease-in-out 0.2s;
+
+          &:hover {
+            border-bottom: 5px solid white;
+
+            a {
+              color: $black;
+            }
+          }
+
+          a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            // background-color: aqua;
+          }
+        }
+      }
+      .burger-nav {
+        // flex: 1;
+        margin-right: 10px;
+        width: 50px;
+        height: 40px;
+        // background-color: #fff;
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        cursor: pointer;
+        transition: all ease-in-out 1s;
+
+        @include screen-size(phone) {
+          display: flex;
+          padding: 10px;
+        }
+
+        @include screen-size(tablet) {
+          display: flex;
+          padding: 10px;
+        }
+
+        @include screen-size(desktop) {
+          display: none;
+        }
+        span {
+          height: 5px;
+          width: 40px;
+          background-color: white;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+}

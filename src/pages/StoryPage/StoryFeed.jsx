@@ -1,6 +1,6 @@
 import {  useState, useEffect } from "react";
 // import { articlesContext } from "../../contexts/articles-context";
-import { localArticles } from "../../resources/resources";
+import { localArticles } from "../../../public/resources/resources";
 import "./stories.scss";
 
 const StoryFeed = () => {

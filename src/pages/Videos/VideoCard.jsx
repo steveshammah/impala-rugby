@@ -1,6 +1,6 @@
 import "./groups.scss";
 import { AddCircle } from "@material-ui/icons";
-import { videos, logos } from "../../resources/resources";
+import { videos, logos } from "../../../public/resources/resources";
 
 const VideoCard = () => {
   return (

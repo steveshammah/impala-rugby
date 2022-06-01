@@ -1,4 +1,4 @@
-import { leagueStandings } from "../../../resources/resources";
+import { leagueStandings } from "../../../../public/resources/resources";
 import LogWidget from "./LogWidget";
 
 const WidgetBg = () => {

@@ -1,0 +1,321 @@
+@import "./global.scss";
+
+.website-home {
+  background-color: white;
+  color: $light;
+  width: 100%;
+
+  .website-landing-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // background-color: black;
+
+    @include screen-size(phone) {
+      flex-direction: column;
+      height: 100vh;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    @include screen-size(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 110vh;
+      // background-color: blue;
+    }
+    @include screen-size(desktop) {
+      flex-direction: initial;
+      height: 90vh;
+      padding: 10px;
+    }
+
+    .main-story {
+      background-color: $black;
+      display: flex;
+      border-top: 10px solid $defaultRed;
+      border-right: 10px solid $defaultRed;
+      border-top-right-radius: 40px;
+      // width: 100%;
+      cursor: pointer;
+      overflow: hidden;
+
+      @include screen-size(phone) {
+        height: 500px;
+        justify-content: center;
+        width: 95%;
+        margin: 10px;
+      }
+      @include screen-size(tablet) {
+        height: 600px;
+        // width: %;
+        width: 95%;
+        align-items: center;
+        margin: 10px;
+        // margin-right: 0px;
+
+        // background-color: red;
+
+        justify-content: center;
+        overflow: initial;
+      }
+      @include screen-size(desktop) {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-right: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      .title-wrapper {
+        // height: 100px;
+        // margin-bottom: 10px;
+        flex: 1;
+        // background-color: aqua;
+
+        h2 {
+          font-weight: 700;
+          padding: 10px;
+          font-size: 2.4rem;
+          color: $mainColor;
+
+          @include screen-size(phone) {
+            font-size: 2.1rem;
+          }
+        }
+      }
+
+      .main-story-image {
+        flex: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        @include screen-size(phone) {
+          height: 400px;
+        }
+        @include screen-size(tablet) {
+          height: 400px;
+          width: 90vw;
+        }
+
+        @include screen-size(desktop) {
+          height: 90%;
+          // height: 500px;
+          // flex: 4;
+          width: 100%;
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: fill;
+          transition: all ease-in-out 0.8s;
+
+          // @include screen-size(tablet) {
+          // }
+
+          // @include screen-size(desktop) {
+          //   height: 100%;
+          // }
+        }
+      }
+
+      &:hover {
+        .main-story-image {
+          overflow: hidden;
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .home-more-stories {
+      display: flex;
+      flex-direction: column;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      > a {
+        color: $defaultRed;
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 700;
+
+        @include screen-size(phone) {
+          display: block;
+          position: absolute;
+          top: -20px;
+          left: 10px;
+        }
+
+        @include screen-size(tablet) {
+          display: block;
+          position: absolute;
+          top: -20px;
+          left: 10px;
+        }
+
+        @include screen-size(desktop) {
+          display: none;
+        }
+      }
+
+      .more-stories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow-y: scroll;
+        //   -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      @include screen-size(phone) {
+        height: 50%;
+        padding-top: 40px;
+        position: relative;
+      }
+
+      @include screen-size(tablet) {
+        padding-top: 30px;
+        position: relative;
+        height: 30%;
+        // background-color: red;
+      }
+
+      @include screen-size(desktop) {
+        height: 100%;
+        flex: 1;
+      }
+
+      .home-story {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom: 1px solid $defaultRed;
+        border-right: 1px solid $defaultRed;
+        border-bottom-right-radius: 40px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        // margin-right: 5px;
+        transition: all ease-in-out 0.5s;
+        // background-color: aqua;
+
+        &:hover {
+          background-color: $black;
+          color: $mainColor;
+
+          -webkit-box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+          box-shadow: 0px 10px 13px -7px #000000,
+            5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+          img {
+            transform: scale(1.1);
+            opacity: 1;
+          }
+        }
+
+        @include screen-size(phone) {
+          height: 150px;
+          width: 170px;
+        }
+        @include screen-size(tablet) {
+          height: 90%;
+          width: 270px;
+        }
+
+        @include screen-size(desktop) {
+          height: 300px;
+          width: 320px;
+        }
+
+        .img-container {
+          overflow: hidden;
+          width: 100%;
+
+          @include screen-size(phone) {
+            display: none;
+          }
+          img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+            transition: all ease-in-out 0.5s;
+            object-position: 50% 10%;
+          }
+        }
+
+        .home-story-text {
+          flex: 1;
+          width: 100%;
+          // background-color: green;
+          // border-right: 1px solid $defaultRed;
+          border: hidden;
+          // border-bottom-right-radius: 30px;
+          span {
+            padding: 5px;
+          }
+
+          p {
+            width: 100%;
+            // color: white;
+            // background-color: yellow;
+            padding: 10px 20px;
+
+            @include screen-size(phone) {
+              font-size: 0.9rem;
+              padding: 5px;
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      a {
+        // display: block;
+        // background-color: lime;
+        text-decoration: none;
+        margin-left: 5px;
+        margin: 10px;
+
+        button {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  .container-card {
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    color: $black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    // justify-content: baseline;
+
+    &:hover {
+      -webkit-box-shadow: 0px 10px 13px -7px #000000,
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+  }
+}

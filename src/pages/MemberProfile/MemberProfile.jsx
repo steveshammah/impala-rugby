@@ -1,6 +1,5 @@
-import "./profile.scss";
 import { useState } from "react";
-import { team } from "../../resources/resources";
+import { team } from "../../../public/resources/resources";
 
 // import { teamContext } from "../../../contexts/team-context";
 import MemberAbout from "./MemberAbout";

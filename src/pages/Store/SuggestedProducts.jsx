@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { products } from "../../resources/resources";
+import { products } from "../../../public/resources/resources";
 
 const SuggestedProducts = ({ activeProductId }) => {
   const [suggested, setSuggested] = useState([]);

@@ -1,9 +1,9 @@
 import { createContext, useState, useEffect } from "react";
-import { localArticles } from "../resources/resources";
+import { localArticles } from "../../public/resources/resources";
 
 export const articlesContext = createContext();
 
-const ArticlesState = (props) => {
+const ArticlesState = ({ children }) => {
   // const initialState = {};
   const [articles, setArticles] = useState([{}]);
 
@@ -52,7 +52,7 @@ const ArticlesState = (props) => {
   };
   return (
     <articlesContext.Provider value={{ articles, getCookie, BASE_URL }}>
-      {props.children}
+      {children}
     </articlesContext.Provider>
   );
 };
