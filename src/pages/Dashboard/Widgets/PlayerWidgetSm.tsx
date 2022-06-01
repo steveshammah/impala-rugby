@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@mui/material";
 
-const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
+
+
+
+const PlayerWidgetSm = ({ member, getConsistency, getPercentage }: any) => {
   return (
     <section className='player-info'>
       <div className='player-image'>
@@ -25,7 +28,7 @@ const PlayerWidgetSm = ({ member, getConsistency, getPercentage }) => {
           <strong> {member.team}</strong>
         </span>
       </div>
-      <Link to={`/players-and-staff/${member.id}`}>
+      <Link href={`/players-and-staff/${member.id}`} passHref>
         <Button variant='outlined'>View Profile</Button>
       </Link>
     </section>

@@ -1,7 +1,7 @@
 import { menuLinks } from "../../resources/resources";
 import SideBarLink from "./SideBarLink";
 import ListItem from "@mui/material/ListItem";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import List from "@mui/material/List";
 
@@ -11,19 +11,21 @@ const SubMenu = ({ category }) => {
   const [activeLink, setActiveLink] = useState("Home");
 
   return (
-    <List className='sub-menu'>
+    <List className="sub-menu">
       <h4>{category}</h4>
       {menuLinks[category].map((link) => {
         return (
-          <Link to={`/${link.url}`} className='link'>
-            <ListItem button key={category}>
-              <SideBarLink
-                name={link.name}
-                icon={link.icon}
-                active={activeLink}
-                setActiveLink={setActiveLink}
-              />
-            </ListItem>
+          <Link href={`/${link.url}`} className="link" passHref>
+            <>
+              <ListItem button key={category}>
+                <SideBarLink
+                  name={link.name}
+                  icon={link.icon}
+                  active={activeLink}
+                  setActiveLink={setActiveLink}
+                />
+              </ListItem>
+            </>
           </Link>
         );
       })}

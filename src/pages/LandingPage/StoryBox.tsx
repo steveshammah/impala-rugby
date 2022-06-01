@@ -1,5 +1,5 @@
 import { Container, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useContext } from "react";
 import { articlesContext } from "../../contexts/articles-context";
 
@@ -13,15 +13,19 @@ const StoryBox = () => {
           <Link
             className='home-story'
             key={article.id}
-            to={`/stories/${article.id}`}>
-            <div className='img-container'>
-              <img src={article.image_1} alt='' />
-            </div>{" "}
-            {/* <img src={BASE_URL + article.image_1} alt='' /> */}
-            <div className='home-story-text'>
-              <span className='story-type'>{article.type}</span>
-              <p>{article.headline}</p>
-            </div>
+            href={`/stories/${article.id}`}
+            passHref>
+            <>
+
+              <div className='img-container'>
+                <img src={article.image_1} alt='' />
+              </div>{" "}
+              {/* <img src={BASE_URL + article.image_1} alt='' /> */}
+              <div className='home-story-text'>
+                <span className='story-type'>{article.type}</span>
+                <p>{article.headline}</p>
+              </div>
+            </>
           </Link>
         ))}
         <a href='/feed/stories'>

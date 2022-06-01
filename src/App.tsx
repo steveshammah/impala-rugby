@@ -18,7 +18,7 @@ import StoryPage from "./pages/StoryPage/StoryPage";
 import Footer from "./components/Footer/Footer";
 import StoryFeed from "./pages/StoryPage/StoryFeed";
 import ArticlesFeed from "./pages/Dashboard/Articles/ArticlesFeed";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 
 import CreateArticle from "./pages/Dashboard/Articles/CreateArticle";
 import EditArticle from "./pages/Dashboard/Articles/EditArticle";
@@ -29,9 +29,9 @@ import MatchReview from "./pages/MatchCenter/MatchReview";
 const App = () => {
   return (
     <div className="app">
-      <Router>
-        <Header />
 
+      <Header />
+      {/* 
         <Switch>
           <Route path="/login">
             <Login />
@@ -54,7 +54,7 @@ const App = () => {
             <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/teams/:name" component={Teams} />
 
-            {/* <Route path='/financials/:name' component={Finacials} /> */}
+            
             <Route path="/dashboard/articles/" component={ArticlesFeed} />
             <Route path="/admin/create-article/" component={CreateArticle} />
             <Route path="/admin/edit-article/:id" component={EditArticle} />
@@ -69,7 +69,7 @@ const App = () => {
         </Switch>
 
         <Footer />
-      </Router>
+      </Router> */}
     </div>
   );
 };
