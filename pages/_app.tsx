@@ -1,4 +1,4 @@
-// import type { AppProps } from "next/app";
+import type { AppProps } from "next/app";
 
 import Header from "../components/Header/Header";
 import "../styles/header.scss";
@@ -11,7 +11,7 @@ import "../styles/profile.scss";
 import ArticlesState from "../src/contexts/articles-context";
 import TeamState from "../src/contexts/team-context";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <TeamState>
       <ArticlesState>
