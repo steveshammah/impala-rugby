@@ -1,0 +1,14 @@
+@import "../../../../global.scss";
+
+.allowance-container {
+  display: none;
+  padding-top: 50px;
+  width: 60%;
+  margin: auto;
+  position: relative;
+
+  & .active-link {
+    display: flex;
+    flex-direction: column;
+  }
+}

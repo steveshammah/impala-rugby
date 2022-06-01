@@ -1,18 +1,18 @@
-// import type { NextPage } from "next";
-import Head from "next/head";
+import Banner from "./LandingPage/Banner";
+import CardsWrapper from "./LandingPage/CardsWrapper";
+import LandingSection from "./LandingPage/LandingSection";
+import MoreStories from "./LandingPage/MoreStories";
 
-import LandingSection from "../src/pages/LandingPage/LandingSection";
 
 const Home = () => {
   return (
-    <>
-      <Head>
-        <title>Impala Rugby KE</title>
-        <meta name="description" content="Impala Rugby KE" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="website-home">
       <LandingSection />
-    </>
+      <Banner />
+      <CardsWrapper items={"Shop"} />
+      <MoreStories />
+      <CardsWrapper items={"Matches"} />
+    </div>
   );
 };
 

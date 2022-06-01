@@ -1,36 +1,36 @@
 import "./global.scss";
 import "./app.scss";
 // import Menu from "./components/Menu/Menu";
-import Login from "./pages/Login/Login";
-import Home from "./pages/Home";
-import Header from "./components/Header/Header";
-import VideoContainer from "./pages/Videos/VideoContainer";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import SideBar from "./components/SideBar/SideBar";
-import Teams from "./pages/Teams/Teams";
+// import Login from "../pages/login";
+// import Home from "../pages";
+// import Header from "./components/Header/Header";
+// import VideoContainer from "../pages/Videos/VideoContainer";
+// import Dashboard from "../pages/Dashboard/Dashboard";
+// import SideBar from "./components/SideBar/SideBar";
+// import Teams from "../pages/teams/Teams";
 
-import MemberProfile from "./pages/MemberProfile/MemberProfile";
-import Store from "./pages/Store/Store";
-import Product from "./pages/Store/Product";
-import AllSponsors from "./pages/Sponsors/AllSponsors";
-import Partner from "./pages/Sponsors/Partner";
-import StoryPage from "./pages/StoryPage/StoryPage";
-import Footer from "./components/Footer/Footer";
-import StoryFeed from "./pages/StoryPage/StoryFeed";
-import ArticlesFeed from "./pages/Dashboard/Articles/ArticlesFeed";
+// import MemberProfile from "../pages/MemberProfile/MemberProfile";
+// import Store from "../pages/Store/Store";
+// import Product from "../pages/Store/Product";
+// import AllSponsors from "../pages/Sponsors/AllSponsors";
+// import Partner from "../pages/Sponsors/Partner";
+// import StoryPage from "../pages/stories/[id]";
+// import Footer from "./components/Footer/Footer";
+// import StoryFeed from "../pages/stories";
+// import ArticlesFeed from "../pages/Dashboard/Articles/ArticlesFeed";
 
 
-import CreateArticle from "./pages/Dashboard/Articles/CreateArticle";
-import EditArticle from "./pages/Dashboard/Articles/EditArticle";
-import Squads from "./pages/Squads/Squads";
-import MatchCenter from "./pages/MatchCenter/MatchCenter";
-import MatchReview from "./pages/MatchCenter/MatchReview";
+// import CreateArticle from "../pages/Dashboard/Articles/CreateArticle";
+// import EditArticle from "../pages/Dashboard/Articles/EditArticle";
+// import Squads from "../pages/squads";
+// import MatchCenter from "../pages/MatchCenter/MatchCenter";
+// import MatchReview from "../pages/MatchCenter/MatchReview";
 
 const App = () => {
   return (
     <div className="app">
 
-      <Header />
+      {/* <Header /> */}
       {/* 
         <Switch>
           <Route path="/login">
