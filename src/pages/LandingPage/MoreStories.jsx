@@ -1,4 +1,4 @@
-import { photos } from "../../resources/resources";
+import { photos } from "../../../public/resources/resources";
 import "./landing-page.scss";
 
 const MoreStories = () => {

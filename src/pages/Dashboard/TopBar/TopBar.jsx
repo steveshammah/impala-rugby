@@ -1,5 +1,5 @@
 import { NotificationImportant, Settings } from "@material-ui/icons";
-import { logos } from "../../../resources/resources";
+import { logos } from "../../../../public/resources/resources";
 
 const TopBar = () => {
   return (

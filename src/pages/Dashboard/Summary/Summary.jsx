@@ -1,6 +1,6 @@
 import BarGraph from "../../../components/Chart/BarGraph";
 import Chart from "../../../components/Chart/LineGraph";
-import { trainingData, salesData } from "../../../resources/resources";
+import { trainingData, salesData } from "../../../../public/resources/resources";
 import SummaryWidget from "../Widgets/SummaryWidget";
 
 const Summary = () => {

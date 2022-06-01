@@ -1,4 +1,4 @@
-import { products } from "../../resources/resources";
+import { products } from "../../../public/resources/resources";
 import { Favorite, FavoriteBorderRounded } from "@material-ui/icons";
 import { useState } from "react";
 import Summary from "./Summary";

@@ -1,6 +1,5 @@
 // import { useContext } from "react";
 // import { appContext } from "../../../contexts/app-context";
-import "./login.scss";
 import LoginForm from "./LoginForm";
 
 const Login = () => {

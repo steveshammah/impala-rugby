@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { allFixtures, logos } from "../../resources/resources";
+import { allFixtures, logos } from "../../../public/resources/resources";
 
 const Fixtures = ({ activeTeam }) => {
   const [teamFixtures, setTeamFixtures] = useState([{}]);

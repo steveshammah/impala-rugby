@@ -1,6 +1,5 @@
 import TopBar from "./TopBar/TopBar";
 import Summary from "./Summary/Summary";
-import "./dashboard.scss";
 import WidgetBg from "./Widgets/WidgetBg";
 import WidgetSm from "./Widgets/WidgetSm";
 import WidgetSmX from "./Widgets/WidgetSmX";

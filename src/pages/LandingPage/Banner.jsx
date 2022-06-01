@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import "./landing-page.scss";
-import { photos } from "../../resources/resources";
+import { photos } from "../../../public/resources/resources";
 
 const Banner = () => {
   return (

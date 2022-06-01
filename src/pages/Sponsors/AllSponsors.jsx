@@ -1,5 +1,5 @@
 // import React from "react";
-import {  partners, photos } from "../../resources/resources";
+import {  partners, photos } from "../../../public/resources/resources";
 import "./sponsors.scss";
 
 const AllSponsors = () => {

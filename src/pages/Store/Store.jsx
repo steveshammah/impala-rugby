@@ -1,5 +1,5 @@
 import "./store.scss";
-import { products } from "../../resources/resources";
+import { products } from "../../../public/resources/resources";
 
 import ProductWrapper from "./ProductWrapper";
 
