@@ -27,7 +27,7 @@
     "src",
     "**/*.ts",
     "**/*.tsx"
-, "pages"  ],
+, "pages", "contexts", "reducers"  ],
   "exclude": [
     "node_modules"
   ]

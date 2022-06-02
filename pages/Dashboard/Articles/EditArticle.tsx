@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { articlesContext } from "../../../src/contexts/articles-context";
+import { articlesContext } from "../../../contexts/articles-context";
 import ArticlesHeader from "./ArticlesHeader";
 import "./articles-admin.scss";
 // import { TextField, Button, Alert } from "@mui/material/";

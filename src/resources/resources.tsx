@@ -109,8 +109,8 @@ import hoodiesRedMinM from "../assets/images/merchandise/hoodie-red-minimal-men.
 import cupWhite from "../assets/images/merchandise/cup-ceramic-white.jpg";
 import cupMetallic from "../assets/images/merchandise/cup-metallic.jpg";
 import { IMenuLinks } from "../components/SideBar/SubMenu";
-import { ITeam } from "../contexts/team-context";
-import { IArticles } from "../contexts/articles-context";
+import { ITeam } from "../../contexts/team-context";
+import { IArticles } from "../../contexts/articles-context";
 
 // Products
 

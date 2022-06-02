@@ -1,55 +1,60 @@
 // import { Button } from "@mui/material";
 
-import { logos, localArticles } from "../../public/resources/resources";
-import { useState, useEffect, useContext } from "react";
-// import { articlesContext } from "../../contexts/articles-context";
-
-// import Header from "../Header/Header";
-// import "./stories.scss";
+import { logos } from "../../public/resources/resources";
+import { useState, useEffect, useContext, useMemo, useCallback } from "react";
 import { useRouter } from 'next/router'
+import { articlesContext } from "../../contexts/articles-context";
+
+
 
 const StoryPage = () => {
   const router = useRouter()
   const storyId = router && parseInt(router.query.id);
-  console.log({ router })
-  // const { articles, BASE_URL } = useContext(articlesContext);
+  const { articles, BASE_URL } = useContext(articlesContext);
 
   const [article, setArticle] = useState({});
   // const [tags, setTags] = useState([]);
 
-  const data = localArticles.filter((story) => {
-    return story.id === storyId
-  });
+  const data = useMemo(() => {
+    const article = articles.filter((story) => {
+      return story.id === storyId
+    }
+    )
+    return article
+  } , [articles, storyId])
 
-  useEffect(() => {
-    setArticle(...data);
-
-    // fetchArticle();
-  }, [storyId]);
 
   // Call to DB
   // eslint-disable-next-line
-  const fetchArticle = async () => {
+  const fetchArticle = useCallback(async () => {
     const url = `${"BASE_URL"}/api/articles/${storyId}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
 
-      // setArticle(data);
-
+      
       // Seperate String from DB to list of tags
       const tagsList = data.tags.split(",");
       // setTags(tagsList);
     } catch (error) {
+      setArticle({ ...data });
       console.log("Error Occured:", error);
     }
-  };
+  }, [data, storyId]);
+  
+  
+  useEffect(() => {
+    
+    setArticle(...data);
+    
 
+    // fetchArticle();
+  }, [data]);
   // const moreStories = articles.filter(
   //   (story) => story.id !== parseInt(storyId)
   // );
-  const moreStories = localArticles.filter(
-    (story) => story.id !== parseInt(storyId)
+  const moreStories = articles.filter(
+    (story) => story.id !== storyId
   );
 
   return (

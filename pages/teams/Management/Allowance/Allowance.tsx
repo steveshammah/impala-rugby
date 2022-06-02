@@ -1,6 +1,6 @@
 import "./allowance.scss";
 import "../../../Profile/profile.scss";
-import { teamContext } from "../../../../src/contexts/team-context";
+import { teamContext } from "../../../../contexts/team-context";
 import { useContext } from "react";
 
 const Allowance = ({ active }) => {

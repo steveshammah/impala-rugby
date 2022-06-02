@@ -3,7 +3,7 @@ import ArticleForm from "./ArticleForm";
 import "./articles-admin.scss";
 import { useContext, useEffect, useState } from "react";
 
-import { articlesContext } from "../../../src/contexts/articles-context";
+import { articlesContext } from "../../../contexts/articles-context";
 
 const CreateArticle = () => {
   const { getCookie, BASE_URL } = useContext(articlesContext);

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { articlesContext } from "../../../src/contexts/articles-context";
+import { articlesContext } from "../../../contexts/articles-context";
 import "./articles-admin.scss";
 import ArticlesHeader from "./ArticlesHeader";
 import ArticleCard from "./ArticleCard";

@@ -1,5 +1,5 @@
 import "./ladies.scss";
-import { teamContext } from "../../../src/contexts/team-context";
+import { teamContext } from "../../../contexts/team-context";
 import { useContext } from "react";
 
 const Ladies = ({ active }) => {

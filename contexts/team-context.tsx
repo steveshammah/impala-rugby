@@ -1,5 +1,5 @@
 
-import { team } from "../../public/resources/resources";
+import { team } from "../public/resources/resources";
 import { createContext, FC } from "react";
 
 

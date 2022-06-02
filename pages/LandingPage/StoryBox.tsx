@@ -1,20 +1,22 @@
 import { Container, Button } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useContext } from "react";
-import { articlesContext } from "../../src/contexts/articles-context";
+import { articlesContext } from "../../contexts/articles-context";
 
 const StoryBox = () => {
   const { articles, BASE_URL } = useContext(articlesContext);
+  const router = useRouter();
   return (
     <Container className='home-more-stories'>
-      <a href='/feed/stories'>More Stories</a>
+      <div onClick={() => router.push('/stories')}>More Stories</div>
       <div className='more-stories'>
         {articles.map((article) => (
-          <Link
+          <div
             className='home-story'
             key={article.id}
-            href={`/stories/${article.id}`}
-            passHref>
+            onClick={() => router.push(`/stories/${encodeURIComponent(article.id)}`)}
+          >
             <>
 
               <div className='img-container'>
@@ -26,13 +28,13 @@ const StoryBox = () => {
                 <p>{article.headline}</p>
               </div>
             </>
-          </Link>
+          </div>
         ))}
-        <a href='/feed/stories'>
+        <div onClick={() => router.push('/stories')}>
           <Button variant='contained' className='btn'>
             View latest news
           </Button>
-        </a>
+        </div>
       </div>
     </Container>
   );

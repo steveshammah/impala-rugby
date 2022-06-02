@@ -1,5 +1,5 @@
 import "./team.scss";
-import TeamState from "../../src/contexts/team-context";
+import TeamState from "../../contexts/team-context";
 import Team from "./Team";
 
 import { useEffect, useState } from "react";

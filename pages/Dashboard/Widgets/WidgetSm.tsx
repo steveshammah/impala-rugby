@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./widgets.scss";
-import { teamContext } from "../../../src/contexts/team-context";
+import { teamContext } from "../../../contexts/team-context";
 import PlayerWidgetSm from "./PlayerWidgetSm";
 
 const WidgetSm = ({ getConsistency, getPercentage }) => {

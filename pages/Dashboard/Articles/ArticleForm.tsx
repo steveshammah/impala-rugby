@@ -1,6 +1,6 @@
 import { useContext, useState, useRef } from "react";
 import { TextField, Button, Alert, styled } from "@mui/material/";
-import { articlesContext } from "../../../src/contexts/articles-context";
+import { articlesContext } from "../../../contexts/articles-context";
 
 import "./articles-admin.scss";
 

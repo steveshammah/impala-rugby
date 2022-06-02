@@ -21,8 +21,8 @@ import "../styles/stories.scss";
 import "../styles/team.scss";
 
 
-import ArticlesState from "../src/contexts/articles-context";
-import TeamState from "../src/contexts/team-context";
+import ArticlesState from "../contexts/articles-context";
+import TeamState from "../contexts/team-context";
 import Footer from "../components/Footer/Footer";
 
 function App({ Component, pageProps }: AppProps) {

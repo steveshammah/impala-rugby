@@ -1,5 +1,5 @@
 
-import { localArticles } from "../../public/resources/resources";
+import { localArticles } from "../public/resources/resources";
 import { createContext, useState, useEffect, FC } from "react";
 
 
