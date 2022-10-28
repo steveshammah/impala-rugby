@@ -1,15 +1,16 @@
+import React from "react";
 import { Box } from "@mui/material";
 import { useState } from "react";
-import BottomNav from "./BottomNav";
-// import TopNav from "./TopNav";
+import MainNav from "./MainNav";
+import SubNav from "./SubNav";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header>
-      <Box maxWidth='bg' className='website-nav'>
-        {/* <TopNav /> */}
-        <BottomNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Box maxWidth="bg" className="website-nav">
+        <MainNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        {/* <SubNav /> */}
       </Box>
     </header>
   );

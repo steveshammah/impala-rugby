@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import { articlesContext } from "../../contexts/articles-context";
 import { localArticles } from "../../public/resources/resources";
-
 
 const StoryFeed = () => {
   // const { articles, BASE_URL } = useContext(articlesContext);
   const [displayArticles, setDisplayArticles] = useState([{}]);
   const [activeLink, setActiveLink] = useState("Latest");
 
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const filteredArticles = localArticles.filter((article) =>
@@ -26,59 +25,68 @@ const StoryFeed = () => {
   };
 
   return (
-    <div className='feeds-home'>
-      <div className='feeds-container'>
-        <div className='feeds-nav'>
+    <div className="feeds-home">
+      <div className="feeds-container">
+        <div className="feeds-nav">
           <h2>Latest Stories</h2>
           <ul>
             <li
-              className={activeLink === "Latest" ? "active" : ''}
-              onClick={() => handleClick("Latest")}>
-              <a href='#'>Latest</a>
+              className={activeLink === "Latest" ? "active" : ""}
+              onClick={() => handleClick("Latest")}
+            >
+              <a href="#">Latest</a>
             </li>
             <li
-              className={activeLink === "Men" ? "active" : ''}
-              onClick={() => handleClick("Men")}>
-              <a href='#'>Men</a>
+              className={activeLink === "Men" ? "active" : ""}
+              onClick={() => handleClick("Men")}
+            >
+              <a href="#">Men</a>
             </li>
             <li
-              className={activeLink === "Women" ? "active" : ''}
-              onClick={() => handleClick("Women")}>
-              <a href='#'>Women</a>
+              className={activeLink === "Women" ? "active" : ""}
+              onClick={() => handleClick("Women")}
+            >
+              <a href="#">Women</a>
             </li>
             <li
-              className={activeLink === "Swaras" ? "active" : ''}
-              onClick={() => handleClick("Swaras")}>
-              <a href='#'>Swaras</a>
+              className={activeLink === "Swaras" ? "active" : ""}
+              onClick={() => handleClick("Swaras")}
+            >
+              <a href="#">Swaras</a>
             </li>
             <li
-              className={activeLink === "Academy" ? "active" : ''}
-              onClick={() => handleClick("Academy")}>
-              <a href='#'>Academy</a>
+              className={activeLink === "Academy" ? "active" : ""}
+              onClick={() => handleClick("Academy")}
+            >
+              <a href="#">Academy</a>
             </li>
             <li
-              className={activeLink === "Club" ? "active" : ''}
-              onClick={() => handleClick("Club")}>
-              <a href='#'>Club</a>
+              className={activeLink === "Club" ? "active" : ""}
+              onClick={() => handleClick("Club")}
+            >
+              <a href="#">Club</a>
             </li>
           </ul>
         </div>
-        <div className='feeds-section'>
+        <div className="feeds-section">
           {displayArticles.map((article) => (
-
-            <div className='feed-story'>
-              <div className='feed-img-wrapper' onClick={() => router.push(`/stories/${encodeURIComponent(article.id)}`)}>
-                <img src={article.image_1} alt='' />
+            <div className="feed-story">
+              <div
+                className="feed-img-wrapper"
+                onClick={() =>
+                  router.push(`/stories/${encodeURIComponent(article.id)}`)
+                }
+              >
+                <img src={article.image_1} alt="" />
                 {/* <img src={BASE_URL + article.image_1} alt='' /> */}
               </div>
-              <div className='feed-story-text'>
-                <span className='story-type'>{article.type}</span>
-                <h3>{article.title}</h3>
-                <p>{article.headline}</p>
-                <span className='date-created'>{article.dateCreated}</span>
+              <div className="feed-story-text">
+                <span className="story-type">{article.type}</span>
+                <h3>{article?.title}</h3>
+                <p>{article?.headline}</p>
+                <span className="date-created">{article.dateCreated}</span>
               </div>
             </div>
-
           ))}
         </div>
       </div>

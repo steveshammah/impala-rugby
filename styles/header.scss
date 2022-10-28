@@ -31,7 +31,7 @@ header {
         }
       }
     }
-    .top-header {
+    .sub-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -51,18 +51,19 @@ header {
       }
     }
 
-    .bottom-header {
-      height: 70px;
+    .main-header {
+      height: 60px;
       display: flex;
-      align-items: center;
+      // align-items: center;
       justify-content: space-between;
       background-color: $defaultRed;
-      width: 100%;
+      // width: 100%;
 
       .logo {
         height: 90%;
         width: 100px;
         margin-left: 10px;
+        align-self: center;
 
         img {
           object-fit: cover;
@@ -74,78 +75,93 @@ header {
       ul {
         transition: all ease-in-out;
         background-color: $defaultRed;
-        transition: all ease-in-out;
+        // transition: all ease-in-out;
+        // visibility: hidden;
 
+        .open {
+          display: flex;
+        }
+        .closed {
+          display: none;
+          visibility: hidden;
+        }
         @include screen-size(phone) {
           flex-direction: column;
           align-items: center;
           position: absolute;
-          top: 70px;
+          top: 60px;
+          width: 100%;
           left: 0;
           height: calc(100vh - 70px);
-          width: 100%;
-          visibility: hidden;
-        }
-        @include screen-size(tablet) {
-          flex-direction: column;
-          align-items: center;
-          position: absolute;
-          top: 70px;
-          left: 0;
-          height: calc(100vh - 70px);
-          width: 100%;
-          padding: 0px;
-          z-index: 10;
-          visibility: hidden;
-
-          * {
-            visibility: hidden;
-          }
+          // visibility: visible;
+          // display: none;
 
           li {
-            font-size: 1.4rem;
-          }
-        }
-        @include screen-size(desktop) {
-          display: flex;
-          flex-direction: initial;
-          flex: 1;
-          max-width: 900px;
-          position: relative;
-          top: 0;
-          height: 100%;
-          visibility: visible;
-
-          // margin: 1px;
-
-          li {
-            font-size: 1rem;
-          }
-        }
-        li {
-          height: 100%;
-          // background-color: #fff;
-          padding: 10px;
-          width: 120px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all ease-in-out 0.2s;
-
-          &:hover {
-            border-bottom: 5px solid white;
-
-            a {
-              color: $black;
+            .open {
+              visibility: visible;
+              display: flex;
             }
           }
+          // }
+          // @include screen-size(tablet) {
+          //   flex-direction: column;
+          //   align-items: center;
+          //   position: absolute;
+          //   top: 70px;
+          //   left: 0;
+          //   height: calc(100vh - 70px);
+          //   width: 100%;
+          //   padding: 0px;
+          //   z-index: 10;
+          //   visibility: hidden;
 
-          a {
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            // background-color: aqua;
-          }
+          //   * {
+          //     visibility: hidden;
+          //   }
+
+          //   li {
+          //     font-size: 1.4rem;
+          //   }
+          // }
+          // @include screen-size(desktop) {
+          //   display: flex;
+          //   flex-direction: initial;
+          //   flex: 1;
+          //   max-width: 900px;
+          //   position: relative;
+          //   top: 0;
+          //   height: 100%;
+          //   visibility: visible;
+          //   margin: 1px;
+
+          //   li {
+          //     font-size: 1rem;
+          //   }
+          // }
+          // li {
+          //   // height: 100%;
+          //   // background-color: #fff;
+          //   // padding: 10px;
+          //   width: 120px;
+          //   display: flex;
+          //   align-items: flex-end;
+          //   justify-content: center;
+          //   transition: all ease-in-out 0.2s;
+          // border-bottom: 3px solid white;
+
+          //   &:hover {
+          //     border-bottom: 3px solid white;
+
+          //     a {
+          //       color: $black;
+          //     }
+          //   }
+
+          //   a {
+          //     text-decoration: none;
+          //     text-transform: uppercase;
+          //     // background-color: aqua;
+          //   }
         }
       }
       .burger-nav {
@@ -160,6 +176,7 @@ header {
         align-items: center;
         cursor: pointer;
         transition: all ease-in-out 1s;
+        align-self: center;
 
         @include screen-size(phone) {
           display: flex;
@@ -169,6 +186,7 @@ header {
         @include screen-size(tablet) {
           display: flex;
           padding: 10px;
+          display: none;
         }
 
         @include screen-size(desktop) {

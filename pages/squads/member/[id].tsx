@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { team } from "../../../public/resources/resources";
 
 // import { teamContext } from "../../../contexts/team-context";
@@ -22,14 +22,12 @@ import { useRouter } from "next/router";
 
 const MemberProfile = () => {
   // const { team } = useContext(teamContext);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState<any>(0);
   const [activeWindow, setActiveWindow] = useState("about");
   const router = useRouter();
   const memberId = router && parseInt(router.query.id);
 
-  const member = team.filter(
-    (user) => user.id === memberId
-  )[0];
+  const member = team.filter((user) => user.id === memberId)[0];
 
   return (
     <section className="member-profile">

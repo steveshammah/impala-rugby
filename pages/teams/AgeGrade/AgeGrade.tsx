@@ -1,6 +1,6 @@
 import "./agegrade.scss";
 import { teamContext } from "../../../contexts/team-context";
-import { useContext } from "react";
+import React, { useContext } from "react";
 
 const AgeGrade = ({ active }) => {
   const { team } = useContext(teamContext);
@@ -13,7 +13,8 @@ const AgeGrade = ({ active }) => {
       className={`swaras-container list-container && ${
         active === "swaras" ? "active-link" : ""
       }`}
-      id={`${active}`}>
+      id={`${active}`}
+    >
       <h2>Swaras</h2>
       <table>
         <thead>

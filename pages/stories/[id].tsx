@@ -1,28 +1,30 @@
 // import { Button } from "@mui/material";
 
 import { logos } from "../../public/resources/resources";
-import { useState, useEffect, useContext, useMemo, useCallback } from "react";
-import { useRouter } from 'next/router'
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  useMemo,
+  useCallback,
+} from "react";
+import { useRouter } from "next/router";
 import { articlesContext } from "../../contexts/articles-context";
 
-
-
 const StoryPage = () => {
-  const router = useRouter()
-  const storyId = router && parseInt(router.query.id);
+  const router = useRouter();
+  const storyId = router && parseInt(router?.query?.id);
   const { articles, BASE_URL } = useContext(articlesContext);
 
-  const [article, setArticle] = useState({});
+  const [article, setArticle] = useState<any>({});
   // const [tags, setTags] = useState([]);
 
   const data = useMemo(() => {
     const article = articles.filter((story) => {
-      return story.id === storyId
-    }
-    )
-    return article
-  } , [articles, storyId])
-
+      return story.id === storyId;
+    });
+    return article;
+  }, [articles, storyId]);
 
   // Call to DB
   // eslint-disable-next-line
@@ -32,7 +34,6 @@ const StoryPage = () => {
       const response = await fetch(url);
       const data = await response.json();
 
-      
       // Seperate String from DB to list of tags
       const tagsList = data.tags.split(",");
       // setTags(tagsList);
@@ -41,40 +42,35 @@ const StoryPage = () => {
       console.log("Error Occured:", error);
     }
   }, [data, storyId]);
-  
-  
+
   useEffect(() => {
-    
-    setArticle(...data);
-    
+    setArticle({ ...data });
 
     // fetchArticle();
   }, [data]);
   // const moreStories = articles.filter(
   //   (story) => story.id !== parseInt(storyId)
   // );
-  const moreStories = articles.filter(
-    (story) => story.id !== storyId
-  );
+  const moreStories = articles.filter((story) => story.id !== storyId);
 
   return (
-    <div className='story-section'>
-      <div className='heading-wrapper'>
-        <div className='story-title-container'>
+    <div className="story-section">
+      <div className="heading-wrapper">
+        <div className="story-title-container">
           <h2>{article.title}</h2>
         </div>
-        <div className='story-image'>
-          <div className='shadow-container'></div>
+        <div className="story-image">
+          <div className="shadow-container"></div>
 
           {/* <img src={BASE_URL + article.image_1} alt='' /> */}
-          <img src={article.image_1} alt='' />
+          <img src={article.image_1} alt="" />
           <i>Caption goes here</i>
           {/* <i>{article.caption_1}</i> */}
         </div>
       </div>
 
-      <div className='story-wrapper'>
-        <div className='story-tags'>
+      <div className="story-wrapper">
+        <div className="story-tags">
           <strong>Tags: </strong>
           {/* 
           {article.tags.split(",").map((tag) => (
@@ -85,18 +81,18 @@ const StoryPage = () => {
           &nbsp;&nbsp;
           <i> {article.tags}</i>
         </div>
-        <div className='story-author'>
-          <div className='author-image'>
-            <img src={logos.impalaLogo1} alt='' />
+        <div className="story-author">
+          <div className="author-image">
+            <img src={logos.impalaLogo1} alt="" />
             <strong>{article.author}</strong>
             {/* UTC time conversion to string */}
-            <i className='author-meta'>
+            <i className="author-meta">
               {new Date(article.created).toUTCString().slice(0, 16)}
             </i>
           </div>
         </div>
-        <div className='story-container'>
-          <div className='story-content'>
+        <div className="story-container">
+          <div className="story-content">
             <h3>{article.headline}</h3>
 
             {/* <p>{article.content_1}</p> */}
@@ -131,11 +127,11 @@ const StoryPage = () => {
               tempore atque unde eum quo!
             </p>
 
-            <div className='story-image small'>
-              <div className='shadow-container'></div>
+            <div className="story-image small">
+              <div className="shadow-container"></div>
 
               {/* <img src={BASE_URL + article.image_2} alt='' /> */}
-              <img src={article.image_2} alt='' />
+              <img src={article.image_2} alt="" />
               {/* <i>{article.caption_2}</i> */}
               <i>Caption goes here</i>
             </div>
@@ -165,16 +161,17 @@ const StoryPage = () => {
             </p>
           </div>
 
-          <div className='more-stories'>
+          <div className="more-stories">
             <h3>More Stories</h3>
-            <div className='news-widgets-container'>
+            <div className="news-widgets-container">
               {moreStories.map((article) => (
                 <div
-
-                  className='latest-news-widget'
-                  onClick={() => { router.push(`/stories/${encodeURIComponent(article.id)}`) }}
+                  className="latest-news-widget"
+                  onClick={() => {
+                    router.push(`/stories/${encodeURIComponent(article.id)}`);
+                  }}
                 >
-                  <img src={article.image_1} alt='' />
+                  <img src={article.image_1} alt="" />
                   {/* <img src={BASE_URL + article.image_1} alt='' /> */}
                   <i>{article.title}</i>
                 </div>
