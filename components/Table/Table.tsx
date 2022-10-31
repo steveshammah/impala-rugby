@@ -1,6 +1,5 @@
-import { DataGrid } from "@material-ui/data-grid";
 import { teamContext } from "../../contexts/team-context";
-import { useContext } from "react";
+import React, { useContext } from "react";
 
 interface IColumns {
   field: string;
@@ -81,14 +80,15 @@ const Table = ({ group }: ITableProps) => {
   const rows = team.filter((member) => member.team === group);
   // console.log(rows);
   return (
-    <DataGrid
-      rows={rows}
-      columns={columns}
-      pageSize={8}
-      rowsPerPageOptions={[5]}
-      checkboxSelection
-      disableSelectionOnClick
-    />
+    // <DataGrid
+    //   rows={rows}
+    //   columns={columns}
+    //   pageSize={8}
+    //   rowsPerPageOptions={[5]}
+    //   checkboxSelection
+    //   disableSelectionOnClick
+    // />
+    <>DataGrid</>
   );
 };
 

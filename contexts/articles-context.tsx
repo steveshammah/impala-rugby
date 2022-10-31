@@ -1,7 +1,5 @@
-
 import { localArticles } from "../public/resources/resources";
-import { createContext, useState, useEffect, FC } from "react";
-
+import React, { createContext, useState, useEffect, FC } from "react";
 
 interface IArticlesContext {
   articles: IArticles[];
@@ -12,8 +10,8 @@ export interface IArticles {
   id: number;
   title: string;
   headline: string;
-  image_1: string;
-  image_2: string;
+  image_1: any;
+  image_2: any;
   type: string;
   tags: string;
   author: string;

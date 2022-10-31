@@ -1,8 +1,6 @@
-// import {ArrowForwardIosIcon, ArrowBackIosNewIcon} from "@mui/icons-material";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-
-
+import React from "react";
+import Link from "next/link";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export interface IItem {
   title: string;
@@ -17,20 +15,20 @@ interface ICardNavProps {
 
 const CardNav = ({ item, changePosition }: ICardNavProps) => {
   return (
-    <div className="container-nav">
-      <span className="nav-title">
-        <h2>{item.title}</h2>
-        <a href={`/${item.url}`}>
-          <h5>{item.linkName}</h5>
-        </a>
-      </span>
-      <div className="nav-btn">
-        <ArrowBackIosNewIcon
-          className="icon"
+    <div className="container-nav flex justify-between w-5/6 h-12 items-center ">
+      <div className="nav-title flex items-center text-blackX">
+        <h2 className="uppercase font-semibold text-xl">{item.title}</h2>
+        <Link href={`/${item.url}`}>
+          <a className="font-thin hover:underline pl-8">{item.linkName}</a>
+        </Link>
+      </div>
+      <div className="nav-btn h-full items-center flex ">
+        <FaChevronLeft
+          className="p-1 m-1 text-2xl font-bold cursor-pointer rounded-md text-whiteX bg-blackX"
           onClick={() => changePosition("-")}
         />
-        <ArrowForwardIosIcon
-          className="icon"
+        <FaChevronRight
+          className="p-1 m-1 text-2xl font-bold cursor-pointer rounded-md text-blackX bg-whiteX"
           onClick={() => changePosition("+")}
         />
       </div>

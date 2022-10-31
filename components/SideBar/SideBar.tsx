@@ -1,24 +1,23 @@
-import Drawer from "@mui/material/Drawer";
-import Toolbar from "@mui/material/Toolbar";
+import React from "react";
 import SubMenu from "./SubMenu";
 
 const SideBar = () => {
   const categories: string[] = ["dashboard", "league", "teams", "website"];
 
   return (
-    <Drawer
+    <div
       sx={{ margin: 2 }}
       variant="permanent"
       anchor="left"
       className="side-bar-links"
     >
-      <Toolbar />
-      <Toolbar />
+      {/* <Toolbar /> */}
+      {/* <Toolbar /> */}
 
       {categories.map((category: string) => (
         <SubMenu category={category} />
       ))}
-    </Drawer>
+    </div>
   );
 };
 

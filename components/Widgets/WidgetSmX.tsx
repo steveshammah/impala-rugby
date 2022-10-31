@@ -1,12 +1,4 @@
-import { CalendarToday } from "@material-ui/icons";
-import {
-  Typography,
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-} from "@mui/material";
-// import { ArrowForwardIosSharpIcon } from "@material-ui/icons";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const WidgetSmX = () => {
   // return (
@@ -25,10 +17,10 @@ const WidgetSmX = () => {
   // };
 
   return (
-    <div className='widget-sm-x'>
+    <div className="widget-sm-x">
       <h2>Upcoming Events</h2>
-      <div className='eventsWrapper'>
-        <Accordion
+      <div className="eventsWrapper">
+        {/* <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}>
           <AccordionSummary
@@ -105,7 +97,7 @@ const WidgetSmX = () => {
               sit amet egestas eros, vitae egestas augue. Duis vel est augue.
             </Typography>
           </AccordionDetails>
-        </Accordion>
+        </Accordion> */}
       </div>
     </div>
   );

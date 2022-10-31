@@ -11,6 +11,7 @@ const Home = () => {
       <Banner />
       <CardsWrapper items={"Shop"} />
       <MoreStories />
+      <LandingSection />
       <CardsWrapper items={"Matches"} />
     </div>
   );

@@ -1,55 +1,42 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ImageViewer from "./ImageViewer";
 
-const MemberGallery = ({ member, activeWindow }) => {
-  const display = activeWindow === "gallery" ? true : false;
-
-  const [activeImage, setActiveImage] = useState("");
+const MemberGallery = ({ member }) => {
+  const [activeImage, setActiveImage] = useState<any>("");
 
   const handleClick = (img) => {
     setActiveImage(img);
   };
 
   return (
-    <section
-      className='images-container'
-      style={{ display: display ? "block" : "none" }}>
-      {/* <h2>{member.name}'s Gallery</h2> */}
+    <section className="images-container flex flex-col w-full border-y-2 border-y-stone-100 text-whiteX p-2  items-center justify-center relative">
+      <h2 className="font-bold text-2xl text-left w-full ml-3">
+        {member?.name}'s Gallery
+      </h2>
 
-      <div className='images-wrapper'>
-        <div className='image'>
+      <div className="flex justify-evenly w-full py-2">
+        <div className="rounded-md h-96">
           <img
-            src={member.img}
-            alt=''
-            onClick={() => handleClick(member.img)}
+            src={member?.img.src}
+            alt={member?.name}
+            className="rounded-md h-full w-80 object-cover aspect-video cursor-pointer"
+            onClick={() => handleClick(member?.img)}
           />
         </div>
-        <div className='image'>
+        <div className="rounded-md h-96">
           <img
-            src={member.img}
-            alt=''
-            onClick={() => handleClick(member.img)}
+            src={member?.img.src}
+            alt={member?.name}
+            className="rounded-md h-full w-80 object-cover aspect-video cursor-pointer"
+            onClick={() => handleClick(member?.img)}
           />
         </div>
-        <div className='image'>
+        <div className="rounded-md h-96">
           <img
-            src={member.img}
-            alt=''
-            onClick={() => handleClick(member.img)}
-          />
-        </div>
-        <div className='image'>
-          <img
-            src={member.img}
-            alt=''
-            onClick={() => handleClick(member.img)}
-          />
-        </div>
-        <div className='image'>
-          <img
-            src={member.img}
-            alt=''
-            onClick={() => handleClick(member.img)}
+            src={member?.img.src}
+            alt={member?.name}
+            className="rounded-md h-full w-80 object-cover aspect-video cursor-pointer"
+            onClick={() => handleClick(member?.img)}
           />
         </div>
       </div>

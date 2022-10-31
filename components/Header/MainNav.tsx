@@ -1,63 +1,76 @@
-// import { impalaLogo } from "/assets/images/logos/impalaLogo.png";
-import { Box } from "@mui/material";
-// import { logos } from "../../resources/resources";
-import React, { useRef, Dispatch, SetStateAction } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  Dispatch,
+  SetStateAction,
+} from "react";
+import Link from "next/link";
+import { logos } from "../../public/resources/resources";
+import { useRouter } from "next/router";
 
 interface IBottomNav {
   menuOpen: boolean;
-  setMenuOpen: Dispatch<SetStateAction<boolean>>;
+  toggleMenu: Dispatch<SetStateAction<boolean>>;
+  navLinks: any[];
 }
 
-const MainNav = ({ menuOpen, setMenuOpen }: IBottomNav) => {
+const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
+  const [activeLink, setActiveLink] = useState("");
   const burgerNav = useRef<HTMLDivElement>(null);
-  const navLinks = [
-    {
-      name: "News",
-      url: "stories",
-    },
-    {
-      name: "Squads",
-      url: "squads",
-    },
-    {
-      name: "Store",
-      url: "store",
-    },
-    {
-      name: "Dashboard",
-      url: "dashboard/home",
-    },
-  ];
 
-  console.log({ menuOpen });
+  const router = useRouter();
+
+  useEffect(() => {
+    setActiveLink(router.pathname);
+    console.log({ router });
+    return () => {
+      setActiveLink("");
+    };
+  }, [router]);
 
   return (
-    <Box className="main-header">
-      <div className="logo">
-        <a href="/">
-          <img src="" alt="" />
-        </a>{" "}
+    <div className="h-nav flex bg-primaryRed justify-between w-full pr-2 items-center uppercase">
+      <div className="h-4/5 aspect-video ml-2 cursor-pointer">
+        <Link href="/">
+          <img
+            src={logos.impalaLogo.src}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </Link>{" "}
       </div>
       <ul
-        className={menuOpen ? "open" : "closed"}
-        // style={{ display: menuOpen ? "flex" : "none" }}
+        className={`${
+          !menuOpen ? "flex" : "hidden"
+        } sm:justify-around  top-20 justify-evenly items-center sm:flex-row sm:w-2/4 absolute sm:relative sm:top-0  w-full h-full flex-col z-10`}
       >
         {navLinks.map((link) => (
-          <li className={menuOpen ? "open" : undefined}>
-            <a href={link.url}>{link.name}</a>
+          <li>
+            <Link href={link.url}>
+              <a
+                className={`transition-all ease-in-out duration-200 p-2  ${
+                  activeLink.includes(link.url) && "border-b-4"
+                }  text-white hover:border-b-4 hover:border-b-white hover:text-whiteX  w-full text-sm`}
+              >
+                {link.name}
+              </a>
+            </Link>
           </li>
         ))}
       </ul>
 
       <div
-        className={"burger-nav"}
-        onClick={() => setMenuOpen(!menuOpen)}
+        className={
+          "sm:hidden flex flex-col justify-between h-4 self-center cursor-pointer z-50"
+        }
+        onClick={() => toggleMenu(!menuOpen)}
         ref={burgerNav}
       >
-        <span></span>
-        <span></span>
+        <span className="bg-white h-1 w-10 rounded-sm"></span>
+        <span className="bg-white h-1 w-10 rounded-sm"></span>
       </div>
-    </Box>
+    </div>
   );
 };
 

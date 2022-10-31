@@ -1,55 +1,29 @@
-const MemberStatistics = ({ member, activeWindow }) => {
-  const display = activeWindow === "statistics" ? true : false;
+import React from "react";
 
+const MemberStatistics = ({ member }) => {
   return (
-    <section
-      className='member-statistics'
-      style={{ display: display ? "block" : "none" }}>
-      {/* <h2>Player Statistics</h2> */}
-      <div className='stats-wrapper'>
-        <div className='match stats'>
-          <h3>Personal Statistics</h3>
-          <div>
-            <span>
-              <strong>DOB:</strong>&nbsp; {member.dob}
-            </span>
-            <span>
-              <strong>Year Joined:</strong>&nbsp; {member.year}
-            </span>
-            <span>
-              <strong>Status: </strong> &nbsp; active
-            </span>
+    <section className=" p-2 w-full">
+      <div className="stats-wrapper flex py-4">
+        <div className="match stats flex flex-wrap  w-4/5 justify-between">
+          <div className="flex flex-col shadow-md px-6 py-4 rounded-md w-48 ">
+            <h2 className="text-lg text-whiteX uppercase font-bold">
+              Position
+            </h2>
+            <i>Backrow</i>
           </div>
-        </div>
-        <div className='performance stats'>
-          <h3>Performance Statistics</h3>
-          <div>
-            <span>
-              <strong>Tries:</strong> &nbsp; {member.daysTrained}
-            </span>
-            {/* <br /> */}
-            <span>
-              <strong>Penalties:</strong> &nbsp; {member.daysMissed}
-            </span>
-            <span>
-              <strong>Total Points:</strong> &nbsp; {member.daysMissed}
-            </span>
+
+          <div className="flex flex-col shadow-md px-6 py-4 rounded-md">
+            <h2 className="text-lg text-whiteX uppercase font-bold">
+              Date of birth
+            </h2>
+            <i>01 Jan 1990</i>
           </div>
-        </div>
 
-        <div className='appearance stats'>
-          <h3>Appearances</h3>
-          <div>
-            <span>
-              <strong>Gazelles:</strong> &nbsp; {member.appearances}
-            </span>
-            <span>
-              <strong>Boks:</strong> &nbsp; {member.daysTrained}
-            </span>
-
-            <span>
-              <strong>Academy:</strong> &nbsp; {member.daysTrained}
-            </span>
+          <div className="flex flex-col shadow-md px-6 py-4 rounded-md">
+            <h2 className="text-lg text-whiteX uppercase font-bold">
+              Date of Joined
+            </h2>
+            <i>01 Jan 2020</i>
           </div>
         </div>
       </div>

@@ -108,6 +108,9 @@ import hoodiesRedMinW from "../assets/images/merchandise/hoodie-red-minimal-wome
 import hoodiesRedMinM from "../assets/images/merchandise/hoodie-red-minimal-men.jpg";
 import cupWhite from "../assets/images/merchandise/cup-ceramic-white.jpg";
 import cupMetallic from "../assets/images/merchandise/cup-metallic.jpg";
+import floodies2022 from "../assets/images/floodies/floodies.png";
+import floodies2022Go from "../assets/images/floodies/floodies-1.png";
+import floodiesStatement from "../assets/images/floodies/floodies-statement.png";
 
 // Products
 
@@ -137,6 +140,9 @@ export const logos = {
 };
 
 export const photos = {
+  floodies2022,
+  floodies2022Go,
+  floodiesStatement,
   coding,
   billGithinji,
   spanner,
@@ -1710,8 +1716,32 @@ export const allFixtures = {
 
 export const localArticles = [
   {
+    id: 19,
+    title: "Official Statement",
+    headline: "Club Statement. #floodiesisback #floodies2022",
+    image_1: floodiesStatement,
+    image_2: floodies2022,
+    type: "news",
+    tags: "Club, Men, Floodies, #Floodies2022",
+    author: "Impala Media",
+    created: "2021-12-19T00:13:58.804188+03:00",
+    posted: "2021-12-19T00:13:58.804188+03:00",
+  },
+  {
+    id: 20,
+    title: "Floodies Is Back",
+    headline: "One more sleep. Usiachwe nyuma. ",
+    image_1: floodies2022,
+    image_2: floodies2022Go,
+    type: "update",
+    tags: "Club, Men, Floodies, #Floodies2022",
+    author: "Impala Media",
+    created: "2021-12-19T00:13:58.804188+03:00",
+    posted: "2021-12-19T00:13:58.804188+03:00",
+  },
+  {
     id: 0,
-    title: "Kenya Cup Is Back",
+    title: "Championship It Is",
     headline: "The off-season is complete. Match day 1 confirmed!",
     image_1: teamPhoto,
     image_2: anderson,
@@ -1730,7 +1760,7 @@ export const localArticles = [
     image_2: kabrasLogo,
     caption_2:
       "Ball retention at the lineout area was impressive from the lads",
-    type: "News",
+    type: "news",
     tags: "Impala, Men, Kabras",
     created: "2021-12-19T00:13:58.804188+03:00",
     posted: "2021-12-19T00:13:58.804188+03:00",

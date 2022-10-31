@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Avatar,
-  IconButton,
-  Typography,
-} from "@mui/material/";
-import { Delete, Edit } from "@material-ui/icons";
+
 // import { useContext } from "react";
 // import { articlesContext } from "../../../contexts/articles-context";
 
@@ -21,8 +11,8 @@ const ArticleCard = ({ article, handleOpen, setActiveArticle }) => {
   };
   console.log(article);
   return (
-    <Card sx={{ maxWidth: 300 }} className="article">
-      <CardHeader
+    <div sx={{ maxWidth: 300 }} className="article">
+      {/* <CardHeader
         avatar={<Avatar aria-label="recipe">{article.author[0]}</Avatar>}
         title={article.title}
         subheader={article.created}
@@ -47,8 +37,8 @@ const ArticleCard = ({ article, handleOpen, setActiveArticle }) => {
         <IconButton aria-label="share" onClick={() => handleClick(article.id)}>
           {<Delete />}
         </IconButton>
-      </CardActions>
-    </Card>
+      </CardActions> */}
+    </div>
   );
 };
 

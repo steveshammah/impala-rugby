@@ -1,16 +1,13 @@
 import Link from "next/link";
-import { Button } from "@mui/material";
-
-
-
+import React from "react";
 
 const PlayerWidgetSm = ({ member, getConsistency, getPercentage }: any) => {
   return (
-    <section className='player-info'>
-      <div className='player-image'>
-        <img src={member.img} alt='' />
+    <section className="player-info">
+      <div className="player-image">
+        <img src={member.img} alt="" />
       </div>
-      <div className='player-meta'>
+      <div className="player-meta">
         <h3>{member.name}</h3>
         <span>
           <strong>
@@ -19,7 +16,8 @@ const PlayerWidgetSm = ({ member, getConsistency, getPercentage }: any) => {
           </strong>
           <br />
           <strong
-            className={getConsistency(member.daysTrained, member.daysMissed)}>
+            className={getConsistency(member.daysTrained, member.daysMissed)}
+          >
             Remarks: {getConsistency(member.daysTrained, member.daysMissed)}
           </strong>
         </span>
@@ -29,7 +27,7 @@ const PlayerWidgetSm = ({ member, getConsistency, getPercentage }: any) => {
         </span>
       </div>
       <Link href={`/players-and-staff/${member.id}`} passHref>
-        <Button variant='outlined'>View Profile</Button>
+        <button>View Profile</button>
       </Link>
     </section>
   );
