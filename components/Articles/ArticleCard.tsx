@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { Dispatch, SetStateAction } from "react";
 import { FaEye, FaHeart } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
-import { formatDate } from "@utils";
+import { formatDate } from "@utils/utils";
 import Image from "@components/Image";
 
 interface Props {
@@ -17,7 +17,6 @@ const ArticleCard = ({ article, handleOpen, setActiveArticle }: Props) => {
   };
   return (
     <div className=" h-56 w-52 mb-6 flex flex-col text-blackX bg-whiteX items-center rounded-md shadow-md">
-      <img />
       <Image
         src={article?.tags ? article.tags : "impalaLogo"}
         className="h-1/2 w-full object-fill aspect-video rounded-t-md bg-blackX text-whiteX"

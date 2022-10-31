@@ -29,10 +29,10 @@ const StoryPage = () => {
     logEvent(analytics, `View story: ${storyId}`);
   }, []);
   return (
-    <div className="w-full flex-col h-full items-center sm:pt-0 pt-10">
-      <div className="relative w-full sm:h-screen h-full overflow-hidden">
-        <div className="flex absolute sm:bottom-28 bottom-6">
-          <h2 className="p-2 text-center uppercase text-whiteX sm:text-5xl text-3xl font-bold transition-all ease-in">
+    <div className="story w-full flex-col h-full items-center sm:pt-0 pt-10">
+      <div className="relative w-full sm:h-[calc(100vh-70px)] h-auto overflow-hidden">
+        <div className="flex absolute bottom-6">
+          <h2 className="p-2 text-center uppercase text-blackX sm:text-5xl text-3xl font-bold transition-all ease-in  bg-whiteX bg-opacity-50">
             {article?.title}
           </h2>
         </div>
@@ -40,7 +40,7 @@ const StoryPage = () => {
           <Image
             src={article?.tags ? article.tags : "floodies"}
             alt="Story Image"
-            className="object-fill h-full w-full aspect-video "
+            className="object-fill h-full w-full aspect-video bg-opacity-50"
           />
 
           <i>{article?.caption_1}</i>
@@ -65,7 +65,9 @@ const StoryPage = () => {
               alt=""
               className="h-12 w-12 rounded-full shadow-lg"
             />
-            <strong className="ml-3">{article?.author}</strong>
+            <strong className="ml-3">
+              {article?.author ? article.author : "Impala Media"}
+            </strong>
 
             <i className="text-sm flex-1 text-right">
               {article?.created &&
@@ -117,14 +119,10 @@ const StoryPage = () => {
                       href={`/stories/${encodeURIComponent(article.id)}`}
                     >
                       <div className="w-80 h-32 flex rounded-md  m-2 flex-wrap shaddow-md bg-blackX items-start">
-                        <img
-                          src={
-                            article?.image_1?.src
-                              ? article.image_1.src
-                              : logos?.impalaLogo?.src
-                          }
+                        <Image
+                          src={article.tags ? article.tags : "impalaLogo"}
+                          className="object-cover aspect-video w-1/3 rounded-l-md h-full"
                           alt={index + "story image"}
-                          className="object-contain aspect-video w-1/3 rounded-l-md h-full"
                         />
 
                         <div className="flex flex-col justify-between h-full  w-2/3 pt-1">

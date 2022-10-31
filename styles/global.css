@@ -11,26 +11,9 @@ body {
   overflow-x: hidden;
 }
 
-/* * {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-} */
-
-/* @layer components {
-  .header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 8vh;
-    position: sticky !important;
-    left: 0;
-    top: 0;
-    width: full;
-
-    transition: all ease-in-out 0.3s;
-    color: white;
-    animation: animateIn 0.5s;
-    z-index: 999;
-  }
-} */
+.story a {
+  font-size: 0.9rem;
+  color: #ff002b;
+  text-decoration: underline;
+  font-weight: 600;
+}

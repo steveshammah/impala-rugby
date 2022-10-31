@@ -1,0 +1,10 @@
+services:
+  impala-rugby:
+    build: .
+    ports:
+      - 3000:3000
+     environment:
+      PORT: 3000
+    volumes:
+      - ./:/app
+    command: pnpm dev
