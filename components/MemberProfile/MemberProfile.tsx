@@ -1,23 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { team } from "../../public/resources/resources";
 
 // import { teamContext } from "../../../contexts/team-context";
-import MemberAbout from "../../../pages/squads/member/MemberAbout";
+// import MemberAbout from "../../../pages/squads/member/MemberAbout";
 import MemberGallery from "./MemberGallery";
-import MemberStatistics from "../../../pages/squads/member/MemberStatistics";
-
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-  Button,
-  Box,
-  BottomNavigation,
-  BottomNavigationAction,
-  Container,
-} from "@mui/material";
+// import MemberStatistics from "../../../pages/squads/member/MemberStatistics";
 
 const MemberProfile = ({ match }) => {
   // const { team } = useContext(teamContext);
@@ -36,26 +23,17 @@ const MemberProfile = ({ match }) => {
       </div>
       <div className="container-wrapper">
         <div className="left-container">
-          <Card className="member-profile-card">
-            <CardMedia
-              component="img"
-              height="200"
-              image={member.img}
-              alt="User profile"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {member.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                One Team. One Dream
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Message</Button>
-              <Button size="small">More</Button>
-            </CardActions>
-          </Card>
+          <div className="member-profile-card">
+            <img height="200" src={member.img.src} alt="User profile" />
+            <div>
+              <h2>{member.name}</h2>
+              <h2>One Team. One Dream</h2>
+            </div>
+            <div>
+              <button>Message</button>
+              <button>More</button>
+            </div>
+          </div>
 
           <div className="profile-meta">
             <div>
@@ -71,35 +49,27 @@ const MemberProfile = ({ match }) => {
         </div>
         <div className="right-container">
           <div className="profile-nav-links">
-            <Box sx={{ width: 500 }}>
-              <BottomNavigation
-                showLabels
-                value={value}
+            <div>
+              <div
                 onChange={(newValue) => {
                   setValue(newValue);
                 }}
               >
-                <BottomNavigationAction
-                  label="About"
-                  onClick={() => setActiveWindow("about")}
-                />
-                <BottomNavigationAction
-                  onClick={() => setActiveWindow("statistics")}
-                  label="Statistics"
-                />
-                <BottomNavigationAction
-                  onClick={() => setActiveWindow("gallery")}
-                  label="Gallery"
-                />
-              </BottomNavigation>
-            </Box>
+                <div onClick={() => setActiveWindow("about")} />
+                About
+                <div onClick={() => setActiveWindow("statistics")} />
+                Statistics
+                <div onClick={() => setActiveWindow("gallery")} />
+                Gallery
+              </div>
+            </div>
           </div>
 
-          <Container maxWidth="lg">
-            <MemberAbout member={member} activeWindow={activeWindow} />
+          <div>
+            {/* <MemberAbout member={member} activeWindow={activeWindow} /> */}
             <MemberGallery member={member} activeWindow={activeWindow} />
-            <MemberStatistics member={member} activeWindow={activeWindow} />
-          </Container>
+            {/* <MemberStatistics member={member} activeWindow={activeWindow} /> */}
+          </div>
         </div>
       </div>
     </section>

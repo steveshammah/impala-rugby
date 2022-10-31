@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CardNav from "./CardNav";
 import MatchesContainer from "./MatchesContainer";
 import ShopContainer from "./ShopContainer";
@@ -6,7 +6,12 @@ import ShopContainer from "./ShopContainer";
 interface ICardsWrapperProps {
   items: string;
 }
-
+{
+  /* 
+slider: boolean
+flex
+*/
+}
 const CardsWrapper = ({ items }: ICardsWrapperProps) => {
   const [container, setContainer] = useState("");
   const [count, setCount] = useState(0);
@@ -38,9 +43,9 @@ const CardsWrapper = ({ items }: ICardsWrapperProps) => {
     }
   };
   return (
-    <>
+    <div className="shadow mt-12">
       {container === "Shop" ? (
-        <div className="shop-container card-lg-container ">
+        <div className="shop-container card-lg-container  flex flex-col w-screen items-center overflow-hidden">
           <CardNav
             item={shop}
             position={position}
@@ -49,7 +54,7 @@ const CardsWrapper = ({ items }: ICardsWrapperProps) => {
           <ShopContainer position={position} />
         </div>
       ) : (
-        <div className="matches-container card-lg-container ">
+        <div className="matches-container card-lg-container flex flex-col w-screen items-center overflow-hidden ">
           <CardNav
             item={match}
             position={position}
@@ -58,7 +63,7 @@ const CardsWrapper = ({ items }: ICardsWrapperProps) => {
           <MatchesContainer position={position} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

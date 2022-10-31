@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { allFixtures, logos } from "../../public/resources/resources";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 import "./matchcenter.scss";
 
 const MatchReview = ({ match }) => {
-  const [activeMatch, setActiveMatch] = useState({});
+  const [activeMatch, setActiveMatch] = useState<any>({});
   const [position, setPosition] = useState(0);
   const team = match.params.team;
   const matchId = match.params.id;
@@ -15,7 +13,7 @@ const MatchReview = ({ match }) => {
     const matchToReview = allFixtures[`${team}`].filter(
       (fixture) => fixture.id === parseInt(matchId)
     );
-    setActiveMatch(...matchToReview);
+    setActiveMatch({ ...matchToReview });
     return () => {};
   }, []);
 
@@ -33,99 +31,100 @@ const MatchReview = ({ match }) => {
   };
 
   return (
-    <div className='match-review-container'>
-      <div className='match-details'>
-        <div className='fixture-details'>
-          <div className='tournament'>
+    <div className="match-review-container">
+      <div className="match-details">
+        <div className="fixture-details">
+          <div className="tournament">
             <span>{activeMatch.league}</span> | <span>{activeMatch.day}</span>
           </div>
-          <div className='teams'>
+          <div className="teams">
             {activeMatch.home ? (
               <>
-                <div className='team'>
+                <div className="team">
                   <h2>Impala</h2>
-                  <div className='team-logo'>
-                    <img src={logos.impalaLogo} alt='' />
+                  <div className="team-logo">
+                    <img src={logos.impalaLogo} alt="" />
                   </div>
                 </div>
                 <h1>VS</h1>
 
-                <div className='team'>
+                <div className="team">
                   <h2>{activeMatch.opponent}</h2>
-                  <div className='team-logo'>
-                    <img src={activeMatch.logo} alt='' />
+                  <div className="team-logo">
+                    <img src={activeMatch.logo} alt="" />
                   </div>
                 </div>
               </>
             ) : (
               <>
-                <div className='team'>
+                <div className="team">
                   <h2>{activeMatch.opponent}</h2>
-                  <div className='team-logo'>
-                    <img src={activeMatch.logo} alt='' />
+                  <div className="team-logo">
+                    <img src={activeMatch.logo} alt="" />
                   </div>
                 </div>
                 <h1>VS</h1>
 
-                <div className='team'>
+                <div className="team">
                   <h2>Impala</h2>
-                  <div className='team-logo'>
-                    <img src={logos.impalaLogo} alt='' />
+                  <div className="team-logo">
+                    <img src={logos.impalaLogo} alt="" />
                   </div>
                 </div>
               </>
             )}
           </div>
         </div>
-        <div className='match-stats'>
-          <div className='title-nav'>
+        <div className="match-stats">
+          <div className="title-nav">
             <h2>Match Stats</h2>
 
-            <div className='nav-btn'>
-              <ArrowBackIosNewIcon
+            <div className="nav-btn">
+              {/* <ArrowBackIosNewIcon
                 className='icon'
                 onClick={() => changePosition("+")}
               />
               <ArrowForwardIosIcon
                 className='icon'
                 onClick={() => changePosition("-")}
-              />
+              /> */}
             </div>
           </div>
 
           <div
-            className='match-report'
-            style={{ transform: `translateX(${position}px)` }}>
+            className="match-report"
+            style={{ transform: `translateX(${position}px)` }}
+          >
             {activeMatch.played ? (
               <>
-                <div className='report-card'>
+                <div className="report-card">
                   <h3>Scores</h3>
                   <h5>Impala:{12} </h5>
                   <h5>{activeMatch.opponent}: 28</h5>
                 </div>
-                <div className='report-card'>
+                <div className="report-card">
                   <h3>Trys</h3>
                   <h5>Impala: 2 </h5>
                   <h5>{activeMatch.opponent}: 5</h5>
                 </div>
-                <div className='report-card'>
+                <div className="report-card">
                   <h3>Conversions</h3>
                   <h5>Impala: 2/2</h5>
                   <h5>{activeMatch.opponent} 3/5</h5>
                 </div>
-                <div className='report-card'>
+                <div className="report-card">
                   <h3>Penalties</h3>
                   <h5>Impala: 4/6 </h5>
                   <h5>{activeMatch.opponent}: 1/3</h5>
                 </div>
 
-                <div className='report-card'>
+                <div className="report-card">
                   <h3>Venue</h3>
                   <h5>{activeMatch.venue}</h5>
                 </div>
               </>
             ) : (
-              <div className='report-card'>
+              <div className="report-card">
                 <h3>Not Played</h3>
 
                 {/* <h5>Match</h5> */}
@@ -135,10 +134,10 @@ const MatchReview = ({ match }) => {
           </div>
         </div>
       </div>
-      <div className='team-lists'>
-        <div className='line-up home'>
+      <div className="team-lists">
+        <div className="line-up home">
           <h3>Impala</h3>
-          <div className='starting'>
+          <div className="starting">
             {/* <h4> Line Ups</h4> */}
             {activeMatch.played ? (
               <ol style={{ display: activeMatch.played ? "block" : "none" }}>
@@ -164,8 +163,9 @@ const MatchReview = ({ match }) => {
           </div>
 
           <div
-            className='substitutes'
-            style={{ display: activeMatch.played ? "block" : "none" }}>
+            className="substitutes"
+            style={{ display: activeMatch.played ? "block" : "none" }}
+          >
             <h4>Substitutes</h4>
             <ol start={16}>
               <li>Front Row</li>
@@ -179,9 +179,9 @@ const MatchReview = ({ match }) => {
             </ol>
           </div>
         </div>
-        <div className='line-up away'>
+        <div className="line-up away">
           <h3>{activeMatch.opponent}</h3>
-          <div className='starting'>
+          <div className="starting">
             {/* <h4> Line Ups</h4> */}
             {activeMatch.played ? (
               <ol style={{ display: activeMatch.played ? "block" : "none" }}>
@@ -207,8 +207,9 @@ const MatchReview = ({ match }) => {
           </div>
 
           <div
-            className='substitutes'
-            style={{ display: activeMatch.played ? "block" : "none" }}>
+            className="substitutes"
+            style={{ display: activeMatch.played ? "block" : "none" }}
+          >
             <h4>Substitutes</h4>
             <ol start={16}>
               <li>Front Row</li>

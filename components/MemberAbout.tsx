@@ -1,12 +1,15 @@
-const MemberAbout = ({ activeWindow }) => {
-  const display = activeWindow === "about" ? true : false;
+import React from "react";
+import MemberStatistics from "./MemberStatistics";
+
+interface Props {
+  member: any[];
+}
+const MemberAbout = ({ member }) => {
   return (
-    <section
-      className='member-about'
-      style={{ display: display ? "block" : "none" }}>
-      {/* <h2>About</h2> */}
-      <div className='member-about-text'>
-        <p>
+    <section className="member-about p-2 flex flex-col items-center ">
+      <h2 className="font-bold text-2xl">Biography</h2>
+      <div className="member-about-text w-2/3 flex items-center  p-2 border-slate-100 border-2 shadow-md">
+        <p className="leading-8 tracking-widest ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
           cupiditate, modi numquam ad illum voluptatem incidunt ut impedit
           similique sed eaque eum consectetur nihil ipsa facilis ipsum officia
@@ -18,6 +21,7 @@ const MemberAbout = ({ activeWindow }) => {
           obcaecati sint dolorem. Omnis, eius?
         </p>
       </div>
+      <MemberStatistics member={member} />
     </section>
   );
 };

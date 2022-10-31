@@ -1,12 +1,11 @@
-import { useContext, useState, useRef } from "react";
-import { TextField, Button, Alert, styled } from "@mui/material/";
+import React, { useContext, useState, useRef } from "react";
 import { articlesContext } from "../../contexts/articles-context";
 
 import "./articles-admin.scss";
 
 const ArticleForm = ({ createPost, editPost, action }) => {
-  const [wordCount1, setWordCount1] = useState("");
-  const [wordCount2, setWordCount2] = useState("");
+  const [wordCount1, setWordCount1] = useState(0);
+  const [wordCount2, setWordCount2] = useState(0);
   const [title, setTitle] = useState("");
   const [headline, setHeadline] = useState("");
   const [content_1, setContent1] = useState("");
@@ -20,7 +19,7 @@ const ArticleForm = ({ createPost, editPost, action }) => {
   const author = 2; //for DB user object
   const { getCookie, BASE_URL } = useContext(articlesContext);
 
-  const articleForm = useRef();
+  const articleForm = useRef<HTMLFormElement>(null);
 
   const handleChange = (e) => {
     // console.log("Name", e);
@@ -65,7 +64,7 @@ const ArticleForm = ({ createPost, editPost, action }) => {
     switch (e.target.name) {
       case "Save":
         createPost();
-        articleForm.current.reset();
+        articleForm && articleForm.current.reset();
 
         console.log("Save");
         return;
@@ -89,33 +88,26 @@ const ArticleForm = ({ createPost, editPost, action }) => {
       <div className="left-wrapper">
         <h2>{action}</h2>
         <div className="article-meta">
-          <TextField
+          <input
             id="standard-multiline-flexible"
-            label="Title"
             name="Title"
-            multiline
-            maxRows={4}
-            variant="standard"
+            aria-label="Title"
             onChange={handleChange}
             required
           />
-          <TextField
+          <input
             id="standard-textarea"
             name="Headline"
-            label="Headline"
+            aria-label="Headline"
             placeholder="Impala time"
-            multiline
-            variant="standard"
             onChange={handleChange}
             required
           />
         </div>
         <div className="article-content">
-          <TextField
-            fullWidth
-            multiline
+          <input
             name="Content1"
-            label="Article Content"
+            aria-label="Article Content"
             placeholder="Impala all the way"
             id="fullWidth"
             className="article-field"
@@ -128,7 +120,7 @@ const ArticleForm = ({ createPost, editPost, action }) => {
               >
                 Word Count: <i>{wordCount1}</i>
               </strong>
-              <i>{parseInt(wordCount1 / 100)} mins read.</i>
+              <i>{wordCount1 / 100} mins read.</i>
             </span>
           )}
         </div>
@@ -217,13 +209,10 @@ const ArticleForm = ({ createPost, editPost, action }) => {
                       Cover Image
                     </Button> */}
               </label>
-              <TextField
+              <input
                 id="standard-multiline-flexible"
-                label="Caption One"
+                aria-label="Caption One"
                 name="Caption1"
-                multiline
-                maxRows={4}
-                variant="standard"
                 onChange={handleChange}
                 required
               />
@@ -255,13 +244,10 @@ const ArticleForm = ({ createPost, editPost, action }) => {
                       Second Image
                     </Button> */}
               </label>
-              <TextField
+              <input
                 id="standard-multiline-flexible"
-                label="Caption Two"
+                aria-label="Caption Two"
                 name="Caption2"
-                multiline
-                maxRows={4}
-                variant="standard"
                 onChange={handleChange}
                 required
               />
@@ -270,27 +256,22 @@ const ArticleForm = ({ createPost, editPost, action }) => {
           </div>
         </div>
         <div className="article-buttons">
-          <Button
-            variant="contained"
-            color="success"
-            name="Save"
-            onClick={handleSubmit}
-          >
+          <button className="bg-green-300" name="Save" onClick={handleSubmit}>
             Save
-          </Button>
-          <Button variant="contained" name="Post" onClick={handleSubmit}>
+          </button>
+          <button className="bg-blue-400" name="Post" onClick={handleSubmit}>
             Post
-          </Button>
+          </button>
         </div>
 
         <div className="article-disclaimer">
-          <Alert severity="info">
+          <p className="bg-blue-200 text-blackX">
             All information and resources provided on
             <a href="#"> impalarugby.com</a> are based on your opinions as the
             author (unless otherwise stated). All information is intended to
             grow the audience and make them want to be part of the Impala
             Fraternity.
-          </Alert>
+          </p>
         </div>
       </div>
       {/* <div className='right-wrapper'>Right Panel</div> */}

@@ -1,9 +1,9 @@
 import { menuLinks } from "../../resources/resources";
 import SideBarLink from "./SideBarLink";
-import ListItem from "@mui/material/ListItem";
+
 import Link from "next/link";
-import List from "@mui/material/List";
-import { useState } from "react";
+
+import React, { useState } from "react";
 
 interface ISubMenuProps {
   category: string;
@@ -22,25 +22,25 @@ const SubMenu = ({ category }: ISubMenuProps) => {
   const [activeLink, setActiveLink] = useState("Home");
 
   return (
-    <List className="sub-menu">
+    <div className="sub-menu">
       <h4>{category}</h4>
       {menuLinks[category].map((link: IMenu) => {
         return (
           <Link href={`/${link.url}`} className="link" passHref>
             <>
-              <ListItem button key={category}>
+              <div key={category}>
                 <SideBarLink
                   name={link.name}
                   icon={link.icon}
                   activeLink={activeLink}
                   setActiveLink={setActiveLink}
                 />
-              </ListItem>
+              </div>
             </>
           </Link>
         );
       })}
-    </List>
+    </div>
   );
 };
 

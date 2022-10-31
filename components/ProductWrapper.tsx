@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { ArrowDropDown, ArrowDropUp } from "@material-ui/icons";
+import React, { useState, useEffect } from "react";
+// import { ArrowDropDown, ArrowDropUp } from "@material-ui/icons";
 
 const ProductWrapper = ({ title, products }) => {
   const [open, setOpen] = useState(false);
@@ -36,13 +36,13 @@ const ProductWrapper = ({ title, products }) => {
               Less
             </a>
 
-            <ArrowDropUp className="icon" />
+            {/* <ArrowDropUp className="icon" /> */}
           </>
         ) : (
           <>
             <a href={`#${title}`}>More</a>
 
-            <ArrowDropDown className="icon" />
+            {/* <ArrowDropDown className="icon" /> */}
           </>
         )}
       </div>

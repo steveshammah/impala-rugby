@@ -1,15 +1,13 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 // import { articlesContext } from "../../contexts/articles-context";
 import { localArticles } from "../../public/resources/resources";
+import { MdShare } from "react-icons/md";
 
 const StoryFeed = () => {
   // const { articles, BASE_URL } = useContext(articlesContext);
-  const [displayArticles, setDisplayArticles] = useState([{}]);
+  const [displayArticles, setDisplayArticles] = useState<any[]>([{}]);
   const [activeLink, setActiveLink] = useState("Latest");
-
-  const router = useRouter();
 
   useEffect(() => {
     const filteredArticles = localArticles.filter((article) =>
@@ -24,67 +22,74 @@ const StoryFeed = () => {
     setActiveLink(details);
   };
 
+  const topics = [
+    "Latest",
+    "Men",
+    "Women",
+    "Swaras",
+    "Academy",
+    "Floodies",
+    "Club",
+  ];
+
   return (
-    <div className="feeds-home">
-      <div className="feeds-container">
-        <div className="feeds-nav">
-          <h2>Latest Stories</h2>
-          <ul>
-            <li
-              className={activeLink === "Latest" ? "active" : ""}
-              onClick={() => handleClick("Latest")}
-            >
-              <a href="#">Latest</a>
-            </li>
-            <li
-              className={activeLink === "Men" ? "active" : ""}
-              onClick={() => handleClick("Men")}
-            >
-              <a href="#">Men</a>
-            </li>
-            <li
-              className={activeLink === "Women" ? "active" : ""}
-              onClick={() => handleClick("Women")}
-            >
-              <a href="#">Women</a>
-            </li>
-            <li
-              className={activeLink === "Swaras" ? "active" : ""}
-              onClick={() => handleClick("Swaras")}
-            >
-              <a href="#">Swaras</a>
-            </li>
-            <li
-              className={activeLink === "Academy" ? "active" : ""}
-              onClick={() => handleClick("Academy")}
-            >
-              <a href="#">Academy</a>
-            </li>
-            <li
-              className={activeLink === "Club" ? "active" : ""}
-              onClick={() => handleClick("Club")}
-            >
-              <a href="#">Club</a>
-            </li>
+    <div className="text-blackX flex items-center justify-around">
+      <div className="w-full flex flex-wrap items-center m-4 justify-around ">
+        <div className="w-11/12">
+          {/* <h2 className="w-full text-3xl font-semibold">Latest Stories</h2> */}
+          <ul className="flex justify-around lg:w-1/3 sm:w-11/12 ">
+            {topics.map((topic, index) => (
+              <li onClick={() => handleClick(topic)} key={index}>
+                <Link href={`#${topic}`}>
+                  <a
+                    className={`text-whiteX ${
+                      activeLink === topic &&
+                      "text-primaryRed border-b-2 border-primaryRed py-1"
+                    } font-bold`}
+                  >
+                    {topic}
+                  </a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="feeds-section">
-          {displayArticles.map((article) => (
-            <div className="feed-story">
-              <div
-                className="feed-img-wrapper"
-                onClick={() =>
-                  router.push(`/stories/${encodeURIComponent(article.id)}`)
-                }
+        <div className="w-11/12 flex flex-wrap items-center p-4 justify-around">
+          {displayArticles.map((article, index) => (
+            <div
+              className={`h-96 w-80 my-4 overflow-hidden ${
+                article.type === "update" ? "flex-row" : "flex-col"
+              } rounded-md cursor-pointer flex shadow`}
+              key={index}
+            >
+              <Link
+                className=" overflow-hidden flex w-90 h-full"
+                href={`/stories/${encodeURIComponent(article.id)}`}
               >
-                <img src={article.image_1} alt="" />
+                <img
+                  src={article.image_1?.src}
+                  alt="Story Thumbnail"
+                  className="h-full w-full aspect-video hover:scale-110 transition-all ease-in duration-300 object-cover  rounded-t-md flex-1"
+                />
                 {/* <img src={BASE_URL + article.image_1} alt='' /> */}
-              </div>
-              <div className="feed-story-text">
-                <span className="story-type">{article.type}</span>
-                <h3>{article?.title}</h3>
-                <p>{article?.headline}</p>
-                <span className="date-created">{article.dateCreated}</span>
+              </Link>
+              <div className="flex-1 p-2 bg-white z-10 relative">
+                <span className="text-xs text-primaryRed p-2 capitalize">
+                  {article.type}
+                </span>
+                <h3 className="text-md uppercase font-bold text-blackX">
+                  {article?.title}
+                </h3>
+                <p className="text-sm font-light">{article?.headline}</p>
+                <span className="date-created absolute bottom-2 left-2 font-medium text-xs">
+                  {article.dateCreated
+                    ? article.dateCreated
+                    : index + 1 + " Nov 2022"}
+                </span>
+
+                <span className="absolute bottom-2 right-2 font-bold text-md cursor-pointer">
+                  <MdShare />
+                </span>
               </div>
             </div>
           ))}

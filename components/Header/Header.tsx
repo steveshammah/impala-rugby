@@ -1,17 +1,43 @@
 import React from "react";
-import { Box } from "@mui/material";
 import { useState } from "react";
 import MainNav from "./MainNav";
 import SubNav from "./SubNav";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, toggleMenu] = useState(false);
+  const navLinks = [
+    {
+      name: "News",
+      url: "/stories",
+    },
+    {
+      name: "Squads",
+      url: "/squads",
+    },
+    {
+      name: "Fixtures",
+      url: "/fixtures",
+    },
+    // {
+    //   name: "Shop",
+    //   url: "/shop",
+    // },
+    {
+      name: "Dashboard",
+      url: "/dashboard",
+    },
+  ];
+
   return (
-    <header>
-      <Box maxWidth="bg" className="website-nav">
-        <MainNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        {/* <SubNav /> */}
-      </Box>
+    <header className="header shadow-md">
+      <div className="flex flex-col w-full ">
+        <MainNav
+          menuOpen={menuOpen}
+          toggleMenu={toggleMenu}
+          navLinks={navLinks}
+        />
+        <SubNav />
+      </div>
     </header>
   );
 };

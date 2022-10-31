@@ -1,4 +1,4 @@
-import { Modal, Button, Typography, Box } from "@mui/material/";
+import React from "react";
 
 const style = {
   position: "absolute",
@@ -8,7 +8,7 @@ const style = {
   width: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
-  boxShadow: 24,
+
   p: 4,
   color: "black",
 };
@@ -22,35 +22,27 @@ const DeleteModal = ({
 }) => {
   return (
     <>
-      <Modal
-        keepMounted
-        open={modalOpen}
-        onClose={handleClose}
-        aria-labelledby='keep-mounted-modal-title'
-        aria-describedby='keep-mounted-modal-description'>
-        <Box sx={style}>
-          <Typography id='keep-mounted-modal-title' variant='h6' component='h2'>
+      <div
+        aria-labelledby="keep-mounted-modal-title"
+        aria-describedby="keep-mounted-modal-description"
+      >
+        <div>
+          <h6 id="keep-mounted-modal-title">
             Deleting post with ID: {activeArticle}
-          </Typography>
-          <Typography id='keep-mounted-modal-description' sx={{ mt: 2 }}>
+          </h6>
+          <h2 id="keep-mounted-modal-description">
             Are you sure you want to delete article?
             <span className="'delete-btn-wrapper">
-              <Button
-                variant='contained'
-                color='error'
-                onClick={() => handleDelete(activeArticle)}>
+              <button color="error" onClick={() => handleDelete(activeArticle)}>
                 Yes
-              </Button>
-              <Button
-                color='primary'
-                variant='contained'
-                onClick={() => setModalOpen(false)}>
+              </button>
+              <button color="primary" onClick={() => setModalOpen(false)}>
                 No
-              </Button>
+              </button>
             </span>
-          </Typography>
-        </Box>
-      </Modal>
+          </h2>
+        </div>
+      </div>
     </>
   );
 };

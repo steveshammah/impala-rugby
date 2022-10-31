@@ -1,115 +1,218 @@
 import React from "react";
-import {
-  Email,
-  Facebook,
-  Instagram,
-  Phone,
-  PinDrop,
-  Twitter,
-} from "@material-ui/icons";
-
-// import { logos } from "/resources/resources";
+import Link from "next/link";
+import { logos, partners } from "../../public/resources/resources";
+import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
+import { MdPhone, MdMail, MdPinDrop } from "react-icons/md";
 
 const Footer = () => {
+  const footerLinks = [
+    {
+      label: "News",
+      url: "stories",
+      to: "sitemap",
+    },
+    {
+      label: "Fixtures",
+      url: "fixtures",
+      to: "sitemap",
+    },
+    {
+      label: "Squad",
+      url: "squads",
+      to: "sitemap",
+    },
+    {
+      label: "Partners & Sponsors",
+      url: "partners",
+      to: "sitemap",
+    },
+    {
+      label: "Contact",
+      url: "contact",
+      to: "contacts",
+    },
+    {
+      label: "About",
+      url: "about",
+      to: "contacts",
+    },
+    {
+      label: "Support Forum",
+      url: "support",
+      to: "contacts",
+    },
+    {
+      label: "Store",
+      url: "store",
+      to: "contacts",
+    },
+    {
+      label: "Match Day",
+      url: "match_day_policy",
+      to: "policy",
+    },
+    {
+      label: "Privacy Policy",
+      url: "privacy_policy",
+      to: "policy",
+    },
+    {
+      label: "Cookies",
+      url: "cookie_policy",
+      to: "policy",
+    },
+    {
+      label: "Terms and Conditions",
+      url: "terms_and_conditions",
+      to: "policy",
+    },
+  ];
+  const socialLinks = [
+    {
+      platform: "Twitter",
+      link: "https://www.twitter.com",
+      icon: FaTwitter,
+    },
+    {
+      platform: "Instagram",
+      link: "https://www.instagram.com",
+      icon: FaInstagram,
+    },
+    {
+      platform: "Facebook",
+      link: "https://www.facebook.com",
+      icon: FaFacebook,
+    },
+    {
+      platform: "Youtube",
+      link: "https://www.youtube.com",
+      icon: FaYoutube,
+    },
+  ];
   return (
-    <footer>
-      <div className="footer-logos">
-        <a href="/partners-sponsors/resolution">
-          {/* <img src={logos.resolutionLogo} alt="" /> */}
-        </a>
-        <a href="/partners-sponsors/stanchart">
-          {/* <img src={logos.stanchartLogo} alt="" /> */}
-        </a>
-
-        <a href="/partners-sponsors/blaze">
-          {/* <img src={logos.blazeLogo} alt="" /> */}
-        </a>
-
-        <a href="/partners-sponsors/saracens">
-          {/* <img src={logos.saracensLogo} alt="" /> */}
-        </a>
-
-        <a href="/partners-sponsors">
-          {/* <img src={logos.resolutionLogo} alt="" /> */}
-        </a>
-
-        <a href="/partners-sponsors">
-          {/* <img src={logos.impalaLogo} alt="" /> */}
-        </a>
-
-        <a href="/partners-sponsors/stanchart">
-          {/* <img src={logos.stanchartLogo} alt="" /> */}
-        </a>
-
-        <a href="/partners-sponsors/blaze">
-          {/* <img src={logos.blazeLogo} alt="" /> */}
-        </a>
+    <footer className="flex flex-col justify-center items-center align-middle w-full mt-5">
+      <div className="flex flex-wrap h-72 items-center sm:w-8/12 w-full justify-around">
+        {partners.map((partner, index) => (
+          <Link href={`/partners-sponsors/${partner.url}`} key={index}>
+            <a className="h-16 w-48 shadow-lg shadow-black">
+              <img
+                src={partner.img.src}
+                className="h-full w-full object-contain"
+                alt=""
+              />
+            </a>
+          </Link>
+        ))}
+        {partners.map((partner, index) => (
+          <Link href={`/partners-sponsors/${partner.url}`} key={index}>
+            <a className="h-16 w-48 shadow-lg shadow-black">
+              <img
+                src={partner.img.src}
+                className="h-full w-full object-contain"
+                alt=""
+              />
+            </a>
+          </Link>
+        ))}
       </div>
-      <div className="footer-list-wrapper">
-        <div className="footer-list">
-          <h2>SITEMAP</h2>
-          <ul>
-            <li>
-              <a href="/feed/stories">News</a>
-            </li>
-            <li>
-              <a href="/match-center">Fixtures</a>
-            </li>
-            <li>
-              <a href="/squads">Squads</a>
-            </li>
-            <li>
-              <a href="/partners-sponsors">Partners & Sponsors</a>
-            </li>
+      <div className="p-4 flex justify-between flex-wrap w-full flex-2 bg-blackX text-whiteX">
+        <div className="footer-list flex flex-col flex-1 m-2">
+          <h2 className="font-bold sm:text-lg text-sm flex-1 flex items-end pb-2">
+            SITEMAP
+          </h2>
+          <ul className="flex flex-col flex-grow w-full justify-around">
+            {footerLinks.map(
+              (siteLink, index) =>
+                siteLink.to === "sitemap" && (
+                  <li
+                    className="cursor-pointer hover:text-primaryRed transition-all ease-out sm:text-md text-sm"
+                    key={index}
+                  >
+                    <Link href={`/${siteLink.url}`}>
+                      <a>{siteLink.label}</a>
+                    </Link>
+                  </li>
+                )
+            )}
           </ul>
         </div>
-        <div className="footer-list">
-          <h2>CONTACT US</h2>
-          <ul>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#support">Support Forum</a>
-            </li>
-            <li>
-              <a href="/store">Store</a>
-            </li>
+        <div className="flex flex-col flex-1 m-2">
+          <h2 className="font-bold sm:text-xl text-sm flex-1 flex items-end pb-2">
+            CONTACT US
+          </h2>
+          <ul className="flex flex-col flex-grow w-full justify-around">
+            {footerLinks.map(
+              (siteLink, index) =>
+                siteLink.to === "contacts" && (
+                  <li
+                    className="cursor-pointer hover:text-primaryRed transition-all ease-out text-sm"
+                    key={index}
+                  >
+                    <Link href="/stories">
+                      <a>{siteLink.label}</a>
+                    </Link>
+                  </li>
+                )
+            )}
+          </ul>
+        </div>
+        <div className="flex flex-col flex-1 m-2">
+          <h2 className="font-bold sm:text-xl text-sm  flex-1 flex items-end pb-2">
+            POLICY
+          </h2>
+          <ul className="flex flex-col flex-grow w-full justify-around">
+            {footerLinks.map(
+              (siteLink, index) =>
+                siteLink.to === "policy" && (
+                  <li
+                    className="cursor-pointer hover:text-primaryRed transition-all ease-out text-sm"
+                    key={index}
+                  >
+                    <Link href="/stories">
+                      <a>{siteLink.label}</a>
+                    </Link>
+                  </li>
+                )
+            )}
           </ul>
         </div>
 
-        <div className="contacts-container">
-          <div className="contacts-text">
-            <span>
-              <Phone /> <i>+254 712 345 678</i>
+        <div className="flex items-center justify-around">
+          <div className="contacts-text flex flex-col justify-evenly h-3/4  items-start">
+            <span className="flex items-center justify-start cursor-pointer w-full">
+              <MdPhone className="text-2xl mr-2" />
+              <i>+254 712 345 678</i>
             </span>
-            <span>
-              <Email /> <i>supportservices@impalarugby.co</i>
+            <span className="flex items-center justify-start cursor-pointer w-full">
+              <MdMail className="text-2xl mr-2" />
+              <i>supportservices@impalarugby.com</i>
             </span>
-            <span>
-              <PinDrop /> <i>Impala Sports Club, Ngong Road.</i>
+            <span className="flex items-center justify-start cursor-pointer w-full">
+              <MdPinDrop className="text-2xl mr-2" />
+              <i>Impala Sports Club, Ngong Road.</i>
             </span>
           </div>
-          <div className="contacts-image">
-            {/* <img src={logos.impalaLogo} alt="" /> */}
+          <div className="h-56 w-56 p-8">
+            <img
+              src={logos.impalaLogo.src}
+              alt="Default_Logo"
+              className="h-3/4 w-full object-fill sm:block hidden"
+            />
           </div>
         </div>
       </div>
-      <div className="socials">
-        <ul>
-          <li>Privacy policy</li>
-          <li>Cookies</li>
-          <li>Contact Us</li>
-          <li>Terms of Use</li>
-          <li>Terms & Conditions</li>
-        </ul>
-        <div className="icons">
-          <Instagram /> <Twitter /> <Facebook />
+      <div className="w-full sm:h-10 h-auto flex   justify-between items-center bg-blackX text-whiteX text-xs">
+        <div className="flex flex-1 justify-around cursor-pointer p-1 ">
+          {socialLinks.map((social, index) => (
+            <Link href={social.link} key={index}>
+              <social.icon
+                className="text-xl hover:text-primaryRed transition-all ease-in"
+                title={social.platform}
+              />
+            </Link>
+          ))}
         </div>
-        <span>&copy;2022 Impala Rugby</span>
+        <span className="p-1 flex-1 text-right">&copy;2022 Impala Rugby</span>
       </div>
     </footer>
   );

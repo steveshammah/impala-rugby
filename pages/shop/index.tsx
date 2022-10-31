@@ -1,55 +1,37 @@
-import "./store.scss";
 import { products } from "../../public/resources/resources";
 import React from "react";
 import ProductWrapper from "../../components/ProductWrapper";
 
 const Store = () => {
-  const menProducts = products.filter((product) =>
-    product.category.includes("men")
-  );
-  const womenProducts = products.filter((product) =>
-    product.category.includes("women")
-  );
-  const floodiesProducts = products.filter((product) =>
-    product.category.includes("floodies")
-  );
-  const kidsProducts = products.filter((product) =>
-    product.category.includes("kids")
-  );
-  const accessoryProducts = products.filter((product) =>
-    product.category.includes("accessories")
-  );
+  const categories = ["men", "women", "kids", "floodies", "accessories"];
+  const productFxn = (category: string) =>
+    products.filter((product) => product.category.includes(category));
 
   return (
-    <div className='store-container'>
-      <header>
-        <ul>
-          <li>
-            <a href='#Men'>Men</a>
-          </li>
-          <li>
-            <a href='#Women'>Women</a>
-          </li>
-          <li>
-            <a href='#Kids'>Kids</a>
-          </li>
-          <li>
-            <a href='#Floodies'>Floodies</a>
-          </li>
-          <li>
-            <a href='#Accessories'>Accessories</a>
-          </li>
+    <div className="store-container w-full">
+      <header className="h-12 bg-blackX sticky top-20 z-10">
+        <ul className="flex justify-around items-center h-full">
+          {categories.map((category, index) => (
+            <li key={index}>
+              <a
+                href={`#${category}`}
+                className="flex items-center text-whiteX capitalize"
+              >
+                {category}
+              </a>
+            </li>
+          ))}
         </ul>
       </header>
 
-      <div className='shop-container' id='main'>
-        <ProductWrapper title={"Men"} products={menProducts} />
-        <ProductWrapper title={"Women"} products={womenProducts} />
-
-        <ProductWrapper title={"Kids"} products={kidsProducts} />
-
-        <ProductWrapper title={"Floodies"} products={floodiesProducts} />
-        <ProductWrapper title={"Accessories"} products={accessoryProducts} />
+      <div className="shop-container" id="main">
+        {categories.map((category, index) => (
+          <ProductWrapper
+            title={category}
+            products={productFxn(category)}
+            key={index}
+          />
+        ))}
       </div>
     </div>
   );
