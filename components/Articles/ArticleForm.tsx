@@ -1,280 +1,250 @@
-import React, { useContext, useState, useRef } from "react";
-import { articlesContext } from "../../contexts/articles-context";
+import { Timestamp } from "firebase/firestore";
+import { useRouter } from "next/router";
+import React, { useRef, Dispatch, SetStateAction } from "react";
+import { MdInfo } from "react-icons/md";
 
-import "./articles-admin.scss";
+interface Props {
+  label: string;
+  article: any;
+  setArticle: Dispatch<SetStateAction<any>>;
+  submitHandler: any;
+}
 
-const ArticleForm = ({ createPost, editPost, action }) => {
-  const [wordCount1, setWordCount1] = useState(0);
-  const [wordCount2, setWordCount2] = useState(0);
-  const [title, setTitle] = useState("");
-  const [headline, setHeadline] = useState("");
-  const [content_1, setContent1] = useState("");
-  const [content_2, setContent2] = useState("");
-  const [image_1, setImage1] = useState("");
-  const [image_2, setImage2] = useState("");
-  const [caption_1, setCaption1] = useState("");
-  const [caption_2, setCaption2] = useState("");
-  const [type, setType] = useState("");
-  const [tags, setTags] = useState("");
-  const author = 2; //for DB user object
-  const { getCookie, BASE_URL } = useContext(articlesContext);
-
+const ArticleForm = ({ label, submitHandler, article, setArticle }: Props) => {
   const articleForm = useRef<HTMLFormElement>(null);
-
-  const handleChange = (e) => {
-    // console.log("Name", e);
-    console.log("Input", e.target.value);
-    const input = e.target.value;
-    let textCount;
-    switch (e.target.name) {
-      case "Title":
-        return setTitle(input);
-      case "Headline":
-        return setHeadline(input);
-      case "Content1":
-        textCount = input.split(" ").length;
-        setWordCount1(textCount);
-        return setContent1(input);
-      case "Content2":
-        textCount = input.split(" ").length;
-        setWordCount2(textCount);
-        return setContent2(input);
-      case "image_1":
-        console.log("Images 1: ", e.target.files[0]);
-        return setImage1(e.target.files[0]);
-      case "image_2":
-        console.log("Images 2: ", e.target.files[0]);
-        return setImage2(e.target.files[0]);
-      case "Caption1":
-        return setCaption1(input);
-      case "Caption2":
-        return setCaption2(input);
-      case "Type":
-        return setType(input);
-      case "Tags":
-        return setTags(input);
-      default:
-        textCount = input.split(" ").length;
-        setWordCount1(textCount);
-        return setContent1(input);
-    }
-  };
-
+  const router = useRouter();
   const handleSubmit = (e) => {
-    switch (e.target.name) {
-      case "Save":
-        createPost();
-        articleForm && articleForm.current.reset();
-
-        console.log("Save");
-        return;
-      case "Post":
-        console.log(createPost());
-        return;
-      default:
-        console.log("Post");
-        return;
+    e.preventDefault();
+    const option = e.target.name;
+    if (option === "Save") {
+      submitHandler({
+        ...article,
+        public: false,
+        created: Timestamp.now(),
+      });
+      articleForm && articleForm?.current?.reset();
+      setArticle({});
+      return;
+    } else if (option === "Edit") {
+      submitHandler(article.id, { ...article, lastEdited: Timestamp.now() });
+      router.back();
+    } else {
+      submitHandler({
+        ...article,
+        public: true,
+        created: Timestamp.now(),
+        posted: Timestamp.now(),
+      });
+      articleForm && articleForm?.current?.reset();
+      setArticle({});
+      return;
     }
   };
 
-  const Input = styled("input")({
-    display: "none",
-  });
+  const updateHandler = (field: string, value: string) => {
+    setArticle({ ...article, [field]: value });
+  };
 
-  let csrftoken = getCookie("csrftoken");
-  // console.log("Token", csrftoken);
   return (
-    <form className="create-post" ref={articleForm}>
-      <div className="left-wrapper">
-        <h2>{action}</h2>
-        <div className="article-meta">
+    <form className="h-full flex justify-between" ref={articleForm}>
+      {/* {JSON.stringify(article)} */}
+      <div className="flex flex-col p-4 justify-center items-center">
+        <h2 className="text-2xl font-bold w-full text-left">{label}</h2>
+        <div className="flex flex-col  justify-around p-2 w-1/2">
           <input
-            id="standard-multiline-flexible"
             name="Title"
+            className="p-1 border-b-2 border-slate-200 outline-none text-3xl my-4 font-black uppercase"
             aria-label="Title"
-            onChange={handleChange}
+            placeholder="Main Title"
+            onChange={(e) => updateHandler("title", e.target.value)}
             required
+            value={article?.title}
           />
           <input
-            id="standard-textarea"
             name="Headline"
+            className="p-1 border-b-2 border-slate-200 outline-none text-2xl my-4 font-black capitalize"
             aria-label="Headline"
-            placeholder="Impala time"
-            onChange={handleChange}
+            placeholder="Headline"
+            onChange={(e) => updateHandler("headline", e.target.value)}
             required
+            value={article?.headline}
           />
         </div>
-        <div className="article-content">
-          <input
+        <div className=" flex items-center flex-col mb-4 sm:w-4/5 w-full">
+          <h3 className="text-md text-whiteX font-bold italic text-left w-4/5">
+            Section 1
+          </h3>
+          <textarea
             name="Content1"
             aria-label="Article Content"
-            placeholder="Impala all the way"
-            id="fullWidth"
-            className="article-field"
-            onChange={handleChange}
+            placeholder="Once upon a time in the grasslands, there was Impala..."
+            className="p-4 border-2 border-slate-200 tracking-wider leading-8 outline-none sm:w-4/5 w-full h-56 rounded-md shadow-md"
+            onChange={(e) => updateHandler("content_1", e.target.value)}
+            value={article?.content_1}
           />
-          {wordCount1 && (
-            <span>
+
+          {article?.content_1?.length && (
+            <span className="flex justify-between text-xs sm:w-4/5 w-full mt-2">
               <strong
-                style={wordCount1 > 400 ? { color: "red" } : { color: "green" }}
+                style={
+                  article?.content_1?.split(" ").length > 250
+                    ? { color: "red" }
+                    : { color: "green" }
+                }
               >
-                Word Count: <i>{wordCount1}</i>
+                Word Count: <i>{article?.content_1?.split(" ").length}</i>
               </strong>
-              <i>{wordCount1 / 100} mins read.</i>
+              <i>{article?.content_1?.split(" ").length / 100} mins read.</i>
             </span>
           )}
         </div>
-        <div className="article-content">
-          <TextField
-            fullWidth
-            multiline
+        <div className=" flex items-center flex-col mt-8 sm:w-4/5 w-full">
+          <h3 className="text-md text-whiteX font-bold italic text-left w-4/5">
+            Section 2
+          </h3>
+          <textarea
             name="Content2"
-            label="Article Content"
-            placeholder="Part 2"
+            aria-label="Article Content"
+            placeholder="and the story continues..."
             id="fullWidth"
-            className="article-field"
-            onChange={handleChange}
+            className="p-4 border-2 border-slate-200 tracking-wider leading-8 outline-none sm:w-4/5 w-full h-56 rounded-md shadow-md"
+            onChange={(e) => updateHandler("content_2", e.target.value)}
+            value={article?.content_2}
           />
-          {wordCount2 && (
-            <span>
+          {article?.content_2?.split(" ").length > 0 && (
+            <span className="flex justify-between text-xs sm:w-4/5 w-full mt-2">
               <strong
-                style={wordCount2 > 400 ? { color: "red" } : { color: "green" }}
+                style={
+                  article?.content_2?.split(" ").length > 150
+                    ? { color: "red" }
+                    : { color: "green" }
+                }
               >
-                Word Count: <i>{wordCount2}</i>
+                Word Count: <i>{article?.content_2?.split(" ").length}</i>
               </strong>
-              <i>{parseInt(wordCount2 / 100)} mins read.</i>
+              <i>{article?.content_2?.split(" ").length / 100} mins read.</i>
             </span>
           )}
         </div>
-        <div className="article-tags">
-          <span>
-            <TextField
-              id="standard-multiline-flexible"
-              label="Type"
-              name="Type"
-              placeholder="Article, Feature, Update, News"
-              variant="standard"
-              className="tag-input"
-              onChange={handleChange}
-            />
-          </span>
-          <span>
-            <TextField
-              id="standard-multiline-flexible"
-              label="Tags: Seperate with commas"
-              name="Tags"
-              placeholder="Kenya Cup, Ess, Nationwide, e.t.c."
-              variant="standard"
-              className="tag-input"
-              onChange={handleChange}
-            />
-          </span>
+        <div className="flex justify-between sm:w-1/2 w-full my-5">
+          <input
+            id="standard-multiline-flexible"
+            aria-label="Type"
+            name="Type"
+            placeholder="Article, Feature, Update, News"
+            className="p-1 border-b-2 border-slate-200 outline-none w-1/3 capitalize "
+            onChange={(e) => updateHandler("type", e.target.value)}
+            value={article?.type}
+          />
 
-          {/* <span>
-              <label htmlFor='contained-button-file'>
-                <Input
-                  accept='image/*'
-                  id='contained-button-file'
-                  multiple
-                  type='file'
-                />
-                <Button variant='contained' component='span'>
-                  Upload
-                </Button>
-              </label>
-            </span> */}
+          <input
+            id="standard-multiline-flexible"
+            aria-label="Tags: Seperate with commas"
+            name="Tags"
+            placeholder="Kenya Cup, Ess, Nationwide, e.t.c."
+            className="p-1 border-b-2 border-slate-200 outline-none w-1/2"
+            onChange={(e) => updateHandler("tags", e.target.value)}
+            value={article?.tags}
+          />
         </div>
-        <div className="images-upload">
-          <div className="image">
-            <span>
-              {/* <Stack direction='row' alignItems='center' spacing={2}> */}
-              <label htmlFor="contained-button-file">
-                {/* <Input
-                      accept='image/*'
-                      id='contained-button-file'
-                      multiple
-                      type='file'
-                      onChange={handleChange}
-                      name='Image1'
-                    /> */}
-                <input
-                  type="file"
-                  name="image_1"
-                  accept="image/*"
-                  id="contained-button-file-2"
-                  onChange={handleChange}
-                  // id="id_image_1"
-                ></input>
-                {/* <Button variant='contained' component='span'>
-                      Cover Image
-                    </Button> */}
-              </label>
-              <input
-                id="standard-multiline-flexible"
-                aria-label="Caption One"
-                name="Caption1"
-                onChange={handleChange}
-                required
-              />
-              {/* </Stack> */}
-            </span>
 
-            <span>
-              {/* <Stack direction='row' alignItems='center' spacing={2}> */}
-              <label htmlFor="contained-button-file-2">
-                {/* <Input
-                      accept='image/*'
-                      id='contained-button-file-2'
-                      multiple
-                      type='file'
-                      onChange={handleChange}
-                      name='Image2'
-                    /> */}
-                {/* <input type='file' accept='image/*' name='Image2' /> */}
-                <input
-                  type="file"
-                  name="image_2"
-                  accept="image/*"
-                  id="contained-button-file-2"
-                  onChange={handleChange}
-                  // id="id_image_1"
-                ></input>
-
-                {/* <Button variant='contained' component='span'>
-                      Second Image
-                    </Button> */}
-              </label>
+        <div className="flex items-center justify-between w-full mt-8 sm:w-2/3">
+          <div className="flex flex-col">
+            <label htmlFor="contained-button-file">
               <input
-                id="standard-multiline-flexible"
-                aria-label="Caption Two"
-                name="Caption2"
-                onChange={handleChange}
-                required
+                type="file"
+                name="image_1"
+                accept="image/*"
+                onChange={(e) => updateHandler("image_1", e.target.value)}
               />
-              {/* </Stack> */}
-            </span>
+            </label>
+            <input
+              className="p-1 border-b-2 border-slate-200 outline-none mt-4 "
+              id="standard-multiline-flexible"
+              placeholder="Caption about the image - 1"
+              aria-label="Caption One"
+              name="Caption1"
+              onChange={(e) => updateHandler("caption_1", e.target.value)}
+              required
+              value={article?.caption_1}
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="contained-button-file-2">
+              <input
+                type="file"
+                name="image_2"
+                accept="image/*"
+                id="contained-button-file-2"
+                onChange={(e) => updateHandler("image_2", e.target.value)}
+              />
+            </label>
+            <input
+              className="p-1 border-b-2 border-slate-200 outline-none mt-4 "
+              placeholder="Caption about the image - 2"
+              aria-label="Caption Two"
+              name="Caption2"
+              onChange={(e) => updateHandler("caption_2", e.target.value)}
+              required
+              value={article?.caption_2}
+            />
           </div>
         </div>
-        <div className="article-buttons">
-          <button className="bg-green-300" name="Save" onClick={handleSubmit}>
-            Save
-          </button>
-          <button className="bg-blue-400" name="Post" onClick={handleSubmit}>
-            Post
-          </button>
+
+        {/* Submit Buttons */}
+        <div className="h-20 w-2/3 flex justify-end items-center">
+          {label === "Edit Article" ? (
+            <>
+              <button
+                className="bg-primaryRed border-2 w-28 rounded-md text-white  mx-10"
+                name="Cancel"
+                onClick={() => router.back()}
+              >
+                Cancel
+              </button>
+              <button
+                className="bg-green-500 border-2 w-28 rounded-md text-white"
+                name="Edit"
+                onClick={handleSubmit}
+              >
+                Edit
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className="border-blackX border-2 w-28 rounded-md text-blackX mx-10"
+                name="Save"
+                onClick={handleSubmit}
+              >
+                Save
+              </button>
+              <button
+                className="bg-green-500 border-2 w-28 rounded-md text-white"
+                name="Post"
+                onClick={handleSubmit}
+              >
+                Upload
+              </button>
+            </>
+          )}
         </div>
 
-        <div className="article-disclaimer">
-          <p className="bg-blue-200 text-blackX">
+        <div className="flex items-center sm:w-2/3 w-4/5 justify-between bg-blue-200 text-blackX rounded-md p-4">
+          <MdInfo className="text-4xl text-white w-16 mr-5" />
+          <p className="font-thin text-sm tracking-widest">
             All information and resources provided on
-            <a href="#"> impalarugby.com</a> are based on your opinions as the
-            author (unless otherwise stated). All information is intended to
-            grow the audience and make them want to be part of the Impala
-            Fraternity.
+            <a href="#" className="text-primaryRed">
+              {" "}
+              impalarugby.com
+            </a>{" "}
+            are based on your opinions as the author (unless otherwise stated).
+            All information is intended to grow the club reputation and to grow
+            the impala brand.
           </p>
         </div>
       </div>
-      {/* <div className='right-wrapper'>Right Panel</div> */}
     </form>
   );
 };

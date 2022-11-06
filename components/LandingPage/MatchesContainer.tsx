@@ -13,9 +13,12 @@ const MatchesContainer = ({ position }: Props) => {
       className="matches container-md-wrapper flex justify-evenly  items-center transition-all ease-in-out duration-700 overflow-y-hidden"
       style={{ transform: `translateX(${position}%)` }}
     >
-      {Men.map((match) => {
+      {Men.map((match, index) => {
         return (
-          <div className="match container-card w-64 h-80 flex flex-col shadow-md hover:shadow-xl m-4 rounded-md p-2">
+          <div
+            key={index}
+            className="match container-card w-64 h-80 flex flex-col shadow-md hover:shadow-xl m-4 rounded-md p-2"
+          >
             <div className="date-details flex-1 flex flex-col items-center w-full">
               <h3 className="uppercase">{match.league}</h3>
               {match.day} <br />

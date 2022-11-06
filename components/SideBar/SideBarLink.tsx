@@ -1,61 +1,55 @@
 import React, { Dispatch, SetStateAction } from "react";
+import Link from "next/link";
 interface ISideBarLinkProps {
-  name: string;
-  icon: string;
+  link: any;
   activeLink: string;
+  collapsed: boolean;
   setActiveLink: Dispatch<SetStateAction<string>>;
 }
+import {
+  MdHome,
+  MdCalendarToday,
+  MdSportsRugby,
+  MdPeople,
+  MdArticle,
+} from "react-icons/md";
 
 const SideBarLink = ({
-  name,
-  icon,
+  link,
   activeLink,
   setActiveLink,
+  collapsed,
 }: ISideBarLinkProps) => {
-  // const setIcon = (name: string) => {
-  //   switch (name) {
-  //     case "home":
-  //       return <Home />;
-  //     case "training":
-  //       return <CalendarToday />;
-  //     case "payments":
-  //       return <AttachMoney />;
-  //     case "sales":
-  //       return <TrendingUp />;
-  //     case "tickets":
-  //       return <Payment />;
-  //     case "gazelles":
-  //       return <SportsRugbyTwoTone />;
-  //     case "boks":
-  //       return <SportsRugbyTwoTone />;
-  //     case "ladies":
-  //       return <SportsRugby />;
-  //     case "swaras":
-  //       return <SportsRugbyTwoTone />;
-  //     case "age-grade":
-  //       return <SportsRugby />;
-  //     case "videos":
-  //       return <Videocam />;
-  //     case "podcasts":
-  //       return <Mic />;
-  //     case "socials":
-  //       return <PeopleAlt />;
-  //     case "default":
-  //       return <PeopleAlt />;
-  //     default:
-  //       return <SportsRugby />;
-  //   }
-  // };
+  const setIcon = (name: string): JSX.Element => {
+    switch (name) {
+      case "home":
+        return <MdHome />;
+      case "articles":
+        return <MdArticle />;
+      case "people":
+        return <MdPeople />;
+      case "calendar":
+        return <MdCalendarToday />;
+      default:
+        return <MdSportsRugby />;
+    }
+  };
   return (
-    <>
-      {/* <ListItemIcon>{setIcon(icon)}</ListItemIcon>
-
-      <ListItemText
-        className={activeLink === name ? "link-text active" : "link-text"}
-        onClick={() => setActiveLink(name)}
-        primary={name}
-      /> */}
-    </>
+    <Link href={`/${link.url}`} passHref>
+      <div
+        className={`flex justify-between items-center w-5/6 h-10 p-2 rounded cursor-pointer shadow-md hover:bg-blackX hover:text-whiteX`}
+        onClick={() => setActiveLink(link)}
+      >
+        <div>{setIcon(link.icon)}</div>
+        <h4
+          className={`${collapsed ? "hidden" : "initial"} ${
+            activeLink === link.label ? "bg-blackX" : ""
+          }  capitalize text-sm`}
+        >
+          {link.label}
+        </h4>
+      </div>
+    </Link>
   );
 };
 

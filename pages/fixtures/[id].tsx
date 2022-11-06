@@ -4,25 +4,13 @@ import { useRouter } from "next/router";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 const MatchReview = () => {
-  // const [activeMatch, setActiveMatch] = useState<any>({});
   const [position, setPosition] = useState(0);
   const router = useRouter();
   const team = router.query.team;
   const matchId = router.query.id;
 
-  // useEffect(() => {
-  //   const matchToReview = allFixtures[`${team}`].filter(
-  //     (fixture) => fixture.id === parseInt(matchId)
-  //   )[0];
-  //   setActiveMatch({ ...matchToReview });
-  //   return () => {};
-  // }, []);
-
   const activeMatch = useMemo(
-    () =>
-      allFixtures[`${team}`]?.filter(
-        (fixture: any) => fixture.id === parseInt(matchId)
-      ),
+    () => allFixtures[team].filter((fixture: any) => fixture.id == matchId),
     [team, matchId]
   )[0];
 
@@ -80,7 +68,7 @@ const MatchReview = () => {
                   <h2 className="uppercase">{activeMatch?.opponent}</h2>
                   <div className="team-logo">
                     <img
-                      src={activeMatch.logo.src}
+                      src={activeMatch?.logo?.src}
                       alt="Opponent logo"
                       className="h-full w-full rounded-full object-contain"
                     />

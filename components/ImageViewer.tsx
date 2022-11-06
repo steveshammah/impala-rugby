@@ -1,7 +1,7 @@
 import React from "react";
 import { MdClose, MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
-const ImageViewer = ({ img, setActiveImage }) => {
+const ImageViewer = ({ img, setActiveImage }: any) => {
   return (
     <div
       id="slide"

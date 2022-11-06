@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { products } from "../../public/resources/resources";
+import { products } from "../public/resources/resources";
 
-const SuggestedProducts = ({ activeProductId }) => {
-  const [suggested, setSuggested] = useState([]);
+const SuggestedProducts = ({ activeProductId }: any) => {
+  const [suggested, setSuggested] = useState<any[]>([]);
   const suggestedProducts = products.filter(
     (product) => product.id !== activeProductId
   );

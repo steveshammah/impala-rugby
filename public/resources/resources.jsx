@@ -777,36 +777,35 @@ export const videos = [
   { id: 11, name: "Sevens Circuit", count: 200, img: resolutionLogo },
 ];
 
-export const menuLinks = {
-  dashboard: [
-    { name: "Home", icon: "home", url: "dashboard/home" },
-    { name: "Training Schedule", icon: "training", url: "training" },
-    {
-      name: "Allowance & Payments",
-      icon: "payments",
-      url: "financials/payments",
-    },
-    { name: "Sales", icon: "sales", url: "financials/sales" },
-  ],
-  league: [
-    { name: "Competitons", icon: "default", url: "tournament/league" },
-    { name: "Match Center", icon: "default", url: "statistics/matchcenter" },
-    { name: "Team Statistics", icon: "default", url: "statistics/teamstats" },
-  ],
-  teams: [
-    { name: "Men", icon: "Men", url: "teams/Men" },
-    { name: "Boks", icon: "boks", url: "teams/Boks" },
-    { name: "Ladies", icon: "ladies", url: "teams/Women" },
-    { name: "Swaras", icon: "swaras", url: "teams/Swaras" },
-    { name: "Age Grade", icon: "age-grade", url: "teams/age-grade" },
-  ],
-  website: [
-    { name: "Articles", icon: "articles", url: "dashboard/articles" },
-    { name: "Videos", icon: "videos", url: "videos" },
-    { name: "Podcasts", icon: "podcasts", url: "podcasts" },
-    { name: "Socials", icon: "socials", url: "socials" },
-  ],
-};
+export const menuLinks = [
+  {
+    label: "Dashboard",
+    icon: "icon",
+    url: "dashboard",
+    subLinks: [
+      {
+        label: "Home",
+        icon: "home",
+        url: "dashboard",
+      },
+      {
+        label: "News Feed",
+        icon: "articles",
+        url: "dashboard/articles",
+      },
+      {
+        label: "Members",
+        icon: "people",
+        url: "dashboard/members",
+      },
+      {
+        label: "Fixtures",
+        icon: "calendar",
+        url: "dashboard/league",
+      },
+    ],
+  },
+];
 
 // Nav Links
 export const navLinks = [

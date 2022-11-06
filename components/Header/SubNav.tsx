@@ -5,8 +5,8 @@ const SubNav = () => {
   return (
     <div className="sub-header flex justify-between items-center h-10 px-1 bg-whiteX text-blackX">
       <ul className="header-leagues flex justify-start flex-grow">
-        <li className="mr-2 font-extralight">Championship</li>
         <li className="mr-2 font-extralight">Kenya Cup</li>
+        <li className="mr-2 font-extralight">Championship</li>
         <li className="mr-2 font-extralight">ESS</li>
         <li className="mr-2 font-extralight">Nationwide</li>
       </ul>

@@ -23,7 +23,7 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
 
   useEffect(() => {
     setActiveLink(router.pathname);
-    console.log({ router });
+
     return () => {
       setActiveLink("");
     };
@@ -45,8 +45,8 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
           !menuOpen ? "flex" : "hidden"
         } sm:justify-around  top-20 justify-evenly items-center sm:flex-row sm:w-2/4 absolute sm:relative sm:top-0  w-full h-full flex-col z-10`}
       >
-        {navLinks.map((link) => (
-          <li>
+        {navLinks.map((link, index) => (
+          <li key={index}>
             <Link href={link.url}>
               <a
                 className={`transition-all ease-in-out duration-200 p-2  ${

@@ -1,13 +1,13 @@
 import { logos } from "../../public/resources/resources";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 const LoginForm = () => {
-  const loginForm = useRef();
+  const loginForm = useRef(null);
 
   return (
     <div className="login-container">
       <div className="img-container">
-        <img src={logos.impala_logo} alt="" />
+        <img src={logos.impalaLogo.src} alt="" />
       </div>
       <div className="form-container">
         <div className="head-container">

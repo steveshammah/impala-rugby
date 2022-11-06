@@ -1,36 +1,42 @@
-import { leagueStandings } from "../../../public/resources/resources";
+import Standings from "../MatchCenter/Standings";
 import LogWidget from "./LogWidget";
+import WidgetSm from "./WidgetSm";
 
 const WidgetBg = () => {
+  const getPercentage = (daysTrained: number, daysMissed: number) => {
+    let percentage;
+    if (daysMissed === 0) {
+      percentage = 1;
+    } else {
+      const totalDays = daysTrained + daysMissed;
+      percentage = (daysTrained / 100) * totalDays;
+    }
+
+    return Math.floor(percentage * 100);
+  };
+  const getConsistency = (daysTrained: number, daysMissed: number) => {
+    const percentage = getPercentage(daysTrained, daysMissed);
+    let consistency;
+    if (percentage === 100) {
+      consistency = "consistent";
+    } else if (percentage >= 50) {
+      consistency = "good";
+    } else if (percentage < 50) {
+      consistency = "inconsistent";
+    }
+    return consistency;
+  };
   return (
-    <div className="widget-big ">
-      <LogWidget />
-      <div className="league-standings">
-        <h2>League Standings</h2>
-        <table>
-          <thead>
-            <th>Team</th>
-            <th>Played</th>
-            <th>Won</th>
-            <th>Lost</th>
-            <th>GF</th>
-            <th>GA</th>
-            <th>Points</th>
-          </thead>
-          {leagueStandings.map((team) => {
-            return (
-              <tr className={team.name === "Impala Saracens" ? "impala" : ""}>
-                <td>{team.name}</td>
-                <td>{team.played}</td>
-                <td>{team.won}</td>
-                <td>{team.lost}</td>
-                <td>{team.goalsFor}</td>
-                <td>{team.goalsAgainst}</td>
-                <td>{team.points}</td>
-              </tr>
-            );
-          })}
-        </table>
+    <div className="widget-big flex sm:flex-row flex-col align-start ">
+      <div className="flex flex-col">
+        <LogWidget />
+        <WidgetSm
+          getConsistency={getConsistency}
+          getPercentage={getPercentage}
+        />
+      </div>
+      <div className="league-standings bg-white flex-1">
+        <Standings />
       </div>
     </div>
   );

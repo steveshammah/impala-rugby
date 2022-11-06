@@ -1,16 +1,14 @@
 import React from "react";
 import { photos } from "../../public/resources/resources";
 import Link from "next/link";
-import { articlesContext, IArticles } from "../../contexts/articles-context";
 
 const MoreStories = () => {
-  
   return (
     <div className="h-max p-2">
       <h2 className="text-3xl font-bold text-primaryRed">Editor's Pick</h2>
 
       <div className="flex flex-wrap relative h-full justify-center">
-        <Link href="/stories/18">
+        <Link href="/stories">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
               src={photos.coding.src}
@@ -23,7 +21,7 @@ const MoreStories = () => {
           </div>
         </Link>
 
-        <Link href="/stories/2">
+        <Link href="/stories">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
               src={photos.oscarOsir.src}
@@ -36,7 +34,7 @@ const MoreStories = () => {
           </div>
         </Link>
 
-        <Link href="/stories/10">
+        <Link href="/stories">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
               src={photos.teamPhoto2.src}
@@ -62,7 +60,7 @@ const MoreStories = () => {
           </div>
         </Link>
 
-        <Link href="/stories/10">
+        <Link href="/stories">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
               src={photos.rilSponsorPhoto.src}

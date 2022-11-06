@@ -1,10 +1,8 @@
-
 import { team } from "../public/resources/resources";
 import { createContext, FC } from "react";
 
-
 export interface ITeamContextProps {
-  team: ITeam[];
+  team: any;
 }
 export const teamContext = createContext({} as ITeamContextProps);
 

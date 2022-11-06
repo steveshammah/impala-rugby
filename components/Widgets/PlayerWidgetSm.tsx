@@ -1,32 +1,31 @@
 import Link from "next/link";
 import React from "react";
 
-const PlayerWidgetSm = ({ member, getConsistency, getPercentage }: any) => {
+const PlayerWidgetSm = ({ member }: any) => {
   return (
-    <section className="player-info">
-      <div className="player-image">
-        <img src={member.img} alt="" />
+    <section className="player-info h-28 flex w-full items-center mb-1">
+      <div className="player-image flex-1">
+        <img
+          src={member?.img?.src}
+          alt=""
+          className="h-20 w-20 object-cover rounded-full"
+        />
       </div>
       <div className="player-meta">
-        <h3>{member.name}</h3>
+        <h3>
+          {member.firstname} {member.lastname}
+        </h3>
         <span>
-          <strong>
-            Training Ratio:{" "}
-            {getPercentage(member.daysTrained, member.daysMissed)}%
-          </strong>
+          <strong>Training Ratio: 50%</strong>
           <br />
-          <strong
-            className={getConsistency(member.daysTrained, member.daysMissed)}
-          >
-            Remarks: {getConsistency(member.daysTrained, member.daysMissed)}
-          </strong>
+          <strong className={""}>Remarks: Average</strong>
         </span>
         <span>
           <i>Team: </i>
-          <strong> {member.team}</strong>
+          <strong className="capitalize"> {member.team}</strong>
         </span>
       </div>
-      <Link href={`/players-and-staff/${member.id}`} passHref>
+      <Link href={`/squads/members/${member.id}`} passHref>
         <button>View Profile</button>
       </Link>
     </section>
