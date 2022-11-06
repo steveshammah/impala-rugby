@@ -1,12 +1,12 @@
 import React from "react";
 
-const Summary = ({ cartItem, selectSize, setCartItem, product }) => {
+const Summary = ({ cartItem, selectSize, setCartItem, product }: any) => {
   return (
     <div className="my-cart">
       <h2>Summary</h2>
       {cartItem ? (
         <div className="added-items">
-          {product.map((item) => (
+          {product.map((item: any) => (
             <div className="item">
               <div className="img-holder">
                 <img src={item.img} alt="" />

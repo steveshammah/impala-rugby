@@ -3,10 +3,10 @@ import { leagueStandings } from "../../public/resources/resources";
 const Standings = () => {
   return (
     <div className="league-standings  p-2 text-blackX flex flex-col items-center justify-center">
-      <h2 className="uppercase text-2xl text-left sm:w-2/3 w-full py-5">
+      <h2 className="uppercase text-2xl text-left w-full py-5">
         League Standings
       </h2>
-      <table className="table-fixed sm:w-2/3 w-full border-2 border-slate-100">
+      <table className="table-fixed w-full border-2 border-slate-100">
         <thead className="text-left">
           <th className="p-2">Team</th>
           <th>Played</th>

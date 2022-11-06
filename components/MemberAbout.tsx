@@ -4,7 +4,7 @@ import MemberStatistics from "./MemberStatistics";
 interface Props {
   member: any[];
 }
-const MemberAbout = ({ member }) => {
+const MemberAbout = ({ member }: any) => {
   return (
     <section className="member-about p-2 flex flex-col items-center ">
       <h2 className="font-bold text-2xl">Biography</h2>

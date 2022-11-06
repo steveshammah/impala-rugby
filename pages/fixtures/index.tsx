@@ -8,11 +8,12 @@ import Link from "next/link";
 const teams = ["Men", "Women", "Swaras"];
 const navList = ["Fixtures", "Results", "Standings"];
 
+type Team = "Men" | "Women" | "Swaras";
+
 const MatchCenter = () => {
   const [activeContainer, setActiveContainer] = useState("Fixtures");
   const [teamFixtures, setTeamFixtures] = useState<any[]>([{}]);
-
-  const [activeTeam, setActiveTeam] = useState<any>("Men");
+  const [activeTeam, setActiveTeam] = useState<Team>("Men");
   const teamSelect = useRef<HTMLSelectElement | null>(null);
 
   const toBePlayed = useMemo(
@@ -24,7 +25,7 @@ const MatchCenter = () => {
     [teamFixtures]
   );
   useEffect(() => {
-    const team = allFixtures[`${activeTeam}`];
+    const team = allFixtures[activeTeam];
     setTeamFixtures(team);
   }, [activeTeam]);
 
@@ -33,7 +34,7 @@ const MatchCenter = () => {
   };
 
   const handleChange = (e: any) => {
-    const team = teamSelect?.current?.value;
+    const team = teamSelect?.current?.value || "Men";
     setActiveTeam(team);
   };
   return (
@@ -43,16 +44,19 @@ const MatchCenter = () => {
           name="team"
           id=""
           ref={teamSelect}
-          onClick={handleChange}
+          onChange={handleChange}
           className="text-lg sm:h-2/3 h-1/2 sm:w-32 w-24 rounded-t-md mr-20 outline-none  text-blackX"
         >
-          {teams.map((team) => (
-            <option value={team}>{team}</option>
+          {teams.map((team, index) => (
+            <option value={team} key={index}>
+              {team}
+            </option>
           ))}
         </select>
         <ul className="flex">
-          {navList.map((link) => (
+          {navList.map((link, index) => (
             <li
+              key={index}
               onClick={() => handleClick(link)}
               className={`cursor-pointer sm:mr-2 mr-1 rounded-t-md sm:p-2 p-1  ${
                 activeContainer === link

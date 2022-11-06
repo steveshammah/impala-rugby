@@ -1,6 +1,7 @@
 import React from "react";
+import { formatDate } from "../utils";
 
-const MemberStatistics = ({ member }) => {
+const MemberStatistics = ({ member }: any) => {
   return (
     <section className=" p-2 w-full">
       <div className="stats-wrapper flex py-4">
@@ -9,21 +10,27 @@ const MemberStatistics = ({ member }) => {
             <h2 className="text-lg text-whiteX uppercase font-bold">
               Position
             </h2>
-            <i>Backrow</i>
+            <i>{member.position}</i>
           </div>
 
           <div className="flex flex-col shadow-md px-6 py-4 rounded-md">
             <h2 className="text-lg text-whiteX uppercase font-bold">
               Date of birth
             </h2>
-            <i>01 Jan 1990</i>
+            <i>
+              {member?.dob &&
+                formatDate(member?.dob?.seconds * 1000, "dd-MM-yyy")}
+            </i>
           </div>
 
           <div className="flex flex-col shadow-md px-6 py-4 rounded-md">
             <h2 className="text-lg text-whiteX uppercase font-bold">
-              Date of Joined
+              Date Joined
             </h2>
-            <i>01 Jan 2020</i>
+            <i>
+              {member?.joinDate &&
+                formatDate(member?.joinDate?.seconds * 1000, "dd-MM-yyy")}
+            </i>
           </div>
         </div>
       </div>

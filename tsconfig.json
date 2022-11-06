@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "ES6"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext", "ES6"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -18,17 +13,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
-    "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true,
-    "strictNullChecks": true
+    "incremental": true
+    // "allowSyntheticDefaultImports": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "strictNullChecks": true
   },
   "include": [
     "src",
     "**/*.ts",
-    "**/*.tsx"
-, "pages", "contexts", "reducers"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "pages",
+    "contexts",
+    "reducers",
+    "utils/firebase.js"
+  ],
+  "exclude": ["node_modules"]
 }

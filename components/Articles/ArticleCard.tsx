@@ -1,43 +1,69 @@
-import React from "react";
+import Link from "next/link";
+import React, { Dispatch, SetStateAction } from "react";
+import { FaEye, FaHeart } from "react-icons/fa";
+import { MdDelete, MdEdit } from "react-icons/md";
+import { formatDate } from "../../utils";
+import { logos } from "../../public/resources/resources";
 
-// import { useContext } from "react";
-// import { articlesContext } from "../../../contexts/articles-context";
-
-const ArticleCard = ({ article, handleOpen, setActiveArticle }) => {
-  // const { BASE_URL } = useContext(articlesContext);
-  const handleClick = (id) => {
+interface Props {
+  article: any;
+  handleOpen: () => void;
+  setActiveArticle: Dispatch<SetStateAction<any>>;
+}
+const ArticleCard = ({ article, handleOpen, setActiveArticle }: Props) => {
+  const handleClick = (id: any) => {
     handleOpen();
     setActiveArticle(id);
   };
-  console.log(article);
   return (
-    <div sx={{ maxWidth: 300 }} className="article">
-      {/* <CardHeader
-        avatar={<Avatar aria-label="recipe">{article.author[0]}</Avatar>}
-        title={article.title}
-        subheader={article.created}
+    <div className=" h-56 w-52 mb-6 flex flex-col text-blackX bg-whiteX items-center rounded-md shadow-md">
+      <img
+        src={article.image_1?.src ? article.image_1.src : logos.impalaLogo.src}
+        className="h-1/2 w-full object-fill aspect-video rounded-t-md bg-blackX text-whiteX"
+        alt="Image Poster"
       />
-      <CardMedia
-        component="img"
-        height="150"
-        // image={BASE_URL + article.image_1}
-        image={article.image_1}
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {article.headline}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <a href={`/admin/edit-article/${article.id}`}>
-            <Edit />
-          </a>
-        </IconButton>
-        <IconButton aria-label="share" onClick={() => handleClick(article.id)}>
-          {<Delete />}
-        </IconButton>
-      </CardActions> */}
+      <div className="h-2/5 w-full p-0.5">
+        <h2 className="font-bold text-xs uppercase">{article.title}</h2>
+      </div>
+      <div className="flex  p-4 justify-between w-full ">
+        <button
+          aria-label="share"
+          onClick={() => handleClick(article)}
+          className="flex justify-evenly items-center rounded-md bg-primaryRed text-xs leading-5 w-14 text-white"
+        >
+          <MdDelete />
+          <span>Delete</span>
+        </button>
+
+        <Link
+          href={`articles/edit/${article.id}`}
+          aria-label="add to favorites"
+        >
+          <button className="flex justify-evenly items-center rounded-md bg-blackX leading-5   w-14 text-xs text-whiteX">
+            <MdEdit />
+            <span>Edit</span>
+          </button>
+        </Link>
+      </div>
+
+      <div className="flex w-full p-1 justify-between mt-2 text-xs font-thin  text-light">
+        <i className="text-xs font-thin  text-light">
+          {article?.created &&
+            formatDate(article.created.seconds * 1000, "dd-MM-yyy")}
+        </i>
+        <div className="flex justify-between items-center px-2 font-thin">
+          <div className="flex items-center mr-2">
+            <FaEye className="mr-1" />
+            <i>173</i>
+          </div>
+
+          <div className="flex items-center text-primaryRed">
+            <FaHeart className="mr-1" />
+
+            <i>29</i>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

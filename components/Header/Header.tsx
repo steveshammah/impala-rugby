@@ -18,10 +18,14 @@ const Header = () => {
       name: "Fixtures",
       url: "/fixtures",
     },
-    // {
-    //   name: "Shop",
-    //   url: "/shop",
-    // },
+    {
+      name: "Shop",
+      url: "/shop",
+    },
+    {
+      name: "Partners",
+      url: "/partners",
+    },
     {
       name: "Dashboard",
       url: "/dashboard",

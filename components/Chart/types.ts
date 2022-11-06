@@ -10,7 +10,11 @@ interface ILineGraphData {
   previous: number;
   amt: number;
 }
+
+type GraphType = "bar" | "line";
+
 export interface IGraph {
+  type: GraphType;
   title: string;
   data: IBarGraphData[] | ILineGraphData[];
   dataKey: string;

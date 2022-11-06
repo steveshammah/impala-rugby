@@ -1,49 +1,38 @@
 import React from "react";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-
-  p: 4,
-  color: "black",
-};
-
 const DeleteModal = ({
   modalOpen,
   handleClose,
   activeArticle,
   handleDelete,
   setModalOpen,
-}) => {
+}: any) => {
   return (
-    <>
-      <div
-        aria-labelledby="keep-mounted-modal-title"
-        aria-describedby="keep-mounted-modal-description"
-      >
-        <div>
-          <h6 id="keep-mounted-modal-title">
-            Deleting post with ID: {activeArticle}
-          </h6>
-          <h2 id="keep-mounted-modal-description">
-            Are you sure you want to delete article?
-            <span className="'delete-btn-wrapper">
-              <button color="error" onClick={() => handleDelete(activeArticle)}>
-                Yes
-              </button>
-              <button color="primary" onClick={() => setModalOpen(false)}>
-                No
-              </button>
-            </span>
-          </h2>
-        </div>
+    <div
+      className={`${
+        modalOpen ? "flex" : "hidden"
+      } flex-col items-center justify-between bg-white border-red-400 border-2 p-4 h-32 w-1/4 absolute top-0 left-1/2 rounded-md shadow-md  -translate-x-1/2 translate-y-1/2`}
+    >
+      <h2 className="">
+        Are you sure you want to delete
+        <br />
+        <i className="capitalize font-semibold">{activeArticle?.title}</i>
+      </h2>
+      <div className="flex justify-between sm:w-2/3 w-full text-sm">
+        <button
+          className="bg-primaryRed text-white w-20 py-1 px-2 rounded-md"
+          onClick={() => handleDelete(activeArticle.label)}
+        >
+          Yes
+        </button>
+        <button
+          onClick={() => setModalOpen(false)}
+          className="bg-blackX text-white py-1 px-2 rounded-md w-20"
+        >
+          No
+        </button>
       </div>
-    </>
+    </div>
   );
 };
 

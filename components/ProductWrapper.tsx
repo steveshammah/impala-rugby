@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { ArrowDropDown, ArrowDropUp } from "@material-ui/icons";
 
-const ProductWrapper = ({ title, products }) => {
+const ProductWrapper = ({ title, products }: any) => {
   const [open, setOpen] = useState(false);
   useEffect(() => {}, [open]);
 
@@ -12,7 +12,7 @@ const ProductWrapper = ({ title, products }) => {
     <div className={`product-wrapper  ${open && "open"}`} id={title}>
       <h2>{title}</h2>
       <div className="category-container">
-        {products.map((product) => {
+        {products.map((product: any) => {
           return (
             <div className="product">
               <img src={product.img} alt="" />

@@ -1,3 +1,1 @@
-export * from "./BarGraph";
-export * from "./LineGraph";
-export * from "./types";
+export * from "./Chart";

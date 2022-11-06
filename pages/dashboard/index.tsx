@@ -1,50 +1,37 @@
-import React from "react";
-import TopBar from "../../components/TopBar/TopBar";
 import Summary from "../../components/Summary/Summary";
 import WidgetBg from "../../components/Widgets/WidgetBg";
-import WidgetSm from "../../components/Widgets/WidgetSm";
-import WidgetSmX from "../../components/Widgets/WidgetSmX";
+import React from "react";
+import Shell from "../../components/DashboardShell";
+import { MdHome, MdNotificationImportant, MdSettings } from "react-icons/md";
 
 const Dashboard = () => {
-  const getPercentage = (daysTrained, daysMissed) => {
-    let percentage;
-    if (daysMissed === 0) {
-      percentage = 1;
-    } else {
-      const totalDays = daysTrained + daysMissed;
-      percentage = (daysTrained / 100) * totalDays;
-    }
-
-    return Math.floor(percentage * 100);
-  };
-  const getConsistency = (daysTrained, daysMissed) => {
-    const percentage = getPercentage(daysTrained, daysMissed);
-    let consistency;
-    if (percentage === 100) {
-      consistency = "consistent";
-    } else if (percentage >= 50) {
-      consistency = "good";
-    } else if (percentage < 50) {
-      consistency = "inconsistent";
-    }
-    return consistency;
-  };
+  const links = [
+    {
+      label: "Home",
+      url: "#",
+      icon: MdHome,
+    },
+    {
+      label: "Notification",
+      url: "/dashboard/notifications",
+      icon: MdNotificationImportant,
+    },
+    {
+      label: "Settings",
+      url: "/dashboard/settings",
+      icon: MdSettings,
+    },
+  ];
   return (
-    <div className="home container">
-      <TopBar />
+    <Shell links={links}>
       <Summary />
 
-      <div className="widgets">
-        {/* <div className="widgets-small-container">
-          <WidgetSm
-            getConsistency={getConsistency}
-            getPercentage={getPercentage}
-          />
-          <WidgetSmX />
+      <div className="flex flex-col">
+        <div className="p-2 flex flex-col justify-start">
+          <WidgetBg />
         </div>
-        <WidgetBg /> */}
       </div>
-    </div>
+    </Shell>
   );
 };
 
