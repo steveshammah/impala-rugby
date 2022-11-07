@@ -55,11 +55,13 @@ const MemberForm = ({ label, submitHandler, member, setMember }: Props) => {
         return;
 
       case "dob":
-        const dob = Timestamp.fromMillis(Date.parse(new Date(value)));
+        const dob = Timestamp.fromMillis(Date.parse(String(new Date(value))));
         setMember({ ...member, [field]: dob });
         return;
       case "joinDate":
-        const joinDate = Timestamp.fromMillis(Date.parse(new Date(value)));
+        const joinDate = Timestamp.fromMillis(
+          Date.parse(String(new Date(value)))
+        );
 
         setMember({ ...member, [field]: joinDate });
         return;

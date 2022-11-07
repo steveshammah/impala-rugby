@@ -1,19 +1,35 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { allFixtures, logos } from "../../public/resources/resources";
 import { useRouter } from "next/router";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
+interface Match {
+  id: number;
+  league: string;
+  home: boolean;
+  logo: any;
+  opponent: string;
+  day: string;
+  played: boolean;
+  venue: string;
+}
+
 const MatchReview = () => {
   const [position, setPosition] = useState(0);
+  const [activeMatch, setActiveMatch] = useState<Match | undefined>();
   const router = useRouter();
   const team = router.query.team;
-  const matchId = router.query.id;
+  const matchId = parseInt(String(router?.query?.id));
 
-  const activeMatch = useMemo(
-    () => allFixtures[team].filter((fixture: any) => fixture.id == matchId),
-    [team, matchId]
-  )[0];
+  useEffect(() => {
+    const temp = allFixtures[team]?.filter(
+      (fixture: any) => fixture.id === matchId
+    );
 
+    setActiveMatch(temp[0]);
+  }, [matchId, team]);
+
+  console.log({ activeMatch });
   const changePosition = (direction: string) => {
     // Get direction and current position and build logic
     if (direction === "+") {

@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import ArticleForm from "../../../../components/Articles/ArticleForm";
 import { useRouter } from "next/router";
 import Shell from "../../../../components/DashboardShell";
-import { useArticlesStore } from "../../../../contexts/articleStore";
+import {
+  IArticle,
+  IFB,
+  useArticlesStore,
+} from "../../../../contexts/articleStore";
 import { MdAddBox, MdArrowBackIos, MdDocumentScanner } from "react-icons/md";
 
 const EditArticle = () => {
   const router = useRouter();
-  const articleId = router?.query?.id;
+  const articleId = String(router?.query?.id);
 
-  const [toEditArticle, setToEditArticle] = useState({});
+  const [toEditArticle, setToEditArticle] = useState<IArticle | IFB>();
   const article = useArticlesStore((state) => state.article);
   const getArticle = useArticlesStore((state) => state.getArticle);
   const editArticle = useArticlesStore((state) => state.editArticle);
@@ -19,9 +23,9 @@ const EditArticle = () => {
     setToEditArticle(article);
 
     return () => {
-      setToEditArticle({});
+      setToEditArticle(undefined);
     };
-  }, [article.label]);
+  }, [article?.label]);
 
   const links = [
     {
