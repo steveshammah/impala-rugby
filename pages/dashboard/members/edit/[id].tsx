@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Shell from "../../../../components/DashboardShell";
-import { useTeamStore } from "../../../../contexts/teamsStore";
+import { Member, useTeamStore } from "../../../../contexts/teamsStore";
 import MemberForm from "../MemberForm";
 import { MdArrowBackIos, MdDocumentScanner } from "react-icons/md";
+import { IFB } from "../../../../contexts/articleStore";
 
 const EditMember = () => {
   const router = useRouter();
   const memberId = String(router?.query?.id);
-  const [toEditMember, setToEditMember] = useState({});
+  const [toEditMember, setToEditMember] = useState<Member | IFB>();
   const member = useTeamStore((state) => state.member);
   const getMember = useTeamStore((state) => state.getMember);
   const edtiMember = useTeamStore((state) => state.editMember);
@@ -17,7 +18,7 @@ const EditMember = () => {
     getMember(memberId);
     setToEditMember(member);
     return () => {
-      setToEditMember({});
+      setToEditMember(undefined);
     };
   }, [member.contacts]);
 

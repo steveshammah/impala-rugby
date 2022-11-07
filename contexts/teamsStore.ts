@@ -11,14 +11,16 @@ import {
 } from "firebase/firestore";
 
 import { db } from "../utils";
+import { IFB } from "./articleStore";
 
 const membersCollectionRef = collection(db, "members");
 
-interface Member {
+export interface Member {
   firstname: string;
   lastname: string;
   dob: string;
   joinDate: string;
+  img?: string;
   position: string[];
   contacts: any;
   role: "player" | "coach" | "management" | "staff";
@@ -33,7 +35,7 @@ interface Member {
 }
 
 interface TeamStore {
-  member: Member | {};
+  member: Member | IFB | undefined;
   members: Member[] | [];
   getMember: (id: string) => void;
   getMembers: () => void;

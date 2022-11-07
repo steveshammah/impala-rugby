@@ -1,11 +1,13 @@
 import { products } from "../../public/resources/resources";
-import { Favorite, FavoriteBorderRounded } from "@material-ui/icons";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import React, { useState } from "react";
-import Summary from "./Summary";
-import SuggestedProducts from "./SuggestedProducts";
+import Summary from "../../components/Summary";
+import SuggestedProducts from "../../components/SuggestedProducts";
+import { useRouter } from "next/router";
 
-const Product = ({ match }) => {
-  const productId = match.params.id;
+const Product = () => {
+  const router = useRouter();
+  const productId = String(router.query.id);
   // const [activeImage, setActiveImage] = useState("");
   const [cartItem, setCartItem] = useState<any>({});
   const [selectSize, setSelectSize] = useState("");
@@ -21,11 +23,11 @@ const Product = ({ match }) => {
           <div className="product-details-wrapper">
             <div className="image-container">
               <div className="more-images">
-                <img src={item.img} alt="" />
-                <img src={item.img} alt="" />
-                <img src={item.img} alt="" />
+                <img src={item?.img} alt="" />
+                <img src={item?.img} alt="" />
+                <img src={item?.img} alt="" />
               </div>
-              <img src={item.img} alt="PRODUCT-IMG" />
+              <img src={item?.img} alt="PRODUCT-IMG" />
             </div>
             <div className="right-wrapper">
               <div className="product-details">
@@ -54,7 +56,7 @@ const Product = ({ match }) => {
                     className="like"
                     onClick={() => setAddToList(!addToList)}
                   >
-                    {addToList ? <Favorite /> : <FavoriteBorderRounded />}
+                    {addToList ? <MdFavorite /> : <MdFavoriteBorder />}
                   </div>
                 </div>
               </div>

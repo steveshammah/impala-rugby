@@ -13,28 +13,32 @@ import {
 } from "firebase/firestore";
 
 import { db } from "../utils";
-import { localArticles } from "../public/resources/resources";
 
 export interface IArticle {
-  id: number;
+  id: string;
   title: string;
   headline: string;
   image_1: any;
   image_2: any;
+  content_1?: string;
+  content_2?: string;
   type: string;
   tags: string;
   author: string;
-  created: string;
-  posted: string;
+  created: any;
+  posted: any;
   caption_1?: string;
   caption_2?: string;
-  label: string;
+  label?: string;
 }
 
+export interface IFB {
+  [field: string]: any;
+}
 const articlesCollectionRef = collection(db, "stories");
 
 interface ArticlesStore {
-  article: IArticle | {};
+  article: IArticle | IFB | undefined;
   articles: IArticle[];
   getArticle: (id: string) => void;
   getArticles: () => void;
@@ -43,7 +47,7 @@ interface ArticlesStore {
   deleteArticle: (articleId: string) => Promise<void>;
 }
 export const useArticlesStore = create<ArticlesStore>((set) => ({
-  article: {},
+  article: undefined,
   articles: [],
 
   // query single article

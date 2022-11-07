@@ -84,7 +84,7 @@ const Fixtures = ({ activeTeam, games }: Props) => {
             </div>
           ))}
         </div>
-      </div>
+    </div>
     </div>
   );
 };

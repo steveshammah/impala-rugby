@@ -8,12 +8,10 @@ import Link from "next/link";
 const teams = ["Men", "Women", "Swaras"];
 const navList = ["Fixtures", "Results", "Standings"];
 
-type Team = "Men" | "Women" | "Swaras";
-
 const MatchCenter = () => {
   const [activeContainer, setActiveContainer] = useState("Fixtures");
   const [teamFixtures, setTeamFixtures] = useState<any[]>([{}]);
-  const [activeTeam, setActiveTeam] = useState<Team>("Men");
+  const [activeTeam, setActiveTeam] = useState<string>("Men");
   const teamSelect = useRef<HTMLSelectElement | null>(null);
 
   const toBePlayed = useMemo(

@@ -14,7 +14,7 @@ const StoryPage = () => {
   const article = useArticlesStore((state) => state.article);
 
   const moreStories = useMemo(
-    () => articles.filter((story) => story.label !== storyId),
+    () => articles?.filter((story) => story.label !== storyId),
     [storyId]
   );
 
@@ -41,14 +41,14 @@ const StoryPage = () => {
             className="object-cover h-full w-full aspect-video "
           />
 
-          <i>{article.caption_1}</i>
+          <i>{article?.caption_1}</i>
         </div>
       </div>
 
       <div className="flex flex-col items-center w-full p-4">
         <div className="w-1/2 flex items-center mb-2">
           <strong>Tags: </strong>
-          {article?.tags?.split(",").map((tag, index) => (
+          {article?.tags?.split(",").map((tag: string, index: number) => (
             <span key={index}>
               <i className="rounded-md cursor-pointer bg-primaryRed text-white text-xs p-1 m-1 capitalize">
                 {tag}
@@ -79,7 +79,7 @@ const StoryPage = () => {
             </h3>
 
             <p className="mb-4 text-lg leading-9 tracking-widest">
-              {article.content_1}
+              {article?.content_1}
             </p>
 
             <div className="story-image small items-center w-full flex flex-col overflow-hidden mb-4">
