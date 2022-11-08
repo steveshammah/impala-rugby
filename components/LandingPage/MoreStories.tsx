@@ -8,7 +8,7 @@ const MoreStories = () => {
       <h2 className="text-3xl font-bold text-primaryRed">Editor's Pick</h2>
 
       <div className="flex flex-wrap relative h-full justify-center">
-        <Link href="/stories">
+        <Link href="/stories/website-built-by-shammah">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
               src={photos.coding.src}

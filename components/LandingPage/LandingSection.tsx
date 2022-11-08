@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Link from "next/link";
-import { useArticlesStore, IArticle } from "../../contexts/articleStore";
+import { useArticlesStore, IArticle } from "../../stores/articleStore";
 import { logos } from "../../public/resources/resources";
 
 const LandingSection: FC = () => {
@@ -24,7 +24,7 @@ const LandingSection: FC = () => {
             </div>
             <div className="flex justify-center px-2 overflow-hidden">
               <img
-                className="aspect-video w-11/12 h-full hover:scale-110 transition-all ease-in duration-300 object-cover overflow-hidden"
+                className="aspect-video w-11/12 h-full hover:scale-110 transition-all ease-in duration-300 object-fill overflow-hidden"
                 src={
                   latestArticle?.image_2?.src
                     ? latestArticle.image_1.src
@@ -45,7 +45,7 @@ const LandingSection: FC = () => {
                     key={index}
                     href={`/stories/${encodeURIComponent(article.id)}`}
                   >
-                    <div className="shadow-md h-60 sm:w-56 w-full bg-white-400 m-4 rounded-md flex flex-col hover:shadow-lg cursor-pointer overflow-hidden">
+                    <div className="shadow-md sm:h-60 h-40 sm:w-56 w-full bg-white-400 sm:m-4 m-1 rounded-md flex sm:flex-col flex-row hover:shadow-lg cursor-pointer overflow-hidden">
                       <div className="flex flex-1 overflow-hidden">
                         <img
                           src={
@@ -54,7 +54,7 @@ const LandingSection: FC = () => {
                               : logos.impalaLogo.src
                           }
                           alt={"Thumbnail"}
-                          className="aspect-video rounded-t-md h-full w-full transition-all ease-in duration-300 hover:scale-110 "
+                          className="aspect-video object-contain rounded-t-md h-full w-full transition-all ease-in duration-300 hover:scale-110 "
                         />
                       </div>
                       <div className="flex-1 w-full ">

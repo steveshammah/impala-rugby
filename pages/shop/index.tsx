@@ -1,6 +1,6 @@
 import { products } from "../../public/resources/resources";
 import React from "react";
-import ProductWrapper from "../../components/ProductWrapper";
+import ProductWrapper from "../../components/Shop/ProductWrapper";
 
 const Store = () => {
   const categories = ["men", "women", "kids", "floodies", "accessories"];

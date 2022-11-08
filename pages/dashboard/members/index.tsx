@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { MdAddBox, MdPeopleOutline } from "react-icons/md";
-import Shell from "../../../components/DashboardShell";
+import Shell from "../../../components/Layouts/DashboardShell";
 import DataTable from "../../../components/DataTable/DataTable";
-import { useTeamStore } from "../../../contexts/teamsStore";
+import { useTeamStore } from "../../../stores/teamsStore";
 import { formatDate } from "../../../utils";
 
 const Players = () => {

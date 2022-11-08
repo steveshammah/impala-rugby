@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import Header from "../components/Header/Header";
 import "../styles/global.css";
 import Footer from "../components/Footer/Footer";
-import { useArticlesStore } from "../contexts/articleStore";
-import { useTeamStore } from "../contexts/teamsStore";
+import { useArticlesStore } from "../stores/articleStore";
+import { useTeamStore } from "../stores/teamsStore";
 
 function App({ Component, pageProps }: AppProps) {
   const getArticles = useArticlesStore((state) => state.getArticles);
@@ -18,8 +18,10 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <div className="pt-24">
+        <Component {...pageProps} />
+        <Footer />
+      </div>{" "}
     </>
   );
 }

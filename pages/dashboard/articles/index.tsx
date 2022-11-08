@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ArticleCard from "../../../components/Articles/ArticleCard";
 import DeleteModal from "../../../components/Articles/DeleteModal";
-import Shell from "../../../components/DashboardShell";
-import { useArticlesStore } from "../../../contexts/articleStore";
+import Shell from "../../../components/Layouts/DashboardShell";
+import { useArticlesStore } from "../../../stores/articleStore";
 import { MdAddBox, MdPeople, MdArticle, MdStyle } from "react-icons/md";
 
 const ArticlesFeed = () => {

@@ -1,7 +1,7 @@
 import ArticleForm from "../../../../components/Articles/ArticleForm";
 import { useState } from "react";
-import Shell from "../../../../components/DashboardShell";
-import { useArticlesStore } from "../../../../contexts/articleStore";
+import Shell from "../../../../components/Layouts/DashboardShell";
+import { useArticlesStore } from "../../../../stores/articleStore";
 import {  MdArrowBackIos, MdDocumentScanner } from "react-icons/md";
 
 const AddMember = () => {

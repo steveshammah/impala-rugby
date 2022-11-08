@@ -20,7 +20,7 @@ const Header = () => {
     },
     {
       name: "Shop",
-      url: "/shop",
+      url: "#",
     },
     {
       name: "Partners",
@@ -29,20 +29,23 @@ const Header = () => {
     {
       name: "Dashboard",
       url: "/dashboard",
+      private: true,
     },
   ];
 
   return (
-    <header className="header shadow-md">
-      <div className="flex flex-col w-full ">
-        <MainNav
-          menuOpen={menuOpen}
-          toggleMenu={toggleMenu}
-          navLinks={navLinks}
-        />
-        <SubNav />
-      </div>
-    </header>
+    <div>
+      <header className="header w-full shadow-md">
+        <div className="flex flex-col w-full fixed top-0 z-50 ">
+          <MainNav
+            menuOpen={menuOpen}
+            toggleMenu={toggleMenu}
+            navLinks={navLinks}
+          />
+          <SubNav />
+        </div>
+      </header>
+    </div>
   );
 };
 

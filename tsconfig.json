@@ -23,7 +23,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages",
-    "contexts",
+    "stores",
     "reducers",
     "utils/firebase.js"
   ],

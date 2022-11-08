@@ -43,7 +43,7 @@ const MatchCenter = () => {
           id=""
           ref={teamSelect}
           onChange={handleChange}
-          className="text-lg sm:h-2/3 h-1/2 sm:w-32 w-24 rounded-t-md mr-20 outline-none  text-blackX"
+          className="text-lg sm:h-2/3 h-1/2 sm:w-32 w-20 rounded-t-md sm:mr-20 mr-6 outline-none  text-blackX"
         >
           {teams.map((team, index) => (
             <option value={team} key={index}>

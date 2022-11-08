@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Shell from "../../../../components/DashboardShell";
-import { Member, useTeamStore } from "../../../../contexts/teamsStore";
+import Shell from "../../../../components/Layouts/DashboardShell";
+import { Member, useTeamStore } from "../../../../stores/teamsStore";
 import MemberForm from "../MemberForm";
 import { MdArrowBackIos, MdDocumentScanner } from "react-icons/md";
-import { IFB } from "../../../../contexts/articleStore";
+import { IFB } from "../../../../stores/articleStore";
 
 const EditMember = () => {
   const router = useRouter();

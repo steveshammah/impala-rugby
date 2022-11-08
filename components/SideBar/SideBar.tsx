@@ -3,13 +3,12 @@ import { BsArrowBarLeft, BsArrowBarRight } from "react-icons/bs";
 import SubMenu from "./SubMenu";
 
 const SideBar = () => {
-  const categories: string[] = ["dashboard", "league", "teams", "website"];
+  // const categories: string[] = ["dashboard", "league", "teams", "website"];
   const [collapsed, setCollapsed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(true);
 
   const handleCollapse = () => {
     setCollapsed(!collapsed);
-    // setMenuOpen((prev) => (prev ? false : prev));
   };
 
   return (

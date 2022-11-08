@@ -26,10 +26,9 @@ const MatchReview = () => {
       (fixture: any) => fixture.id === matchId
     );
 
-    setActiveMatch(temp[0]);
+    !!temp && setActiveMatch(temp[0]);
   }, [matchId, team]);
 
-  console.log({ activeMatch });
   const changePosition = (direction: string) => {
     // Get direction and current position and build logic
     if (direction === "+") {
@@ -44,61 +43,61 @@ const MatchReview = () => {
   };
 
   return (
-    <div className="match-review-container w-full flex sm:flex-row flex-col justify-between items-center my-2">
-      <div className="flex items-center justify-evenly flex-col">
-        <div className="flex flex-col h-1/2 w-5/6 mb-4">
-          <div className="bg-primaryRed text-white w-full p-1">
+    <div className="w-full flex sm:flex-row flex-col justify-between sm:items-start items-center my-2 ">
+      <div className="flex sm:flex-1 flex-none items-center justify-evenly flex-col sm:mb-0 mt-5">
+        <div className="flex flex-col items-center justify-center h-1/2 sm:w-5/6 w-screen mb-4 sm:text-base text-sm">
+          <div className="bg-primaryRed text-white w-11/12 p-1">
             <span>{activeMatch?.league}</span> | <span>{activeMatch?.day}</span>
           </div>
           <div className="w-full">
             {activeMatch?.home ? (
               // Home Game
-              <div className="teams flex items-center justify-center h-4/5 w-full ">
-                <div className="team w-2/5 h-full text-blackX flex items-center flex-col">
-                  <h2 className="uppercase">Impala</h2>
-                  <div className="team-logo">
+              <div className="flex items-center justify-center h-4/5 w-full ">
+                <div className=" w-2/5 h-full text-blackX flex items-center flex-col">
+                  {/* <h2 className="uppercase">Impala</h2> */}
+                  <div className="">
                     <img
                       src={logos.impalaLogo?.src}
                       alt="Impala Logo"
-                      className="h-full w-full rounded-full object-contain"
+                      className="sm:h-52 h-40 w-40 sm:w-52 rounded-full object-contain aspect-video"
                     />
                   </div>
                 </div>
                 <h1 className="text-4xl font-bold">VS</h1>
 
                 <div className="team w-2/5 h-full text-blackX flex items-center flex-col">
-                  <h2 className="uppercase">{activeMatch?.opponent}</h2>
+                  {/* <h2 className="uppercase">{activeMatch?.opponent}</h2> */}
                   <div className="team-logo">
                     <img
                       src={activeMatch.logo.src}
                       alt="Opponent logo"
-                      className="h-full w-full rounded-full object-contain"
+                      className="sm:h-52 h-40 w-40 sm:w-52 rounded-full object-contain aspect-video"
                     />
                   </div>
                 </div>
               </div>
             ) : (
               // Away Match
-              <div className="teams flex items-center justify-center h-4/5 w-full ">
-                <div className="team w-2/5 h-full text-blackX flex items-center flex-col">
-                  <h2 className="uppercase">{activeMatch?.opponent}</h2>
-                  <div className="team-logo">
+              <div className=" flex flex-grow flex-1 items-center justify-center h-4/5 w-full ">
+                <div className=" w-2/5 h-full text-blackX flex items-center flex-col">
+                  {/* <h2 className="uppercase">{activeMatch?.opponent}</h2> */}
+                  <div className="">
                     <img
                       src={activeMatch?.logo?.src}
                       alt="Opponent logo"
-                      className="h-full w-full rounded-full object-contain"
+                      className="sm:h-52 h-40 w-40 sm:w-52 rounded-full object-contain aspect-video"
                     />
                   </div>
                 </div>
-                <h1 className="text-4xl font-bold">VS</h1>
+                <h1 className="text-4xl font-bold mx-4">VS</h1>
 
                 <div className="team w-2/5 h-full text-blackX flex items-center flex-col">
-                  <h2 className="uppercase">Impala</h2>
+                  {/* <h2 className="uppercase">Impala</h2> */}
                   <div className="team-logo">
                     <img
                       src={logos.impalaLogo?.src}
                       alt="Impala Logo"
-                      className="h-full w-full rounded-full object-contain"
+                      className="sm:h-52 h-40 w-40 sm:w-52 rounded-full object-contain aspect-video"
                     />
                   </div>
                 </div>
@@ -106,11 +105,11 @@ const MatchReview = () => {
             )}
           </div>
         </div>
-        <div className="flex flex-col w-5/6 justify-between mt-2">
-          <div className="title-nav  bg-primaryRed text-white w-full p-1 flex items-center justify-between">
+        <div className="flex flex-col items-center justify-center h-1/2 sm:w-5/6 w-screen mb-4">
+          <div className=" bg-primaryRed h-1/2 text-white w-11/12 flex items-center justify-between p-1">
             <h2 className="uppercase text-md">Match Stats</h2>
 
-            <div className="nav-btn flex">
+            <div className=" flex">
               <MdArrowBackIosNew
                 className="cursor-pointer text-xl"
                 onClick={() => changePosition("+")}
@@ -123,33 +122,33 @@ const MatchReview = () => {
           </div>
 
           <div
-            className="match-report flex justify-around text-blackX"
+            className="flex w-full justify-around text-blackX"
             style={{ transform: `translateX(${position}px)` }}
           >
             {activeMatch?.played ? (
               <>
-                <div className="report-card h-24 w-44 rounded-md shadow-md p-2 uppercase">
+                <div className=" h-24 w-44 rounded-md shadow-md p-2 uppercase">
                   <h3 className="text-light ">Scores</h3>
                   <h5 className="text-sm text-primaryRed">Impala:{12} </h5>
                   <h5 className="text-sm">{activeMatch?.opponent}: 28</h5>
                 </div>
-                <div className="report-card h-24 w-44 rounded-md shadow-md p-2 uppercase">
+                <div className=" h-24 w-44 rounded-md shadow-md p-2 uppercase">
                   <h3 className="text-light ">Trys</h3>
                   <h5 className="text-sm text-primaryRed">Impala: 2 </h5>
                   <h5 className="text-sm">{activeMatch?.opponent}: 5</h5>
                 </div>
-                <div className="report-card h-24 w-44 rounded-md shadow-md p-2 uppercase">
+                <div className=" h-24 w-44 rounded-md shadow-md p-2 uppercase">
                   <h3 className="text-light ">Conversions</h3>
                   <h5 className="text-sm text-primaryRed ">Impala: 2/2</h5>
                   <h5 className="text-sm">{activeMatch?.opponent}: 3/5</h5>
                 </div>
-                <div className="report-card h-24 w-44 rounded-md shadow-md p-2 uppercase">
+                <div className=" h-24 w-44 rounded-md shadow-md p-2 uppercase">
                   <h3 className="text-light ">Penalties</h3>
                   <h5 className="text-sm text-primaryRed">Impala: 4/6 </h5>
                   <h5 className="text-sm">{activeMatch?.opponent}: 1/3</h5>
                 </div>
 
-                <div className="report-card h-24 w-44 rounded-md shadow-md p-2 uppercase">
+                <div className=" h-24 w-44 rounded-md shadow-md p-2 uppercase">
                   <h3 className="text-light  ">Venue</h3>
                   <h5 className="text-sm text-primaryRed">
                     {activeMatch?.venue}
@@ -157,7 +156,7 @@ const MatchReview = () => {
                 </div>
               </>
             ) : (
-              <div className="report-card h-24 w-44 rounded-md shadow-md p-2 uppercase">
+              <div className=" h-24 w-44 rounded-md shadow-md p-2 uppercase">
                 <h3 className="text-light ">Not Played</h3>
 
                 {/* <h5>Match</h5> */}
@@ -167,12 +166,12 @@ const MatchReview = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-around items-center h-full flex-1">
+
+      <div className="flex justify-around items-center h-full sm:flex-1 flex-none">
         <div className=" bg-blackX text-whiteX  flex-1 flex flex-col justify-between p-1  h-1/2">
           <h3 className=" uppercase text-lg">Impala</h3>
           {/* Starting Lineup */}
-          <div className="pl-7">
-            {/* <h4> Line Ups</h4> */}
+          <div className="sm:pl-7 pl-8">
             {activeMatch?.played ? (
               <ol
                 style={{ display: activeMatch?.played ? "block" : "none" }}
@@ -195,12 +194,14 @@ const MatchReview = () => {
                 <li>Full Back</li>
               </ol>
             ) : (
-              <h2>Line Ups will be available on match day</h2>
+              <h2 className="sm:text-base text-sm">
+                Line Ups will be available on match day
+              </h2>
             )}
           </div>
           {/* Substitutes */}
           <div
-            className="pl-7"
+            className="sm:pl-7 pl-8"
             style={{ display: activeMatch?.played ? "block" : "none" }}
           >
             <h4 className="text-lg text-primaryRed">Substitutes</h4>
@@ -218,8 +219,7 @@ const MatchReview = () => {
         </div>
         <div className=" h-full flex-1 flex flex-col justify-between p-1">
           <h3 className=" uppercase text-lg">{activeMatch?.opponent}</h3>
-          <div className="pl-7">
-            {/* <h4> Line Ups</h4> */}
+          <div className="sm:pl-7 pl-8">
             {activeMatch?.played ? (
               <ol
                 style={{ display: activeMatch?.played ? "block" : "none" }}
@@ -242,12 +242,14 @@ const MatchReview = () => {
                 <li>Full Back</li>
               </ol>
             ) : (
-              <h2>Line Ups will be available on match day</h2>
+              <h2 className="sm:text-base text-sm">
+                Line Ups will be available on match day
+              </h2>
             )}
           </div>
 
           <div
-            className=" pl-7"
+            className="sm:pl-7 pl-8"
             style={{ display: activeMatch?.played ? "block" : "none" }}
           >
             <h4 className="text-lg text-primaryRed">Substitutes</h4>

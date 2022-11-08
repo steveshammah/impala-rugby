@@ -70,31 +70,31 @@ const Footer = () => {
   const socialLinks = [
     {
       platform: "Twitter",
-      link: "https://www.twitter.com",
+      link: "https://www.twitter.com/ImpalaSaracens",
       icon: FaTwitter,
     },
     {
       platform: "Instagram",
-      link: "https://www.instagram.com",
+      link: "https://www.instagram.com/ImpalaSaracens",
       icon: FaInstagram,
     },
     {
       platform: "Facebook",
-      link: "https://www.facebook.com",
+      link: "https://www.facebook.com/ImpalaSaracens",
       icon: FaFacebook,
     },
     {
       platform: "Youtube",
-      link: "https://www.youtube.com",
+      link: "https://www.youtube.com/ImpalaSaracens",
       icon: FaYoutube,
     },
   ];
   return (
     <footer className="flex flex-col justify-center items-center align-middle w-full mt-5">
-      <div className="flex flex-wrap h-72 items-center sm:w-8/12 w-full justify-around">
+      <div className="flex flex-wrap sm:h-72 h-auto items-center sm:w-8/12 w-full justify-around">
         {partners.map((partner, index) => (
-          <Link href={`/partners-sponsors/${partner.url}`} key={index}>
-            <a className="h-16 w-48 shadow-lg shadow-black">
+          <Link href={`/partners/${partner.url}`} key={index}>
+            <a className="h-16 sm:w-48 w-2/5 my-2 shadow-lg shadow-black">
               <img
                 src={partner.img.src}
                 className="h-full w-full object-contain"
@@ -104,8 +104,8 @@ const Footer = () => {
           </Link>
         ))}
         {partners.map((partner, index) => (
-          <Link href={`/partners-sponsors/${partner.url}`} key={index}>
-            <a className="h-16 w-48 shadow-lg shadow-black">
+          <Link href={`/partners/${partner.url}`} key={index}>
+            <a className="h-16  sm:w-48 w-2/5 my-2 shadow-lg shadow-black">
               <img
                 src={partner.img.src}
                 className="h-full w-full object-contain"
@@ -204,7 +204,7 @@ const Footer = () => {
       <div className="w-full sm:h-10 h-auto flex   justify-between items-center bg-blackX text-whiteX text-xs">
         <div className="flex flex-1 justify-around cursor-pointer p-1 ">
           {socialLinks.map((social, index) => (
-            <Link href={social.link} key={index}>
+            <Link href={social.link} key={index} target="_blank">
               <social.icon
                 className="text-xl hover:text-primaryRed transition-all ease-in"
                 title={social.platform}

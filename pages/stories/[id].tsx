@@ -2,7 +2,7 @@ import { logos } from "../../public/resources/resources";
 import React, { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import { MdShare } from "react-icons/md";
-import { useArticlesStore } from "../../contexts/articleStore";
+import { useArticlesStore } from "../../stores/articleStore";
 import { formatDate } from "../../utils";
 import Link from "next/link";
 
@@ -23,10 +23,10 @@ const StoryPage = () => {
   }, [storyId]);
 
   return (
-    <div className="w-full flex-col h-full items-center -mt-20">
-      <div className="relative w-full h-screen overflow-hidden">
-        <div className="flex absolute bottom-3">
-          <h2 className="p-2 text-center uppercase text-whiteX text-5xl font-bold transition-all ease-in">
+    <div className="w-full flex-col h-full items-center sm:pt-0 pt-10">
+      <div className="relative w-full sm:h-screen h-full overflow-hidden">
+        <div className="flex absolute sm:bottom-28 bottom-6">
+          <h2 className="p-2 text-center uppercase text-whiteX sm:text-5xl text-3xl font-bold transition-all ease-in">
             {article?.title}
           </h2>
         </div>
@@ -38,7 +38,7 @@ const StoryPage = () => {
                 : logos?.impalaLogo?.src
             }
             alt="Story Image"
-            className="object-cover h-full w-full aspect-video "
+            className="object-fill h-full w-full aspect-video "
           />
 
           <i>{article?.caption_1}</i>
@@ -46,7 +46,7 @@ const StoryPage = () => {
       </div>
 
       <div className="flex flex-col items-center w-full p-4">
-        <div className="w-1/2 flex items-center mb-2">
+        <div className="sm:w-1/2 w-full flex items-center mb-2">
           <strong>Tags: </strong>
           {article?.tags?.split(",").map((tag: string, index: number) => (
             <span key={index}>
@@ -56,7 +56,7 @@ const StoryPage = () => {
             </span>
           ))}
         </div>
-        <div className="h-full w-1/2 flex cursor-pointer">
+        <div className="h-full sm:w-1/2 w-full flex cursor-pointer">
           <div className="h-full w-full flex items-center justify-around">
             <img
               src={logos.impalaLogo1?.src}
@@ -68,13 +68,13 @@ const StoryPage = () => {
             <i className="text-sm flex-1 text-right">
               {article?.created &&
                 article?.created &&
-                formatDate(article.created * 1000, "date")}
+                formatDate(article.created?.seconds * 1000, "dd-MM-yyyy")}
             </i>
           </div>
         </div>
-        <div className="flex flex-col items-center w-4/5 mt-10">
+        <div className="flex flex-col items-center sm:w-4/5 w-full mt-10">
           <div className="flex-grow items-start flex flex-col">
-            <h3 className="mb-2  text-4xl font-semibold text-center capitalize">
+            <h3 className="mb-2  sm:text-4xl text-2xl font-semibold text-center capitalize">
               {article?.headline}
             </h3>
 

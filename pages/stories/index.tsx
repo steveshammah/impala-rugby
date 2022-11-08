@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { MdShare } from "react-icons/md";
-import { useArticlesStore } from "../../contexts/articleStore";
+import { useArticlesStore } from "../../stores/articleStore";
 import { logos } from "../../public/resources/resources";
 import { formatDate } from "../../utils";
 
@@ -35,16 +35,16 @@ const StoryFeed = () => {
   return (
     <div className="text-blackX flex items-center justify-around">
       <div className="w-full flex flex-wrap items-center m-4 justify-around ">
-        <div className="w-11/12">
-          <ul className="flex justify-around lg:w-1/3 sm:w-11/12 ">
+        <div className="w-11/12 py-2">
+          <ul className="flex justify-between sm:justify-around lg:w-1/3 sm:w-full">
             {subMenu.map((topic, index) => (
               <li onClick={() => handleClick(topic)} key={index}>
                 <Link href={`#${topic}`}>
                   <a
-                    className={`text-whiteX ${
+                    className={`text-light ${
                       activeLink === topic &&
-                      "text-primaryRed border-b-2 border-primaryRed py-1"
-                    } font-bold`}
+                      "text-primaryRed border-b-2 border-primaryRed "
+                    }  text-xs sm:text-lg font-semibold`}
                   >
                     {topic}
                   </a>
@@ -72,7 +72,7 @@ const StoryFeed = () => {
                       : logos.impalaLogo.src
                   }
                   alt="Story Thumbnail"
-                  className="h-full w-full aspect-video hover:scale-110 transition-all ease-in duration-300 object-cover  rounded-t-md flex-1"
+                  className="h-full w-full aspect-video hover:scale-110 transition-all ease-in duration-300 object-fill  rounded-t-md flex-1"
                 />
                 <div className="flex-1 p-2 bg-white z-10 relative">
                   <span className="text-xs text-primaryRed p-2 capitalize">

@@ -14,13 +14,15 @@ const Banner = () => {
       </div>
       <div className="textWrapper z-10 flex flex-col items-center">
         <h2 className="text-3xl p-2 font-bold">#MACHOREDSINCE</h2>
-        <p className="text-lg">
+        <p className="sm:text-lg text-md">
           While you're here, you might fancy joining the family and recieve team
           updates and news on the go.
         </p>
-        <p className="m-1 text-lg">Sign Up to join the Herd for free</p>
+        <p className="m-1 sm:text-lg text-sm">
+          Sign Up to join the Herd for free
+        </p>
         <Link href="/partners-sponsors" className="">
-          <button className="w-28 p-1 border border-primaryRed text-whiteX rounded-md hover:text-blackX hover:bg-primaryRed">
+          <button className="w-28  bg-whiteX text-blackX rounded-md hover:text-white hover:bg-primaryRed">
             JOIN
           </button>
         </Link>

@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
-
-import MemberAbout from "../../../components/MemberAbout";
-import MemberGallery from "../../../components/MemberGallery";
-
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
-import MoreStories from "../../../components/LandingPage/MoreStories";
-import { useTeamStore } from "../../../contexts/teamsStore";
+
+import { useTeamStore } from "../../../stores/teamsStore";
 import { logos } from "../../../public/resources/resources";
+import MemberAbout from "../../../components/MemberProfile/MemberAbout";
+import MemberGallery from "../../../components/MemberProfile/MemberGallery";
+import MoreStories from "../../../components/LandingPage/MoreStories";
 
 const MemberProfile = () => {
   const router = useRouter();
@@ -24,22 +23,22 @@ const MemberProfile = () => {
   const socialLinks = [
     {
       platform: "Twitter",
-      link: "https://www.twitter.com",
+      link: "https://www.twitter.com/ImpalaSaracens",
       icon: FaTwitter,
     },
     {
       platform: "Instagram",
-      link: "https://www.instagram.com",
+      link: "https://www.instagram.com/ImpalaSaracens",
       icon: FaInstagram,
     },
     {
       platform: "Facebook",
-      link: "https://www.facebook.com",
+      link: "https://www.facebook.com/ImpalaSaracens",
       icon: FaFacebook,
     },
     {
       platform: "Youtube",
-      link: "https://www.youtube.com",
+      link: "https://www.youtube.comImpalaSaracens",
       icon: FaYoutube,
     },
   ];
@@ -61,13 +60,13 @@ const MemberProfile = () => {
                 className="h-4/5 w-full rounded-t-md object-contain"
               />
             </div>
-            <div className=" items-center flex flex-col relative w-full">
+            <div className=" items-center flex flex-col relative w-full pt-4">
               <h2 className="text-2xl text-whiteX capitalize">
                 {member?.firstname} {member?.lastname}
               </h2>
-              <h5 className="font-thin text-xs text-primaryRed absolute top-0 right-2 capitalize">
+              <h5 className="font-thin text-xs text-primaryRed absolute top-0 right-2 capitalize ">
                 {" "}
-                {member?.team}
+                {member?.team?.replace(/-/, " ")}
               </h5>
             </div>
             <div className="flex w-2/5 my-2 justify-between ">

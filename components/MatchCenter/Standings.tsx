@@ -16,25 +16,28 @@ const Standings = () => {
           <th className="sm:table-cell hidden">GA</th>
           <th>Points</th>
         </thead>
-        {leagueStandings.map((team) => {
-          return (
-            <tr
-              className={`sm:h-10 h-auto sm:text-sm text-xs shadow-lg ${
-                team.name === "Impala Saracens"
-                  ? "bg-primaryRed text-white"
-                  : " text-blackX"
-              }`}
-            >
-              <td className="p-1">{team.name}</td>
-              <td>{team.played}</td>
-              <td>{team.won}</td>
-              <td>{team.lost}</td>
-              <td className="sm:table-cell hidden">{team.goalsFor}</td>
-              <td className="sm:table-cell hidden">{team.goalsAgainst}</td>
-              <td>{team.points}</td>
-            </tr>
-          );
-        })}
+        <tbody>
+          {leagueStandings.map((team, index) => {
+            return (
+              <tr
+                className={`sm:h-10 h-auto sm:text-sm text-xs shadow-lg ${
+                  team.name === "Impala Saracens"
+                    ? "bg-primaryRed text-white"
+                    : " text-blackX"
+                }`}
+                key={index}
+              >
+                <td className="p-1">{team.name}</td>
+                <td>{team.played}</td>
+                <td>{team.won}</td>
+                <td>{team.lost}</td>
+                <td className="sm:table-cell hidden">{team.goalsFor}</td>
+                <td className="sm:table-cell hidden">{team.goalsAgainst}</td>
+                <td>{team.points}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );

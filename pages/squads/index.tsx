@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useTeamStore } from "../../contexts/teamsStore";
+import { useTeamStore } from "../../stores/teamsStore";
 import Link from "next/link";
 import { logos } from "../../public/resources/resources";
 
@@ -7,11 +7,11 @@ const Squads = () => {
   const [activeLink, setActiveLink] = useState("all");
   const [activeTeam, setActiveTeam] = useState([]);
   const members = useTeamStore((state) => state.members);
-  const links = ["all", "gazelle", "women", "swaras", "coaches", "tech"];
+  const links = ["all", "gazelle", "women", "swaras", "tech-bench"];
 
   useEffect(() => {
     const selectedTeam = members.filter((member) =>
-      member.team.includes(activeLink)
+      member?.team?.includes(activeLink)
     );
     setActiveTeam(activeLink === "all" ? members : selectedTeam);
   }, [activeLink, members]);
@@ -21,11 +21,11 @@ const Squads = () => {
   };
   return (
     <div className="bg-blackX text-whiteX flex justify-center items-center flex-col py-5">
-      <h2 className="uppercase flex items-center font-black text-5xl">
+      <h2 className="uppercase flex items-center font-black sm:text-5xl text-2xl">
         Impala Rugby Squad
       </h2>
 
-      <div className="h-12 w-1/2 border-primaryRed border-2 my-5">
+      <div className="sm:h-12 h-8 sm:w-1/2 w-full border-primaryRed border-2 sm:my-5 my-2">
         <ul className="flex justify-between w-full h-full ">
           {links.map((link, index) => (
             <li
@@ -36,7 +36,7 @@ const Squads = () => {
               <Link href={`?${link}`}>
                 <a
                   className={`
-                  text-xl h-full border-r-2 border-primaryRed w-full capitalize flex justify-center items-center font-semibold
+                  sm:text-xl text-xs h-full border-r-2 border-primaryRed w-full capitalize flex justify-center items-center font-semibold
                   ${activeLink === link ? "bg-primaryRed text-whiteX" : ""} 
                   `}
                 >
@@ -54,10 +54,7 @@ const Squads = () => {
             href={`/squads/members/${encodeURIComponent(member.id)}`}
             key={member.id}
           >
-            <div
-              className="h-64 w-48 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col"
-              // className="flex flex-col h-full w-full"
-            >
+            <div className="h-64 w-48 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col">
               <img
                 src={member?.img ? member.img.src : logos.impalaLogo.src}
                 alt={`${member?.name} image`}

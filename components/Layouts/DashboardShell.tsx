@@ -1,5 +1,7 @@
-import React, { ReactNode } from "react";
-import SideBar from "./SideBar/SideBar";
+import { useRouter } from "next/router";
+import React, { ReactNode, useEffect } from "react";
+import { useAppStore } from "../../stores/appStore";
+import SideBar from "../SideBar/SideBar";
 import SubHeader from "./SubHeader";
 
 interface Props {
@@ -7,10 +9,20 @@ interface Props {
   links?: any;
 }
 const Shell = ({ children, links }: Props) => {
+  const router = useRouter();
+  const isAuth = useAppStore((state) => state.isAuth);
+  useEffect(() => {
+    if (!isAuth) {
+      router.push("/auth");
+    }
+  }, []);
+
   return (
     <div className=" flex flex-col">
       <div className="flex w-full">
-        <SideBar />
+        <div className="relative ">
+          <SideBar />
+        </div>{" "}
         <div className="flex flex-col relative w-full h-full flex-1">
           {links && <SubHeader links={links} />}
           {children}

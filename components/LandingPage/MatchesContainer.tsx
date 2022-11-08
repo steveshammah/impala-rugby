@@ -32,7 +32,7 @@ const MatchesContainer = ({ position }: Props) => {
                     alt="Away Team Logo"
                     className="h-14 object-contain rounded-full object-center"
                   />
-                  <h3 className="font-semibold text-lg">{match.opponent}</h3>
+                  <h3 className="font-semibold text-sm">{match.opponent}</h3>
                 </div>
                 {match.played ? (
                   <span className="bg-blackX p-2 rounded-md text-whiteX">
@@ -49,7 +49,7 @@ const MatchesContainer = ({ position }: Props) => {
                     alt="Home Team Logo"
                     className="h-14 object-contain rounded-full object-center"
                   />
-                  <h3 className="font-semibold text-lg">Impala</h3>
+                  <h3 className="font-semibold text-sm">Impala</h3>
                 </div>
               </div>
             ) : (
@@ -60,7 +60,7 @@ const MatchesContainer = ({ position }: Props) => {
                     alt="Home Team Logo"
                     className="h-14 object-contain rounded-full object-center mb-1"
                   />
-                  <h3 className="font-semibold text-lg">Impala</h3>
+                  <h3 className="font-semibold text-sm">Impala</h3>
                 </div>
                 {match.played ? (
                   <span className="bg-blackX p-2 rounded-md text-whiteX">
@@ -77,7 +77,7 @@ const MatchesContainer = ({ position }: Props) => {
                     alt="Away Team Logo"
                     className="h-14 object-contain rounded-full object-center"
                   />
-                  <h3 className="font-semibold text-lg">{match.opponent}</h3>
+                  <h3 className="font-semibold text-sm">{match.opponent}</h3>
                 </div>
               </div>
             )}
