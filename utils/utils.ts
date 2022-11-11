@@ -12,13 +12,12 @@ export const formatDate = (date: number, option?: string) => {
   if ((option && option?.includes("/")) || option?.includes("-")) {
     return format(date, option);
   } else if (option === "long") {
-    const options = {
+    return new Date(date).toLocaleDateString("en-us", {
       weekday: "long",
       year: "numeric",
       month: "short",
       day: "numeric",
-    };
-    return new Date(date).toLocaleDateString("en-us", options);
+    });
   } else if (option === "time") {
     return format(date, "HH:mm");
   } else {

@@ -59,7 +59,7 @@ const Carousel = () => {
                 </div>
                 {match.played ? (
                   <span className="bg-blackX p-2 mx-4 rounded-md text-whiteX">
-                    {match.scores?.impala.ft}-{match.scores?.opponent.ft}
+                    {match.impalaScores.ft}-{match.opponentScores.ft}
                   </span>
                 ) : (
                   <span className="bg-blackX p-2  rounded-md text-whiteX">
@@ -87,7 +87,7 @@ const Carousel = () => {
                 </div>
                 {match.played ? (
                   <span className="bg-blackX p-2 mx-4 rounded-md text-whiteX">
-                    {match.scores?.impala.ft}-{match.scores?.opponent.ft}
+                    {match.impalaScores.ft}-{match?.opponentScores.ft}
                   </span>
                 ) : (
                   <span className="bg-blackX p-2  rounded-md text-whiteX">

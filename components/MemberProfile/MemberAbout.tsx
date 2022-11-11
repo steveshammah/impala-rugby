@@ -1,9 +1,10 @@
 import React from "react";
+import { IFB } from "../../stores/gamesStore";
 import { Member } from "../../stores/teamsStore";
 import MemberStatistics from "./MemberStatistics";
 
 interface Props {
-  member: Member;
+  member: Member | IFB | undefined;
 }
 const MemberAbout = ({ member }: Props) => {
   return (
