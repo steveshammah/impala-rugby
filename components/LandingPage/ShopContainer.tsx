@@ -22,7 +22,7 @@ const ShopContainer = ({ position }: any) => {
             <div className="p-2 flex justify-between">
               <span className="flex">{product.name}</span>
 
-              <Link href={`/store/${product.id}`}>
+              <Link href={`#shop#${product.id}`}>
                 <button className="bg-primaryRed p-1 text-white text-sm rounded-md">
                   Shop Now
                 </button>

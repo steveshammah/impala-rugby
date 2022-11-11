@@ -75,7 +75,7 @@ import rilSponsorPhoto1 from "../assets/images/mens-team/ril-sponsor-photo-1.jpg
 import swaras from "../assets/images/mens-team/swaras.jpg";
 import ladiesRun from "../assets/images/ladies-team/ladies-running.jpg";
 import coding from "../assets/images/anonymous-hacker.jpg";
-import situationControl from "../assets/images/situation.jpeg";
+// import situationControl from "../assets/images/situation.jpeg";
 
 // Products Imports
 import awayKitReplicaW from "../assets/images/merchandise/away kit-replica-w-2016.jpg";
@@ -801,7 +801,7 @@ export const menuLinks = [
       {
         label: "Fixtures",
         icon: "calendar",
-        url: "dashboard/league",
+        url: "dashboard/games",
       },
     ],
   },
@@ -1968,7 +1968,7 @@ export const localArticles = [
     headline:
       "Frontend of the application. Data used may be random and/or inaccurate. ",
     image_1: coding,
-    image_2: situationControl,
+    image_2: coding,
     type: "feature",
     tags: "React Js, Django, Javascript, Python, API, Fullstack Development, Club",
     created: "2022-01-07T00:22:25.804188+03:00",

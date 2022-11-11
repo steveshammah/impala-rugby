@@ -1,91 +1,103 @@
 import React from "react";
-import { allFixtures, logos } from "../../public/resources/resources";
+import { logos } from "../../public/resources/resources";
 import Link from "next/link";
+import { useFixtureStore } from "../../stores/gamesStore";
+import { formatDate } from "../../utils";
 
 export interface Props {
   position: number;
 }
 
 const MatchesContainer = ({ position }: Props) => {
-  const { Men } = allFixtures;
+  const fixtures = useFixtureStore((state) => state.fixtures);
   return (
     <div
-      className="matches container-md-wrapper flex justify-evenly  items-center transition-all ease-in-out duration-700 overflow-y-hidden"
-      style={{ transform: `translateX(${position}%)` }}
+      className="flex justify-evenly  items-center transition-all ease-in-out duration-700 overflow-y-hidden"
+      // style={{ transform: `translateX(${position}%)` }}
     >
-      {Men.map((match, index) => {
+      {fixtures.map((match, index) => {
         return (
           <div
             key={index}
-            className="match container-card w-64 h-80 flex flex-col shadow-md hover:shadow-xl m-4 rounded-md p-2"
+            className=" w-80 h-80 flex flex-col shadow-md hover:shadow-xl m-4 rounded-md p-2"
           >
-            <div className="date-details flex-1 flex flex-col items-center w-full">
-              <h3 className="uppercase">{match.league}</h3>
-              {match.day} <br />
-              {match.kickOff}, {match.venue}
+            <div className="flex-1 flex flex-col items-center w-full">
+              <h4 className="uppercase">{match.competition}</h4>
+              {formatDate(match?.kickOff.seconds * 1000, "long")}
+              {/* <div className="flex">   */}
+              <span className="capitalize">
+                {formatDate(match?.kickOff.seconds * 1000, "time")}{" "}
+              </span>
+
+              <span className="capitalize italic">{match.venue}</span>
+              {/* </div> */}
             </div>
-            {match.venue !== "Impala Grounds" ? (
-              <div className="team-logos flex items-center justify-between">
+            {!match?.home ? (
+              <div className="flex items-center justify-between">
                 <div className="flex flex-col justify-between items-center">
                   <img
-                    src={match.logo.src}
-                    alt="Away Team Logo"
-                    className="h-14 object-contain rounded-full object-center"
+                    src={match?.logo ? match.logo.src : logos.kruLogo.src}
+                    alt="Logo"
+                    className="h-14 w-16 object-contain rounded-full object-center mb-1"
                   />
-                  <h3 className="font-semibold text-sm">{match.opponent}</h3>
+                  <h3 className="font-semibold text-sm capitalize">
+                    {match.opponent}
+                  </h3>
                 </div>
                 {match.played ? (
-                  <span className="bg-blackX p-2 rounded-md text-whiteX">
-                    {match.scores}
+                  <span className="bg-blackX p-2 mx-4 rounded-md text-whiteX">
+                    {match.impalaScores.ft}-{match.opponentScores.ft}
                   </span>
                 ) : (
-                  <span className="bg-blackX p-2 rounded-md text-whiteX">
-                    {match.kickOff}
+                  <span className="bg-blackX p-2  rounded-md text-whiteX">
+                    {formatDate(match?.kickOff.seconds * 1000, "time")}
                   </span>
                 )}
                 <div className="flex flex-col justify-between items-center">
                   <img
                     src={logos.impalaLogo.src}
-                    alt="Home Team Logo"
-                    className="h-14 object-contain rounded-full object-center"
+                    alt="Impala Logo"
+                    className="h-14 w-16 object-contain rounded-full object-center mb-1"
                   />
                   <h3 className="font-semibold text-sm">Impala</h3>
                 </div>
               </div>
             ) : (
-              <div className="team-logos flex flex-1 items-center justify-between">
-                <div className="flex flex-col justify-between items-center">
+              <div className="flex flex-1 items-center justify-between w-full">
+                <div className="flex flex-1 flex-col justify-between items-center">
                   <img
                     src={logos.impalaLogo.src}
-                    alt="Home Team Logo"
-                    className="h-14 object-contain rounded-full object-center mb-1"
+                    alt="Impala Logo"
+                    className="h-14 w-16 object-contain rounded-full object-center mb-1"
                   />
-                  <h3 className="font-semibold text-sm">Impala</h3>
+                  <h3 className="font-semibold text-sm w-18">Impala</h3>
                 </div>
                 {match.played ? (
-                  <span className="bg-blackX p-2 rounded-md text-whiteX">
-                    {match.scores}
+                  <span className="bg-blackX p-2 mx-4 rounded-md text-whiteX">
+                    {match.impalaScores.ft}-{match.opponentScores.ft}
                   </span>
                 ) : (
-                  <span className="bg-blackX p-2 rounded-md text-whiteX">
-                    {match.kickOff}
+                  <span className="bg-blackX p-2  rounded-md text-whiteX">
+                    {formatDate(match?.kickOff.seconds * 1000, "time")}
                   </span>
                 )}
-                <div className="flex flex-col">
+                <div className="flex flex-1 flex-col">
                   <img
-                    src={match.logo.src}
-                    alt="Away Team Logo"
-                    className="h-14 object-contain rounded-full object-center"
+                    src={match?.logo ? match.logo.src : logos.kruLogo.src}
+                    alt="Logo"
+                    className="h-14 w-16 object-contain rounded-full object-center mb-1"
                   />
-                  <h3 className="font-semibold text-sm">{match.opponent}</h3>
+                  <h3 className="font-semibold text-sm capitalize w-18 text-ellipsis">
+                    {match.opponent}
+                  </h3>
                 </div>
               </div>
             )}
             <div className="teams flex flex-1 items-center  justify-center flex-col">
               {
-                <Link href={`/fixtures/${match.id}?team=Men`}>
+                <Link href={`/fixtures/${match.uId}`}>
                   <button className="border border-gray-400 font-thin p-2 rounded-full">
-                    Match Review
+                    {match?.played ? "Match Report" : "  Match Review"}
                   </button>
                 </Link>
               }

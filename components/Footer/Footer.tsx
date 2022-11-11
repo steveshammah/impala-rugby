@@ -85,7 +85,7 @@ const Footer = () => {
     },
     {
       platform: "Youtube",
-      link: "https://www.youtube.com/ImpalaSaracens",
+      link: "https://www.youtube.com/channel/UCIv7m_fThZmVQz-UHgo6Epg",
       icon: FaYoutube,
     },
   ];
@@ -185,7 +185,7 @@ const Footer = () => {
             </span>
             <span className="flex items-center justify-start cursor-pointer w-full">
               <MdMail className="text-2xl mr-2" />
-              <i>supportservices@impalarugby.com</i>
+              <i>impalarugbyke@gmail.com</i>
             </span>
             <span className="flex items-center justify-start cursor-pointer w-full">
               <MdPinDrop className="text-2xl mr-2" />
@@ -205,14 +205,21 @@ const Footer = () => {
         <div className="flex flex-1 justify-around cursor-pointer p-1 ">
           {socialLinks.map((social, index) => (
             <Link href={social.link} key={index} target="_blank">
-              <social.icon
-                className="text-xl hover:text-primaryRed transition-all ease-in"
-                title={social.platform}
-              />
+              <a target={"_blank"}>
+                <social.icon
+                  className="text-xl hover:text-primaryRed transition-all ease-in"
+                  title={social.platform}
+                />
+              </a>
             </Link>
           ))}
         </div>
-        <span className="p-1 flex-1 text-right">&copy;2022 Impala Rugby</span>
+        <span className="p-1 flex-1 text-right">
+          &copy;
+          <a href="https://steveshammah.netlify.app" target={"_blank"}>
+            2022 Takeover
+          </a>
+        </span>
       </div>
     </footer>
   );

@@ -5,14 +5,17 @@ import "../styles/global.css";
 import Footer from "../components/Footer/Footer";
 import { useArticlesStore } from "../stores/articleStore";
 import { useTeamStore } from "../stores/teamsStore";
+import { useFixtureStore } from "../stores/gamesStore";
 
 function App({ Component, pageProps }: AppProps) {
   const getArticles = useArticlesStore((state) => state.getArticles);
   const getMembers = useTeamStore((state) => state.getMembers);
+  const getFixtures = useFixtureStore((state) => state.getFixtures);
 
   useEffect(() => {
     getArticles();
     getMembers();
+    getFixtures();
   }, []);
 
   return (
@@ -21,7 +24,7 @@ function App({ Component, pageProps }: AppProps) {
       <div className="pt-24">
         <Component {...pageProps} />
         <Footer />
-      </div>{" "}
+      </div>
     </>
   );
 }

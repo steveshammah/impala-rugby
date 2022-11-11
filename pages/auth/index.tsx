@@ -12,7 +12,7 @@ const Login = () => {
 
   const onSubmit = () => {
     const { key, pass } = magicWord;
-    if (key === "impala" && pass === "123") {
+    if (key === "impala@rugby.com" && pass === "123") {
       setIsAuth(true);
       router.push("/dashboard");
     } else {

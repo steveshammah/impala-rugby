@@ -13,7 +13,8 @@ import {
 import { db } from "../utils";
 import { IFB } from "./articleStore";
 
-const membersCollectionRef = collection(db, "members");
+const collectionName = "members";
+const membersCollectionRef = collection(db, collectionName);
 
 export interface Member {
   firstname: string;
@@ -21,6 +22,7 @@ export interface Member {
   dob: string;
   joinDate: string;
   img?: string;
+  bio?: string;
   position: string[];
   contacts: any;
   role: "player" | "coach" | "management" | "staff";
@@ -88,7 +90,7 @@ export const useTeamStore = create<TeamStore>((set) => ({
   addMember: async (member) => {
     const uId = `${member?.firstname}-${member?.lastname}`.toLowerCase();
     try {
-      await setDoc(doc(db, "members", uId), member);
+      await setDoc(doc(db, collectionName, uId), member);
     } catch (error) {
       console.error("Error adding document");
     }
@@ -96,7 +98,7 @@ export const useTeamStore = create<TeamStore>((set) => ({
 
   // Updating an article
   editMember: async (memberId, member) => {
-    const articleRef = doc(db, "members", memberId);
+    const articleRef = doc(db, collectionName, memberId);
     await updateDoc(articleRef, member);
   },
 }));

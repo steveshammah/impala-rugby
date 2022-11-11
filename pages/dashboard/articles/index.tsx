@@ -37,7 +37,7 @@ const ArticlesFeed = () => {
     },
   ];
 
-  const handleDelete = (articleId) => {
+  const handleDelete = (articleId: string) => {
     setModalOpen(false);
     deleteArticle(articleId);
     getArticles();

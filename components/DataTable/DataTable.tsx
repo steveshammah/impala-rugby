@@ -24,6 +24,7 @@ const DataTable = ({ title, columns, children }: Props) => {
               className={`cursor-pointer ${index === 0 && "p-2"} ${
                 column.hide && `${column.hide}:table-cell hidden`
               }`}
+              key={index}
             >
               {column.label}
             </th>

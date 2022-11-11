@@ -21,7 +21,7 @@ const Banner = () => {
         <p className="m-1 sm:text-lg text-sm">
           Sign Up to join the Herd for free
         </p>
-        <Link href="/partners-sponsors" className="">
+        <Link href="/partners" className="">
           <button className="w-28  bg-whiteX text-blackX rounded-md hover:text-white hover:bg-primaryRed">
             JOIN
           </button>

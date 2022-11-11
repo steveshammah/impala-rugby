@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { logos } from "../../public/resources/resources";
+import { formatDate } from "../../utils";
 
 interface Props {
   activeTeam: string;
@@ -16,11 +17,13 @@ const Fixtures = ({ activeTeam, games }: Props) => {
               key={index}
               className="w-full bg-white flex flex-col items-center justify-center"
             >
-              <div className="bg-whiteX text-blackX w-full p-1 sm:text-md text-sm">
-                {fixture.day} | {fixture.league}
+              <div className="bg-whiteX text-blackX w-full p-1 sm:text-md text-sm capitalize">
+                {fixture?.kickOff &&
+                  formatDate(fixture?.kickOff.seconds * 1000, "long")}{" "}
+                | {fixture?.competition}
               </div>
               {fixture.home ? (
-                <div className="flex items-center justify-center ">
+                <div className="flex items-center justify-center w-full  ">
                   <div className="flex items-center justify-end flex-1">
                     <h4 className="italic mr-1 sm:text-base text-sm">Impala</h4>
                     <img
@@ -30,18 +33,21 @@ const Fixtures = ({ activeTeam, games }: Props) => {
                     />
                   </div>
                   <span className="bg-blackX p-2 rounded-md text-whiteX mx-1">
-                    {fixture.kickOff}
+                    {fixture.played
+                      ? `${fixture?.scores?.impala?.ft} - ${fixture?.scores?.opponent?.ft}`
+                      : fixture?.kickOff &&
+                        formatDate(fixture.kickOff.seconds * 1000, "time")}
                   </span>
 
-                  <div className="flex items-center justify-end flex-1">
+                  <div className="flex items-center justify-start flex-1">
                     <img
-                      src={fixture.logo.src}
-                      alt="Opponent Logo"
+                      src={fixture?.logo ? fixture.logo.src : logos.kruLogo.src}
+                      alt="Opponent"
                       className="h-11 w-11 rounded-full object-contain m-2"
                     />
 
-                    <h4 className="italic ml-1 min-w-max sm:text-base text-sm">
-                      {fixture.opponent}
+                    <h4 className="italic ml-1 min-w-max sm:text-base text-sm capitalize">
+                      {fixture?.opponent}
                     </h4>
                   </div>
                 </div>
@@ -49,18 +55,21 @@ const Fixtures = ({ activeTeam, games }: Props) => {
                 // Away Fixtures
                 <div className="teams flex items-center justify-center ">
                   <div className="team-details flex items-center justify-end flex-1">
-                    <h4 className="italic ml-1 min-w-max sm:text-base text-sm">
-                      {fixture.opponent}
+                    <h4 className="italic ml-1 min-w-max sm:text-base text-sm capitalize">
+                      {fixture?.opponent}
                     </h4>
 
                     <img
-                      src={fixture.logo?.src}
-                      alt="Opponent Logo"
+                      src={fixture?.logo ? fixture.logo.src : logos.kruLogo.src}
+                      alt="Opponent"
                       className="h-11 w-11 rounded-full object-contain m-2"
                     />
                   </div>
                   <span className="bg-blackX p-2 rounded-md text-whiteX mx-1">
-                    {fixture.played ? fixture.scores : fixture.kickOff}
+                    {fixture.played
+                      ? `${fixture?.scores?.impala?.ft} - ${fixture?.scores?.opponent?.ft}`
+                      : fixture?.kickOff &&
+                        formatDate(fixture.kickOff.seconds * 1000, "time")}
                   </span>
                   <div className="team-details flex items-center justify-end flex-1">
                     <img
@@ -74,7 +83,7 @@ const Fixtures = ({ activeTeam, games }: Props) => {
                 </div>
               )}
               <Link
-                href={`/fixtures/${fixture.id}?team=${activeTeam}`}
+                href={`/fixtures/${fixture.uId}`}
                 className="text-primaryRed text-sm"
               >
                 <a className="text-primaryRed font-semibold text-sm">

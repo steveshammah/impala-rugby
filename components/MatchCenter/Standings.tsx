@@ -7,14 +7,16 @@ const Standings = () => {
         League Standings
       </h2>
       <table className="table-fixed w-full border-2 border-slate-100">
-        <thead className="text-left">
-          <th className="p-2">Team</th>
-          <th>Played</th>
-          <th>Won</th>
-          <th>Lost</th>
-          <th className="sm:table-cell hidden">GF</th>
-          <th className="sm:table-cell hidden">GA</th>
-          <th>Points</th>
+        <thead>
+          <tr className="text-left">
+            <th className="p-2">Team</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Lost</th>
+            <th className="sm:table-cell hidden">GF</th>
+            <th className="sm:table-cell hidden">GA</th>
+            <th>Points</th>
+          </tr>
         </thead>
         <tbody>
           {leagueStandings.map((team, index) => {

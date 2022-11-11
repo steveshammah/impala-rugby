@@ -35,7 +35,8 @@ export interface IArticle {
 export interface IFB {
   [field: string]: any;
 }
-const articlesCollectionRef = collection(db, "stories");
+const collectionName= 'stories'
+const articlesCollectionRef = collection(db, collectionName);
 
 interface ArticlesStore {
   article: IArticle | IFB | undefined;
@@ -88,10 +89,9 @@ export const useArticlesStore = create<ArticlesStore>((set) => ({
       article.title.toLowerCase().split(" ").join("-") +
       "-" +
       new Date().getFullYear();
-    console.log({ uId });
 
     try {
-      await setDoc(doc(db, "stories", uId), {
+      await setDoc(doc(db, collectionName, uId), {
         ...article,
         label: uId,
       });
@@ -102,12 +102,12 @@ export const useArticlesStore = create<ArticlesStore>((set) => ({
 
   // Updating an article
   editArticle: async (articleId, article) => {
-    const articleRef = doc(db, "stories", articleId);
+    const articleRef = doc(db, collectionName, articleId);
     await updateDoc(articleRef, article);
   },
 
   // Deleting and article
   deleteArticle: async (articleId) => {
-    await deleteDoc(doc(db, "stories", articleId));
+    await deleteDoc(doc(db, collectionName, articleId));
   },
 }));

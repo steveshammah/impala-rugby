@@ -19,22 +19,13 @@ const Summary = () => {
           />
         </div>
         <div className="w-1/3 text-whiteX">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sunt
-            sapiente aspernatur deserunt recusandae id. Lorem ipsum dolor sit
-            amet consectetur, adipisicing elit. Molestiae necessitatibus commodi
-            recusandae.
-          </p>
+          <p>content unavailable</p>
         </div>
       </div>
 
       <div className="summary-graphs flex h-72  w-full justify-around items-center my-4 bg-blackX rounded-md">
         <div className="w-1/3 text-whiteX px-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sunt
-            sapiente aspernatur deserunt recusandae id. Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit. Enim rerum fugit ad!
-          </p>
+          <p>content unavailable</p>
         </div>
         <div className="w-2/3 h-full flex flex-col justify-around items-center">
           <Chart

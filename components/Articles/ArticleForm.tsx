@@ -47,7 +47,6 @@ const ArticleForm = ({ label, submitHandler, article, setArticle }: Props) => {
 
   return (
     <form className="h-full flex justify-between" ref={articleForm}>
-      {/* {JSON.stringify(article)} */}
       <div className="flex flex-col p-4 justify-center items-center">
         <h2 className="text-2xl font-bold w-full text-left">{label}</h2>
         <div className="flex flex-col  justify-around p-2 w-1/2">

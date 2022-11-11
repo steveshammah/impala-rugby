@@ -16,20 +16,22 @@ const Shell = ({ children, links }: Props) => {
       router.push("/auth");
     }
   }, []);
-
-  return (
-    <div className=" flex flex-col">
-      <div className="flex w-full">
-        <div className="relative ">
-          <SideBar />
-        </div>{" "}
-        <div className="flex flex-col relative w-full h-full flex-1">
-          {links && <SubHeader links={links} />}
-          {children}
+  if (isAuth) {
+    return (
+      <div className=" flex flex-col">
+        <div className="flex w-full">
+          <div className="relative ">
+            <SideBar />
+          </div>{" "}
+          <div className="flex flex-col relative w-full h-full flex-1">
+            {links && <SubHeader links={links} />}
+            {children}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+  return <></>;
 };
 
 export default Shell;

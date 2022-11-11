@@ -4,8 +4,9 @@ import Standings from "../../components/MatchCenter/Standings";
 import { allFixtures } from "../../public/resources/resources";
 
 import Link from "next/link";
+import { useFixtureStore } from "../../stores/gamesStore";
 
-const teams = ["Men", "Women", "Swaras"];
+const teams = ["All", "Men", "Women", "Swaras"];
 const navList = ["Fixtures", "Results", "Standings"];
 
 const MatchCenter = () => {
@@ -14,18 +15,19 @@ const MatchCenter = () => {
   const [activeTeam, setActiveTeam] = useState<string>("Men");
   const teamSelect = useRef<HTMLSelectElement | null>(null);
 
+  const fixtures = useFixtureStore((state) => state.fixtures);
   const toBePlayed = useMemo(
-    () => teamFixtures.filter((fixture) => !fixture.played),
-    [teamFixtures]
+    () => fixtures.filter((fixture) => !fixture.played),
+    [fixtures]
   );
   const played = useMemo(
-    () => teamFixtures.filter((fixture) => fixture.played),
-    [teamFixtures]
+    () => fixtures.filter((fixture) => fixture.played),
+    [fixtures]
   );
   useEffect(() => {
     const team = allFixtures[activeTeam];
     setTeamFixtures(team);
-  }, [activeTeam]);
+  }, []);
 
   const handleClick = (name: string) => {
     setActiveContainer(name);
