@@ -9,6 +9,7 @@ import Link from "next/link";
 import { logos } from "../../public/resources/resources";
 import { useRouter } from "next/router";
 import { useAppStore } from "../../stores/appStore";
+import Image from "../Image";
 
 interface IBottomNav {
   menuOpen: boolean;
@@ -18,7 +19,7 @@ interface IBottomNav {
 
 const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
   const [activeLink, setActiveLink] = useState("");
-  const isAuth = useAppStore((state) => state.isAuth);
+  const user = useAppStore((state) => state.user);
 
   const router = useRouter();
 
@@ -34,11 +35,13 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
     <nav className="relative select-none bg-grey bg-primaryRed lg:flex lg:items-stretch w-full ">
       <div className="flex flex-no-shrink items-stretch h-14">
         <Link href="/">
-          <img
-            src={logos.impalaLogo.src}
-            alt=""
-            className="w-full h-full object-contain"
-          />
+          <a>
+            <Image
+              src="impalaLogo"
+              alt="Impala Logo"
+              className="w-full h-full object-contain"
+            />
+          </a>
         </Link>
         <button
           className={`block lg:hidden cursor-pointer ml-auto relative w-14 h-12 p-4`}
@@ -79,7 +82,7 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
             <li
               key={index}
               className={`${
-                !isAuth && link.private && "hidden"
+                !user?.isAuth && link.private && "hidden"
               } h-full items-baseline flex mx-10`}
               onClick={() => toggleMenu(!menuOpen)}
             >

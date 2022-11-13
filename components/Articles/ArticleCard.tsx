@@ -3,7 +3,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { FaEye, FaHeart } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { formatDate } from "../../utils";
-import { logos } from "../../public/resources/resources";
+import Image from "../Image";
 
 interface Props {
   article: any;
@@ -17,8 +17,9 @@ const ArticleCard = ({ article, handleOpen, setActiveArticle }: Props) => {
   };
   return (
     <div className=" h-56 w-52 mb-6 flex flex-col text-blackX bg-whiteX items-center rounded-md shadow-md">
-      <img
-        src={article.image_1?.src ? article.image_1.src : logos.impalaLogo.src}
+      <img />
+      <Image
+        src={article?.tags ? article.tags : "impalaLogo"}
         className="h-1/2 w-full object-fill aspect-video rounded-t-md bg-blackX text-whiteX"
         alt="Image Poster"
       />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "../Image";
 import ImageViewer from "./ImageViewer";
 
 const MemberGallery = ({ member }: any) => {
@@ -16,24 +17,24 @@ const MemberGallery = ({ member }: any) => {
 
       <div className="flex justify-evenly w-full py-2">
         <div className="rounded-md h-96">
-          <img
-            src={member?.img?.src}
+          <Image
+            src={member?.firstname}
             alt={member?.name}
             className="rounded-md h-full w-80 object-cover aspect-video cursor-pointer"
             onClick={() => handleClick(member?.img)}
           />
         </div>
         <div className="rounded-md h-96">
-          <img
-            src={member?.img?.src}
+          <Image
+            src={member?.firstname}
             alt={member?.name}
             className="rounded-md h-full w-80 object-cover aspect-video cursor-pointer"
             onClick={() => handleClick(member?.img)}
           />
         </div>
         <div className="rounded-md h-96">
-          <img
-            src={member?.img?.src}
+          <Image
+            src={member?.firstname}
             alt={member?.name}
             className="rounded-md h-full w-80 object-cover aspect-video cursor-pointer"
             onClick={() => handleClick(member?.img)}

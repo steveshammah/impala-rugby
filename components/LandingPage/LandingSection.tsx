@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import { useArticlesStore, IArticle } from "../../stores/articleStore";
 import { logos } from "../../public/resources/resources";
+import Image from "../Image";
 
 const LandingSection: FC = () => {
   const articles = useArticlesStore((state) => state.articles);
@@ -23,13 +24,9 @@ const LandingSection: FC = () => {
               </h2>
             </div>
             <div className="flex justify-center px-2 overflow-hidden">
-              <img
+              <Image
                 className="aspect-video w-11/12 h-full hover:scale-110 transition-all ease-in duration-300 object-fill overflow-hidden"
-                src={
-                  latestArticle?.image_2?.src
-                    ? latestArticle.image_1.src
-                    : logos?.impalaLogo?.src
-                }
+                src={latestArticle?.tags ? latestArticle.tags : "impalaLogo"}
                 alt={latestArticle?.caption_1}
               />
             </div>
@@ -47,14 +44,10 @@ const LandingSection: FC = () => {
                   >
                     <div className="shadow-md sm:h-60 h-40 sm:w-56 w-full bg-white-400 sm:m-4 m-1 rounded-md flex sm:flex-col flex-row hover:shadow-lg cursor-pointer overflow-hidden">
                       <div className="flex flex-1 overflow-hidden">
-                        <img
-                          src={
-                            article.image_1?.src
-                              ? article.image_1.src
-                              : logos.impalaLogo.src
-                          }
+                        <Image
+                          src={article?.tags ? article.tags : "impalaLogo"}
                           alt={"Thumbnail"}
-                          className="aspect-video object-contain rounded-t-md h-full w-full transition-all ease-in duration-300 hover:scale-110 "
+                          className="aspect-video object-cover rounded-t-md h-full w-full transition-all ease-in duration-300 hover:scale-110 "
                         />
                       </div>
                       <div className="flex-1 w-full ">

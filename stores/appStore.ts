@@ -2,17 +2,23 @@ import create from "zustand";
 
 interface AppState {
   theme: "default" | "dark";
-  isAuth: boolean;
+  user: {
+    isAuth: boolean;
+    username: string;
+  };
   toggleTheme: (theme: string) => void;
-  setIsAuth: (authState: boolean) => void;
+  setIsAuth: (authState: boolean, username: string) => void;
 }
 
 export const useAppStore = create<AppState>()((set) => ({
+  user: {
+    isAuth: false,
+    username: "",
+  },
   theme: "default",
-  isAuth: false,
 
-  setIsAuth: (authState: boolean) => {
-    set({ isAuth: authState });
+  setIsAuth: (authState, username) => {
+    set({ user: { isAuth: authState, username } });
   },
   toggleTheme: (theme) => {
     set({ theme: theme === "default" ? "dark" : "default" });

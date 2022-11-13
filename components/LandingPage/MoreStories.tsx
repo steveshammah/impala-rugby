@@ -11,7 +11,7 @@ const MoreStories = () => {
         <Link href="/stories/website-built-by-shammah">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
-              src={photos.coding.src}
+              src={photos.dev.src}
               alt=""
               className="transition-all ease-in duration-300 object-cover rounded-sm w-full h-full absolute top-0 hover:scale-110"
             />
@@ -47,10 +47,10 @@ const MoreStories = () => {
           </div>
         </Link>
 
-        <Link href="/stories/13">
+        <Link href="/stories">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
-              src={photos.solido.src}
+              src={photos.bill.src}
               alt=""
               className="transition-all ease-in duration-300 object-cover rounded-sm w-full h-full absolute top-0 hover:scale-110"
             />

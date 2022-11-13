@@ -8,6 +8,7 @@ import { logos } from "../../../public/resources/resources";
 import MemberAbout from "../../../components/MemberProfile/MemberAbout";
 import MemberGallery from "../../../components/MemberProfile/MemberGallery";
 import MoreStories from "../../../components/LandingPage/MoreStories";
+import Image from "../../../components/Image";
 
 const MemberProfile = () => {
   const router = useRouter();
@@ -38,7 +39,7 @@ const MemberProfile = () => {
     },
     {
       platform: "Youtube",
-      link: "https://www.youtube.comImpalaSaracens",
+      link: "https://www.youtube.com/channel/UCIv7m_fThZmVQz-UHgo6Epg",
       icon: FaYoutube,
     },
   ];
@@ -46,21 +47,21 @@ const MemberProfile = () => {
   return (
     <section className="w-full">
       <div className="flex flex-col-reverse sm:flex-row justify-between p-5 h-auto">
-        <div className="flex">
-          <div className="flex flex-col">
+        <div className="flex flex-1">
+          <div className="flex flex-1 flex-col">
             <MemberAbout member={member} />
           </div>
         </div>
-        <div className="flex flex-col  bg-blackX rounded-md h-full w-full">
+        <div className="flex flex-col  bg-blackX rounded-md h-full flex-1">
           <div className="flex sm:w-auto w-full flex-col items-center h-full">
-            <div className="flex h-2/3 flex-1">
-              <img
-                src={member?.img ? member?.img?.src : logos.impalaLogo.src}
+            <div className="h-[400px] w-full rounded-t-md">
+              <Image
+                src={member?.firstname ? member.firstname : "impalaLogo"}
                 alt="User profile"
-                className="h-4/5 w-full rounded-t-md object-contain"
+                className="h-full w-full rounded-t-md object-contain"
               />
             </div>
-            <div className=" items-center flex flex-col relative w-full pt-4">
+            <div className=" items-center flex flex-1 flex-col relative w-full pt-4">
               <h2 className="text-2xl text-whiteX capitalize">
                 {member?.firstname} {member?.lastname}
               </h2>

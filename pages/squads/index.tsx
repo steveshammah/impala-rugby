@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTeamStore } from "../../stores/teamsStore";
 import Link from "next/link";
 import { logos } from "../../public/resources/resources";
+import Image from "../../components/Image";
 
 const Squads = () => {
   const [activeLink, setActiveLink] = useState("all");
@@ -55,8 +56,8 @@ const Squads = () => {
             key={member.id}
           >
             <div className="h-64 w-48 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col">
-              <img
-                src={member?.img ? member.img.src : logos.impalaLogo.src}
+              <Image
+                src={member?.firstname ? member.firstname : "impalaLogo"}
                 alt={`${member?.name} image`}
                 className="object-fill h-4/5 w-full rounded-t-sm"
               />
@@ -64,7 +65,13 @@ const Squads = () => {
                 <h3 className="font-semibold uppercase text-sm">
                   {member?.firstname} {member?.lastname}
                 </h3>
-                <h5 className="uppercase text-xs">{member?.position}</h5>
+                <h5 className="uppercase text-xs">
+                  {member?.position?.map((pos, index: number) => (
+                    <i className="capitalize" key={index}>
+                      {pos}{" "}
+                    </i>
+                  ))}
+                </h5>
               </span>
             </div>
           </Link>

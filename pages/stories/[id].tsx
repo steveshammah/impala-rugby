@@ -5,6 +5,7 @@ import { MdShare } from "react-icons/md";
 import { useArticlesStore } from "../../stores/articleStore";
 import { formatDate } from "../../utils";
 import Link from "next/link";
+import Image from "../../components/Image";
 
 const StoryPage = () => {
   const router = useRouter();
@@ -31,12 +32,8 @@ const StoryPage = () => {
           </h2>
         </div>
         <div className="items-center w-full flex flex-col overflow-hidden ">
-          <img
-            src={
-              article?.image_2?.src
-                ? article.image_1.src
-                : logos?.impalaLogo?.src
-            }
+          <Image
+            src={article?.tags ? article.tags : "floodies"}
             alt="Story Image"
             className="object-fill h-full w-full aspect-video "
           />

@@ -10,13 +10,14 @@ interface Props {
 }
 const Shell = ({ children, links }: Props) => {
   const router = useRouter();
-  const isAuth = useAppStore((state) => state.isAuth);
+  const user = useAppStore((state) => state.user);
   useEffect(() => {
-    if (!isAuth) {
+    console.log({ user });
+    if (!user?.isAuth) {
       router.push("/auth");
     }
   }, []);
-  if (isAuth) {
+  if (user?.isAuth) {
     return (
       <div className=" flex flex-col">
         <div className="flex w-full">

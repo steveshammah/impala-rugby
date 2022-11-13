@@ -4,6 +4,7 @@ import { MdShare } from "react-icons/md";
 import { useArticlesStore } from "../../stores/articleStore";
 import { logos } from "../../public/resources/resources";
 import { formatDate } from "../../utils";
+import Image from "../../components/Image";
 
 const StoryFeed = () => {
   const [displayArticles, setDisplayArticles] = useState<any[]>([{}]);
@@ -65,12 +66,8 @@ const StoryFeed = () => {
                   article.type === "update" ? "flex-row" : "flex-col"
                 } rounded-md cursor-pointer flex shadow`}
               >
-                <img
-                  src={
-                    article.image_1?.src
-                      ? article.image_1.src
-                      : logos.impalaLogo.src
-                  }
+                <Image
+                  src={article.tags ? article.tags : "impalaLogo"}
                   alt="Story Thumbnail"
                   className="h-full w-full aspect-video hover:scale-110 transition-all ease-in duration-300 object-fill  rounded-t-md flex-1"
                 />

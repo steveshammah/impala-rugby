@@ -91,21 +91,10 @@ const Footer = () => {
   ];
   return (
     <footer className="flex flex-col justify-center items-center align-middle w-full mt-5">
-      <div className="flex flex-wrap sm:h-72 h-auto items-center sm:w-8/12 w-full justify-around">
+      <div className="flex flex-wrap sm:h-44 h-auto items-center sm:w-8/12 w-full justify-around">
         {partners.map((partner, index) => (
           <Link href={`/partners/${partner.url}`} key={index}>
             <a className="h-16 sm:w-48 w-2/5 my-2 shadow-lg shadow-black">
-              <img
-                src={partner.img.src}
-                className="h-full w-full object-contain"
-                alt=""
-              />
-            </a>
-          </Link>
-        ))}
-        {partners.map((partner, index) => (
-          <Link href={`/partners/${partner.url}`} key={index}>
-            <a className="h-16  sm:w-48 w-2/5 my-2 shadow-lg shadow-black">
               <img
                 src={partner.img.src}
                 className="h-full w-full object-contain"
