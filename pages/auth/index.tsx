@@ -1,25 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoginForm from "../../components/Login/LoginForm";
 import { useRouter } from "next/router";
 import { useAppStore } from "../../stores/appStore";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../utils";
 
-// const users = [
-//   {
-//     name: "impala@rugby.com",
-//     pass: "impalaTime",
-//   },
-//   {
-//     name: "@guest",
-//     pass: "imp@l@123",
-//   },
-// ];
 const Login = () => {
   const [magicWord, sayMagicWord] = useState({ key: "", pass: "" });
   const [error, setError] = useState(false);
   const router = useRouter();
 
   const setIsAuth = useAppStore((state) => state.setIsAuth);
-
+  useEffect(() => {
+    logEvent(analytics, "Login page");
+  }, []);
   const onSubmit = () => {
     const { key, pass } = magicWord;
     if (

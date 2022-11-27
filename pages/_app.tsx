@@ -6,6 +6,8 @@ import Footer from "../components/Footer/Footer";
 import { useArticlesStore } from "../stores/articleStore";
 import { useTeamStore } from "../stores/teamsStore";
 import { useFixtureStore } from "../stores/gamesStore";
+import { analytics, loadAnalytics } from "../utils";
+import { logEvent } from "firebase/analytics";
 
 function App({ Component, pageProps }: AppProps) {
   const getArticles = useArticlesStore((state) => state.getArticles);
@@ -13,9 +15,11 @@ function App({ Component, pageProps }: AppProps) {
   const getFixtures = useFixtureStore((state) => state.getFixtures);
 
   useEffect(() => {
+    loadAnalytics();
     getArticles();
     getMembers();
     getFixtures();
+    logEvent(analytics, "app visit");
   }, []);
 
   return (

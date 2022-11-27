@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import { MdShare } from "react-icons/md";
 import { useArticlesStore } from "../../stores/articleStore";
 import { logos } from "../../public/resources/resources";
-import { formatDate } from "../../utils";
+import { analytics, formatDate } from "../../utils";
 import Image from "../../components/Image";
+import { logEvent } from "firebase/analytics";
 
 const StoryFeed = () => {
   const [displayArticles, setDisplayArticles] = useState<any[]>([{}]);
@@ -19,6 +20,9 @@ const StoryFeed = () => {
     setDisplayArticles(activeLink === "Latest" ? articles : filteredArticles);
   }, [activeLink, articles]);
 
+  useEffect(() => {
+    logEvent(analytics, "View stories");
+  }, []);
   const handleClick = (details: any) => {
     setActiveLink(details);
   };

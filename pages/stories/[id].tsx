@@ -3,9 +3,10 @@ import React, { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import { MdShare } from "react-icons/md";
 import { useArticlesStore } from "../../stores/articleStore";
-import { formatDate } from "../../utils";
+import { analytics, formatDate } from "../../utils";
 import Link from "next/link";
 import Image from "../../components/Image";
+import { logEvent } from "firebase/analytics";
 
 const StoryPage = () => {
   const router = useRouter();
@@ -23,6 +24,9 @@ const StoryPage = () => {
     storyId && getArticle(storyId);
   }, [storyId]);
 
+  useEffect(() => {
+    logEvent(analytics, `View story: ${storyId}`);
+  }, []);
   return (
     <div className="w-full flex-col h-full items-center sm:pt-0 pt-10">
       <div className="relative w-full sm:h-screen h-full overflow-hidden">

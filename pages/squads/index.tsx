@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useTeamStore } from "../../stores/teamsStore";
 import Link from "next/link";
-import { logos } from "../../public/resources/resources";
 import Image from "../../components/Image";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../utils";
 
 const Squads = () => {
   const [activeLink, setActiveLink] = useState("all");
@@ -17,6 +18,9 @@ const Squads = () => {
     setActiveTeam(activeLink === "all" ? members : selectedTeam);
   }, [activeLink, members]);
 
+  useEffect(() => {
+    logEvent(analytics, "View squad");
+  }, []);
   const handleClick = (link: string) => {
     setActiveLink(link);
   };

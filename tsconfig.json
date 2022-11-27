@@ -25,7 +25,7 @@
     "pages",
     "stores",
     "reducers",
-    "utils/firebase.js"
+    "utils/firebase.ts"
   ],
   "exclude": ["node_modules"]
 }

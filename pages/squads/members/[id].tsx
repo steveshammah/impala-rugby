@@ -4,11 +4,12 @@ import Link from "next/link";
 import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
 
 import { useTeamStore } from "../../../stores/teamsStore";
-import { logos } from "../../../public/resources/resources";
 import MemberAbout from "../../../components/MemberProfile/MemberAbout";
 import MemberGallery from "../../../components/MemberProfile/MemberGallery";
 import MoreStories from "../../../components/LandingPage/MoreStories";
 import Image from "../../../components/Image";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../../utils";
 
 const MemberProfile = () => {
   const router = useRouter();
@@ -19,6 +20,8 @@ const MemberProfile = () => {
 
   useEffect(() => {
     memberId && getMember(memberId);
+
+    logEvent(analytics, `View member: ${memberId}`);
   }, [memberId]);
 
   const socialLinks = [

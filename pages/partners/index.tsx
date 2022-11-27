@@ -1,8 +1,13 @@
+import { logEvent } from "firebase/analytics";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { partners, photos } from "../../public/resources/resources";
+import { analytics } from "../../utils";
 
 const AllSponsors = () => {
+  useEffect(() => {
+    logEvent(analytics, "View partners");
+  }, []);
   return (
     <div className="w-full h-auto">
       <div className=" bg-blackX text-white relative h-96">
