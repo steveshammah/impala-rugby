@@ -13,7 +13,6 @@ const Image = ({ src, alt, className, onClick }: Props) => {
     let tempSrc: string;
     if (src?.split(",").length >= 2) {
       tempSrc = String(src?.split(",")[0].toLowerCase());
-      console.log(tempSrc, "Its an object");
     } else {
       tempSrc = src;
     }
