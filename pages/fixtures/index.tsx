@@ -21,7 +21,7 @@ const MatchCenter = () => {
     [fixtures]
   );
   const played = useMemo(
-    () => fixtures.filter((fixture) => fixture.played),
+    () => fixtures.filter((fixture) => fixture.played).reverse(),
     [fixtures]
   );
 

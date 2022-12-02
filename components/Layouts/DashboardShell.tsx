@@ -12,7 +12,7 @@ const Shell = ({ children, links }: Props) => {
   const router = useRouter();
   const user = useAppStore((state) => state.user);
   useEffect(() => {
-    console.log({ user });
+    
     if (!user?.isAuth) {
       router.push("/auth");
     }

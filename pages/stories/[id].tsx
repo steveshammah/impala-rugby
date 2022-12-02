@@ -13,6 +13,72 @@ const StoryPage = () => {
   const articles = useArticlesStore((state) => state.articles);
   const getArticle = useArticlesStore((state) => state.getArticle);
   const article = useArticlesStore((state) => state.article);
+  const text = `
+<p>
+The weekend saw the commencement of the Kenya Cup, Championship and Nation-
+Wide Leagues with various matches being played across the country. For Impala, 
+the first challenge in the Championship saw them face Zetech Oaks at home for the 
+season opener. This proved to be a day of mixed emotions for the home side as 
+both side shared late penalties with the Thika Road side pulling off the late winner. 
+Impala went ahead through a penalty from Johnson Waiganjo before number 8 
+Aaron Adhanja went over the line with a powerful drive to extend the lead with 
+Waiganjo adding the extra two.  The visitors were quick to respond with a try from 
+the winger Mark Demba with the conversion being unsuccessful. This ensured a 13 –
+5 lead for the home side at the break. </p>
+<br />
+<p>The resumption of the game would see Zetech come into the match with renewed vigor landing a quick try off the bat. 
+Zetech second row Felix Ouma was on the spot with a drive to cut the lead to 13-10 
+with fly-half Johnson Wafula adding the extra two points from the tee to make it a 
+one point game. Relentless attack from the away side saw Oaks land a penalty 
+which was converted successfully by the fly-half taking Zetech into the lead for the 
+first time with a two point advantage. The battle for the supremacy would ensue 
+with both teams putting in spirited attacks with no success. Impala second row Carl 
+Siambe was sent to the bin with just over twenty minutes to play and upon his 
+resumption, Zetech scrum-half Frank Oduor was also handed a yellow card.</p>
+<p> The trend continued with Zetech fullback Brian Ombogo also being sent to the bin with 
+five minutes to play. The battle for the win would get heated in the final stages as 
+Impala landed a penalty in their opponents’ 40 with James Mwangi stepping up to 
+take it. The subsequent kick was successful taking the home side into a one point 
+lead. Jubilation, however, would be cut short as a mistake by Impala after the kickoff
+would see them equally concede a penalty in their own 40 with replacement hooker 
+Jayson Michael shown the yellow card. The Zetech kicker making no mistakes split 
+the post to give his side their first win of the season. </p>
+
+<br />
+<p>For Impala it is a rocky start to a season in the Championship having ten more games to go until the end of the 
+season to try and make a bid for their return to the Kenya Cup. With a youthful side 
+Impala is going to have to make their case against opponents yet to come. Impala 
+face Daystar Falcons in an away match, USIU at home and will conclude the first 
+part of the season before the Christmas break with a tour to face Kisumu RFC. 
+</p>
+
+<br />
+
+<div style={{display: 'flex'}}>
+
+<strong>Impala</strong>
+<br/>
+1. Joseph Munyaka 2. Maxwell Otieno 3. Brian Ochieng 4. Victor Imela 5. Caleb 
+Siambe 6. Evans Omondi 7. Cosmas Valentino 8. Aaron Adhanja 
+9. James Mwangi 10. Johnson Waiganjo 11. Derrick Kinyari 12. Daniel Dindi 13. 
+Churchill Obat 14. Samuel Maina 15. Patrick Mutuku 
+16. Jayson Michael 17. Warren Akaranga 18. Eric Kiai 19. Richard Asante 20. 
+Clinton Musonye 
+21. Wilfred Odhiambo 22. Stephen Muisyo 23. Mofat Omondi
+
+<br/><br/>
+
+
+<strong>Zetech Oaks (Away)</strong>
+<br/>
+1. Evans Kilura 2. Hope Dihary 3. Eugene Odhiambo 4. Wyclif Ochoro 5. Felix Ouma
+6. Augustine Simiyu 7. Mike Wekesa 8. Shaqil Ondogo 
+9. Frank Oduor 10. Johnson Wafula 11. Ken Wafula 12. Rafael Wanga 13. Oliver 
+Kilibwa 14. Mark Demba 15. Brian Ombogo 
+16. Sammy Odhiambo 17. Wilson Mwangi 18. Isaac Odhiambo 19. Ian Adeya 20. 
+Noah Tochora 
+21. Goorgil Kodi 22. Jack Mangalo 23. Anderson Oduor
+  `;
 
   const moreStories = useMemo(
     () => articles?.filter((story) => story.label !== storyId),
@@ -75,9 +141,10 @@ const StoryPage = () => {
               {article?.headline}
             </h3>
 
-            <p className="mb-4 text-lg leading-9 tracking-widest">
-              {article?.content_1}
-            </p>
+            <p
+              className="mb-4 text-lg leading-9 tracking-widest"
+              dangerouslySetInnerHTML={{ __html: article?.content_1 }}
+            ></p>
 
             <div className="story-image small items-center w-full flex flex-col overflow-hidden mb-4">
               <img
@@ -94,7 +161,10 @@ const StoryPage = () => {
               </i>
             </div>
 
-            <p className="mb-4 text-lg leading-10">{article?.content_2}</p>
+            <p
+              className="mb-4 text-lg leading-9 tracking-widest"
+              dangerouslySetInnerHTML={{ __html: article?.content_2 }}
+            ></p>
           </div>
 
           <div className="flex w-full flex-col m-2">
