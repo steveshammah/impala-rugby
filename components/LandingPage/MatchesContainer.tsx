@@ -1,8 +1,8 @@
 import React from "react";
-import { logos } from "../../public/resources/resources";
+import { logos } from "@public/resources/resources";
 import Link from "next/link";
-import { useFixtureStore } from "../../stores/gamesStore";
-import { formatDate } from "../../utils";
+import { useFixtureStore } from "@stores/gamesStore";
+import { formatDate } from "@utils/utils";
 
 export interface Props {
   position: number;
@@ -13,7 +13,7 @@ const MatchesContainer = ({ position }: Props) => {
   return (
     <div
       className="flex justify-evenly  items-center transition-all ease-in-out duration-700 overflow-y-hidden"
-      // style={{ transform: `translateX(${position}%)` }}
+      
     >
       {fixtures.map((match, index) => {
         return (

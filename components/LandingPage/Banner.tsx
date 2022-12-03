@@ -1,5 +1,5 @@
 import React from "react";
-import { photos } from "../../public/resources/resources";
+import { photos } from "@public/resources/resources";
 import Link from "next/link";
 
 const Banner = () => {

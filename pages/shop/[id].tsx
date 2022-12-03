@@ -1,9 +1,9 @@
-import { products } from "../../public/resources/resources";
+import { products } from "@public/resources/resources";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import React, { useState } from "react";
-import SuggestedProducts from "../../components/Shop/SuggestedProducts";
+import SuggestedProducts from "@components/Shop/SuggestedProducts";
 import { useRouter } from "next/router";
-import Summary from "../../components/Shop/Summary";
+import Summary from "@components/Shop/Summary";
 
 const Product = () => {
   const router = useRouter();

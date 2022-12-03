@@ -1,6 +1,6 @@
 import React from "react";
-import { IFB } from "../../stores/gamesStore";
-import { Member } from "../../stores/teamsStore";
+import { IFB } from "@stores/gamesStore";
+import { Member } from "@stores/teamsStore";
 import MemberStatistics from "./MemberStatistics";
 
 interface Props {

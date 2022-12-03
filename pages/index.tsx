@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "../components/LandingPage/Banner";
-import CardsWrapper from "../components/LandingPage/CardsWrapper";
-import LandingSection from "../components/LandingPage/LandingSection";
-import MoreStories from "../components/LandingPage/MoreStories";
+import Banner from "@components/LandingPage/Banner";
+import CardsWrapper from "@components/LandingPage/CardsWrapper";
+import LandingSection from "@components/LandingPage/LandingSection";
+import MoreStories from "@components/LandingPage/MoreStories";
 
 const Home = () => {
   return (

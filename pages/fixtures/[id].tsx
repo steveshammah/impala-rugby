@@ -1,10 +1,10 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { logos } from "../../public/resources/resources";
+import React, { useState, useEffect } from "react";
+import { logos } from "@public/resources/resources";
 import { useRouter } from "next/router";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-import { useFixtureStore } from "../../stores/gamesStore";
-import { formatDate } from "../../utils";
-import TeamList from "../../components/MatchCenter/TeamList";
+import { useFixtureStore } from "@stores/gamesStore";
+import { formatDate } from "@utils/utils";
+import TeamList from "@components/MatchCenter/TeamList";
 
 const MatchReview = () => {
   const [position, setPosition] = useState(0);

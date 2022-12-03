@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { useAppStore } from "../../stores/appStore";
+import { useAppStore } from "@stores/appStore";
 
 const SubNav = () => {
   const isAuth = useAppStore((state) => state.user.isAuth);

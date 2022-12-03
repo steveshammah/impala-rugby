@@ -1,7 +1,7 @@
-import { menuLinks } from "../../public/resources/resources";
+import { menuLinks } from "@public/resources/resources";
 import SideBarLink from "./SideBarLink";
 import React, { Dispatch, SetStateAction, useState } from "react";
-import { MdArrowForwardIos, MdDashboard } from "react-icons/md";
+import { MdDashboard } from "react-icons/md";
 
 interface ISubMenuProps {
   menuOpen: boolean;

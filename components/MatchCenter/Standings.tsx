@@ -1,4 +1,4 @@
-import { leagueStandings } from "../../public/resources/resources";
+import { leagueStandings } from "@public/resources/resources";
 
 const Standings = () => {
   return (

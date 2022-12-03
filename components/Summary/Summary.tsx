@@ -1,5 +1,5 @@
 import React from "react";
-import { trainingData, salesData } from "../../public/resources/resources";
+import { trainingData, salesData } from "@public/resources/resources";
 import Chart from "../Chart/Chart";
 
 import SummaryWidget from "../Widgets/SummaryWidget";

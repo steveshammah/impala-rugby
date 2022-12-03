@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "../Image";
+import Image from "@components/Image";
 import ImageViewer from "./ImageViewer";
 
 const MemberGallery = ({ member }: any) => {

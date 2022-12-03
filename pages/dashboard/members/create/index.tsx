@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Shell from "../../../../components/Layouts/DashboardShell";
+import Shell from "@components/Layouts/DashboardShell";
 
-import { useTeamStore } from "../../../../stores/teamsStore";
+import { useTeamStore } from "@stores/teamsStore";
 import MemberForm from "../MemberForm";
 
 const AddMember = () => {

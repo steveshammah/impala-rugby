@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React, { ReactNode, useEffect } from "react";
-import { useAppStore } from "../../stores/appStore";
+import { useAppStore } from "@stores/appStore";
 import SideBar from "../SideBar/SideBar";
 import SubHeader from "./SubHeader";
 

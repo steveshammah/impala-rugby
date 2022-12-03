@@ -2,8 +2,8 @@ import Link from "next/link";
 import React, { Dispatch, SetStateAction } from "react";
 import { FaEye, FaHeart } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
-import { formatDate } from "../../utils";
-import Image from "../Image";
+import { formatDate } from "@utils";
+import Image from "@components/Image";
 
 interface Props {
   article: any;

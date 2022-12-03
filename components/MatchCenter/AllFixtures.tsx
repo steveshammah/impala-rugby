@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { logos } from "../../public/resources/resources";
-import { formatDate } from "../../utils";
+import { logos } from "@public/resources/resources";
+import { formatDate } from "@utils/utils";
 
 const AllFixtures = ({ fixtures }) => {
   return (

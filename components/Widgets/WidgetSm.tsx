@@ -1,5 +1,5 @@
 import React from "react";
-import { useTeamStore } from "../../stores/teamsStore";
+import { useTeamStore } from "@stores/teamsStore";
 import PlayerWidgetSm from "./PlayerWidgetSm";
 
 const WidgetSm = ({ getConsistency, getPercentage }: any) => {

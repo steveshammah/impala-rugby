@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppStore } from "../../stores/appStore";
+import { useAppStore } from "@stores/appStore";
 
 const DeleteModal = ({
   modalOpen,

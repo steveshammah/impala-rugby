@@ -1,7 +1,6 @@
 import { Timestamp } from "firebase/firestore";
 import { useRouter } from "next/router";
 import React, { useRef, Dispatch, SetStateAction } from "react";
-import { formatDate } from "../../utils";
 import MultiInput from "./MultiInput";
 
 interface Props {

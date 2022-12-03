@@ -1,8 +1,8 @@
 import { logEvent } from "firebase/analytics";
 import Link from "next/link";
 import React, { useEffect } from "react";
-import { partners, photos } from "../../public/resources/resources";
-import { analytics } from "../../utils";
+import { partners, photos } from "@public/resources/resources";
+import { analytics } from "@utils/firebase";
 
 const AllSponsors = () => {
   useEffect(() => {

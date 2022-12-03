@@ -1,5 +1,5 @@
 import React from "react";
-import { IFixture } from "../../stores/gamesStore";
+import { IFixture } from "@stores/gamesStore";
 interface Props {
   entry: string;
   fixture: IFixture;

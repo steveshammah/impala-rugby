@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
-
-import { useTeamStore } from "../../../stores/teamsStore";
-import MemberAbout from "../../../components/MemberProfile/MemberAbout";
-import MemberGallery from "../../../components/MemberProfile/MemberGallery";
-import MoreStories from "../../../components/LandingPage/MoreStories";
-import Image from "../../../components/Image";
+import { useTeamStore } from "@stores/teamsStore";
+import MemberAbout from "@components/MemberProfile/MemberAbout";
+import MemberGallery from "@components/MemberProfile/MemberGallery";
+import MoreStories from "@components/LandingPage/MoreStories";
+import Image from "@components/Image";
 import { logEvent } from "firebase/analytics";
-import { analytics } from "../../../utils";
+import { analytics } from "@utils/firebase";
 
 const MemberProfile = () => {
   const router = useRouter();

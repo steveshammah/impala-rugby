@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { logos, partners } from "../../public/resources/resources";
+import { logos, partners } from "@public/resources/resources";
 import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
 import { MdPhone, MdMail, MdPinDrop } from "react-icons/md";
 

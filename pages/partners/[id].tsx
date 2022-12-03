@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { partners } from "../../public/resources/resources";
+import { partners } from "@public/resources/resources";
 import { useRouter } from "next/router";
 
 const Partner = () => {

@@ -13,10 +13,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
     // "allowSyntheticDefaultImports": true,
     // "noFallthroughCasesInSwitch": true,
     // "strictNullChecks": true
+    "paths": {
+      "@styles/*": ["./styles/*"],
+      "@pages/*": ["./pages/*"],
+      "@public/*": ["./public/*"],
+      "@utils/*": ["./utils/*"],
+      "@stores/*": ["./stores/*"],
+      "@components/*": ["./components/*"]
+    }
   },
   "include": [
     "src",
@@ -24,7 +32,6 @@
     "**/*.tsx",
     "pages",
     "stores",
-    "reducers",
     "utils/firebase.ts"
   ],
   "exclude": ["node_modules"]

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useTeamStore } from "../../stores/teamsStore";
+import { useTeamStore } from "@stores/teamsStore";
 import Link from "next/link";
-import Image from "../../components/Image";
+import Image from "@components/Image";
 import { logEvent } from "firebase/analytics";
-import { analytics } from "../../utils";
+import { analytics } from "@utils/firebase";
 
 const Squads = () => {
   const [activeLink, setActiveLink] = useState("all");

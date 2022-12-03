@@ -1,15 +1,8 @@
-import React, {
-  useEffect,
-  useState,
-  useRef,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import Link from "next/link";
-import { logos } from "../../public/resources/resources";
 import { useRouter } from "next/router";
-import { useAppStore } from "../../stores/appStore";
-import Image from "../Image";
+import { useAppStore } from "@stores/appStore";
+import Image from "@components/Image";
 
 interface IBottomNav {
   menuOpen: boolean;

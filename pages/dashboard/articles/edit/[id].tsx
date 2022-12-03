@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import ArticleForm from "../../../../components/Articles/ArticleForm";
+import ArticleForm from "@components/Articles/ArticleForm";
 import { useRouter } from "next/router";
-import Shell from "../../../../components/Layouts/DashboardShell";
-import {
-  IArticle,
-  IFB,
-  useArticlesStore,
-} from "../../../../stores/articleStore";
+import Shell from "@components/Layouts/DashboardShell";
+import { IArticle, IFB, useArticlesStore } from "@stores/articleStore";
 import { MdAddBox, MdArrowBackIos, MdDocumentScanner } from "react-icons/md";
 
 const EditArticle = () => {

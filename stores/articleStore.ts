@@ -12,7 +12,7 @@ import {
   where,
 } from "firebase/firestore";
 
-import { db } from "../utils";
+import { db } from "@utils/firebase";
 
 export interface IArticle {
   id: string;
@@ -35,7 +35,7 @@ export interface IArticle {
 export interface IFB {
   [field: string]: any;
 }
-const collectionName= 'stories'
+const collectionName = "stories";
 const articlesCollectionRef = collection(db, collectionName);
 
 interface ArticlesStore {

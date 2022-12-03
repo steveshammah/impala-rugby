@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import LoginForm from "../../components/Login/LoginForm";
+import LoginForm from "@components/Login/LoginForm";
 import { useRouter } from "next/router";
-import { useAppStore } from "../../stores/appStore";
+import { useAppStore } from "@stores/appStore";
 import { logEvent } from "firebase/analytics";
-import { analytics } from "../../utils";
+import { analytics } from "@utils/firebase";
 
 const Login = () => {
   const [magicWord, sayMagicWord] = useState({ key: "", pass: "" });

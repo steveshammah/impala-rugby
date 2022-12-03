@@ -1,7 +1,7 @@
-import Summary from "../../components/Summary/Summary";
-import WidgetBg from "../../components/Widgets/WidgetBg";
+import Summary from "@components/Summary/Summary";
+import WidgetBg from "@components/Widgets/WidgetBg";
 import React from "react";
-import Shell from "../../components/Layouts/DashboardShell";
+import Shell from "@components/Layouts/DashboardShell";
 import { MdHome, MdNotificationImportant, MdSettings } from "react-icons/md";
 
 const Dashboard = () => {

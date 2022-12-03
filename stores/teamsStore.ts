@@ -10,7 +10,7 @@ import {
   where,
 } from "firebase/firestore";
 
-import { db } from "../utils";
+import { db } from "@utils/firebase";
 import { IFB } from "./articleStore";
 
 const collectionName = "members";

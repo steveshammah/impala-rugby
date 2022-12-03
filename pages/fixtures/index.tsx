@@ -1,9 +1,9 @@
 import React, { useState, useRef, useMemo } from "react";
-import Fixtures from "../../components/MatchCenter/Fixtures";
-import Standings from "../../components/MatchCenter/Standings";
+import Fixtures from "@components/MatchCenter/Fixtures";
+import Standings from "@components/MatchCenter/Standings";
 
 import Link from "next/link";
-import { useFixtureStore } from "../../stores/gamesStore";
+import { useFixtureStore } from "@stores/gamesStore";
 
 // Implement team filtering
 // const teams = ["All", "Men", "Women", "Swaras"];

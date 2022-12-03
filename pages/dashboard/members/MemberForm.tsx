@@ -1,7 +1,7 @@
 import { Timestamp } from "firebase/firestore";
 import { useRouter } from "next/router";
 import React, { useRef, Dispatch, SetStateAction } from "react";
-import { formatDate } from "../../../utils";
+import { formatDate } from "@utils/utils";
 
 interface Props {
   label: string;

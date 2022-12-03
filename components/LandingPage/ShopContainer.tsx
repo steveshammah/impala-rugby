@@ -1,4 +1,4 @@
-import { products } from "../../public/resources/resources";
+import { products } from "@public/resources/resources";
 import Link from "next/link";
 import React from "react";
 

@@ -1,8 +1,8 @@
-import ArticleForm from "../../../../components/Articles/ArticleForm";
+import ArticleForm from "@components/Articles/ArticleForm";
 import { useState } from "react";
-import Shell from "../../../../components/Layouts/DashboardShell";
-import { useArticlesStore } from "../../../../stores/articleStore";
-import {  MdArrowBackIos, MdDocumentScanner } from "react-icons/md";
+import Shell from "@components/Layouts/DashboardShell";
+import { useArticlesStore } from "@stores/articleStore";
+import { MdArrowBackIos, MdDocumentScanner } from "react-icons/md";
 
 const AddMember = () => {
   const [article, setArticle] = useState({});

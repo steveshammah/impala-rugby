@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { logos, photos } from "../public/resources/resources";
+import React, { useMemo } from "react";
+import { logos, photos } from "@public/resources/resources";
 
 interface Props {
   src: string;

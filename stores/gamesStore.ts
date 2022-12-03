@@ -12,7 +12,7 @@ import {
   where,
 } from "firebase/firestore";
 
-import { db, formatDate } from "../utils";
+import { db } from "@utils/firebase";
 
 export interface IFixture {
   uId: string;

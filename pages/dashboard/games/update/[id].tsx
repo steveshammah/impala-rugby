@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { MdDocumentScanner, MdSportsRugby } from "react-icons/md";
-import Shell from "../../../../components/Layouts/DashboardShell";
-import EventForm from "../../../../components/MatchCenter/EventForm";
-import { IFB, IFixture, useFixtureStore } from "../../../../stores/gamesStore";
+import Shell from "@components/Layouts/DashboardShell";
+import EventForm from "@components/MatchCenter/EventForm";
+import { IFB, IFixture, useFixtureStore } from "@stores/gamesStore";
 
 const AddEvent = () => {
   const router = useRouter();

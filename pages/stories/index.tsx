@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { MdShare } from "react-icons/md";
-import { useArticlesStore } from "../../stores/articleStore";
-import { logos } from "../../public/resources/resources";
-import { analytics, formatDate } from "../../utils";
-import Image from "../../components/Image";
+import { useArticlesStore } from "@stores/articleStore";
+import { formatDate } from "@utils/utils";
+import { analytics } from "@utils/firebase";
+import Image from "@components/Image";
 import { logEvent } from "firebase/analytics";
 
 const StoryFeed = () => {
@@ -41,7 +41,7 @@ const StoryFeed = () => {
     <div className="text-blackX flex items-center justify-around">
       <div className="w-full flex flex-wrap items-center m-4 justify-around ">
         <div className="w-11/12 py-2">
-          <ul className="flex justify-between sm:justify-around lg:w-1/3 sm:w-full">
+          <ul className="flex justify-between sm:justify-around lg:w-[600px] sm:w-full">
             {subMenu.map((topic, index) => (
               <li onClick={() => handleClick(topic)} key={index}>
                 <Link href={`#${topic}`}>
@@ -49,7 +49,7 @@ const StoryFeed = () => {
                     className={`text-light ${
                       activeLink === topic &&
                       "text-primaryRed border-b-2 border-primaryRed "
-                    }  text-xs sm:text-lg font-semibold`}
+                    }  text-xs sm:text-[1rem] font-semibold`}
                   >
                     {topic}
                   </a>

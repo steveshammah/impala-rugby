@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { logos } from "../../public/resources/resources";
-import { formatDate } from "../../utils";
+import React from "react";
+import { logos } from "@public/resources/resources";
+import { formatDate } from "@utils/utils";
 
 const NextFixture = ({ fixture }) => {
   return (

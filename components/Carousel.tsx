@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { logos } from "../public/resources/resources";
-import { useFixtureStore } from "../stores/gamesStore";
-import { formatDate } from "../utils";
+import { logos } from "@public/resources/resources";
+import { useFixtureStore } from "@stores/gamesStore";
+import { formatDate } from "@utils/utils";
 
 const Carousel = () => {
   const fixtures = useFixtureStore((state) => state.fixtures);

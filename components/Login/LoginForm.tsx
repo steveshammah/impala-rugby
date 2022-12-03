@@ -1,4 +1,4 @@
-import { logos } from "../../public/resources/resources";
+import { logos } from "@public/resources/resources";
 import React, { useRef } from "react";
 import Link from "next/link";
 

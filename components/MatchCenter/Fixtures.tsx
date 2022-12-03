@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { logos } from "../../public/resources/resources";
-import { formatDate } from "../../utils";
+import { logos } from "@public/resources/resources";
+import { formatDate } from "@utils/utils";
 
 interface Props {
   activeTeam: string;
