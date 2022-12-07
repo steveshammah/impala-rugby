@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useTeamStore } from "@stores/teamsStore";
 import Link from "next/link";
 import Image from "@components/Image";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "@utils/firebase";
+import { eventLogger } from "@utils/utils";
+import Loader from "@components/Loader";
 
 const Squads = () => {
   const [activeLink, setActiveLink] = useState("all");
@@ -19,7 +19,9 @@ const Squads = () => {
   }, [activeLink, members]);
 
   useEffect(() => {
-    logEvent(analytics, "View squad");
+    eventLogger({
+      event: "View Squad",
+    });
   }, []);
   const handleClick = (link: string) => {
     setActiveLink(link);
@@ -54,32 +56,36 @@ const Squads = () => {
       </div>
 
       <div className="squad-members flex justify-around flex-wrap p-2 w-5/6 ">
-        {activeTeam.map((member) => (
-          <Link
-            href={`/squads/members/${encodeURIComponent(member.id)}`}
-            key={member.id}
-          >
-            <div className="h-64 w-48 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col">
-              <Image
-                src={member?.firstname ? member.firstname : "impalaLogo"}
-                alt={`${member?.name} image`}
-                className="object-fill h-4/5 w-full rounded-t-sm"
-              />
-              <span className="flex flex-col items-center justify-between p-1">
-                <h3 className="font-semibold uppercase text-sm">
-                  {member?.firstname} {member?.lastname}
-                </h3>
-                <h5 className="uppercase text-xs">
-                  {member?.position?.map((pos, index: number) => (
-                    <i className="capitalize" key={index}>
-                      {pos}{" "}
-                    </i>
-                  ))}
-                </h5>
-              </span>
-            </div>
-          </Link>
-        ))}
+        {activeTeam.length > 0 ? (
+          activeTeam.map((member) => (
+            <Link
+              href={`/squads/members/${encodeURIComponent(member.id)}`}
+              key={member.id}
+            >
+              <div className="h-64 w-48 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col">
+                <Image
+                  src={member?.firstname ? member.firstname : "impalaLogo"}
+                  alt={`${member?.name} image`}
+                  className="object-fill h-4/5 w-full rounded-t-sm"
+                />
+                <span className="flex flex-col items-center justify-between p-1">
+                  <h3 className="font-semibold uppercase text-sm">
+                    {member?.firstname} {member?.lastname}
+                  </h3>
+                  <h5 className="uppercase text-xs">
+                    {member?.position?.map((pos, index: number) => (
+                      <i className="capitalize" key={index}>
+                        {pos}{" "}
+                      </i>
+                    ))}
+                  </h5>
+                </span>
+              </div>
+            </Link>
+          ))
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   );

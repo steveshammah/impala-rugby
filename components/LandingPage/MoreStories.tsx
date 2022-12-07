@@ -4,8 +4,10 @@ import Link from "next/link";
 
 const MoreStories = () => {
   return (
-    <div className="h-max p-2">
-      <h2 className="text-3xl font-bold text-primaryRed">Editor's Pick</h2>
+    <div className="h-max p-2 py-5">
+      <h2 className="text-3xl font-bold text-primaryRed mb-4 px-2">
+        Editor's Pick
+      </h2>
 
       <div className="flex flex-wrap relative h-full justify-center">
         <Link href="/stories/website-built-by-shammah">

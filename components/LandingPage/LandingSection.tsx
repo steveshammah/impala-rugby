@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import { useArticlesStore, IArticle } from "@stores/articleStore";
 import Image from "@components/Image";
-import LoadingScreen from "@components/LoadingScreen";
+import LoadingScreen from "@components/Loader";
 
 const LandingSection: FC = () => {
   const articles = useArticlesStore((state) => state.articles);

@@ -4,8 +4,9 @@ import Standings from "@components/MatchCenter/Standings";
 
 import Link from "next/link";
 import { useFixtureStore } from "@stores/gamesStore";
+import Loader from "@components/Loader";
 
-// Implement team filtering
+// TODO Implement team filtering
 // const teams = ["All", "Men", "Women", "Swaras"];
 const teams = ["All"];
 const navList = ["Fixtures", "Results", "Standings"];
@@ -64,13 +65,14 @@ const MatchCenter = () => {
         </ul>
       </div>
 
-      {activeContainer === "Fixtures" && (
+      {toBePlayed && activeContainer === "Fixtures" && (
         <Fixtures activeTeam={activeTeam} games={toBePlayed} />
       )}
-      {activeContainer === "Results" && (
+      {played && activeContainer === "Results" && (
         <Fixtures activeTeam={activeTeam} games={played} />
       )}
       {activeContainer === "Standings" && <Standings />}
+      {(played.length < 1 || toBePlayed.length < 1) && <Loader />}
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { useArticlesStore } from "@stores/articleStore";
 import { useTeamStore } from "@stores/teamsStore";
 import { useFixtureStore } from "@stores/gamesStore";
 import { analytics, loadAnalytics } from "@utils/firebase";
-import { logEvent } from "firebase/analytics";
+import { eventLogger } from "@utils/utils";
 
 function App({ Component, pageProps }: AppProps) {
   const getArticles = useArticlesStore((state) => state.getArticles);
@@ -19,7 +19,9 @@ function App({ Component, pageProps }: AppProps) {
     getArticles();
     getMembers();
     getFixtures();
-    logEvent(analytics, "app visit");
+    eventLogger({
+      event: "Open Application",
+    });
   }, []);
 
   return (

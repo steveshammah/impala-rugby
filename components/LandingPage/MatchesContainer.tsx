@@ -11,10 +11,7 @@ export interface Props {
 const MatchesContainer = ({ position }: Props) => {
   const fixtures = useFixtureStore((state) => state.fixtures);
   return (
-    <div
-      className="flex justify-evenly  items-center transition-all ease-in-out duration-700 overflow-y-hidden"
-      
-    >
+    <div className="flex justify-evenly  items-center transition-all ease-in-out duration-700 overflow-y-hidden">
       {fixtures.map((match, index) => {
         return (
           <div
@@ -46,7 +43,7 @@ const MatchesContainer = ({ position }: Props) => {
                 </div>
                 {match.played ? (
                   <span className="bg-blackX p-2 mx-4 rounded-md text-whiteX">
-                    {match.impalaScores.ft}-{match.opponentScores.ft}
+                    {match.opponentScores.ft}-{match.impalaScores.ft}
                   </span>
                 ) : (
                   <span className="bg-blackX p-2  rounded-md text-whiteX">
@@ -96,7 +93,13 @@ const MatchesContainer = ({ position }: Props) => {
             <div className="teams flex flex-1 items-center  justify-center flex-col">
               {
                 <Link href={`/fixtures/${match.uId}`}>
-                  <button className="border border-gray-400 font-thin p-2 rounded-full">
+                  <button
+                    className={` font-thin p-2 rounded-full px-4 ${
+                      match?.played
+                        ? "bg-primaryRed text-white"
+                        : "bg-white border border-gray-400"
+                    }`}
+                  >
                     {match?.played ? "Match Report" : "  Match Review"}
                   </button>
                 </Link>

@@ -67,7 +67,7 @@ const Fixtures = ({ activeTeam, games }: Props) => {
                   </div>
                   <span className="bg-blackX p-2 rounded-md text-whiteX mx-1">
                     {fixture.played
-                      ? `${fixture?.impalaScores?.ft} - ${fixture?.opponentScores?.ft}`
+                      ? `                        ${fixture?.opponentScores?.ft}-${fixture?.impalaScores?.ft}`
                       : fixture?.kickOff &&
                         formatDate(fixture.kickOff.seconds * 1000, "time")}
                   </span>

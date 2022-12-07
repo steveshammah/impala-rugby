@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import LoginForm from "@components/Login/LoginForm";
 import { useRouter } from "next/router";
 import { useAppStore } from "@stores/appStore";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "@utils/firebase";
+import { eventLogger } from "@utils/utils";
 
 const Login = () => {
   const [magicWord, sayMagicWord] = useState({ key: "", pass: "" });
@@ -12,7 +11,9 @@ const Login = () => {
 
   const setIsAuth = useAppStore((state) => state.setIsAuth);
   useEffect(() => {
-    logEvent(analytics, "Login page");
+    eventLogger({
+      event: "Open Login Page",
+    });
   }, []);
   const onSubmit = () => {
     const { key, pass } = magicWord;

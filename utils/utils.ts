@@ -1,4 +1,6 @@
 import { format, formatDistance, subDays } from "date-fns";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "./firebase";
 
 export const scrollFxn = (direction: string) => {
   // Get direction and current position and build logic
@@ -31,4 +33,8 @@ export const formatDate = (date: number, option?: string) => {
       // x days ago
     );
   }
+};
+
+export const eventLogger = ({ payload }: any) => {
+  analytics && logEvent(analytics, { ...payload });
 };

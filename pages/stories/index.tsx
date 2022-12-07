@@ -2,10 +2,9 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { MdShare } from "react-icons/md";
 import { useArticlesStore } from "@stores/articleStore";
-import { formatDate } from "@utils/utils";
-import { analytics } from "@utils/firebase";
+import { eventLogger, formatDate } from "@utils/utils";
 import Image from "@components/Image";
-import { logEvent } from "firebase/analytics";
+import Loader from "@components/Loader";
 
 const StoryFeed = () => {
   const [displayArticles, setDisplayArticles] = useState<any[]>([{}]);
@@ -21,7 +20,9 @@ const StoryFeed = () => {
   }, [activeLink, articles]);
 
   useEffect(() => {
-    logEvent(analytics, "View stories");
+    eventLogger({
+      event: "Open News Feed",
+    });
   }, []);
   const handleClick = (details: any) => {
     setActiveLink(details);
@@ -58,46 +59,50 @@ const StoryFeed = () => {
             ))}
           </ul>
         </div>
-        <div className="w-11/12 flex flex-wrap items-center p-4 justify-around">
-          {displayArticles.map((article, index) => (
-            <Link
-              key={index}
-              className=" overflow-hidden flex w-90 h-full"
-              href={`/stories/${encodeURIComponent(article.id)}`}
-            >
-              <div
-                className={`h-96 w-80 my-4 overflow-hidden ${
-                  article.type === "update" ? "flex-row" : "flex-col"
-                } rounded-md cursor-pointer flex shadow`}
+        {displayArticles.length > 0 ? (
+          <div className="w-11/12 flex flex-wrap items-center p-4 justify-around">
+            {displayArticles.map((article, index) => (
+              <Link
+                key={index}
+                className=" overflow-hidden flex w-90 h-full"
+                href={`/stories/${encodeURIComponent(article.id)}`}
               >
-                <Image
-                  src={article.tags ? article.tags : "impalaLogo"}
-                  alt="Story Thumbnail"
-                  className="h-full w-full aspect-video hover:scale-110 transition-all ease-in duration-300 object-fill  rounded-t-md flex-1"
-                />
-                <div className="flex-1 p-2 bg-white z-10 relative">
-                  <span className="text-xs text-primaryRed p-2 capitalize">
-                    {article.type}
-                  </span>
-                  <h3 className="text-md uppercase font-bold text-blackX">
-                    {article?.title}
-                  </h3>
-                  <p className="text-sm font-light capitalize">
-                    {article?.headline}
-                  </p>
-                  <i className="date-created absolute bottom-2 left-2 font-medium text-xs">
-                    {article?.created &&
-                      formatDate(article?.created?.seconds * 1000)}
-                  </i>
+                <div
+                  className={`h-96 w-80 my-4 overflow-hidden ${
+                    article.type === "update" ? "flex-row" : "flex-col"
+                  } rounded-md cursor-pointer flex shadow`}
+                >
+                  <Image
+                    src={article.tags ? article.tags : "impalaLogo"}
+                    alt="Story Thumbnail"
+                    className="h-full w-full aspect-video hover:scale-110 transition-all ease-in duration-300 object-fill  rounded-t-md flex-1"
+                  />
+                  <div className="flex-1 p-2 bg-white z-10 relative">
+                    <span className="text-xs text-primaryRed p-2 capitalize">
+                      {article.type}
+                    </span>
+                    <h3 className="text-md uppercase font-bold text-blackX">
+                      {article?.title}
+                    </h3>
+                    <p className="text-sm font-light capitalize">
+                      {article?.headline}
+                    </p>
+                    <i className="date-created absolute bottom-2 left-2 font-medium text-xs">
+                      {article?.created &&
+                        formatDate(article?.created?.seconds * 1000)}
+                    </i>
 
-                  <span className="absolute bottom-2 right-2 font-bold text-md cursor-pointer">
-                    <MdShare />
-                  </span>
+                    <span className="absolute bottom-2 right-2 font-bold text-md cursor-pointer">
+                      <MdShare />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   );

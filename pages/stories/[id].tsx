@@ -3,11 +3,9 @@ import React, { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import { MdShare } from "react-icons/md";
 import { useArticlesStore } from "@stores/articleStore";
-import { formatDate } from "@utils/utils";
-import { analytics } from "@utils/firebase";
+import { eventLogger, formatDate } from "@utils/utils";
 import Link from "next/link";
 import Image from "@components/Image";
-import { logEvent } from "firebase/analytics";
 
 const StoryPage = () => {
   const router = useRouter();
@@ -26,7 +24,9 @@ const StoryPage = () => {
   }, [storyId]);
 
   useEffect(() => {
-    logEvent(analytics, `View story: ${storyId}`);
+    eventLogger({
+      event: `View story: ${storyId}`,
+    });
   }, []);
   return (
     <div className="story w-full flex-col h-full items-center sm:pt-0 pt-10">

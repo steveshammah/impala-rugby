@@ -20,7 +20,7 @@ const CardsWrapper = ({ items }: ICardsWrapperProps) => {
   const match = {
     title: "Match",
     linkName: "All Matches",
-    url: "match-center",
+    url: "fixtures",
   };
 
   useEffect(() => {

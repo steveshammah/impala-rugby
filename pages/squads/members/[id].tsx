@@ -7,8 +7,7 @@ import MemberAbout from "@components/MemberProfile/MemberAbout";
 import MemberGallery from "@components/MemberProfile/MemberGallery";
 import MoreStories from "@components/LandingPage/MoreStories";
 import Image from "@components/Image";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "@utils/firebase";
+import { eventLogger } from "@utils/utils";
 
 const MemberProfile = () => {
   const router = useRouter();
@@ -20,7 +19,9 @@ const MemberProfile = () => {
   useEffect(() => {
     memberId && getMember(memberId);
 
-    logEvent(analytics, `View member: ${memberId}`);
+    eventLogger({
+      event: `View member: ${memberId}`,
+    });
   }, [memberId]);
 
   const socialLinks = [
