@@ -19,15 +19,14 @@ const MatchesContainer = ({ position }: Props) => {
             className=" w-80 h-80 flex flex-col shadow-md hover:shadow-xl m-4 rounded-md p-2"
           >
             <div className="flex-1 flex flex-col items-center w-full">
-              <h4 className="uppercase">{match.competition}</h4>
+              <h4 className="uppercase font-bold">{match.competition}</h4>
               {formatDate(match?.kickOff.seconds * 1000, "long")}
-              {/* <div className="flex">   */}
+
               <span className="capitalize">
                 {formatDate(match?.kickOff.seconds * 1000, "time")}{" "}
               </span>
 
               <span className="capitalize italic">{match.venue}</span>
-              {/* </div> */}
             </div>
             {!match?.home ? (
               <div className="flex items-center justify-between">
@@ -100,7 +99,7 @@ const MatchesContainer = ({ position }: Props) => {
                         : "bg-white border border-gray-400"
                     }`}
                   >
-                    {match?.played ? "Match Report" : "  Match Review"}
+                    {match?.played ? "Match Report" : "  Match Details"}
                   </button>
                 </Link>
               }

@@ -9,11 +9,11 @@ const TeamList = ({ name, team }: Props) => {
     <div
       className={`${
         name === "impala" ? "bg-blackX text-whiteX" : "bg-whiteX text-blackX"
-      }  flex-1 flex flex-col justify-between p-1  h-1/2`}
+      }  flex-1 flex flex-col justify-start p-1  h-1/2 min-h-[20vh]`}
     >
       <h3 className=" uppercase text-lg">{name}</h3>
       {/* Starting Lineup */}
-      <div className="sm:pl-10 pl-8">
+      <div className="lg:pl-10 pl-8 sm:pl-8 md:pl-10">
         {team ? (
           <ol
             style={{ display: team ? "block" : "none" }}
@@ -22,7 +22,10 @@ const TeamList = ({ name, team }: Props) => {
             {Object.entries(team).map((player, index: number) => {
               if (index + 1 < 16) {
                 return (
-                  <li key={index} className="capitalize">
+                  <li
+                    key={index}
+                    className="capitalize text-[13px] md:text-[18px]"
+                  >
                     {player[1]}
                   </li>
                 );
@@ -32,7 +35,7 @@ const TeamList = ({ name, team }: Props) => {
             })}
           </ol>
         ) : (
-          <h2 className="sm:text-base text-sm">
+          <h2 className="sm:text-[8px] text-sm">
             Line Ups will be available on match day
           </h2>
         )}
@@ -40,7 +43,7 @@ const TeamList = ({ name, team }: Props) => {
       {/* Substitutes */}
       {team && (
         <div
-          className="sm:pl-10 pl-8"
+          className="lg:pl-10 pl-8 sm:pl-8 md:pl-10"
           style={{ display: team ? "block" : "none" }}
         >
           <h4 className="text-lg text-primaryRed">Substitutes</h4>
@@ -48,7 +51,10 @@ const TeamList = ({ name, team }: Props) => {
             {Object.entries(team).map((player, index: number) => {
               if (index + 1 > 15) {
                 return (
-                  <li key={index} className="capitalize">
+                  <li
+                    key={index}
+                    className="capitalize text-[13px] md:text-[18px]"
+                  >
                     {player[1]}
                   </li>
                 );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { logos } from "@public/resources/resources";
 import { useRouter } from "next/router";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import { MdStarRate } from "react-icons/md";
 import { useFixtureStore } from "@stores/gamesStore";
 import { formatDate } from "@utils/utils";
 import TeamList from "@components/MatchCenter/TeamList";
@@ -32,8 +32,8 @@ const MatchReview = () => {
   };
 
   return (
-    <div className="w-full flex sm:flex-row flex-col justify-between sm:items-start items-center my-2 ">
-      <div className="flex sm:flex-1 flex-none items-center justify-evenly flex-col sm:mb-0 mt-5">
+    <div className="w-full flex lg:flex-row md:flex-col flex-col justify-between sm:items-start items-center my-2 ">
+      <div className="flex lg:flex-1 md:flex-1 flex-none items-center justify-evenly flex-col sm:mb-0 mt-5">
         <div className="flex flex-col items-center justify-center h-1/2 sm:w-11/12 w-screen mb-4 sm:text-base text-sm">
           <div className="bg-primaryRed text-white w-11/12 p-1 capitalize">
             {fixture?.kickOff &&
@@ -59,7 +59,7 @@ const MatchReview = () => {
                   <div className="flex flex-col justify-center items-center">
                     <h2 className="text-2xl font-bold">FT</h2>
 
-                    <span className="bg-blackX p-2 rounded-md text-whiteX mx-1">
+                    <span className="bg-blackX lg:p-2 p-1 rounded-md text-whiteX mx-1">
                       {`${fixture?.impalaScores?.ft} -
                       ${fixture?.opponentScores.ft}`}
                     </span>
@@ -97,7 +97,7 @@ const MatchReview = () => {
                   <div className="flex flex-col justify-center items-center">
                     <h2 className="text-2xl font-bold">FT</h2>
 
-                    <span className="bg-blackX p-2 rounded-md text-whiteX mx-1">
+                    <span className="bg-blackX lg:p-2 p-1 rounded-md text-whiteX mx-1">
                       {`${fixture?.impalaScores.ft} -
                       ${fixture?.opponentScores.ft} `}
                     </span>
@@ -120,24 +120,17 @@ const MatchReview = () => {
             )}
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center h-1/2 sm:w-full w-screen mb-4">
+        <div className="flex flex-col items-center justify-center h-1/2 lg:w-full w-screen mb-4">
           <div className=" bg-primaryRed h-1/2 text-white w-10/12 flex items-center justify-between p-1">
             <h2 className="uppercase text-md">Match Stats</h2>
 
             <div className=" flex">
-              <MdArrowBackIosNew
-                className="cursor-pointer text-xl"
-                onClick={() => changePosition("+")}
-              />
-              <MdArrowForwardIos
-                className="cursor-pointer text-xl"
-                onClick={() => changePosition("-")}
-              />
+              <MdStarRate className="text-xl" />
             </div>
           </div>
 
           <div
-            className="flex w-full justify-around text-blackX "
+            className="flex  justify-around text-blackX flex-wrap lg:w-2/3 w-full  "
             style={{ transform: `translateX(${position}px)` }}
           >
             {fixture?.played ? (
@@ -188,14 +181,13 @@ const MatchReview = () => {
               <div className=" h-24 w-40 rounded-md shadow-md p-2 m-2 uppercase">
                 <h3 className="text-light ">Not Played</h3>
 
-                {/* <h5>Match</h5> */}
                 <h5 className="text-sm text-primaryRed">Stats Unavailable</h5>
               </div>
             )}
           </div>
         </div>
       </div>
-      <div className="flex justify-around items-center h-full sm:flex-1 flex-none">
+      <div className="flex justify-around items-center h-full lg:flex-1 md:flex-1  flex-none w-full">
         <TeamList name={"impala"} team={fixture?.impalaTeamList} />
         <TeamList name={fixture?.opponent} team={fixture?.opponentTeamList} />
       </div>

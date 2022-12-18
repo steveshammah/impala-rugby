@@ -6,7 +6,7 @@ import MoreStories from "@components/LandingPage/MoreStories";
 import VideoContainer from "@components/VideoContainer";
 
 const Home = () => {
-  const title = "The Captain Speaks after going down to DU Falcons";
+  const title = "Match Day Captain speaks after DU Falcons defeat";
   const videoId = "https://www.youtube.com/embed/EYDtKmn7Cu0";
 
   return (

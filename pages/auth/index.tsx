@@ -12,14 +12,16 @@ const Login = () => {
   const setIsAuth = useAppStore((state) => state.setIsAuth);
   useEffect(() => {
     eventLogger({
-      event: "Open Login Page",
+      event: "Visit Login Page",
     });
   }, []);
+
   const onSubmit = () => {
     const { key, pass } = magicWord;
     if (
       (key === "impala@rugby.com" && pass === "123") ||
-      (key === "@guest" && pass === "imp@l@123")
+      (key === "@guest-user" && pass === "imp@l@123") ||
+      (key === "takeover@rugby.com" && pass === "2023")
     ) {
       setIsAuth(true, key);
       router.push("/dashboard");

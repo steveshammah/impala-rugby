@@ -10,15 +10,15 @@ const MoreStories = () => {
       </h2>
 
       <div className="flex flex-wrap relative h-full justify-center">
-        <Link href="/stories/website-built-by-shammah">
+        <Link href="/stories/it's-a-wrap-for-floodies-2022">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
-              src={photos.dev.src}
+              src={photos.floodies2022.src}
               alt=""
               className="transition-all ease-in duration-300 object-cover rounded-sm w-full h-full absolute top-0 hover:scale-110"
             />
-            <h3 className="z-10 absolute top-3/4 text-whiteX font-bold sm:text-2xl text-lg p-1 uppercase">
-              Website Built By Shammah
+            <h3 className="z-10 absolute bottom-0 text-white font-bold sm:text-2xl text-lg p-1 uppercase bg-blackX bg-opacity-60 w-full text-center">
+              IT'S A WRAP FOR FLOODIES
             </h3>
           </div>
         </Link>
@@ -26,12 +26,12 @@ const MoreStories = () => {
         <Link href="/stories">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
-              src={photos.oscarOsir.src}
+              src={photos.billGithinji.src}
               alt=""
               className="transition-all ease-in duration-300 object-cover rounded-sm w-full h-full absolute top-0 hover:scale-110"
             />
-            <h3 className="z-10 absolute top-3/4 text-whiteX font-bold sm:text-2xl text-lg p-1 uppercase">
-              Osir Appointed Head Coach
+            <h3 className="z-10 absolute bottom-0 text-white font-bold sm:text-2xl text-lg p-1 uppercase bg-blackX bg-opacity-60 w-full text-center">
+              Impala Appoint New Head Coach
             </h3>
           </div>
         </Link>
@@ -43,8 +43,8 @@ const MoreStories = () => {
               alt=""
               className="transition-all ease-in duration-300 object-cover rounded-sm w-full h-full absolute top-0 hover:scale-110"
             />
-            <h3 className="z-10 absolute top-3/4 text-whiteX font-bold sm:text-2xl text-lg p-1 uppercase">
-              Tusker na Rugby
+            <h3 className="z-10 absolute bottom-0 text-white font-bold sm:text-2xl text-lg p-1 uppercase bg-blackX bg-opacity-60">
+              Impala To Compete In the Championship League
             </h3>
           </div>
         </Link>
@@ -52,11 +52,11 @@ const MoreStories = () => {
         <Link href="/stories">
           <div className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl">
             <img
-              src={photos.bill.src}
+              src={photos.paul.src}
               alt=""
               className="transition-all ease-in duration-300 object-cover rounded-sm w-full h-full absolute top-0 hover:scale-110"
             />
-            <h3 className="z-10 absolute top-3/4 text-whiteX font-bold sm:text-2xl text-lg p-1 uppercase">
+            <h3 className="z-10 absolute bottom-0 text-white font-bold sm:text-2xl text-lg p-1 uppercase bg-blackX bg-opacity-60 w-full text-center">
               Transfer News
             </h3>
           </div>
@@ -69,8 +69,8 @@ const MoreStories = () => {
               alt=""
               className="transition-all ease-in duration-300 object-cover rounded-sm w-full h-full absolute top-0 hover:scale-110"
             />
-            <h3 className="z-10 absolute top-3/4 text-whiteX font-bold sm:text-2xl text-lg p-1 uppercase">
-              Where is Resolution Now
+            <h3 className="z-10 absolute bottom-0 text-white font-bold sm:text-2xl text-lg p-1 uppercase bg-blackX bg-opacity-60 w-full text-center">
+              Impala Sponsorship
             </h3>
           </div>
         </Link>

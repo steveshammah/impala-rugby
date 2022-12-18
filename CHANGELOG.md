@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.1.2 [18-12-2022]
+
+refactor: Layout fixes
+
+- Update match center responsiveness
+- Update editors pick details
+- Update login screen
+
 ## 0.1.1 [7-12-2022]
 
 feat: Add youtube player
@@ -8,7 +16,6 @@ feat: Add youtube player
 - Fix firebase component lifecycle error
 - Fix broken link
 - Fix fixture's score display
-
 
 ## 0.1.0 [3-12-2022]
 

@@ -55,14 +55,14 @@ const Squads = () => {
         </ul>
       </div>
 
-      <div className="squad-members flex justify-around flex-wrap p-2 w-5/6 ">
+      <div className="flex justify-around flex-wrap p-2 lg:w-5/6 w-full">
         {activeTeam.length > 0 ? (
           activeTeam.map((member) => (
             <Link
               href={`/squads/members/${encodeURIComponent(member.id)}`}
               key={member.id}
             >
-              <div className="h-64 w-48 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col">
+              <div className="lg:h-64 h-52 lg:w-48 w-40 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col">
                 <Image
                   src={member?.firstname ? member.firstname : "impalaLogo"}
                   alt={`${member?.name} image`}
