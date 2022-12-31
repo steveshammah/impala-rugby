@@ -3,6 +3,7 @@ import LoginForm from "@components/Login/LoginForm";
 import { useRouter } from "next/router";
 import { useAppStore } from "@stores/appStore";
 import { eventLogger } from "@utils/utils";
+import { setCookie } from "nookies";
 
 const Login = () => {
   const [magicWord, sayMagicWord] = useState({ key: "", pass: "" });
@@ -24,6 +25,11 @@ const Login = () => {
       (key === "takeover@rugby.com" && pass === "2023")
     ) {
       setIsAuth(true, key);
+      setCookie(null, "authEmail", key, {
+        maxAge: 36000,
+        sameSite: "strict",
+        path: "/",
+      });
       router.push("/dashboard");
     } else {
       setError(true);

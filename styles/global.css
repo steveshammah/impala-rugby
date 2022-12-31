@@ -17,3 +17,9 @@ body {
   text-decoration: underline;
   font-weight: 600;
 }
+
+.slick-slide {
+  margin-right: 15px !important ;
+}
+@media screen and (min-width: 767px) {
+}

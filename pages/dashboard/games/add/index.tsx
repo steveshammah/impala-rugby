@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { MdDocumentScanner, MdSportsRugby } from "react-icons/md";
-import Carousel from "@components/Carousel";
 import Shell from "@components/Layouts/DashboardShell";
 import EventForm from "@components/MatchCenter/EventForm";
 import { useFixtureStore } from "@stores/gamesStore";
@@ -24,7 +23,6 @@ const AddEvent = () => {
   ];
   return (
     <Shell links={links}>
-      {/* <Carousel /> */}
       <EventForm
         label="Add Event"
         submitHandler={addFixture}

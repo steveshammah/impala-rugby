@@ -8,6 +8,7 @@ import MemberGallery from "@components/MemberProfile/MemberGallery";
 import MoreStories from "@components/LandingPage/MoreStories";
 import Image from "@components/Image";
 import { eventLogger } from "@utils/utils";
+import Carousel from "@components/Carousel";
 
 const MemberProfile = () => {
   const router = useRouter();
@@ -15,6 +16,7 @@ const MemberProfile = () => {
 
   const getMember = useTeamStore((state) => state.getMember);
   const member = useTeamStore((state) => state.member);
+  const members = useTeamStore((state) => state.members);
 
   useEffect(() => {
     memberId && getMember(memberId);
@@ -46,6 +48,39 @@ const MemberProfile = () => {
       icon: FaYoutube,
     },
   ];
+
+  const playersDetails = {
+    title: "Other Players",
+    linkName: "",
+    url: "#",
+  };
+
+  const players = members.map((member) => (
+    <Link
+      href={`/squads/members/${encodeURIComponent(member.id)}`}
+      key={member.id}
+    >
+      <div className="lg:h-64 h-52 lg:w-48 w-40 m-2 shadow-primaryRed shadow-sm rounded-sm overflow-hidden flex flex-col">
+        <Image
+          src={member?.firstname ? member.firstname : "impalaLogo"}
+          alt={`${member?.name} image`}
+          className="object-fill h-4/5 w-full rounded-t-sm"
+        />
+        <span className="flex flex-col items-center justify-between p-1">
+          <h3 className="font-semibold uppercase text-sm">
+            {member?.firstname} {member?.lastname}
+          </h3>
+          <h5 className="uppercase text-xs">
+            {member?.position?.map((pos, index: number) => (
+              <i className="capitalize" key={index}>
+                {pos}{" "}
+              </i>
+            ))}
+          </h5>
+        </span>
+      </div>
+    </Link>
+  ));
 
   return (
     <section className="w-full">
@@ -91,6 +126,8 @@ const MemberProfile = () => {
       </div>
       <div className="flex flex-col w-full">
         <MemberGallery member={member} />
+        <br /> <br />
+        <Carousel items={players} details={playersDetails} />
         <MoreStories />
       </div>
     </section>

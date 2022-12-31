@@ -1,12 +1,14 @@
 import Link from "next/link";
 import React from "react";
 import { useAppStore } from "@stores/appStore";
+import { destroyCookie } from "nookies";
 
 const SubNav = () => {
   const isAuth = useAppStore((state) => state.user.isAuth);
   const setIsAuth = useAppStore((state) => state.setIsAuth);
   return (
     <div className="sub-header flex sm:flex-row flex-col-reverse justify-end items-center sm:h-10 h-10 px-1 bg-whiteX text-blackX">
+      {/* TODO */}
       {/* <ul className="header-leagues flex justify-start flex-grow">
         <li className="mr-2 font-extralight sm:text-base text-sm">Kenya Cup</li>
         <li className="mr-2 font-extralight sm:text-base text-sm">
@@ -50,7 +52,7 @@ const SubNav = () => {
               <button
                 className="bg-green-600 p-1 text-white rounded-r-md w-24"
                 title="Sign In"
-                onClick={() => setIsAuth(false, "")}
+                onClick={() => destroyCookie(null, "authEmail")}
               >
                 Sign Out
               </button>

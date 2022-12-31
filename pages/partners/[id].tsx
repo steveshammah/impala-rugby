@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { partners } from "@public/resources/resources";
 import { useRouter } from "next/router";
+import { eventLogger } from "@utils/utils";
 
 const Partner = () => {
   const router = useRouter();
@@ -9,6 +10,10 @@ const Partner = () => {
     () => partners.filter((sponsor) => sponsor.url === entity),
     [entity]
   );
+
+  eventLogger({
+    event: `View Partner: ${partner}`,
+  });
 
   return (
     <div className="flex items-center h-full w-full sm:pt-0 pt-6">
@@ -35,6 +40,11 @@ const Partner = () => {
               href={`https://www.${detail.website}`}
               target="_blank"
               className="rounded-full p-2 bg-primaryRed w-44 uppercase text-center my-4"
+              onClick={() =>
+                eventLogger({
+                  event: `Open Partners website: ${partner}`,
+                })
+              }
             >
               Find out more
             </a>

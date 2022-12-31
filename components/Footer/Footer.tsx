@@ -85,13 +85,13 @@ const Footer = () => {
     },
     {
       platform: "Youtube",
-      link: "https://www.youtube.com/channel/UCIv7m_fThZmVQz-UHgo6Epg",
+      link: "https://www.youtube.com/@takeoverke",
       icon: FaYoutube,
     },
   ];
   return (
     <footer className="flex flex-col justify-center items-center align-middle w-full mt-5">
-      <div className="flex flex-wrap sm:h-44 h-auto items-center sm:w-8/12 w-full justify-around">
+      <div className="flex flex-wrap sm:h-44 h-auto items-center sm:w-8/12 w-full justify-around mb-4">
         {partners.map((partner, index) => (
           <Link href={`/partners/${partner.url}`} key={index}>
             <a className="h-16 sm:w-48 w-2/5 my-2 shadow-lg shadow-black">

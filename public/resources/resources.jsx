@@ -268,7 +268,7 @@ export const partners = [
     id: 1,
     name: "Standard Chartered Bank",
     url: "stanchart",
-    website: "resolution.co.ke",
+    website: "sc.com/ke",
     img: stanchartLogo,
     about:
       "At Standard Chartered Kenya, we help you achieve financial freedom with products such as savings accounts, personal loans, credit cards & wealth solutions.",

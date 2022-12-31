@@ -1,3 +1,4 @@
+import { parseCookies } from "nookies";
 import create from "zustand";
 
 interface AppState {
@@ -12,7 +13,7 @@ interface AppState {
 
 export const useAppStore = create<AppState>()((set) => ({
   user: {
-    isAuth: false,
+    isAuth: !!parseCookies()["authEmail"],
     username: "",
   },
   theme: "default",

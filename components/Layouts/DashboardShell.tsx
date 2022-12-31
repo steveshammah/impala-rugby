@@ -3,6 +3,7 @@ import React, { ReactNode, useEffect } from "react";
 import { useAppStore } from "@stores/appStore";
 import SideBar from "../SideBar/SideBar";
 import SubHeader from "./SubHeader";
+import { parseCookies } from "nookies";
 
 interface Props {
   children: ReactNode;
@@ -12,12 +13,11 @@ const Shell = ({ children, links }: Props) => {
   const router = useRouter();
   const user = useAppStore((state) => state.user);
   useEffect(() => {
-    
-    if (!user?.isAuth) {
+    if (!parseCookies()["authEmail"]) {
       router.push("/auth");
     }
   }, []);
-  if (user?.isAuth) {
+  if (parseCookies()["authEmail"]) {
     return (
       <div className=" flex flex-col">
         <div className="flex w-full">
