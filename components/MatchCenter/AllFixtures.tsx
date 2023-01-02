@@ -65,11 +65,17 @@ const AllFixtures = ({ fixtures }) => {
               </div>
             </div>
             <div className="team-a flex-1 text-right px-4">
-              <Link href={`/dashboard/games/update/${fixture?.uId}`}>
-                <a className="text-blackX underline mx-4">Update Fixture</a>
+              <Link
+                href={`/dashboard/games/update/${fixture?.uId}`}
+                className="text-blackX underline mx-4"
+              >
+                Update Fixture
               </Link>
-              <Link href={`/fixtures/${fixture?.uId}`}>
-                <a className="text-primaryRed underline">Match Report</a>
+              <Link
+                href={`/fixtures/${fixture?.uId}`}
+                className="text-primaryRed underline"
+              >
+                Match Report
               </Link>
             </div>
           </div>

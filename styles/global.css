@@ -19,7 +19,11 @@ body {
 }
 
 .slick-slide {
-  margin-right: 15px !important ;
+  margin-right: 15px !important;
 }
-@media screen and (min-width: 767px) {
+
+.slick-list {
+  max-height: 350px !important;
 }
+/* @media screen and (min-width: 767px) {
+} */

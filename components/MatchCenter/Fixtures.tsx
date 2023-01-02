@@ -84,11 +84,9 @@ const Fixtures = ({ activeTeam, games }: Props) => {
               )}
               <Link
                 href={`/fixtures/${fixture.uId}`}
-                className="text-primaryRed text-sm"
+                className="text-primaryRed font-semibold text-sm"
               >
-                <a className="text-primaryRed font-semibold text-sm">
-                  {fixture.played ? "Match Review" : "Match Details"}
-                </a>
+                {fixture.played ? "Match Review" : "Match Details"}
               </Link>
             </div>
           ))}

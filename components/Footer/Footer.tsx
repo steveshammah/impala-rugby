@@ -93,14 +93,16 @@ const Footer = () => {
     <footer className="flex flex-col justify-center items-center align-middle w-full mt-5">
       <div className="flex flex-wrap sm:h-44 h-auto items-center sm:w-8/12 w-full justify-around mb-4">
         {partners.map((partner, index) => (
-          <Link href={`/partners/${partner.url}`} key={index}>
-            <a className="h-16 sm:w-48 w-2/5 my-2 shadow-lg shadow-black">
-              <img
-                src={partner.img.src}
-                className="h-full w-full object-contain"
-                alt=""
-              />
-            </a>
+          <Link
+            href={`/partners/${partner.url}`}
+            key={index}
+            className="h-16 sm:w-48 w-2/5 my-2 shadow-lg shadow-black"
+          >
+            <img
+              src={partner.img.src}
+              className="h-full w-full object-contain"
+              alt=""
+            />
           </Link>
         ))}
       </div>
@@ -117,9 +119,7 @@ const Footer = () => {
                     className="cursor-pointer hover:text-primaryRed transition-all ease-out sm:text-md text-sm"
                     key={index}
                   >
-                    <Link href={`/${siteLink.url}`}>
-                      <a>{siteLink.label}</a>
-                    </Link>
+                    <Link href={`/${siteLink.url}`}>{siteLink.label}</Link>
                   </li>
                 )
             )}
@@ -137,9 +137,7 @@ const Footer = () => {
                     className="cursor-pointer hover:text-primaryRed transition-all ease-out text-sm"
                     key={index}
                   >
-                    <Link href="/stories">
-                      <a>{siteLink.label}</a>
-                    </Link>
+                    <Link href="/stories">{siteLink.label}</Link>
                   </li>
                 )
             )}
@@ -157,9 +155,7 @@ const Footer = () => {
                     className="cursor-pointer hover:text-primaryRed transition-all ease-out text-sm"
                     key={index}
                   >
-                    <Link href="/stories">
-                      <a>{siteLink.label}</a>
-                    </Link>
+                    <Link href="/stories">{siteLink.label}</Link>
                   </li>
                 )
             )}
@@ -194,20 +190,18 @@ const Footer = () => {
         <div className="flex flex-1 justify-around cursor-pointer p-1 ">
           {socialLinks.map((social, index) => (
             <Link href={social.link} key={index} target="_blank">
-              <a target={"_blank"}>
-                <social.icon
-                  className="text-xl hover:text-primaryRed transition-all ease-in"
-                  title={social.platform}
-                />
-              </a>
+              <social.icon
+                className="text-xl hover:text-primaryRed transition-all ease-in"
+                title={social.platform}
+              />
             </Link>
           ))}
         </div>
         <span className="p-1 flex-1 text-right">
           &copy;
-          <a href="https://steveshammah.netlify.app" target={"_blank"}>
+          <Link href="https://steveshammah.netlify.app" target={"_blank"}>
             2022 Takeover
-          </a>
+          </Link>
         </span>
       </div>
     </footer>

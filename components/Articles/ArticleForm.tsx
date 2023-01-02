@@ -1,4 +1,5 @@
 import { Timestamp } from "firebase/firestore";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useRef, Dispatch, SetStateAction } from "react";
 import { MdInfo } from "react-icons/md";
@@ -234,10 +235,10 @@ const ArticleForm = ({ label, submitHandler, article, setArticle }: Props) => {
           <MdInfo className="text-4xl text-white w-16 mr-5" />
           <p className="font-thin text-sm tracking-widest">
             All information and resources provided on
-            <a href="#" className="text-primaryRed">
+            <Link href="#" className="text-primaryRed">
               {" "}
               impalarugby.com
-            </a>{" "}
+            </Link>{" "}
             are based on your opinions as the author (unless otherwise stated).
             All information is intended to grow the club reputation and to grow
             the impala brand.

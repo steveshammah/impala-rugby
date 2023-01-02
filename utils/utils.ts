@@ -38,3 +38,10 @@ export const formatDate = (date: number, option?: string) => {
 export const eventLogger = ({ payload }: any) => {
   analytics && logEvent(analytics, { ...payload });
 };
+
+export const replacer = (value: string) => {
+  return value
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&");
+};

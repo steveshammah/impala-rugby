@@ -11,8 +11,8 @@ import { formatDate } from "@utils/utils";
 import { logos } from "@public/resources/resources";
 
 const Home = () => {
-  const title = "Match Day Captain speaks after DU Falcons defeat";
-  const videoId = "https://www.youtube.com/embed/EYDtKmn7Cu0";
+  const title = "Impala Vs DU Falcons | Match Highlights";
+  const videoUrl = "https://www.youtube.com/embed/jUTpV6Ullfg";
   const fixtures = useFixtureStore((state) => state.fixtures);
 
   const shopDetails = {
@@ -151,9 +151,12 @@ const Home = () => {
     <div className="website-home">
       <LandingSection />
       <Banner />
+      <br />
+      <br />
       <Carousel items={shop} details={shopDetails} />
-      <VideoContainer title={title} videoId={videoId} />
+      <VideoContainer title={title} videoUrl={videoUrl} />
       <MoreStories />
+      <br />
       <Carousel items={matches} details={matchesDetails} />
     </div>
   );

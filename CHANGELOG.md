@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## 0.1.4 [02-01-2023]
+
+feat: tv section
+
+- fetch youtube videos
+- tv page layout update
+- upgrade nextjs to v13
+- update typescript to v 4.8
+- update Link tags for next v13
+
+## 0.1.3 [31-12-2022]
+
+feat: add carousel component
+
+- add react-slick
+- update landing page carousels i.e shop & matchcenter
+- persist authState in cookies
+- track fixtures and partners events
+
 ## 0.1.2 [18-12-2022]
 
 refactor: Layout fixes

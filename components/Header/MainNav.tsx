@@ -22,19 +22,17 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
     return () => {
       setActiveLink("");
     };
-  }, [router]);
+  }, [router, user]);
 
   return (
     <nav className="relative select-none bg-grey bg-primaryRed lg:flex lg:items-stretch w-full ">
       <div className="flex flex-no-shrink items-stretch h-14">
         <Link href="/">
-          <a>
-            <Image
-              src="impalaLogo"
-              alt="Impala Logo"
-              className="w-full h-full object-contain"
-            />
-          </a>
+          <Image
+            src="impalaLogo"
+            alt="Impala Logo"
+            className="w-full h-full object-contain"
+          />
         </Link>
         <button
           className={`block lg:hidden cursor-pointer ml-auto relative w-14 h-12 p-4`}
@@ -71,22 +69,22 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
             !menuOpen && "hidden"
           } lg:flex h-full lg:items-stretch lg:justify-end ml-auto flex-1`}
         >
+          {/* !user?.isAuth && */}
           {navLinks.map((link, index) => (
             <li
               key={index}
               className={`${
-                !user?.isAuth && link.private && "hidden"
+                link.private ? "hidden" : ""
               } h-full items-baseline flex mx-10`}
               onClick={() => toggleMenu(!menuOpen)}
             >
-              <Link href={link.url}>
-                <a
-                  className={`transition-all ease-in-out duration-200 p-2  ${
-                    activeLink.includes(link.url) && "border-b-4"
-                  }  text-white hover:border-b-4  hover:border-b-white hover:text-whiteX  w-full text-lg h-full flex items-baseline justify-center`}
-                >
-                  {link.name}
-                </a>
+              <Link
+                href={link.url}
+                className={`transition-all ease-in-out duration-200 p-2  ${
+                  activeLink.includes(link.url) && "border-b-4"
+                }  text-white hover:border-b-4  hover:border-b-white hover:text-whiteX  w-full text-lg h-full flex items-baseline justify-center`}
+              >
+                {link.name}
               </Link>
             </li>
           ))}

@@ -1,6 +1,7 @@
 import { products } from "@public/resources/resources";
 import React from "react";
 import ProductWrapper from "@components/Shop/ProductWrapper";
+import Link from "next/link";
 
 const Store = () => {
   const categories = ["men", "women", "kids", "floodies", "accessories"];
@@ -13,12 +14,12 @@ const Store = () => {
         <ul className="flex justify-around items-center h-full">
           {categories.map((category, index) => (
             <li key={index}>
-              <a
+              <Link
                 href={`#${category}`}
                 className="flex items-center text-whiteX capitalize"
               >
                 {category}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

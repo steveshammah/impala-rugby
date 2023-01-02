@@ -6,7 +6,7 @@ import Footer from "@components/Footer/Footer";
 import { useArticlesStore } from "@stores/articleStore";
 import { useTeamStore } from "@stores/teamsStore";
 import { useFixtureStore } from "@stores/gamesStore";
-import { analytics, loadAnalytics } from "@utils/firebase";
+import { loadAnalytics } from "@utils/firebase";
 import { eventLogger } from "@utils/utils";
 
 function App({ Component, pageProps }: AppProps) {

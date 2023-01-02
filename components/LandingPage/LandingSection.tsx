@@ -15,25 +15,24 @@ const LandingSection: FC = () => {
         {/* Main story */}
         {articles.length > 0 ? (
           <>
-            <Link href={`/stories/${encodeURIComponent(latestArticle?.id)}`}>
-              <div className="flex-1 cursor-pointer rounded-t-md bg-blackX ">
-                <div className="flex flex-col rounded-t-md p-1">
-                  <span className="text-xs text-primaryRed p-2 capitalize">
-                    {latestArticle?.type}
-                  </span>
-                  <h2 className="font-bold sm:p-3 p-0 text-whiteX sm:text-4xl text-2xl text-center w-full capitalize">
-                    {latestArticle?.title}
-                  </h2>
-                </div>
-                <div className="flex justify-center px-2 overflow-hidden">
-                  <Image
-                    className="aspect-video w-11/12 h-full hover:scale-110 transition-all ease-in duration-300 object-fill overflow-hidden"
-                    src={
-                      latestArticle?.tags ? latestArticle.tags : "impalaLogo"
-                    }
-                    alt={latestArticle?.caption_1}
-                  />
-                </div>
+            <Link
+              href={`/stories/${encodeURIComponent(latestArticle?.id)}`}
+              className="flex-1 cursor-pointer rounded-t-md bg-blackX "
+            >
+              <div className="flex flex-col rounded-t-md p-1">
+                <span className="text-xs text-primaryRed p-2 capitalize">
+                  {latestArticle?.type}
+                </span>
+                <h2 className="font-bold sm:p-3 p-0 text-whiteX sm:text-4xl text-2xl text-center w-full capitalize">
+                  {latestArticle?.title}
+                </h2>
+              </div>
+              <div className="flex justify-center px-2 overflow-hidden">
+                <Image
+                  className="aspect-video w-11/12 h-full hover:scale-110 transition-all ease-in duration-300 object-fill overflow-hidden"
+                  src={latestArticle?.tags ? latestArticle.tags : "impalaLogo"}
+                  alt={latestArticle?.caption_1}
+                />
               </div>
             </Link>
 
@@ -45,21 +44,20 @@ const LandingSection: FC = () => {
                       <Link
                         key={index}
                         href={`/stories/${encodeURIComponent(article.id)}`}
+                        className="shadow-md sm:h-60 h-40 sm:w-56 w-full bg-white-400 sm:m-4 m-1 rounded-md flex sm:flex-col flex-row hover:shadow-lg cursor-pointer overflow-hidden"
                       >
-                        <div className="shadow-md sm:h-60 h-40 sm:w-56 w-full bg-white-400 sm:m-4 m-1 rounded-md flex sm:flex-col flex-row hover:shadow-lg cursor-pointer overflow-hidden">
-                          <div className="flex flex-1 overflow-hidden">
-                            <Image
-                              src={article?.tags ? article.tags : "impalaLogo"}
-                              alt={"Thumbnail"}
-                              className="aspect-video object-cover rounded-t-md h-full w-full transition-all ease-in duration-300 hover:scale-110 "
-                            />
-                          </div>
-                          <div className="flex-1 w-full ">
-                            <span className="text-xs text-primaryRed p-2 capitalize">
-                              {article.type}
-                            </span>
-                            <p className="p-2 capitalize">{article.headline}</p>
-                          </div>
+                        <div className="flex flex-1 overflow-hidden">
+                          <Image
+                            src={article?.tags ? article.tags : "impalaLogo"}
+                            alt={"Thumbnail"}
+                            className="aspect-video object-cover rounded-t-md h-full w-full transition-all ease-in duration-300 hover:scale-110 "
+                          />
+                        </div>
+                        <div className="flex-1 w-full ">
+                          <span className="text-xs text-primaryRed p-2 capitalize">
+                            {article.type}
+                          </span>
+                          <p className="p-2 capitalize">{article.headline}</p>
                         </div>
                       </Link>
                     );

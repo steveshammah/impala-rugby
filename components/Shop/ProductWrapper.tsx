@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 // import { ArrowDropDown, ArrowDropUp } from "@material-ui/icons";
 
@@ -18,9 +19,9 @@ const ProductWrapper = ({ title, products }: any) => {
               <img src={product.img} alt="" />
               <div className="product-details">
                 <button className="ship">
-                  <a href={`/store/${product.id}`}>
+                  <Link href={`/store/${product.id}`}>
                     {product.inStock ? "Ready to Collect" : "Out of Stock"}
-                  </a>
+                  </Link>
                 </button>
                 <span className="price">Ksh. {product.price}</span>
                 <p className="product-meta">{product.details}</p>
@@ -32,15 +33,15 @@ const ProductWrapper = ({ title, products }: any) => {
       <div className="more" onClick={handleClick}>
         {open ? (
           <>
-            <a href={`#${title}`} onClick={handleClick}>
+            <Link href={`#${title}`} onClick={handleClick}>
               Less
-            </a>
+            </Link>
 
             {/* <ArrowDropUp className="icon" /> */}
           </>
         ) : (
           <>
-            <a href={`#${title}`}>More</a>
+            <Link href={`#${title}`}>More</Link>
 
             {/* <ArrowDropDown className="icon" /> */}
           </>

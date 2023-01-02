@@ -45,15 +45,14 @@ const StoryFeed = () => {
           <ul className="flex justify-between sm:justify-around lg:w-[600px] sm:w-full">
             {subMenu.map((topic, index) => (
               <li onClick={() => handleClick(topic)} key={index}>
-                <Link href={`#${topic}`}>
-                  <a
-                    className={`text-light ${
-                      activeLink === topic &&
-                      "text-primaryRed border-b-2 border-primaryRed "
-                    }  text-xs sm:text-[1rem] font-semibold`}
-                  >
-                    {topic}
-                  </a>
+                <Link
+                  href={`#${topic}`}
+                  className={`text-light ${
+                    activeLink === topic &&
+                    "text-primaryRed border-b-2 border-primaryRed "
+                  }  text-xs sm:text-[1rem] font-semibold`}
+                >
+                  {topic}
                 </Link>
               </li>
             ))}

@@ -40,15 +40,14 @@ const Squads = () => {
               className="flex-1 flex items-center w-full h-full"
               key={index}
             >
-              <Link href={`?${link}`}>
-                <a
-                  className={`
+              <Link
+                href={`?${link}`}
+                className={`
                   sm:text-xl text-xs h-full border-r-2 border-primaryRed w-full capitalize flex justify-center items-center font-semibold
                   ${activeLink === link ? "bg-primaryRed text-whiteX" : ""} 
                   `}
-                >
-                  {link}
-                </a>
+              >
+                {link}
               </Link>
             </li>
           ))}

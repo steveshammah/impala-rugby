@@ -57,9 +57,7 @@ const MatchCenter = () => {
                   : "bg-whiteX text-blackX"
               } `}
             >
-              <Link href={`?${link}`}>
-                <a>{link}</a>
-              </Link>
+              <Link href={`?${link}`}>{link}</Link>
             </li>
           ))}
         </ul>

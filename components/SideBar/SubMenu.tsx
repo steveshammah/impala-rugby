@@ -52,7 +52,7 @@ const SubMenu = ({ menuOpen, setMenuOpen, collapsed }: ISubMenuProps) => {
                   collapsed ? "hidden" : "initial"
                 } text-primaryRed uppercase text-sm`}
               >
-                {link.label}
+                {link.label} 
               </h4>
             </div>
             <div

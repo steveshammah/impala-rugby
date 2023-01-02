@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { partners } from "@public/resources/resources";
 import { useRouter } from "next/router";
 import { eventLogger } from "@utils/utils";
+import Link from "next/link";
 
 const Partner = () => {
   const router = useRouter();
@@ -36,7 +37,7 @@ const Partner = () => {
               {detail.about}
             </p>
 
-            <a
+            <Link
               href={`https://www.${detail.website}`}
               target="_blank"
               className="rounded-full p-2 bg-primaryRed w-44 uppercase text-center my-4"
@@ -47,7 +48,7 @@ const Partner = () => {
               }
             >
               Find out more
-            </a>
+            </Link>
           </div>
         </div>
       ))}

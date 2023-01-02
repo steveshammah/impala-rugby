@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { products } from "@public/resources/resources";
+import Link from "next/link";
 
 const SuggestedProducts = ({ activeProductId }: any) => {
   const [suggested, setSuggested] = useState<any[]>([]);
@@ -15,10 +16,14 @@ const SuggestedProducts = ({ activeProductId }: any) => {
         <h2>Suggested</h2>
 
         {suggested.map((product) => (
-          <a href={`/store/${product.id}`} className="product" key={product.id}>
+          <Link
+            href={`/store/${product.id}`}
+            className="product"
+            key={product.id}
+          >
             <img src={product.img} alt="" />
             <h3>{product.name}</h3>
-          </a>
+          </Link>
         ))}
       </div>
     </div>

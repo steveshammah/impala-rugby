@@ -5,6 +5,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Carousel = ({ items, details }) => {
   const settings = {
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -22,7 +23,6 @@ const Carousel = ({ items, details }) => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -44,7 +44,7 @@ const Carousel = ({ items, details }) => {
   };
 
   return (
-    <div className="lg:p-5 p-2 relative  flex flex-col items-center justify-center w-full ">
+    <div className="lg:p-5 p-2 relative  flex flex-col items-center justify-center w-full">
       <div className="flex items-center w-full">
         <span className="uppercase font-semibold text-xl inline mx-4">
           {details.title}

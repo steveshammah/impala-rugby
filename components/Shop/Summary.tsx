@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Summary = ({ cartItem, selectSize, setCartItem, product }: any) => {
@@ -23,9 +24,9 @@ const Summary = ({ cartItem, selectSize, setCartItem, product }: any) => {
               </div>
             </div>
           ))}
-          <a href="#ToCart" className="btn">
+          <Link href="#ToCart" className="btn">
             View Bag
-          </a>
+          </Link>
         </div>
       ) : (
         <strong>Your bag is empty</strong>

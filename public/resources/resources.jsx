@@ -33,6 +33,7 @@ import player18 from "../assets/images/mens-team/player_18.jpg";
 import clinton from "../assets/images/mens-team/tola-2.jpg";
 import elkeans from "../assets/images/mens-team/phonto.jpg";
 import phontoCarry from "../assets/images/mens-team/phonto-2.jpg";
+import teamPhoto_black from "../assets/images/mens-team/team-photo.jpeg";
 import teamPhoto from "../assets/images/mens-team/team_photo.jpg";
 import teamPhoto2 from "../assets/images/mens-team/team_photo-2.jpg";
 import tony from "../assets/images/mens-team/ajo-kenya.jpg";
@@ -178,12 +179,13 @@ export const photos = {
   kevoDanku,
   kevoUfc,
   munai,
-  bill,
   billGithinji,
+  bill,
   tony,
   soi,
   player18,
   elkeans,
+  teamPhoto_black,
   teamPhoto,
   ajo,
   anderson,

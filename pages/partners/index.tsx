@@ -21,9 +21,9 @@ const AllSponsors = () => {
             <br />
             If you would like to speak to us about partnership opportunities at
             Impala please{" "}
-            <a href="#contact" className="text-primaryRed">
+            <Link href="#contact" className="text-primaryRed">
               contact
-            </a>{" "}
+            </Link>{" "}
             our team.
           </p>
         </div>
@@ -49,10 +49,11 @@ const AllSponsors = () => {
                 {partner.name}
               </h3>
               <p className="my-2 sm:text-lg text-md">{partner.tag}</p>
-              <Link href={`/partners/${partner.url}`}>
-                <a className="rounded-full flex justify-center items-center sm:h-10 h-8 w-24 text-white bg-primaryRed">
-                  More
-                </a>
+              <Link
+                href={`/partners/${partner.url}`}
+                className="rounded-full flex justify-center items-center sm:h-10 h-8 w-24 text-white bg-primaryRed"
+              >
+                More
               </Link>
             </div>
           </div>

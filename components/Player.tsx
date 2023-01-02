@@ -1,12 +1,12 @@
 import Loader from "./Loader";
 
-const Player = ({ videoId }) => {
+const Player = ({ videoUrl }) => {
   return (
     <>
-      {videoId ? (
+      {videoUrl ? (
         <iframe
           className="video-player w-full h-full"
-          src={videoId}
+          src={`https://www.youtube.com/embed/${videoUrl}`}
           width="640"
           height="480"
           title="YouTube video player"
