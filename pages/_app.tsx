@@ -4,20 +4,17 @@ import Header from "@components/Header/Header";
 import "@styles/global.css";
 import Footer from "@components/Footer/Footer";
 import { useArticlesStore } from "@stores/articleStore";
-import { useTeamStore } from "@stores/teamsStore";
 import { useFixtureStore } from "@stores/gamesStore";
 import { loadAnalytics } from "@utils/firebase";
 import { eventLogger } from "@utils/utils";
 
 function App({ Component, pageProps }: AppProps) {
-  const getArticles = useArticlesStore((state) => state.getArticles);
-  const getMembers = useTeamStore((state) => state.getMembers);
-  const getFixtures = useFixtureStore((state) => state.getFixtures);
+  const { getArticles } = useArticlesStore();
+  const { getFixtures } = useFixtureStore();
 
   useEffect(() => {
     loadAnalytics();
     getArticles();
-    getMembers();
     getFixtures();
     eventLogger({
       event: "Open Application",

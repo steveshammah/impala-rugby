@@ -11,8 +11,6 @@ import { formatDate } from "@utils/utils";
 import { logos } from "@public/resources/resources";
 
 const Home = () => {
-  const title = "Impala Vs DU Falcons | Match Highlights";
-  const videoUrl = "https://www.youtube.com/embed/jUTpV6Ullfg";
   const fixtures = useFixtureStore((state) => state.fixtures);
 
   const shopDetails = {
@@ -41,7 +39,7 @@ const Home = () => {
         <div className="p-2 flex justify-between">
           <span className="flex">{product.name}</span>
 
-          <Link href={`#shop#${product.id}`}>
+          <Link href={`/shop/${product.id}`}>
             <button className="bg-primaryRed p-1 text-white text-sm rounded-md">
               Shop Now
             </button>
@@ -154,8 +152,27 @@ const Home = () => {
       <br />
       <br />
       <Carousel items={shop} details={shopDetails} />
-      <VideoContainer title={title} videoUrl={videoUrl} />
+      <br />
+      <div className="flex items-center w-full">
+        <span className="uppercase font-semibold text-xl inline lg:mx-8 mx-2">
+          Latest Video
+        </span>
+        <Link href={`/tv`} className="font-thin hover:underline ml-4 inline">
+          View All
+        </Link>
+      </div>
+      <VideoContainer />
       <MoreStories />
+      <br />
+      <div className="flex items-center w-full">
+        <span className="uppercase font-semibold text-xl inline lg:mx-8 mx-2">
+          Women's Team
+        </span>
+        <Link href={`/tv`} className="font-thin hover:underline ml-4 inline">
+          View All
+        </Link>
+      </div>
+      <VideoContainer title="Kenya Cup Final | Women" videoUrl="2_q7qOYhpGQ" />
       <br />
       <Carousel items={matches} details={matchesDetails} />
     </div>

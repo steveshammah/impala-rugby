@@ -728,7 +728,7 @@ export const products = [
     color: "Black",
   },
   {
-    id: 18,
+    id: 25,
     name: "Hoodie Min",
     img: hoodiesRedMinM,
     price: "3500",

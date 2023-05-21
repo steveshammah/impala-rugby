@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const MoreStories = () => {
   return (
-    <div className="h-max p-2 py-5">
-      <h2 className="text-3xl font-bold text-primaryRed mb-4 px-2">
+    <div className="h-max py-5 w-full flex flex-col items-center justify-center">
+      <h2 className="text-3xl font-bold text-primaryRed mb-4 mx-8 w-full lg:pl-8">
         Editor's Pick
       </h2>
 
-      <div className="flex flex-wrap relative h-full justify-center">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 relative h-full justify-center w-[80%]">
         <Link
           href="/stories"
           className="relative h-52 w-96 m-2 rounded-md shadow-md cursor-pointer overflow-hidden hover:shadow-2xl"

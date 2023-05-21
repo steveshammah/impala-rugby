@@ -37,14 +37,15 @@ const LandingSection: FC = () => {
             </Link>
 
             <div className="flex flex-col flex-1 h-full justify-between">
-              <div className="flex flex-wrap justify-between items-center">
+              <div className="grid grid-cols-2 gap-10">
+                {/* <div className="flex flex-wrap justify-between items-center"> */}
                 {articles?.map((article, index) => {
-                  if (index < 7 && index != 0) {
+                  if (index < 5 && index != 0) {
                     return (
                       <Link
                         key={index}
                         href={`/stories/${encodeURIComponent(article.id)}`}
-                        className="shadow-md sm:h-60 h-40 sm:w-56 w-full bg-white-400 sm:m-4 m-1 rounded-md flex sm:flex-col flex-row hover:shadow-lg cursor-pointer overflow-hidden"
+                        className="shadow-md  h-72  bg-white-400 sm:m-4 m-1 rounded-md flex sm:flex-col flex-row hover:shadow-lg cursor-pointer overflow-hidden"
                       >
                         <div className="flex flex-1 overflow-hidden">
                           <Image
@@ -53,11 +54,13 @@ const LandingSection: FC = () => {
                             className="aspect-video object-cover rounded-t-md h-full w-full transition-all ease-in duration-300 hover:scale-110 "
                           />
                         </div>
-                        <div className="flex-1 w-full ">
+                        <div className="h-[40%] w-full ">
                           <span className="text-xs text-primaryRed p-2 capitalize">
                             {article.type}
                           </span>
-                          <p className="p-2 capitalize">{article.headline}</p>
+                          <p className="p-2 capitalize font-semibold text-lg">
+                            {article.headline}
+                          </p>
                         </div>
                       </Link>
                     );
@@ -66,7 +69,7 @@ const LandingSection: FC = () => {
                 })}
               </div>
               <Link href={"/stories"}>
-                <button className="self-end px-4 underline text-primaryRed">
+                <button className="text-md self-end px-4 underline text-primaryRed">
                   More Stories
                 </button>
               </Link>

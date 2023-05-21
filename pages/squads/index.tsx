@@ -8,10 +8,11 @@ import Loader from "@components/Loader";
 const Squads = () => {
   const [activeLink, setActiveLink] = useState("all");
   const [activeTeam, setActiveTeam] = useState([]);
-  const members = useTeamStore((state) => state.members);
+  const {members, getMembers} = useTeamStore();
   const links = ["all", "gazelle", "women", "swaras", "tech-bench"];
 
   useEffect(() => {
+    getMembers()
     const selectedTeam = members.filter((member) =>
       member?.team?.includes(activeLink)
     );

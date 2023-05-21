@@ -20,7 +20,7 @@ const Header = () => {
     },
     {
       name: "Shop",
-      url: "#",
+      url: "/shop",
     },
     {
       name: "Partners",

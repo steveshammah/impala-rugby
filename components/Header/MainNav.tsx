@@ -25,7 +25,7 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
   }, [router, user]);
 
   return (
-    <nav className="relative select-none bg-grey bg-primaryRed lg:flex lg:items-stretch w-full ">
+    <nav className="relative select-none bg-grey bg-primaryRed lg:flex items-center w-full pl-4 h-[65px]">
       <div className="flex flex-no-shrink items-stretch h-14">
         <Link href="/">
           <Image
@@ -63,11 +63,11 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
           </svg>
         </button>
       </div>
-      <div className="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow flex-1 ">
+      <div className="lg:flex lg:flex-no-shrink lg:flex-grow flex-1 h-full ">
         <ul
           className={`${
             !menuOpen && "hidden"
-          } lg:flex h-full lg:items-stretch lg:justify-end ml-auto flex-1`}
+          } lg:flex justify-end items-center flex-1`}
         >
           {/* !user?.isAuth && */}
           {navLinks.map((link, index) => (
@@ -75,14 +75,14 @@ const MainNav = ({ menuOpen, toggleMenu, navLinks }: IBottomNav) => {
               key={index}
               className={`${
                 link.private ? "hidden" : ""
-              } h-full items-baseline flex mx-10`}
+              } h-full flex mx-10 min-w-[8ch]`}
               onClick={() => toggleMenu(!menuOpen)}
             >
               <Link
                 href={link.url}
-                className={`transition-all ease-in-out duration-200 p-2  ${
+                className={`flex items-center transition-all ease-in-out duration-200 h-full  ${
                   activeLink.includes(link.url) && "border-b-4"
-                }  text-white hover:border-b-4  hover:border-b-white hover:text-whiteX  w-full text-lg h-full flex items-baseline justify-center`}
+                }  text-white hover:border-b-4  hover:border-b-white hover:text-whiteX  w-full text-lg h-full flex justify-center`}
               >
                 {link.name}
               </Link>

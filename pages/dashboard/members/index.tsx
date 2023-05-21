@@ -7,8 +7,7 @@ import { useTeamStore } from "@stores/teamsStore";
 import { formatDate } from "@utils/utils";
 
 const Players = () => {
-  const getMembers = useTeamStore((state) => state.getMembers);
-  const members = useTeamStore((state) => state.members);
+  const { getMembers, members } = useTeamStore();
 
   useEffect(() => {
     getMembers();
