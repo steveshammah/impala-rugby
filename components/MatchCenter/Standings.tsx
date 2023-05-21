@@ -22,7 +22,7 @@ const Standings = () => {
           {leagueStandings.map((team, index) => {
             return (
               <tr
-                className={`sm:h-10 h-auto sm:text-sm text-xs shadow-lg ${
+                className={`h-[50px] sm:text-sm text-xs shadow-lg ${
                   team.name === "Impala Saracens"
                     ? "bg-primaryRed text-white"
                     : " text-blackX"

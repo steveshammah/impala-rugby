@@ -62,14 +62,19 @@ const MatchCenter = () => {
           ))}
         </ul>
       </div>
-
       {toBePlayed && activeContainer === "Fixtures" && (
         <Fixtures activeTeam={activeTeam} games={toBePlayed} />
       )}
       {played && activeContainer === "Results" && (
         <Fixtures activeTeam={activeTeam} games={played} />
       )}
-      {activeContainer === "Standings" && <Standings />}
+      {activeContainer === "Standings" && (
+        <div className="flex items-center justify-center w-full">
+          <div className="flex items-center justify-center w-[80%]">
+            <Standings />
+          </div>
+        </div>
+      )}
       {(played.length < 1 || toBePlayed.length < 1) && <Loader />}
     </div>
   );

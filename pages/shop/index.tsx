@@ -9,14 +9,14 @@ const Store = () => {
     products.filter((product) => product.category.includes(category));
 
   return (
-    <div className="store-container w-full">
+    <div className="store-containe relative flex flex-col w-full">
       <header className="h-12 bg-blackX sticky top-20 z-10">
         <ul className="flex justify-around items-center h-full">
           {categories.map((category, index) => (
             <li key={index}>
               <Link
                 href={`#${category}`}
-                className="flex items-center text-whiteX capitalize"
+                className="flex items-center shadow-lg  text-whiteX capitalize"
               >
                 {category}
               </Link>
@@ -25,14 +25,19 @@ const Store = () => {
         </ul>
       </header>
 
-      <div className="shop-container" id="main">
-        {categories.map((category, index) => (
-          <ProductWrapper
-            title={category}
-            products={productFxn(category)}
-            key={index}
-          />
-        ))}
+      <div
+        className="shop-container flex flex-col items-center w-full"
+        id="main"
+      >
+        <div className="flex flex-col  w-[80%]">
+          {categories.map((category, index) => (
+            <ProductWrapper
+              title={category}
+              products={productFxn(category)}
+              key={index}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

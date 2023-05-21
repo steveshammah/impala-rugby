@@ -1,3 +1,4 @@
+import { replacer } from "@utils/utils";
 import create from "zustand";
 
 // youtube API config
@@ -25,8 +26,12 @@ export const useTvStore = create<TvStore>((set) => ({
       console.log(`HTTP error! status: ${response.status}`);
     }
 
-    const data = await response.json();
+    const videos = await response.json();
 
-    void set({ videos: data["items"] });
+    const impalaVideos = videos["items"].filter((video) =>
+      replacer(video.snippet.title).toLocaleLowerCase().includes("impala")
+    );
+
+    void set({ videos: impalaVideos });
   },
 }));

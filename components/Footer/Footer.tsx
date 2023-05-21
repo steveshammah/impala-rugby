@@ -199,7 +199,7 @@ const Footer = () => {
         </div>
         <span className="p-1 flex-1 text-right">
           &copy;
-          <Link href="https://steveshammah.netlify.app" target={"_blank"}>
+          <Link href="https://steveshammah.vercel.app" target={"_blank"}>
             2022 Takeover
           </Link>
         </span>

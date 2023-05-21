@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <link rel="manifest" href="site.webmanifest" />
 
           {/*apple icon data*/}
-          <link rel="apple-touch-icon" href="/impala-log.png" />
+          <link rel="apple-touch-icon" href="/impala-logo.png" />
           <link rel="icon" sizes="192x192" href="../public/impala-logo.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
